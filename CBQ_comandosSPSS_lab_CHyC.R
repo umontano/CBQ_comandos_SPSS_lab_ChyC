@@ -1,13 +1,12 @@
 #################################################################
-url <- "https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament-/main/cbqLab_serrano2022.csv?token=GHSAT0AAAAAABSTRYZHSCQE4YJZYC6JWOTAYR6DDureFQ"
-#raw_information <- read.csv("https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament-/main/cbqLab_serrano2022.csv?token=GHSAT0AAAAAABSTRYZHSCQE4YJZYC6JWOTAYR6DDFQ", header=TRUE )
+#url <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv'
 
-#'Copy of base de datos final.csv'
-raw_information <- read.csv('Copy of base de datos final.csv' , header=TRUE )
+raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+
 
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
-items  <- lapply(raw_information[,8:202] , as.numeric)
+items  <- lapply(raw_information[,5:199] , as.numeric)
 #################################################################
 
 
