@@ -5,9 +5,9 @@ raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
-calif  <- data.frame(lapply( raw_information[, grep("^...[^\\d]", names(raw_information), perl=TRUE) ] , as.numeric))
-names(calif)
+calif  <- data.frame(lapply( raw_information[, grep('^(?!cbq\\d{1,3})', names(raw_information), perl=TRUE) ] , as.numeric))
 # NOTE, CBQ ITEMS ARE COLUMNS 5:199
+
 
 #SET THE ROW NAMES USING THE ID COLUM
 row.names(scales)  <- raw_information$investigadora
@@ -156,6 +156,7 @@ factors$profile[CE <  cem & AN <  anm] <- 'gamma'
 factors$profile[CE <  cem & AN >= anm] <- 'risky'
 detach(factors)
 
+factors$profile  <- as.factor(factors$profile)
 
 
 
