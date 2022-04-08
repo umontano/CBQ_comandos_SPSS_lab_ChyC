@@ -1,28 +1,24 @@
-#################################################################
+#LOAD DATA
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
-#items  <- lapply(raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric)
+calif  <- data.frame(lapply( raw_information[, grep("^...[^\\d]", names(raw_information), perl=TRUE) ] , as.numeric))
+names(calif)
 # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
-#SET THE ROW NAMES USIN THE ID COLUM
+#SET THE ROW NAMES USING THE ID COLUM
 row.names(scales)  <- raw_information$investigadora
 row.names(factors) <- raw_information$investigadora
-row.names(items)  <- raw_information$investigadora
+row.names(items) <- raw_information$investigadora
+row.names(calif) <- raw_information$investigadora
 
-#MAKE ITEMS NUMERIC
-#numi  <- lapply(items, as.numeric)
-#numi  <- data.frame(numi)
-#colnames(numi)  <-  names(items)
-#row.names(numi)  <- raw_information$investigadora
-#items  <- numi
 
 #################################################################
 
-
+#CALCULATE REVERSED QUESTIONS
 attach(items)
 items$cbq41r <- 8-cbq41
 items$cbq88r <- 8-cbq88
@@ -102,7 +98,7 @@ items$cbq165r <- 8-cbq165
 detach(items)
 
 
-
+#CALCULATE DIMENSIONS
 attach(items)
 scales$act = rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
 cbq172, cbq187, cbq192r) , na.rm=TRUE )
@@ -159,3 +155,12 @@ factors$profile[CE >= cem & AN >= anm] <- 'beta'
 factors$profile[CE <  cem & AN <  anm] <- 'gamma'
 factors$profile[CE <  cem & AN >= anm] <- 'risky'
 detach(factors)
+
+
+
+
+#SAVE TO DISK
+write.csv(scales, 'xCBQ_16DIMENSIONES.csv', row.names=TRUE)
+write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
+write.csv(calif, 'xCBQ_CALIFICACION_Y_DEMAS.csv', row.names=TRUE)
+
