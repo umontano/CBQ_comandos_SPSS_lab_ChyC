@@ -4,9 +4,7 @@ raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
-items  <- data.frame(lapply(
-        raw_information[, grep('^cbq\\d', names(raw_information)) ]
-, as.numeric))
+items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
 #items  <- lapply(raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric)
 # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
