@@ -150,3 +150,12 @@ factors$AN <- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
 factors$SURG <- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
 detach(scales)
 
+#PERFILES/PROFILES
+attach(factors)
+cem  <- median(CE)
+anm  <- median(AN)
+factors$profile[CE >= cem & AN <  anm] <- 'easy'
+factors$profile[CE >= cem & AN >= anm] <- 'beta'
+factors$profile[CE <  cem & AN <  anm] <- 'gamma'
+factors$profile[CE <  cem & AN >= anm] <- 'risky'
+detach(factors)
