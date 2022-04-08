@@ -1,12 +1,25 @@
 #################################################################
-#url <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv'
-
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
-
+#CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
-items  <- lapply(raw_information[,5:199] , as.numeric)
+items  <- raw_information[, grep('^cbq\\d', names(raw_information)) ]
+#items  <- lapply(raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric)
+# NOTE, CBQ ITEMS ARE COLUMNS 5:199
+
+#SET THE ROW NAMES USIN THE ID COLUM
+row.names(scales)  <- raw_information$investigadora
+row.names(factors) <- raw_information$investigadora
+row.names(items)  <- raw_information$investigadora
+
+#MAKE ITEMS NUMERIC
+numi  <- lapply(items, as.numeric)
+numi  <- data.frame(numi)
+colnames(numi)  <-  names(items)
+row.names(numi)  <- raw_information$investigadora
+items  <- numi
+
 #################################################################
 
 
