@@ -6,7 +6,6 @@ scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
 calif  <- data.frame(lapply( raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ] , as.numeric))
-str(calif)
     # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
 
@@ -101,39 +100,24 @@ detach(items)
 
 #CALCULATE DIMENSIONS
 attach(items)
-scales$act = rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
-cbq172, cbq187, cbq192r) , na.rm=TRUE )
-scales$fru <- rowMeans(data.frame(cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173,
-cbq181, cbq193) , na.rm=TRUE )
-scales$app <- rowMeans(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131r, cbq148, cbq166, cbq175r,
-cbq188r, cbq191r) , na.rm=TRUE )
+scales$act = rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153, cbq172, cbq187, cbq192r) , na.rm=TRUE )
+scales$fru <- rowMeans(data.frame(cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173, cbq181, cbq193) , na.rm=TRUE )
+scales$app <- rowMeans(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131r, cbq148, cbq166, cbq175r, cbq188r, cbq191r) , na.rm=TRUE )
 scales$attfoc <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r) , na.rm=TRUE )
 scales$attshi <- rowMeans(data.frame(cbq6r, cbq29, cbq95r, cbq180, cbq184r) , na.rm=TRUE )
-scales$attcon <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r,
-cbq6r, cbq29, cbq95r, cbq180, cbq184r) , na.rm=TRUE ) 
 #suma de las dos atenciones anteriores
-scales$dis <- rowMeans(data.frame(cbq5r, cbq21, cbq61, cbq87, cbq97, cbq101r, cbq115, cbq132, cbq141, cbq157, cbq178,
-cbq190r) , na.rm=TRUE )
-scales$sth <- rowMeans(data.frame(cbq14r, cbq27, cbq42, cbq53r, cbq68r, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150r,
-cbq167r, cbq177) , na.rm=TRUE )
-scales$fea <- rowMeans(data.frame(cbq15r, cbq40, cbq50, cbq58r, cbq70r, cbq80, cbq91, cbq130, cbq138r, cbq161r,
-cbq176r, cbq189) , na.rm=TRUE )
-scales$hip <- rowMeans(data.frame(cbq8, cbq22, cbq30r, cbq51r, cbq60r, cbq67, cbq77, cbq100, cbq107, cbq124, cbq139,
-cbq159r, cbq182) , na.rm=TRUE )
-scales$imp <- rowMeans(data.frame(cbq13, cbq26, cbq46, cbq59, cbq71r, cbq79r, cbq90r, cbq104, cbq114, cbq137r,
-cbq155, cbq169r, cbq183r) , na.rm=TRUE )
-scales$inh <- rowMeans(data.frame(cbq4, cbq20, cbq32r, cbq63, cbq75, cbq93r, cbq108r, cbq116, cbq136, cbq147, cbq162r,
-cbq168, cbq185) , na.rm=TRUE )
-scales$lip <- rowMeans(data.frame(cbq12r, cbq36, cbq54, cbq66r, cbq76, cbq86r, cbq111r, cbq113, cbq133, cbq146, cbq151,
-cbq164, cbq174) , na.rm=TRUE )
-scales$per <- rowMeans(data.frame(cbq9, cbq28r, cbq31, cbq52, cbq65, cbq84r, cbq98, cbq105, cbq122r, cbq142r, cbq154,
-cbq170r) , na.rm=TRUE )
-scales$sad <- rowMeans(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72r, cbq81, cbq94, cbq109r, cbq112r, cbq127,
-cbq149r) , na.rm=TRUE )
-scales$shy <- rowMeans(data.frame(cbq7, cbq17r, cbq23r, cbq37, cbq45r, cbq57r, cbq74, cbq89, cbq106, cbq119r, cbq129r,
-cbq143, cbq158r) , na.rm=TRUE )
-scales$smi <- rowMeans(data.frame(cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq135r, cbq152, cbq163,
-cbq165r, cbq179, cbq194) , na.rm=TRUE )
+scales$attcon <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r, cbq6r, cbq29, cbq95r, cbq180, cbq184r) , na.rm=TRUE ) 
+scales$dis <- rowMeans(data.frame(cbq5r, cbq21, cbq61, cbq87, cbq97, cbq101r, cbq115, cbq132, cbq141, cbq157, cbq178, cbq190r) , na.rm=TRUE )
+scales$sth <- rowMeans(data.frame(cbq14r, cbq27, cbq42, cbq53r, cbq68r, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150r, cbq167r, cbq177) , na.rm=TRUE )
+scales$fea <- rowMeans(data.frame(cbq15r, cbq40, cbq50, cbq58r, cbq70r, cbq80, cbq91, cbq130, cbq138r, cbq161r, cbq176r, cbq189) , na.rm=TRUE )
+scales$hip <- rowMeans(data.frame(cbq8, cbq22, cbq30r, cbq51r, cbq60r, cbq67, cbq77, cbq100, cbq107, cbq124, cbq139, cbq159r, cbq182) , na.rm=TRUE )
+scales$imp <- rowMeans(data.frame(cbq13, cbq26, cbq46, cbq59, cbq71r, cbq79r, cbq90r, cbq104, cbq114, cbq137r, cbq155, cbq169r, cbq183r) , na.rm=TRUE )
+scales$inh <- rowMeans(data.frame(cbq4, cbq20, cbq32r, cbq63, cbq75, cbq93r, cbq108r, cbq116, cbq136, cbq147, cbq162r, cbq168, cbq185) , na.rm=TRUE )
+scales$lip <- rowMeans(data.frame(cbq12r, cbq36, cbq54, cbq66r, cbq76, cbq86r, cbq111r, cbq113, cbq133, cbq146, cbq151, cbq164, cbq174) , na.rm=TRUE )
+scales$per <- rowMeans(data.frame(cbq9, cbq28r, cbq31, cbq52, cbq65, cbq84r, cbq98, cbq105, cbq122r, cbq142r, cbq154, cbq170r) , na.rm=TRUE )
+scales$sad <- rowMeans(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72r, cbq81, cbq94, cbq109r, cbq112r, cbq127, cbq149r) , na.rm=TRUE )
+scales$shy <- rowMeans(data.frame(cbq7, cbq17r, cbq23r, cbq37, cbq45r, cbq57r, cbq74, cbq89, cbq106, cbq119r, cbq129r, cbq143, cbq158r) , na.rm=TRUE )
+scales$smi <- rowMeans(data.frame(cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq135r, cbq152, cbq163, cbq165r, cbq179, cbq194) , na.rm=TRUE )
 detach(items)
 
 
