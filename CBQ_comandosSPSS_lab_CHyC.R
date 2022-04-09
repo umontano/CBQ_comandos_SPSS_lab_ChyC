@@ -5,8 +5,9 @@ raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
-calif  <- data.frame(lapply( raw_information[, grep('^(?!cbq\\d{1,3})', names(raw_information), perl=TRUE) ] , as.numeric))
-# NOTE, CBQ ITEMS ARE COLUMNS 5:199
+calif  <- data.frame(lapply( raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ] , as.numeric))
+str(calif)
+    # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
 
 #SET THE ROW NAMES USING THE ID COLUM
