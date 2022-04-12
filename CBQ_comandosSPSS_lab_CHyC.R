@@ -5,7 +5,7 @@ raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
-calif  <- data.frame(lapply( raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ] , as.numeric))
+calif  <- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ]
     # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
 
@@ -100,7 +100,7 @@ detach(items)
 
 #CALCULATE DIMENSIONS
 attach(items)
-scales$act = rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153, cbq172, cbq187, cbq192r) , na.rm=TRUE )
+scales$act <- rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153, cbq172, cbq187, cbq192r) , na.rm=TRUE )
 scales$fru <- rowMeans(data.frame(cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173, cbq181, cbq193) , na.rm=TRUE )
 scales$app <- rowMeans(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131r, cbq148, cbq166, cbq175r, cbq188r, cbq191r) , na.rm=TRUE )
 scales$attfoc <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r) , na.rm=TRUE )
