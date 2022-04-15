@@ -1,0 +1,56 @@
+---
+title: "inattentional_blindness"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+3 Factor Model Analysis 
+
+```{r, include=FALSE}
+library(dplyr)
+library(backports)
+library(ggplot2)
+library(tidytext)
+library(tidyr)
+library(broom)
+library(skimr)
+library(GGally)
+
+ceg  <- read.csv("https://raw.githubusercontent.com/umontano/kar/master/cegu.csv") %>%
+#mutate(Sexo=1-as.numeric(Sexo))  %>% 
+mutate(Sexo=as.factor(Sexo), Tipo_escuela=as.factor(Tipo_escuela), ESCUELA=as.factor(ESCUELA))  %>% 
+tibble()
+```
+
+
+
+```{r, include=FALSE}
+#=======================
+#attach(ceg)
+#names(ceg)
+traits  <- ceg %>% select(nivelactividad :  "Sensibilidad.perceptual") %>% dplyr::filter(!is.na(nivelactividad))
+
+fa_traits <- stats::factanal(traits, factors=3, rotation="promax")
+```
+
+
+#=======================
+
+```{r}
+fa_traits %>% broom::tidy() %>% select(-uniqueness) %>% pivot_longer(cols=-variable) %>% dplyr::filter(abs(value)>.30) %>%
+ggplot(aes(value, reorder(variable, abs(value)), fill=variable)) +
+geom_col() +
+facet_wrap(~name)
+
+```
+
+Contributions to 3 factors.
+
+```{r}
+print(fa_traits, digits=2, cutoff=0.30)
+
+```
+
