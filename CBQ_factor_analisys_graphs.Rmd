@@ -1,0 +1,61 @@
+---
+title: "inattentional_blindness"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+3 Factor Model Analysis 
+
+```{r, include=FALSE}
+library(dplyr)
+library(backports)
+library(ggplot2)
+library(tidytext)
+library(tidyr)
+library(broom)
+library(skimr)
+library(GGally)
+
+```
+
+
+
+```{r, include=FALSE}
+#RUN CBQ COMANDOS SPSS
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
+
+#SELECCIONA KAREN
+#scales <- scales %>% dplyr::filter(grepl('kw1', rownames(scales))) %>% tibble()
+
+#SELECCIONA VALE
+#scales <- scales %>% dplyr::filter(grepl('vm0', rownames(scales))) %>% tibble()
+#=======================
+traits  <- scales %>%
+        select(-attcon) %>% 
+        dplyr::filter(!is.na(attshi)) %>%
+        tibble()
+
+fa_traits <- stats::factanal(traits, factors=3, rotation="promax")
+```
+
+
+#=======================
+
+```{r}
+fa_traits %>% broom::tidy() %>% select(-uniqueness) %>% pivot_longer(cols=-variable) %>% dplyr::filter(abs(value)>.30) %>%
+ggplot(aes(value, reorder(variable, abs(value)), fill=variable)) +
+geom_col() +
+facet_wrap(~name)
+
+```
+
+Contributions to 3 factors.
+
+```{r}
+print(fa_traits, digits=2, cutoff=0.30)
+
+```
+
