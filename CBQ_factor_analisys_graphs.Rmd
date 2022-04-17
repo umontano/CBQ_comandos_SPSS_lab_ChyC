@@ -19,6 +19,25 @@ library(broom)
 library(skimr)
 library(GGally)
 
+fa_graphics  <- function(analyzee, num_factors, theshold){
+fa_results <- stats::factanal(analyzee, factors = num_factors, rotation="promax")
+
+print(fa_results, digits=2, cutoff=theshold)
+#=======================
+
+fa_results %>% broom::tidy() %>% 
+        select(-uniqueness) %>% 
+        pivot_longer(cols=-variable) %>% 
+        dplyr::filter(abs(value)>theshold) %>%
+ggplot(aes(value, reorder(variable, abs(value)), fill=variable)) +
+geom_col() +
+facet_wrap(~name)
+}
+
+
+
+
+
 ```
 
 
@@ -27,17 +46,14 @@ library(GGally)
 #RUN CBQ COMANDOS SPSS
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
 
-#SELECCIONA KAREN
-#scales <- scales %>% dplyr::filter(grepl('kw1', rownames(scales))) %>% tibble()
-
-#SELECCIONA VALE
-#scales <- scales %>% dplyr::filter(grepl('vm0', rownames(scales))) %>% tibble()
 #=======================
-traits  <- scales %>%
+scales <- scales %>%
         select(-attcon) %>% 
         dplyr::filter(!is.na(attshi)) %>%
         tibble()
 
+#ANALISIS CON TODOS LOS DATOS
+traits  <- scales
 fa_traits <- stats::factanal(traits, factors=3, rotation="promax")
 ```
 
@@ -57,5 +73,14 @@ Contributions to 3 factors.
 ```{r}
 print(fa_traits, digits=2, cutoff=0.30)
 
+#ANALIS DE DATOS DE KAREN 
+karen <- scales %>% dplyr::filter(grepl('kw1', rownames(scales))) %>% tibble()
+fa_graphics(karen, 3, 0.30)
+ggsave('factor_analis_karen.pdf')
+
+#ANALISIS DE DATOS DE VALE
+vale <- scales %>% dplyr::filter(grepl('vm0', rownames(scales))) %>% tibble()
+fa_graphics(vale, 3, 0.30)
+ggsave('factor_analis_vale.pdf')
 ```
 
