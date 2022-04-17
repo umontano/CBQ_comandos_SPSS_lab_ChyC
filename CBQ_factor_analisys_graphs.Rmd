@@ -1,5 +1,5 @@
 ---
-title: "inattentional_blindness"
+title: "Exploratory Factor Analysis"
 output: pdf_document
 ---
 
@@ -11,80 +11,71 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, include=FALSE}
 library(dplyr)
-library(backports)
-library(ggplot2)
-library(tidytext)
 library(tidyr)
+library(ggplot2)
 library(broom)
-library(skimr)
-library(GGally)
 
-fa_graphics  <- function(analyzee, num_factors, theshold){
+#DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS
+fa_graphics  <- function(analyzee, num_factors, threshold) {
+#MAKE TITLE STRING
+dtitle <- toupper(deparse(substitute(analyzee)))
+
+#FACTOR ANALYSIS
 fa_results <- stats::factanal(analyzee, factors = num_factors, rotation="promax")
+print('==========================================================================')
+print(dtitle)
+print('==========================================================================')
+print(fa_results, digits=2, cutoff=threshold)
 
-print(fa_results, digits=2, cutoff=theshold)
-#=======================
-
-fa_results %>% broom::tidy() %>% 
+#GENERATES LONG FORMAT RESULTS
+fatidy <- fa_results %>% broom::tidy() %>% 
         select(-uniqueness) %>% 
         pivot_longer(cols=-variable) %>% 
-        dplyr::filter(abs(value)>theshold) %>%
-ggplot(aes(value, reorder(variable, abs(value)), fill=variable)) +
-geom_col() +
-facet_wrap(~name)
+        dplyr::filter(abs(value)>threshold)
+
+#MAKES GRAPHICS
+faplot <- ggplot(fatidy, aes(abs(value), reorder(variable, abs(value)), col=variable, fill=value>0)) +
+        geom_col() +
+        facet_wrap(~name) + 
+        labs(title = dtitle,
+                subtitle = paste('N factors=', num_factors, 'cutoff=', threshold),
+                caption = 'CBQ dims, Loadings to Factors')
+
+#SAVE GRAPHICS TO DISK
+ggsave(paste0('xANALISIS_FACTORES_', dtitle, '_f', num_factors, '_cut', chartr('.', '_', threshold), '.pdf'))
+
+#SHOW GRAPHICS
+faplot
 }
-
-
-
-
-
 ```
-
 
 
 ```{r, include=FALSE}
-#RUN CBQ COMANDOS SPSS
+#CORRE EL SCRIPT con datos MAFER-SERRANO+VALE+KAREN (CBQ COMANDOS SPSS)
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
-
 #=======================
-#QUITA LA VARIABLE CONJUNTO-ATENCION
+#QUITA LAs VARIABLEs -ATENCION-foc-shi
 scales <- scales %>%
-        select(-attcon) %>% 
-        dplyr::filter(!is.na(attshi)) %>%
-        tibble()
-
-
-#ANALISIS CON TODOS LOS DATOS
-traits  <- scales
-fa_graphics(traits, 3, 0.30)
-ggsave('xANALISIS_D_FACTORES_TODOS.pdf')
-fa_traits <- stats::factanal(traits, factors=3, rotation="promax")
+        select(-attfoc, -attshi) %>% 
+        dplyr::filter(!is.na(attcon))
 ```
-
 
 #=======================
-
-```{r}
-fa_traits %>% broom::tidy() %>% select(-uniqueness) %>% pivot_longer(cols=-variable) %>% dplyr::filter(abs(value)>.30) %>%
-ggplot(aes(value, reorder(variable, abs(value)), fill=variable)) +
-geom_col() +
-facet_wrap(~name)
-
-```
-
 Contributions to 3 factors.
-
 ```{r}
-print(fa_traits, digits=2, cutoff=0.30)
+#ANALISIS CON DATOS COMPLETOS
+complet  <- scales
+fa_graphics(complet, 3, 0.40)
+#PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
+#HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
 
 #ANALIS DE DATOS DE KAREN 
-karen <- scales %>% dplyr::filter(grepl('kw1', rownames(scales))) %>% tibble()
-fa_graphics(karen, 3, 0.30)
-ggsave('xANALISIS_D_FACTORES_karen.pdf')
+karen <- scales %>% dplyr::filter(grepl('kw1', rownames(scales)))
+fa_graphics(karen, 3, 0.40)
 
 #ANALISIS DE DATOS DE VALE
-vale <- scales %>% dplyr::filter(grepl('vm0', rownames(scales))) %>% tibble()
-fa_graphics(vale, 3, 0.30)
-ggsave('xANALISIS_D_FACTORES_vale.pdf')
+vale <- scales %>% dplyr::filter(grepl('vm0', rownames(scales)))
+fa_graphics(vale, 3, 0.40)
+#PROBLEMS IN  PER=PERCEPTUALSENSITVITY
+#HIGH CORRELATION BETWEEN F1 F3 
 ```
-
