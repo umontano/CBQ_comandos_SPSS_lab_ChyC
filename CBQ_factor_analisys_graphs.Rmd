@@ -47,13 +47,17 @@ facet_wrap(~name)
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
 
 #=======================
+#QUITA LA VARIABLE CONJUNTO-ATENCION
 scales <- scales %>%
         select(-attcon) %>% 
         dplyr::filter(!is.na(attshi)) %>%
         tibble()
 
+
 #ANALISIS CON TODOS LOS DATOS
 traits  <- scales
+fa_graphics(traits, 3, 0.30)
+ggsave('xANALISIS_D_FACTORES_TODOS.pdf')
 fa_traits <- stats::factanal(traits, factors=3, rotation="promax")
 ```
 
@@ -76,11 +80,11 @@ print(fa_traits, digits=2, cutoff=0.30)
 #ANALIS DE DATOS DE KAREN 
 karen <- scales %>% dplyr::filter(grepl('kw1', rownames(scales))) %>% tibble()
 fa_graphics(karen, 3, 0.30)
-ggsave('factor_analis_karen.pdf')
+ggsave('xANALISIS_D_FACTORES_karen.pdf')
 
 #ANALISIS DE DATOS DE VALE
 vale <- scales %>% dplyr::filter(grepl('vm0', rownames(scales))) %>% tibble()
 fa_graphics(vale, 3, 0.30)
-ggsave('factor_analis_vale.pdf')
+ggsave('xANALISIS_D_FACTORES_vale.pdf')
 ```
 
