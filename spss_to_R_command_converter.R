@@ -1,11 +1,22 @@
+'~/u/prrasgostest.txt' -> file_name
+
+#CONDITIONAL TO READ FROM COMMAND LINE
+cli_arguments <- commandArgs(trailingOnly = FALSE)
+print(cli_arguments)
+if(length(cli_arguments)>8){ 
+file_name <- cli_arguments[9]
+}
+
+#DEFINE FUNCTIONS TO LOAD TEXT, WE ONLY USE ONE OF THESE FUNCTIOSN
+get_text_lines  <- function(f){return(paste(readLines(f), collapse = '\n'))}
 get_text_char  <- function(f){return(readChar(f, file.size(f)))}
-processing_text <- ' ahrn eeeeeeee EXECUTE. ZZJJJJJJJJJJK
-SDKKKKKKKKKKKKKKKKKKKKLLLLSLD
-IIIIIIIIIIIII EXECUTE.      OOOOOOOOOO'
+#READ TEXT FILE
+processing_text <- get_text_lines(file_name)
 
-processing_text <- get_text_lines('~/u/prrasgostest.txt')
-processing_text <- get_text_char('~/u/prrasgostest.txt')
 
+########################################################################################
+#PROCESSING TEXT
+#TAKE AWAY EXECUTE COMMAND
 processing_text  <-  gsub('(EXECUTE.*\\.)', 
                           '####################\\1', 
                           processing_text, perl=TRUE)
@@ -44,4 +55,9 @@ COMPUTE\\
      processing_text, perl=TRUE)
 
 #SAVE TO DISK 
-writeChar(processing_text, 'xOUT_TEST_COVERTER_CBQ_SPSS_R.txt', nchars = nchar(processing_text, type = "chars"), eos = "\n")
+#writeChar(processing_text, 'xOUT_TEST_COVERTER_CBQ_SPSS_R.txt', nchars = nchar(processing_text, type = "chars"), eos = "\n")
+out_name <- gsub('\\W','_', file_name, perl=TRUE)
+out_name <- paste0('xOUTPUT_CONVERTER_SPSS_R_CBQ_', out_name, '_.R')
+writeLines(processing_text, out_name)
+
+
