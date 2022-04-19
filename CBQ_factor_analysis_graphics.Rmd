@@ -55,26 +55,34 @@ faplot
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
 #=======================
 #QUITA LAs VARIABLEs -ATENCION-foc-shi
-scales <- scales %>%
+dimensions_noextras_att <- scales %>%
         select(-attfoc, -attshi) %>% 
         dplyr::filter(!is.na(attcon))
 ```
 
-#=======================
-Contributions to 3 factors.
+# CRONBERG'S ALPHA ANALYSIS
+
+```{r}
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_alpha_mfserrano_vale_karen.R')
+```
+
+
+=======================
+# FACTOR ANALISIS
+## Contributions to 3 factors.
 ```{r}
 #ANALISIS CON DATOS COMPLETOS
-complet  <- scales
+complet  <- dimensions_noextras_att
 fa_graphics(complet, 3, 0.40)
 #PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
 #HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
 
 #ANALIS DE DATOS DE KAREN 
-karen <- scales %>% dplyr::filter(grepl('kw1', rownames(scales)))
+karen <- dimensions_noextras_att %>% dplyr::filter(grepl('kw1', rownames(dimensions_noextras_att)))
 fa_graphics(karen, 3, 0.40)
 
 #ANALISIS DE DATOS DE VALE
-vale <- scales %>% dplyr::filter(grepl('vm0', rownames(scales)))
+vale <- dimensions_noextras_att %>% dplyr::filter(grepl('vm0', rownames(dimensions_noextras_att)))
 fa_graphics(vale, 3, 0.40)
 #PROBLEMS IN  PER=PERCEPTUALSENSITVITY
 #HIGH CORRELATION BETWEEN F1 F3 
