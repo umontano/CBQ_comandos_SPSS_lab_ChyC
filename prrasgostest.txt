@@ -18,7 +18,9 @@ COMPUTE cbq84r = (8-cbq84).
 COMPUTE cbq121r = (8-cbq121).
 COMPUTE cbq135r = (8-cbq135).
 COMPUTE cbq165r = (8-cbq165).
-COMPUTE = mean (cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
+
+
+COMPUTE = act (cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
 cbq172, cbq187, cbq192r).
 COMPUTE fru = mean (cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173,
 cbq181, cbq193).
