@@ -36,7 +36,7 @@ COMPUTE\\
 #CBQ COLUMNS
 (cbq.+?)
 \\)\\.', 
-'scales\\$\\1 <- rowMeans(data.frame(\\2), na.rm=TRUE)',
+'alpha(data.frame(\\2), impute=median)',
      processing_text, perl=TRUE)
 
 
@@ -51,9 +51,8 @@ COMPUTE\\
 #SCALES COLUMNS
 ([a-z]{2,}.+?)
 \\)\\.',
-'factors\\$\\1 <- rowMeans(data.frame(\\2), na.rm=TRUE)',
+'alpha(data.frame(\\2), impute=mean)',
      processing_text, perl=TRUE)
-
 
 
 
@@ -63,10 +62,12 @@ COMPUTE\\
 ###########################################################################
 
 
+
+
 #SAVE TO DISK 
 #writeChar(processing_text, 'xOUT_TEST_COVERTER_CBQ_SPSS_R.txt', nchars = nchar(processing_text, type = "chars"), eos = "\n")
 out_name <- gsub('\\W','_', file_name, perl=TRUE)
-out_name <- paste0('xOUTPUT_CONVERTER_SPSS_R_CBQ_', out_name, '_.R')
+out_name <- paste0('xALPHA_CRONBERG_OUTPUT_CONVERTER_SPSS_R_CBQ_', out_name, '_.R')
 writeLines(processing_text, out_name)
 
 
