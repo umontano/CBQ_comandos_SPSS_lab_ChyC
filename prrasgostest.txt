@@ -1,5 +1,3 @@
-# 0y}:.,.+33!"
-# 0y}:.,.+33!"
 COMPUTE cbq170r = (8-cbq170).
 COMPUTE cbq72r = (8-cbq72).
 COMPUTE cbq109r = (8-cbq109).
@@ -20,7 +18,8 @@ COMPUTE cbq135r = (8-cbq135).
 COMPUTE cbq165r = (8-cbq165).
 
 
-COMPUTE = act (cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
+
+COMPUTE act = mean (cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153,
 cbq172, cbq187, cbq192r).
 COMPUTE fru = mean (cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173,
 cbq181, cbq193).
@@ -29,7 +28,8 @@ cbq188r, cbq191r).
 COMPUTE attfoc = mean (cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r).
 COMPUTE attshi = mean (cbq6r, cbq29, cbq95r, cbq180, cbq184r).
 COMPUTE attcon = mean (cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r,
-cbq6r, cbq29, cbq95r, cbq180, cbq184r). (suma de las dos atenciones anteriores)
+cbq6r, cbq29, cbq95r, cbq180, cbq184r).
+###suma de las dos atenciones anteriores
 COMPUTE dis = mean (cbq5r, cbq21, cbq61, cbq87, cbq97, cbq101r, cbq115, cbq132, cbq141, cbq157, cbq178,
 cbq190r).
 COMPUTE sth = mean (cbq14r, cbq27, cbq42, cbq53r, cbq68r, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150r,
@@ -55,6 +55,6 @@ cbq165r, cbq179, cbq194).
 EXECUTE .
 
                 COMPUTE CE = mean (attcon, lip,inh, per, attfoc, attshi). 
-                  COMPUTE AN = mean (sad, dis, fru, fear, sth). 
+                  COMPUTE AN = mean (sad, dis, fru, fea, sth). 
                     COMPUTE SURG = mean (shy, app, imp, hip, smi, act). 
                      EXECUTE . 
