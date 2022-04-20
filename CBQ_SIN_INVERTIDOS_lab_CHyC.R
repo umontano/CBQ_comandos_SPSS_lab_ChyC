@@ -1,6 +1,9 @@
 #LOAD DATA
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
+#TRANSLATE IVESTIG INTO IDENTIFICADOR
+names(raw_information) <- gsub('^investigadora$', 'identificador', names(raw_information), perl=TRUE)
+
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
@@ -10,10 +13,10 @@ calif  <- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=
 
 
 #SET THE ROW NAMES USING THE ID COLUM
-row.names(scales)  <- raw_information$investigadora
-row.names(factors) <- raw_information$investigadora
-row.names(items) <- raw_information$investigadora
-row.names(calif) <- raw_information$investigadora
+row.names(scales)  <- raw_information$identificador
+row.names(factors) <- raw_information$identificador
+row.names(items) <- raw_information$identificador
+row.names(calif) <- raw_information$identificador
 
 
 #################################################################

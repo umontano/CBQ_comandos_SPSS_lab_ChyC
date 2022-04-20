@@ -1,6 +1,9 @@
 #LOAD DATA
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
+#TRANSLATE IVESTIG INTO IDENTIFICADOR
+names(raw_information) <- gsub('^investigadora$', 'identificador', names(raw_information), perl=TRUE)
+
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
 factors <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
@@ -9,11 +12,11 @@ calif  <- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=
     # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
 
-#SET THE ROW NAMES USING THE ID COLUM
-row.names(scales)  <- raw_information$investigadora
-row.names(factors) <- raw_information$investigadora
-row.names(items) <- raw_information$investigadora
-row.names(calif) <- raw_information$investigadora
+#SET THE ROW NAMES USING THE ID COLUMN
+row.names(scales)  <- raw_information$identificador
+row.names(factors) <- raw_information$identificador
+row.names(items) <- raw_information$identificador
+row.names(calif) <- raw_information$identificador
 
 
 #################################################################
@@ -126,7 +129,7 @@ detach(items)
 ##COMANDOS PARA CALCULAR LOS 3 FACTORES, CE, AN, Y SURG  
 ##
 attach(scales)
-factors$CE <- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
+factors$CE <- rowMeans(data.frame(attcon, lip, inh, per, attfoc, attshi) , na.rm=TRUE )
 factors$AN <- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
 factors$SURG <- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
 detach(scales)
