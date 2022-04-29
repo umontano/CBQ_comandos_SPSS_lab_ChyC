@@ -1,4 +1,4 @@
-'~/u/prrasgostest.txt' -> file_name
+'https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_spss_syntax_Temperament_Scale_Definitions.txt' -> file_name
 #'https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/prrasgostest.txt' -> file_name
 
 #CONDITIONAL TO READ FROM COMMAND LINE
@@ -23,7 +23,7 @@ processing_text  <-  gsub('(EXECUTE.*\\.)',
                           processing_text, perl=TRUE)
 
 #SECTION REVERSING ITEMS
-processing_text <- gsub('(?xx)COMPUTE\\ (\\w+?)\\ \\=\\ \\((8\\-cbq\\w+?)\\)\\.',
+processing_text <- gsub('(?xx)COMPUTE\\ (\\w+?)\\ \\=\\ \\((8\\-cbq\\w+?)\\)\\.\\s*\\n',
 '',
      processing_text, perl=TRUE)
 
@@ -38,6 +38,13 @@ COMPUTE\\
 (cbq.+?)
 \\)\\.', 
 'attach(items, warn.conflicts=FALSE)
+print(\'==============================================================\')
+print(\'==============================================================\')
+print(\'==============================================================\')
+print(\'==============================================================\')
+print(\'==============================================================\')
+print(\'======================== \\1 = \\1 = \\1 =====================\')
+print(\'==============================================================\')
 print(alpha(data.frame(\\2), impute="medians", check.keys=TRUE))
 detach(items)',
      processing_text, perl=TRUE)
@@ -68,7 +75,7 @@ processing_text <- paste('library(psych)\n\n', processing_text)
 
 ###########################################################################
 #CHANGE REVERESED TO NON REVERSED BY TAKING AWAY TRAILING r FROM cbq ITEMS
-#processing_text <- gsub('(cbq\\d{1,3})r', '\\1', processing_text, perl=TRUE)
+processing_text <- gsub('(cbq\\d{1,3})r', '\\1', processing_text, perl=TRUE)
 ###########################################################################
 
 
