@@ -54,9 +54,9 @@ fa_graphics  <- function(analyzee, num_factors, threshold) {
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
 #=======================
 #QUITA LAs VARIABLEs -ATENCION-foc-shi
-dimensions_noextras_att <- scales %>%
-        select(-attfoc, -attshi) %>% 
-        dplyr::filter(!is.na(attcon))
+#dimensions_noextras_att <- scales %>%
+#        select(-attfoc, -attshi) %>% 
+#        dplyr::filter(!is.na(attcon))
 ```
 
 # CRONBACH'S ALPHA AND FACTOR ANALYSIS
