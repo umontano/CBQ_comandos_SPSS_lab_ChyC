@@ -17,38 +17,37 @@ library(broom)
 
 #DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS
 fa_graphics  <- function(analyzee, num_factors, threshold) {
-#MAKE TITLE STRING
-dtitle <- toupper(deparse(substitute(analyzee)))
+	#MAKE TITLE STRING
+	dtitle <- toupper(deparse(substitute(analyzee)))
 
-#FACTOR ANALYSIS
-fa_results <- stats::factanal(analyzee, factors = num_factors, rotation="promax")
-print('==========================================================================')
-print(dtitle)
-print('==========================================================================')
-print(fa_results, digits=2, cutoff=threshold)
+	#FACTOR ANALYSIS
+	fa_results <- stats::factanal(analyzee, factors = num_factors, rotation="promax")
+	print('==========================================================================')
+	print(dtitle)
+	print('==========================================================================')
+	print(fa_results, digits=2, cutoff=threshold)
 
-#GENERATES LONG FORMAT RESULTS
-fatidy <- fa_results %>% broom::tidy() %>% 
-        select(-uniqueness) %>% 
-        pivot_longer(cols=-variable) %>% 
-        dplyr::filter(abs(value)>threshold)
+	#GENERATES LONG FORMAT RESULTS
+	fatidy <- fa_results %>% broom::tidy() %>% 
+		select(-uniqueness) %>% 
+		pivot_longer(cols=-variable) %>% 
+		dplyr::filter(abs(value)>threshold)
 
-#MAKES GRAPHICS
-faplot <- ggplot(fatidy, aes(abs(value), reorder(variable, abs(value)), col=variable, fill=value>0)) +
-        geom_col() +
-        facet_wrap(~name) + 
-        labs(title = dtitle,
-                subtitle = paste('N factors=', num_factors, 'cutoff=', threshold),
-                caption = 'CBQ dims, Loadings to Factors')
+	#MAKES GRAPHICS
+	faplot <- ggplot(fatidy, aes(abs(value), reorder(variable, abs(value)), col=variable, fill=value>0)) +
+		geom_col() +
+		facet_wrap(~name) + 
+		labs(title = dtitle,
+			subtitle = paste('N factors=', num_factors, 'cutoff=', threshold),
+			caption = 'CBQ dims, Loadings to Factors')
 
-#SAVE GRAPHICS TO DISK
-ggsave(paste0('xANALISIS_FACTORES_', dtitle, '_f', num_factors, '_cut', chartr('.', '_', threshold), '.pdf'))
+	#SAVE GRAPHICS TO DISK
+	#ggsave(paste0('xANALISIS_FACTORES_', dtitle, '_f', num_factors, '_cut', chartr('.', '_', threshold), '.pdf'))
 
-#SHOW GRAPHICS
-faplot
+	#SHOW GRAPHICS
+	faplot
 }
 ```
-
 
 ```{r, include=FALSE}
 #CORRE EL SCRIPT con datos MAFER-SERRANO+VALE+KAREN (CBQ COMANDOS SPSS)
@@ -61,29 +60,47 @@ dimensions_noextras_att <- scales %>%
 ```
 
 # CRONBACH'S ALPHA AND FACTOR ANALYSIS
-
 ```{r}
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_alpha_mfserrano_vale_karen.R')
 ```
 
-
-=======================
-# FACTOR ANALISIS
-## Contributions to 3 factors.
+# ALPHA IMPARES
 ```{r}
-#ANALISIS CON DATOS COMPLETOS
+items_impares <- items[seq_along(items[,1])%%2 != 0  ,]
+alpha_cbq(items_impares)
+```
+
+# ALPHA PARES
+```{r}
+items_pares <- items[seq_along(items[,1])%%2 == 0  ,]
+alpha_cbq(items_pares)
+```
+
+=== ====================
+=== ====================
+=== ====================
+=== ====================
+=== ====================
+# FACTOR ANALYSIS
+Contributions to 3 factors.
+# ANALISIS CON DATOS COMPLETOS
+### PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
+### HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
+```{r}
 complet  <- dimensions_noextras_att
 fa_graphics(complet, 3, 0.40)
-#PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
-#HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
+```
 
-#ANALIS DE DATOS DE KAREN 
+# ANALISIS DE DATOS DE KAREN 
+```{r}
 karen <- dimensions_noextras_att %>% dplyr::filter(grepl('kw1', rownames(dimensions_noextras_att)))
 fa_graphics(karen, 3, 0.40)
+```
 
-#ANALISIS DE DATOS DE VALE
+# ANALISIS DE DATOS DE VALE
+### PROBLEMS IN  PER=PERCEPTUALSENSITVITY
+### HIGH CORRELATION BETWEEN F1 F3 
+```{r}
 vale <- dimensions_noextras_att %>% dplyr::filter(grepl('vm0', rownames(dimensions_noextras_att)))
 fa_graphics(vale, 3, 0.40)
-#PROBLEMS IN  PER=PERCEPTUALSENSITVITY
-#HIGH CORRELATION BETWEEN F1 F3 
 ```

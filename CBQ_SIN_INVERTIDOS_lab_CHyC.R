@@ -2,7 +2,7 @@
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
 #TRANSLATE IVESTIG INTO IDENTIFICADOR
-names(raw_information) <- gsub('^investigadora$', 'identificador', names(raw_information), perl=TRUE)
+names(raw_information) <- gsub('investigadora', 'identificador', names(raw_information), perl=TRUE)
 
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
@@ -47,32 +47,32 @@ scales$smi <- rowMeans(data.frame(cbq11, cbq43, cbq56, cbq83, cbq99, cbq110, cbq
 detach(items)
 
 
-##################################
-##################################
-##COMANDOS PARA CALCULAR LOS 3 FACTORES, CE, AN, Y SURG  
-##
+##CALCULA 3 FACTORES, CE, AN, Y SURG  
 attach(scales)
 factors$CE <- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
 factors$AN <- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
 factors$SURG <- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
 detach(scales)
 
-#PERFILES/PROFILES
+##################################
+#PERFILES
 attach(factors)
 cem  <- median(CE)
 anm  <- median(AN)
-factors$profile[CE >= cem & AN <  anm] <- 'easy'
-factors$profile[CE >= cem & AN >= anm] <- 'beta'
-factors$profile[CE <  cem & AN <  anm] <- 'gamma'
-factors$profile[CE <  cem & AN >= anm] <- 'risky'
+factors$perfil[CE >= cem & AN <  anm] <- 'easy'
+factors$perfil[CE >= cem & AN >= anm] <- 'intense'
+factors$perfil[CE <  cem & AN <  anm] <- 'disengaged'
+factors$perfil[CE <  cem & AN >= anm] <- 'risky'
 detach(factors)
+factors$perfil  <- as.factor(factors$perfil)
 
-factors$profile  <- as.factor(factors$profile)
 
-
+#QUITA LAS VARIABLES DE ATENCION -ATTFOC -ATTSHI
+dimensions_noextras_att <- scales[, !grepl('(attfoc|attshi)', names(scales), perl=TRUE)]
 
 #SAVE TO DISK
 write.csv(scales, 'xCBQ_16DIMENSIONES.csv', row.names=TRUE)
 write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
 write.csv(calif, 'xCBQ_CALIFICACION_Y_DEMAS.csv', row.names=TRUE)
+write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.names=TRUE)
 

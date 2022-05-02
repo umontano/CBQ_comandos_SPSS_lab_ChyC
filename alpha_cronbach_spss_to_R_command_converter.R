@@ -37,16 +37,25 @@ COMPUTE\\
 #CBQ COLUMNS
 (cbq.+?)
 \\)\\.', 
-'attach(items, warn.conflicts=FALSE)
+'attach(analyzee, warn.conflicts=FALSE)
 print(\'==============================================================\')
 print(\'==============================================================\')
 print(\'==============================================================\')
 print(\'==============================================================\')
 print(\'==============================================================\')
+print(\'==============================================================\')
+print(dtitle)
+print(dtitle)
+print(dtitle)
 print(\'======================== \\1 = \\1 = \\1 =====================\')
+print(\' \\1 \')
+print(\' \\1 \')
+print(\' \\1 \')
+print(\' \\1 \')
+print(\' \\1 \')
 print(\'==============================================================\')
 print(alpha(data.frame(\\2), impute="medians", check.keys=TRUE))
-detach(items)',
+detach(analyzee)',
      processing_text, perl=TRUE)
 
 
@@ -60,18 +69,35 @@ COMPUTE\\
 \\ \\=\\ mean\\ \\(
 #SCALES COLUMNS
 ([a-z]{2,}.+?)
-\\)\\.',
-'attach(scales, warn.conflicts=FALSE)
-print(alpha(data.frame(\\2), impute="means", check.keys=TRUE))
-detach(scales)',
+\\)\\.
+\\s*\\n',
+'',
+#'attach(scales, warn.conflicts=FALSE)
+#print(alpha(data.frame(\\2), impute="means", check.keys=TRUE))
+#detach(scales)',
      processing_text, perl=TRUE)
 
 
 
 #CHANGE DOUBLE QUOTES TO SINGLE
 processing_text <- gsub('\\"', "\\'", processing_text, perl=TRUE)
-processing_text <- paste('library(psych)\n\n', processing_text)
 
+
+##########################################
+begin_code <- '
+library(psych)
+#DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS
+alpha_cbq  <- function(analyzee) {
+	#MAKE TITLE STRING
+	dtitle <- toupper(deparse(substitute(analyzee)))
+'
+#############################################
+end_code <- '
+}
+'
+
+#JOIN BEGIN AND END
+processing_text <- paste(begin_code, processing_text, end_code)
 
 ###########################################################################
 #CHANGE REVERESED TO NON REVERSED BY TAKING AWAY TRAILING r FROM cbq ITEMS
