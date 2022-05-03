@@ -47,7 +47,7 @@ alpha_cbq(items_pares)
 # FACTOR ANALYSIS
 ## TWO FACTORS
 ```{r}
-source('~/u/temperament_ant_vale_karen_mfserrano/factor_analysis_graph_function.R')
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
 complet  <- dimensions_noextras_att
 fa_graphics(complet, 2, 0.40)
 ```
