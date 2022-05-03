@@ -15,48 +15,11 @@ library(tidyr)
 library(ggplot2)
 library(broom)
 
-#DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS
-fa_graphics  <- function(analyzee, num_factors, threshold) {
-	#MAKE TITLE STRING
-	dtitle <- toupper(deparse(substitute(analyzee)))
-
-	#FACTOR ANALYSIS
-	fa_results <- stats::factanal(analyzee, factors = num_factors, rotation="promax")
-	print('==========================================================================')
-	print(dtitle)
-	print('==========================================================================')
-	print(fa_results, digits=2, cutoff=threshold)
-
-	#GENERATES LONG FORMAT RESULTS
-	fatidy <- fa_results %>% broom::tidy() %>% 
-		select(-uniqueness) %>% 
-		pivot_longer(cols=-variable) %>% 
-		dplyr::filter(abs(value)>threshold)
-
-	#MAKES GRAPHICS
-	faplot <- ggplot(fatidy, aes(abs(value), reorder(variable, abs(value)), col=variable, fill=value>0)) +
-		geom_col() +
-		facet_wrap(~name) + 
-		labs(title = dtitle,
-			subtitle = paste('N factors=', num_factors, 'cutoff=', threshold),
-			caption = 'CBQ dims, Loadings to Factors')
-
-	#SAVE GRAPHICS TO DISK
-	#ggsave(paste0('xANALISIS_FACTORES_', dtitle, '_f', num_factors, '_cut', chartr('.', '_', threshold), '.pdf'))
-
-	#SHOW GRAPHICS
-	faplot
-}
 ```
 
 ```{r, include=FALSE}
 #CORRE EL SCRIPT con datos MAFER-SERRANO+VALE+KAREN (CBQ COMANDOS SPSS)
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
-#=======================
-#QUITA LAs VARIABLEs -ATENCION-foc-shi
-#dimensions_noextras_att <- scales %>%
-#        select(-attfoc, -attshi) %>% 
-#        dplyr::filter(!is.na(attcon))
 ```
 
 # CRONBACH'S ALPHA AND FACTOR ANALYSIS
@@ -82,18 +45,31 @@ alpha_cbq(items_pares)
 === ====================
 === ====================
 # FACTOR ANALYSIS
+## TWO FACTORS
+```{r}
+source('~/u/temperament_ant_vale_karen_mfserrano/factor_analysis_graph_function.R')
+complet  <- dimensions_noextras_att
+fa_graphics(complet, 2, 0.40)
+```
+
+## FOUR FACTORS
+```{r}
+fa_graphics(complet, 4, 0.40)
+```
+
 Contributions to 3 factors.
 # ANALISIS CON DATOS COMPLETOS
 ### PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
 ### HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
 ```{r}
-complet  <- dimensions_noextras_att
 fa_graphics(complet, 3, 0.40)
 ```
 
 # ANALISIS DE DATOS DE KAREN 
 ```{r}
 karen <- dimensions_noextras_att %>% dplyr::filter(grepl('kw1', rownames(dimensions_noextras_att)))
+fa_graphics(karen, 2, 0.40)
+fa_graphics(karen, 4, 0.40)
 fa_graphics(karen, 3, 0.40)
 ```
 
@@ -102,5 +78,7 @@ fa_graphics(karen, 3, 0.40)
 ### HIGH CORRELATION BETWEEN F1 F3 
 ```{r}
 vale <- dimensions_noextras_att %>% dplyr::filter(grepl('vm0', rownames(dimensions_noextras_att)))
+fa_graphics(vale, 2, 0.40)
+fa_graphics(vale, 4, 0.40)
 fa_graphics(vale, 3, 0.40)
 ```
