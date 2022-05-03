@@ -1,3 +1,16 @@
+# specify the libraries to load
+packages = c('rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'broom')
+
+# load or install&load libraries
+package.check <- lapply(packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = 2)
+    }
+  }
+)
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)

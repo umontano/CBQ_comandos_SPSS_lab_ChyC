@@ -1,3 +1,15 @@
+# specify the libraries to load
+packages = c('psych')
+
+# load or install&load libraries
+package.check <- lapply(packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = 2)
+    }
+  }
+)
 
 library(psych)
 #DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS

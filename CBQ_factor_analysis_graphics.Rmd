@@ -7,14 +7,8 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-3 Factor Model Analysis 
 
 ```{r, include=FALSE}
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(broom)
-
 ```
 
 ```{r, include=FALSE}
@@ -45,6 +39,8 @@ alpha_cbq(items_pares)
 === ====================
 === ====================
 # FACTOR ANALYSIS
+3 Factor Model Analysis 
+
 ## TWO FACTORS
 ```{r}
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
