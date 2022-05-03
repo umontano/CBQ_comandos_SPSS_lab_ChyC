@@ -1,37 +1,17 @@
 ---
-title: "Exploratory Factor Analysis"
-output: pdf_document
+title: "NO ATTSHI NO ATTCON (ATTFOC ONLY), Factor Analysis"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 ```{r, include=FALSE}
-#CORRE EL SCRIPT con datos MAFER-SERRANO+VALE+KAREN (CBQ COMANDOS SPSS)
+#CORRE EL SCRIPT con datos SIN INVERTIR de MAFER-SERRANO+VALE+KAREN
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIDOS_lab_CHyC.R')
 ```
-
-# CRONBACH'S ALPHA AND FACTOR ANALYSIS
-```{r}
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_alpha_mfserrano_vale_karen.R')
-```
-
-# ALPHA IMPARES
-```{r}
-items_impares <- items[seq_along(items[,1])%%2 != 0  ,]
-alpha_cbq(items_impares)
-```
-
-\pagebreak
-
-# ALPHA PARES
-```{r}
-items_pares <- items[seq_along(items[,1])%%2 == 0  ,]
-alpha_cbq(items_pares)
-```
-
-\pagebreak
 
 === ====================
 === ====================
@@ -42,16 +22,24 @@ alpha_cbq(items_pares)
 3 Factor Model Analysis 
 
 ## TWO FACTORS
-```{r}
+```{r, echo=FALSE}
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
-complet  <- dimensions_noextras_att
+library(tidyr)
+library(broom)
+library(ggplot2)
+#complet  <- dimensions_noextras_att
+library(dplyr)
+
+complet <- scales %>%
+       select(-attshi, -attcon)
+
 fa_graphics(complet, 2, 0.40)
 ```
 
 \pagebreak
 
 ## FOUR FACTORS
-```{r}
+```{r, echo=FALSE}
 fa_graphics(complet, 4, 0.40)
 ```
 
@@ -61,15 +49,15 @@ Contributions to 3 factors.
 # ANALISIS CON DATOS COMPLETOS
 ### PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
 ### HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
-```{r}
+```{r, echo=FALSE}
 fa_graphics(complet, 3, 0.40)
 ```
 
 \pagebreak
 
 # ANALISIS DE DATOS DE KAREN 
-```{r}
-karen <- dimensions_noextras_att %>% dplyr::filter(grepl('kw1', rownames(dimensions_noextras_att)))
+```{r, echo=FALSE}
+karen <- complet %>% dplyr::filter(grepl('kw1', rownames(complet)))
 fa_graphics(karen, 2, 0.40)
 fa_graphics(karen, 4, 0.40)
 fa_graphics(karen, 3, 0.40)
@@ -79,8 +67,9 @@ fa_graphics(karen, 3, 0.40)
 # ANALISIS DE DATOS DE VALE
 ### PROBLEMS IN  PER=PERCEPTUALSENSITVITY
 ### HIGH CORRELATION BETWEEN F1 F3 
-```{r}
-vale <- dimensions_noextras_att %>% dplyr::filter(grepl('vm0', rownames(dimensions_noextras_att)))
+
+```{r, echo=FALSE}
+vale <- complet %>% dplyr::filter(grepl('vm0', rownames(complet)))
 fa_graphics(vale, 2, 0.40)
 fa_graphics(vale, 4, 0.40)
 fa_graphics(vale, 3, 0.40)
