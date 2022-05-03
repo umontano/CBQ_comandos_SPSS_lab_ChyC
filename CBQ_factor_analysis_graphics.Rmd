@@ -27,11 +27,15 @@ items_impares <- items[seq_along(items[,1])%%2 != 0  ,]
 alpha_cbq(items_impares)
 ```
 
+\pagebreak
+
 # ALPHA PARES
 ```{r}
 items_pares <- items[seq_along(items[,1])%%2 == 0  ,]
 alpha_cbq(items_pares)
 ```
+
+\pagebreak
 
 === ====================
 === ====================
@@ -48,10 +52,14 @@ complet  <- dimensions_noextras_att
 fa_graphics(complet, 2, 0.40)
 ```
 
+\pagebreak
+
 ## FOUR FACTORS
 ```{r}
 fa_graphics(complet, 4, 0.40)
 ```
+
+\pagebreak
 
 Contributions to 3 factors.
 # ANALISIS CON DATOS COMPLETOS
@@ -61,6 +69,8 @@ Contributions to 3 factors.
 fa_graphics(complet, 3, 0.40)
 ```
 
+\pagebreak
+
 # ANALISIS DE DATOS DE KAREN 
 ```{r}
 karen <- dimensions_noextras_att %>% dplyr::filter(grepl('kw1', rownames(dimensions_noextras_att)))
@@ -68,6 +78,7 @@ fa_graphics(karen, 2, 0.40)
 fa_graphics(karen, 4, 0.40)
 fa_graphics(karen, 3, 0.40)
 ```
+\pagebreak
 
 # ANALISIS DE DATOS DE VALE
 ### PROBLEMS IN  PER=PERCEPTUALSENSITVITY
