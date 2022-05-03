@@ -1,21 +1,21 @@
-## specify the libraries to load
-#packages = c("dplyr")
+# specify the libraries to load
+packages = c('rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'broom')
 
-## load or install&load libraries
-#package.check <- lapply(packages,
-#  FUN = function(x) {
-#    if (!require(x, character.only = TRUE)) {
-#      install.packages(x, dependencies = TRUE)
-#      library(x, character.only = 2)
-#    }
-#  }
-#)
+# load or install&load libraries
+package.check <- lapply(packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = 2)
+    }
+  }
+)
 
 #LOAD DATA
 raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
 #TRANSLATE IVESTIG INTO IDENTIFICADOR
-names(raw_information) <- gsub('^investigadora$', 'identificador', names(raw_information), perl=TRUE)
+names(raw_information) <- gsub('investigadora', 'identificador', names(raw_information), perl=TRUE)
 
 #CREATE DATAFRAMES
 scales  <- data.frame(matrix(ncol = 0, nrow = length(raw_information$cbq1)))
