@@ -54,8 +54,12 @@ print(\' \\1 \')
 print(\' \\1 \')
 print(\' \\1 \')
 print(\'==============================================================\')
-print(alpha(data.frame(\\2), impute="medians", check.keys=TRUE))
-detach(analyzee)',
+fit <- alpha(data.frame(\\2), impute="medians", check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- \'\\1\'
+detach(analyzee)
+',
      processing_text, perl=TRUE)
 
 
@@ -90,9 +94,14 @@ library(psych)
 alpha_cbq  <- function(analyzee) {
 	#MAKE TITLE STRING
 	dtitle <- toupper(deparse(substitute(analyzee)))
+results  <- data.frame(matrix(ncol = 1, nrow = 0))
+dimensiones  <- data.frame(matrix(ncol = 1, nrow = 0))
+names(results) <- dtitle
 '
 #############################################
 end_code <- '
+row.names(results) <- dimensiones[,1]
+return(results)
 }
 '
 

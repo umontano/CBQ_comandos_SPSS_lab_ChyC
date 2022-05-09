@@ -1,21 +1,12 @@
-# specify the libraries to load
-packages = c('psych')
-
-# load or install&load libraries
-package.check <- lapply(packages,
-  FUN = function(x) {
-    if (!require(x, character.only = TRUE)) {
-      install.packages(x, dependencies = TRUE)
-      library(x, character.only = 2)
-    }
-  }
-)
 
 library(psych)
 #DEFINICION DE FUNCION PARA ANALISIS DE FACTORES Y GRAFICAS
 alpha_cbq  <- function(analyzee) {
 	#MAKE TITLE STRING
 	dtitle <- toupper(deparse(substitute(analyzee)))
+results  <- data.frame(matrix(ncol = 1, nrow = 0))
+dimensiones  <- data.frame(matrix(ncol = 1, nrow = 0))
+names(results) <- dtitle
  
 
 attach(analyzee, warn.conflicts=FALSE)
@@ -35,9 +26,13 @@ print(' act ')
 print(' act ')
 print(' act ')
 print('==============================================================')
-print(alpha(data.frame(cbq1, cbq25, cbq41, cbq48, cbq88, cbq102, cbq123, cbq126, cbq145, cbq153,
-cbq172, cbq187, cbq192), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq1, cbq25, cbq41, cbq48, cbq88, cbq102, cbq123, cbq126, cbq145, cbq153,
+cbq172, cbq187, cbq192), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'act'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -55,9 +50,13 @@ print(' fru ')
 print(' fru ')
 print(' fru ')
 print('==============================================================')
-print(alpha(data.frame(cbq2, cbq19, cbq34, cbq62, cbq73, cbq78, cbq120, cbq128, cbq140, cbq156, cbq173,
-cbq181, cbq193), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq2, cbq19, cbq34, cbq62, cbq73, cbq78, cbq120, cbq128, cbq140, cbq156, cbq173,
+cbq181, cbq193), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'fru'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -75,9 +74,13 @@ print(' app ')
 print(' app ')
 print(' app ')
 print('==============================================================')
-print(alpha(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131, cbq148, cbq166, cbq175,
-cbq188, cbq191), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131, cbq148, cbq166, cbq175,
+cbq188, cbq191), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'app'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -95,8 +98,12 @@ print(' attfoc ')
 print(' attfoc ')
 print(' attfoc ')
 print('==============================================================')
-print(alpha(data.frame(cbq16, cbq38, cbq47, cbq125, cbq144, cbq160, cbq171, cbq186, cbq195), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq16, cbq38, cbq47, cbq125, cbq144, cbq160, cbq171, cbq186, cbq195), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'attfoc'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -114,8 +121,12 @@ print(' attshi ')
 print(' attshi ')
 print(' attshi ')
 print('==============================================================')
-print(alpha(data.frame(cbq6, cbq29, cbq95, cbq180, cbq184), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq6, cbq29, cbq95, cbq180, cbq184), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'attshi'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -133,9 +144,13 @@ print(' attcon ')
 print(' attcon ')
 print(' attcon ')
 print('==============================================================')
-print(alpha(data.frame(cbq16, cbq38, cbq47, cbq125, cbq144, cbq160, cbq171, cbq186, cbq195,
-cbq6, cbq29, cbq95, cbq180, cbq184), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq16, cbq38, cbq47, cbq125, cbq144, cbq160, cbq171, cbq186, cbq195,
+cbq6, cbq29, cbq95, cbq180, cbq184), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'attcon'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -153,9 +168,13 @@ print(' dis ')
 print(' dis ')
 print(' dis ')
 print('==============================================================')
-print(alpha(data.frame(cbq5, cbq21, cbq61, cbq87, cbq97, cbq101, cbq115, cbq132, cbq141, cbq157, cbq178,
-cbq190), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq5, cbq21, cbq61, cbq87, cbq97, cbq101, cbq115, cbq132, cbq141, cbq157, cbq178,
+cbq190), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'dis'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -173,9 +192,13 @@ print(' sth ')
 print(' sth ')
 print(' sth ')
 print('==============================================================')
-print(alpha(data.frame(cbq14, cbq27, cbq42, cbq53, cbq68, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150,
-cbq167, cbq177), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq14, cbq27, cbq42, cbq53, cbq68, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150,
+cbq167, cbq177), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'sth'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -193,9 +216,13 @@ print(' fea ')
 print(' fea ')
 print(' fea ')
 print('==============================================================')
-print(alpha(data.frame(cbq15, cbq40, cbq50, cbq58, cbq70, cbq80, cbq91, cbq130, cbq138, cbq161,
-cbq176, cbq189), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq15, cbq40, cbq50, cbq58, cbq70, cbq80, cbq91, cbq130, cbq138, cbq161,
+cbq176, cbq189), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'fea'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -213,9 +240,13 @@ print(' hip ')
 print(' hip ')
 print(' hip ')
 print('==============================================================')
-print(alpha(data.frame(cbq8, cbq22, cbq30, cbq51, cbq60, cbq67, cbq77, cbq100, cbq107, cbq124, cbq139,
-cbq159, cbq182), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq8, cbq22, cbq30, cbq51, cbq60, cbq67, cbq77, cbq100, cbq107, cbq124, cbq139,
+cbq159, cbq182), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'hip'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -233,9 +264,13 @@ print(' imp ')
 print(' imp ')
 print(' imp ')
 print('==============================================================')
-print(alpha(data.frame(cbq13, cbq26, cbq46, cbq59, cbq71, cbq79, cbq90, cbq104, cbq114, cbq137,
-cbq155, cbq169, cbq183), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq13, cbq26, cbq46, cbq59, cbq71, cbq79, cbq90, cbq104, cbq114, cbq137,
+cbq155, cbq169, cbq183), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'imp'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -253,9 +288,13 @@ print(' inh ')
 print(' inh ')
 print(' inh ')
 print('==============================================================')
-print(alpha(data.frame(cbq4, cbq20, cbq32, cbq63, cbq75, cbq93, cbq108, cbq116, cbq136, cbq147, cbq162,
-cbq168, cbq185), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq4, cbq20, cbq32, cbq63, cbq75, cbq93, cbq108, cbq116, cbq136, cbq147, cbq162,
+cbq168, cbq185), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'inh'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -273,9 +312,13 @@ print(' lip ')
 print(' lip ')
 print(' lip ')
 print('==============================================================')
-print(alpha(data.frame(cbq12, cbq36, cbq54, cbq66, cbq76, cbq86, cbq111, cbq113, cbq133, cbq146, cbq151,
-cbq164, cbq174), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq12, cbq36, cbq54, cbq66, cbq76, cbq86, cbq111, cbq113, cbq133, cbq146, cbq151,
+cbq164, cbq174), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'lip'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -293,9 +336,13 @@ print(' per ')
 print(' per ')
 print(' per ')
 print('==============================================================')
-print(alpha(data.frame(cbq9, cbq28, cbq31, cbq52, cbq65, cbq84, cbq98, cbq105, cbq122, cbq142, cbq154,
-cbq170), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq9, cbq28, cbq31, cbq52, cbq65, cbq84, cbq98, cbq105, cbq122, cbq142, cbq154,
+cbq170), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'per'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -313,9 +360,13 @@ print(' sad ')
 print(' sad ')
 print(' sad ')
 print('==============================================================')
-print(alpha(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72, cbq81, cbq94, cbq109, cbq112, cbq127,
-cbq149), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72, cbq81, cbq94, cbq109, cbq112, cbq127,
+cbq149), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'sad'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -333,9 +384,13 @@ print(' shy ')
 print(' shy ')
 print(' shy ')
 print('==============================================================')
-print(alpha(data.frame(cbq7, cbq17, cbq23, cbq37, cbq45, cbq57, cbq74, cbq89, cbq106, cbq119, cbq129,
-cbq143, cbq158), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq7, cbq17, cbq23, cbq37, cbq45, cbq57, cbq74, cbq89, cbq106, cbq119, cbq129,
+cbq143, cbq158), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'shy'
 detach(analyzee)
+
 attach(analyzee, warn.conflicts=FALSE)
 print('==============================================================')
 print('==============================================================')
@@ -353,14 +408,20 @@ print(' smi ')
 print(' smi ')
 print(' smi ')
 print('==============================================================')
-print(alpha(data.frame(cbq11, cbq43, cbq56, cbq83, cbq99, cbq110, cbq121, cbq135, cbq152, cbq163,
-cbq165, cbq179, cbq194), impute='medians', check.keys=TRUE))
+fit <- alpha(data.frame(cbq11, cbq43, cbq56, cbq83, cbq99, cbq110, cbq121, cbq135, cbq152, cbq163,
+cbq165, cbq179, cbq194), impute='medians', check.keys=TRUE)
+print(fit)
+results[nrow(results)+1, ] <- round(fit$total$raw_alpha, digits=2)
+dimensiones[nrow(dimensiones)+1, ] <- 'smi'
 detach(analyzee)
+
 ####################EXECUTE .
 
 
 
 ####################EXECUTE .
   
+row.names(results) <- dimensiones[,1]
+return(results)
 }
 

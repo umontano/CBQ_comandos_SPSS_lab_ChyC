@@ -16,12 +16,13 @@ source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/ma
 # CRONBACH'S ALPHA AND FACTOR ANALYSIS
 ```{r}
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_alpha_mfserrano_vale_karen.R')
+res1 <- alpha_cbq(items)
 ```
 
 # ALPHA IMPARES
 ```{r}
 items_impares <- items[seq_along(items[,1])%%2 != 0  ,]
-alpha_cbq(items_impares)
+res2 <- alpha_cbq(items_impares)
 ```
 
 \pagebreak
@@ -29,11 +30,17 @@ alpha_cbq(items_impares)
 # ALPHA PARES
 ```{r}
 items_pares <- items[seq_along(items[,1])%%2 == 0  ,]
-alpha_cbq(items_pares)
+res3 <- alpha_cbq(items_pares)
 ```
 
 \pagebreak
+```{r}
 
+restot <- data.frame(res1, res2, res3)
+print(restot)
+write.csv(restot, 'xCBQ_raw_alphas_todos.csv')
+
+```
 === ====================
 === ====================
 === ====================
