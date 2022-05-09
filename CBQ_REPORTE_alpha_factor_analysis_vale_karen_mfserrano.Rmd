@@ -41,11 +41,17 @@ print(restot)
 write.csv(restot, 'xCBQ_raw_alphas_todos.csv')
 
 ```
+
+\pagebreak
+
 === ====================
 === ====================
 === ====================
 === ====================
 === ====================
+
+\pagebreak
+
 # FACTOR ANALYSIS
 3 Factor Model Analysis 
 
