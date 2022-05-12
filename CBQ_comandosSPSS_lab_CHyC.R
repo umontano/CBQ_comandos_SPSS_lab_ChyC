@@ -1,18 +1,5 @@
-# specify the libraries to load
-packages = c('rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'broom')
-
-# load or install&load libraries
-package.check <- lapply(packages,
-  FUN = function(x) {
-    if (!require(x, character.only = TRUE)) {
-      install.packages(x, dependencies = TRUE)
-      library(x, character.only = 2)
-    }
-  }
-)
-
 #LOAD DATA
-raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
 #TRANSLATE IVESTIG INTO IDENTIFICADOR
 names(raw_information) <- gsub('investigadora', 'identificador', names(raw_information), perl=TRUE)
@@ -24,6 +11,8 @@ items  <- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_informa
 calif  <- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ]
     # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
+#REMOVE LESS THAN 1 AND ABOVE 7
+items[items<1 | items>7] <- NA
 
 #SET THE ROW NAMES USING THE ID COLUMN
 row.names(scales)  <- raw_information$identificador
