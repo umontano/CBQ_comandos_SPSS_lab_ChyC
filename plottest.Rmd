@@ -1,0 +1,120 @@
+---
+title: "Cleaned Data Analysis"
+output: 
+  html_document:
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+
+#LOAD DATA
+raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+#CORRE EL SCRIPT con datos MAFER-SERRANO+VALE+KAREN (CBQ COMANDOS SPSS)
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIR_vale_karen_mfserrano.R')
+
+
+replace_outlier_with_mean <- function(x) {
+	replace(x, x %in% boxplot.stats(x)$out,mean(x))  
+	}
+
+#OUTLIERS REPLACE
+clean_scales <- data.frame(lapply(scales, replace_outlier_with_mean))
+clean_scales[] <- lapply(clean_scales, replace_outlier_with_mean)
+clean_scales[] <- lapply(clean_scales, replace_outlier_with_mean)
+clean_scales[] <- lapply(clean_scales, replace_outlier_with_mean)
+
+# CRONBACH'S ALPHA AND FACTOR ANALYSIS
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_alpha_mfserrano_vale_karen.R')
+res1 <- alpha_cbq(items)
+# ALPHA IMPARES
+items_impares <- items[seq_along(items[,1])%%2 != 0  ,]
+res2 <- alpha_cbq(items_impares)
+# ALPHA PARES
+items_pares <- items[seq_along(items[,1])%%2 == 0  ,]
+res3 <- alpha_cbq(items_pares)
+restot <- data.frame(res1, res2, res3)
+write.csv(restot, 'xCBQ_raw_alphas_todos.csv')
+```
+
+
+# RAW ALPHAS TRES ANALISIS
+## Raw_alpha. Observaciones Completas, Impares y Pares
+```{r, echo=FALSE}
+print(restot)
+```
+
+\pagebreak
+
+# ORIGINAL DATA BOXPLOT
+
+```{r, echo=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+#library(ggbeeswarm)
+
+slong <- scales %>% pivot_longer(
+	cols=everything(),
+	names_to='dimension',
+	values_to='score'
+	) %>%
+mutate(broadd=case_when(
+dimension %in% 
+c('attcon', 'lip', 'inh', 'per', 'attfoc', 'attshi')
+~ 'CE',
+dimension %in% 
+c('sad', 'dis', 'fru', 'fea', 'sth')
+~ 'AN',
+dimension %in% 
+c('shy', 'app', 'imp', 'hip', 'smi', 'act')
+~ 'SURG'))
+
+
+ps <- ggplot(slong, aes(score, reorder(dimension, score), fill=dimension)) +
+#geom_beeswarm(groupOnX=FALSE, alpha=0.15) +
+geom_jitter(aes(fill=dimension), alpha=0.15) +
+geom_boxplot( alpha=0.65) +
+geom_violin(alpha=0.65) +
+facet_wrap(~broadd)
+
+print(ps)
+
+```
+
+# No Outliers
+
+```{r, echo=FALSE}
+
+clean_scales %>%
+	pivot_longer(
+	cols=everything(),
+	names_to='dimension',
+	values_to='score'
+	) %>%
+ggplot(aes(score, reorder(dimension, score), fill=dimension)) +
+#geom_beeswarm(groupOnX=FALSE, alpha=0.15) +
+geom_violin(alpha=0.65) +
+geom_boxplot(alpha=0.65) +
+facet_wrap(~dimension)
+
+```
+
+\pagebreak
+
+# FACTOR ANALYSIS WITH NO OUTLIERS
+
+(results are mostly unchanged respect to original data)
+
+```{r, echo=FALSE}
+scales <- clean_scales
+#QUITA LAS VARIABLES DE ATENCION -ATTFOC -ATTSHI
+clean_no_att <- clean_scales[, !grepl('(attfoc|attshi)', names(scales), perl=TRUE)]
+
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
+fa_graphics(clean_no_att, 2, 0.40)
+fa_graphics(clean_no_att, 3, 0.40)
+fa_graphics(clean_no_att, 4, 0.40)
+#SAVE TO DISK
+write.csv(clean_no_att, 'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.names=TRUE)
+```
+
