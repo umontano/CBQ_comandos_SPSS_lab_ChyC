@@ -118,7 +118,6 @@ processing_text <- gsub('(cbq\\d{1,3})r', '\\1', processing_text, perl=TRUE)
 
 #SAVE TO DISK 
 out_name <- gsub('\\W','_', file_name, perl=TRUE)
-out_name <- paste0('xALPHA_CRONBACH_OUTPUT_CONVERTER_SPSS_R_', out_name, '_.R')
+out_name <- paste0('xOUTPUT_CONVERTER_ALPHA_CRONBACH_SPSS_R_', out_name, '_.R')
 writeLines(processing_text, out_name)
 
-# 0y}:.,.+33!"

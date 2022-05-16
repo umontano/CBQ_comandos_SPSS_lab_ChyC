@@ -1,4 +1,4 @@
-'https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/prrasgostest.txt' -> file_name
+'https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_spss_syntax_Temperament_Scale_Definitions.txt' -> file_name
 
 #CONDITIONAL TO READ FROM COMMAND LINE
 cli_arguments <- commandArgs(trailingOnly = FALSE)
