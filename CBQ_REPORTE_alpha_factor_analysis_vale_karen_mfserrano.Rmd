@@ -1,4 +1,5 @@
 ---
+#TEST 02 GIT
 title: "Exploratory Factor Analysis"
 output: pdf_document
 ---
