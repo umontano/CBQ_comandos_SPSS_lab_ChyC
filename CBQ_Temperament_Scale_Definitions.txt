@@ -114,7 +114,6 @@ EXECUTE .
 
 
 ##################################
-##################################
 ##COMANDOS PARA CALCULAR LOS 3 FACTORES CE AN SUR
 COMPUTE CE = mean (attcon, lip, inh, per, attfoc, attshi).
 COMPUTE AN = mean (sad, dis, fru, fea, sth).
