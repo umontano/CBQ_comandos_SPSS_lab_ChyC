@@ -1,5 +1,5 @@
 #LOAD DATA
-#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 
 #TRANSLATE IVESTIG INTO IDENTIFICADOR
 names(raw_information) <- gsub('investigadora', 'identificador', names(raw_information), perl=TRUE)
