@@ -16,7 +16,7 @@ items[items<1 | items>7] <- NA
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
 library(mice)
-temp_data <- mice(df_with_missing_values , m=5, maxit=2, meth='pmm', seed=500)
+temp_data <- mice(items, m=5, maxit=2, meth='pmm', seed=500)
 items <- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
