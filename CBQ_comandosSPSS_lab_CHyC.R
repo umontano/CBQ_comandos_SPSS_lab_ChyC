@@ -153,6 +153,7 @@ factors$perfil  <- as.factor(factors$perfil)
 dimensions_noextras_att <- scales[, !grepl('(attfoc|attshi)', names(scales), perl=TRUE)]
 
 #SAVE TO DISK
+write.csv(items, 'xCBQ_IMPUTED_ITEMS.csv', row.names=TRUE)
 write.csv(scales, 'xCBQ_16DIMENSIONES.csv', row.names=TRUE)
 write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
 write.csv(calif, 'xCBQ_CALIFICACION_Y_DEMAS.csv', row.names=TRUE)

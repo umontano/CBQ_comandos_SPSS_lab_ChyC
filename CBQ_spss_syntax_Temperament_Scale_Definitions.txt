@@ -111,10 +111,7 @@ COMPUTE smi = mean (cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq13
 cbq165r, cbq179, cbq194).
 EXECUTE .
 
-
-
-COMPUTE CE = mean (attcon, lip, inh, per, attfoc, attshi).
+COMPUTE CE = mean (lip, inh, per, attcon).
 COMPUTE AN = mean (sad, dis, fru, fea, sth).
-COMPUTE SURG = mean (shy, app, imp, hip, smi, act).
+COMPUTE SU = mean (shy, app, imp, hip, smi, act).
 EXECUTE .
- 

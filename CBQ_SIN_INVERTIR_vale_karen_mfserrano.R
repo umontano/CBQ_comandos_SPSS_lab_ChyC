@@ -16,8 +16,8 @@ items[items<1 | items>7] <- NA
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
 library(mice)
-temp_data <- mice(items, m=5, maxit=2, meth='pmm', seed=500)
-items <- complete(temp_data, 1)
+#temp_data <- mice(items, m=5, maxit=2, meth='pmm', seed=500)
+#items <- complete(temp_data, 1)
 
 
 #SET THE ROW NAMES USING THE ID COLUM
@@ -79,6 +79,7 @@ factors$perfil  <- as.factor(factors$perfil)
 dimensions_noextras_att <- scales[, !grepl('(attfoc|attshi)', names(scales), perl=TRUE)]
 
 #SAVE TO DISK
+write.csv(items, 'xCBQ_IMPUTED_ITEMS.csv', row.names=TRUE)
 write.csv(scales, 'xCBQ_16DIMENSIONES.csv', row.names=TRUE)
 write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
 write.csv(calif, 'xCBQ_CALIFICACION_Y_DEMAS.csv', row.names=TRUE)
