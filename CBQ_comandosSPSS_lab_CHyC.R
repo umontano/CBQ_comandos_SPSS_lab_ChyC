@@ -15,9 +15,9 @@ calif  <- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=
 items[items<1 | items>7] <- NA
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
-library(mice)
-temp_data <- mice(items, m=5, maxit=2, meth='pmm', seed=500)
-items <- complete(temp_data, 1)
+#library(mice)
+#temp_data <- mice(items, m=5, maxit=2, meth='pmm', seed=500)
+#items <- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
 row.names(scales)  <- raw_information$identificador
