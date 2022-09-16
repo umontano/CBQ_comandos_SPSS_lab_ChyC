@@ -1,6 +1,5 @@
-create_datasets <<- function(questionnaire_dataset_file) {
+create_datasets <- function(questionnaire_dataset_file) {
 #LOAD DATA
-raw_information <<- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 raw_information <<- read.csv(questionnaire_dataset_file , header=TRUE )
 
 #TRANSLATE IVESTIG INTO IDENTIFICADOR
@@ -34,81 +33,81 @@ row.names(calif) <<- raw_information$identificador
 #==========================================
 generate_unreversed_items  <- function() {
 attach(items)
-items$cbq41r <<- 8-cbq41
-items$cbq88r <<- 8-cbq88
-items$cbq102r <<- 8-cbq102
-items$cbq123r <<- 8-cbq123
-items$cbq126r <<- 8-cbq126
-items$cbq145r <<- 8-cbq145
-items$cbq192r <<- 8-cbq192
-items$cbq19r <<- 8-cbq19
-items$cbq120r <<- 8-cbq120
-items$cbq156r <<- 8-cbq156
-items$cbq131r <<- 8-cbq131
-items$cbq175r <<- 8-cbq175
-items$cbq188r <<- 8-cbq188
-items$cbq191r <<- 8-cbq191
-items$cbq38r <<- 8-cbq38
-items$cbq47r <<- 8-cbq47
-items$cbq171r <<- 8-cbq171
-items$cbq195r <<- 8-cbq195
-items$cbq6r <<- 8-cbq6
-items$cbq95r <<- 8-cbq95
-items$cbq184r <<- 8-cbq184
-items$cbq5r <<- 8-cbq5
-items$cbq101r <<- 8-cbq101
-items$cbq190r <<- 8-cbq190
-items$cbq14r <<- 8-cbq14
-items$cbq53r <<- 8-cbq53
-items$cbq68r <<- 8-cbq68
-items$cbq150r <<- 8-cbq150
-items$cbq167r <<- 8-cbq167
-items$cbq15r <<- 8-cbq15
-items$cbq58r <<- 8-cbq58
-items$cbq70r <<- 8-cbq70
-items$cbq138r <<- 8-cbq138
-items$cbq161r <<- 8-cbq161
-items$cbq176r <<- 8-cbq176
-items$cbq30r <<- 8-cbq30
-items$cbq51r <<- 8-cbq51
-items$cbq60r <<- 8-cbq60
-items$cbq159r <<- 8-cbq159
-items$cbq71r <<- 8-cbq71
-items$cbq79r <<- 8-cbq79
-items$cbq90r <<- 8-cbq90
-items$cbq137r <<- 8-cbq137
-items$cbq169r <<- 8-cbq169
-items$cbq183r <<- 8-cbq183
-items$cbq32r <<- 8-cbq32
-items$cbq93r <<- 8-cbq93
-items$cbq108r <<- 8-cbq108
-items$cbq162r <<- 8-cbq162
-items$cbq12r <<- 8-cbq12
-items$cbq66r <<- 8-cbq66
-items$cbq86r <<- 8-cbq86
-items$cbq111r <<- 8-cbq111
-items$cbq28r <<- 8-cbq28
-items$cbq83r <<- 8-cbq83
-items$cbq122r <<- 8-cbq122
-items$cbq142r <<- 8-cbq142
-items$cbq170r <<- 8-cbq170
-items$cbq72r <<- 8-cbq72
-items$cbq109r <<- 8-cbq109
-items$cbq112r <<- 8-cbq112
-items$cbq149r <<- 8-cbq149
-items$cbq17r <<- 8-cbq17
-items$cbq23r <<- 8-cbq23
-items$cbq45r <<- 8-cbq45
-items$cbq57r <<- 8-cbq57
-items$cbq119r <<- 8-cbq119
-items$cbq129r <<- 8-cbq129
-items$cbq158r <<- 8-cbq158
-items$cbq43r <<- 8-cbq43
-items$cbq99r <<- 8-cbq99
-items$cbq84r <<- 8-cbq84
-items$cbq121r <<- 8-cbq121
-items$cbq135r <<- 8-cbq135
-items$cbq165r <<- 8-cbq165
+items$cbq41 <<- 8-cbq41
+items$cbq88 <<- 8-cbq88
+items$cbq102 <<- 8-cbq102
+items$cbq123 <<- 8-cbq123
+items$cbq126 <<- 8-cbq126
+items$cbq145 <<- 8-cbq145
+items$cbq192 <<- 8-cbq192
+items$cbq19 <<- 8-cbq19
+items$cbq120 <<- 8-cbq120
+items$cbq156 <<- 8-cbq156
+items$cbq131 <<- 8-cbq131
+items$cbq175 <<- 8-cbq175
+items$cbq188 <<- 8-cbq188
+items$cbq191 <<- 8-cbq191
+items$cbq38 <<- 8-cbq38
+items$cbq47 <<- 8-cbq47
+items$cbq171 <<- 8-cbq171
+items$cbq195 <<- 8-cbq195
+items$cbq6 <<- 8-cbq6
+items$cbq95 <<- 8-cbq95
+items$cbq184 <<- 8-cbq184
+items$cbq5 <<- 8-cbq5
+items$cbq101 <<- 8-cbq101
+items$cbq190 <<- 8-cbq190
+items$cbq14 <<- 8-cbq14
+items$cbq53 <<- 8-cbq53
+items$cbq68 <<- 8-cbq68
+items$cbq150 <<- 8-cbq150
+items$cbq167 <<- 8-cbq167
+items$cbq15 <<- 8-cbq15
+items$cbq58 <<- 8-cbq58
+items$cbq70 <<- 8-cbq70
+items$cbq138 <<- 8-cbq138
+items$cbq161 <<- 8-cbq161
+items$cbq176 <<- 8-cbq176
+items$cbq30 <<- 8-cbq30
+items$cbq51 <<- 8-cbq51
+items$cbq60 <<- 8-cbq60
+items$cbq159 <<- 8-cbq159
+items$cbq71 <<- 8-cbq71
+items$cbq79 <<- 8-cbq79
+items$cbq90 <<- 8-cbq90
+items$cbq137 <<- 8-cbq137
+items$cbq169 <<- 8-cbq169
+items$cbq183 <<- 8-cbq183
+items$cbq32 <<- 8-cbq32
+items$cbq93 <<- 8-cbq93
+items$cbq108 <<- 8-cbq108
+items$cbq162 <<- 8-cbq162
+items$cbq12 <<- 8-cbq12
+items$cbq66 <<- 8-cbq66
+items$cbq86 <<- 8-cbq86
+items$cbq111 <<- 8-cbq111
+items$cbq28 <<- 8-cbq28
+items$cbq83 <<- 8-cbq83
+items$cbq122 <<- 8-cbq122
+items$cbq142 <<- 8-cbq142
+items$cbq170 <<- 8-cbq170
+items$cbq72 <<- 8-cbq72
+items$cbq109 <<- 8-cbq109
+items$cbq112 <<- 8-cbq112
+items$cbq149 <<- 8-cbq149
+items$cbq17 <<- 8-cbq17
+items$cbq23 <<- 8-cbq23
+items$cbq45 <<- 8-cbq45
+items$cbq57 <<- 8-cbq57
+items$cbq119 <<- 8-cbq119
+items$cbq129 <<- 8-cbq129
+items$cbq158 <<- 8-cbq158
+items$cbq43 <<- 8-cbq43
+items$cbq99 <<- 8-cbq99
+items$cbq84 <<- 8-cbq84
+items$cbq121 <<- 8-cbq121
+items$cbq135 <<- 8-cbq135
+items$cbq165 <<- 8-cbq165
 detach(items)
 
 }
@@ -117,7 +116,7 @@ detach(items)
 #################################################################
 
 #CALCULATE REVERSED QUESTIONS
-compute_reversed_scales_factors <- functio() {
+compute_reversed_scales_factors <- function() {
 attach(items)
 items$cbq41r <<- 8-cbq41
 items$cbq88r <<- 8-cbq88
@@ -255,15 +254,18 @@ write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.
 #==========================================
 #==========================================
 sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
-compute_reversed_scales_factors(questionnaire_dataset_file)
+create_datasets(questionnaire_dataset_file)
 generate_unreversed_items()
-create_datasets()
+compute_reversed_scales_factors()
 }
 
 
 #==========================================
 #==========================================
 cbq  <- function(questionnaire_dataset_file) {
-compute_reversed_scales_factors(questionnaire_dataset_file)
-create_datasets()
+create_datasets(questionnaire_dataset_file)
+compute_reversed_scales_factors()
 }
+
+
+#sin_invertidos_val_kar_mfs('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
