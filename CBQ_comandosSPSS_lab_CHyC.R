@@ -14,17 +14,27 @@ calif  <<- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl
 
 #REMOVE LESS THAN 1 AND ABOVE 7
 items[items<1 | items>7] <<- NA
+#SET THE ROW NAMES USING THE ID COLUMN
+row.names(scales)  <<- raw_information$identificador
+row.names(factors) <<- raw_information$identificador
+row.names(items) <<- raw_information$identificador
+row.names(calif) <<- raw_information$identificador
+}
+
+mice_imputation_items <- function(maximum_iterations) {
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
-#library(mice)
-#temp_data <<- mice(items, m=5, maxit=2, meth='pmm', seed=500)
-#items <<- complete(temp_data, 1)
+library(mice)
+temp_data <<- mice(items, m=5, maxit=maximum_iterations, meth='pmm', seed=500)
+items <<- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
 row.names(scales)  <<- raw_information$identificador
 row.names(factors) <<- raw_information$identificador
 row.names(items) <<- raw_information$identificador
 row.names(calif) <<- raw_information$identificador
+#SAVE TO DISK
+write.csv(items, 'xCBQ_IMPUTED_ITEMS.csv', row.names=TRUE)
 }
 
 
@@ -241,10 +251,9 @@ factors$perfil  <<- as.factor(factors$perfil)
 dimensions_noextras_att <<- scales[, !grepl('(attfoc|attshi)', names(scales), perl=TRUE)]
 
 #SAVE TO DISK
-write.csv(items, 'xCBQ_IMPUTED_ITEMS.csv', row.names=TRUE)
-write.csv(scales, 'xCBQ_16DIMENSIONES.csv', row.names=TRUE)
+write.csv(scales, 'xCBQ_15DIMENSIONES.csv', row.names=TRUE)
 write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
-write.csv(calif, 'xCBQ_CALIFICACION_Y_DEMAS.csv', row.names=TRUE)
+write.csv(calif, 'xCBQ_OTROS_DATOS.csv', row.names=TRUE)
 write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.names=TRUE)
 
 }
@@ -267,5 +276,20 @@ create_datasets(questionnaire_dataset_file)
 compute_reversed_scales_factors()
 }
 
+imputed_cbq  <- function(maximum_iterations) {
+create_datasets(questionnaire_dataset_file)
+mice_imputation_items (maximum_iterations)
+compute_reversed_scales_factors()
+}
 
+
+imputed_sin_invertidos  <- function(maximum_iterations) {
+create_datasets(questionnaire_dataset_file)
+mice_imputation_items (maximum_iterations)
+generate_unreversed_items()
+compute_reversed_scales_factors()
+}
 #sin_invertidos_val_kar_mfs('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+
+#cbq('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv')
+cbq('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv')
