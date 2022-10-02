@@ -1,0 +1,19 @@
+---
+title: "uuutests"
+output:
+  html_document:
+    theme: flatly
+---
+```{r setup, include=FALSE}
+df <- cars
+```
+
+\pagebreak
+
+# PLOT AND DATAFRAME
+## set datos de valores para observaciones totales, impares y pares  raw_alpha
+```{r, echo=FALSE}
+plot(df)
+tail(df)
+```
+\pagebreak

@@ -1,0 +1,54 @@
+---
+#TEST GIT
+title: "NO ATTSHI NO ATTCON (ATTFOC ONLY), Factor Analysis"
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+
+fit$total$raw_alpha
+
+
+#LOAD DATA
+raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+#CORRE EL SCRIPT con datos SIN INVERTIR de MAFER-SERRANO+VALE+KAREN
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIR_vale_karen_mfserrano.R')
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
+
+complet <- scales %>%
+       select(-attshi, -attcon)
+
+```
+
+# FACTOR ANALYSIS
+3 Factor Model Analysis 
+
+## TWO FACTORS, ANALISIS CON DATOS COMPLETOS
+```{r, echo=FALSE}
+fa_graphics(complet, 2, 0.40)
+```
+
+\pagebreak
+
+## FOUR FACTORS
+```{r, echo=FALSE}
+fa_graphics(complet, 4, 0.40)
+```
+
+\pagebreak
+
+# THREE FACTORS
+### PROBLEMS IN PER, STH (SPERCEPTUAL, SOOTHABILITY)
+### HIGH CORRELATION BETWEEN  F1 F3, ALTHOUGH LOWER THAN VALE'S
+```{r, echo=FALSE}
+fa_graphics(complet, 3, 0.40)
+```
+
+\pagebreak
