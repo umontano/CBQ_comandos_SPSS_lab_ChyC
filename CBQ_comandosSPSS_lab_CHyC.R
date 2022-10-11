@@ -268,6 +268,102 @@ generate_unreversed_items()
 compute_reversed_scales_factors()
 }
 
+#==========================================
+#==========================================
+#==========================================
+#==========================================
+#==========================================
+    #Function to clean-up outlaiers
+#==========================================
+place_na_in_otlaiers <- function(column_outlaieree) {
+        for(iteration_column in 1:10) {
+		print(paste0(iteration_column, '===ITER COLUM======'))
+            outlaiers <- boxplot.stats(column_outlaieree)$out
+            column_outlaieree[which(column_outlaieree %in% outlaiers)] <- NA
+            if(! length(boxplot.stats(column_outlaieree)$out) > 0) break else print(paste0('==A COLUMN ITER=== ', iteration_column, '\\n ', as.character(which(column_outlaieree %in% outlaiers))))
+        }
+	return(column_outlaieree)
+}
+#==========================================
+#==========================================
+
+
+#==========================================
+#FUNTIONTO CONSTRUCT A VECTOR OF BOOLENA VALUES INDICATION IF EACH COLUM HAS OUTLAIERS
+#Creates a boolean value checking if there is still outlaiers after being removed, so tgat it can be evaluated
+#==========================================
+check_is_cleaned <- function(column_outlaieree) {
+    return(! length(boxplot.stats(column_outlaieree)$out) > 0)
+}
+
+#==========================================
+#Loop to identify outlaiers and place NA 
+#==========================================
+identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
+	for(iteration_dataset in 1:10) {
+		print(paste0(iteration_dataset, '===ITER WHOLE DATASET======'))
+	    outlaieree_dataset <- data.frame(lapply(outlaieree_dataset, place_na_in_otlaiers))
+	    checked_out_cleaned_vector <- unlist(lapply(outlaieree_dataset, check_is_cleaned))
+	    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_dataset))
+	}
+	if(iteration_dataset > 9) print(paste0(iteration_dataset, '== MAQXIMUM I REACHED =========='))
+	write.csv(outlaieree_dataset, '~/b/xOUTLAIERS_CLEANED_ITEMS.csv')
+	return(outlaieree_dataset)
+}
+
+#==========================================
+#SIN INVERTIDOS
+#OUTLAIERS NA AND THEN IMPUTES
+#==========================================
+#==========================================
+sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations) {
+#LOAD()
+create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+#LOOP OUTLS IMPUTE
+for(iteration_imputation in 1:10) {
+	items <- identify_and_make_na_outlaiers(items)
+	#IMPUTE()
+	#check there are not outs left and  stop the loop
+	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
+    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
+	}
+#Remaining of the original impute fvgunction
+mice_imputation_items (maximum_iterations)
+generate_unreversed_items()
+compute_reversed_scales_factors()
+#
+}
+#
+
+
+#==========================================
+#IN MAKING THE ORIGINAL CBQ CALCULATION IT MAKES OUTLAIERS NA AND THEN IMPUTES, STOPINGG THE LOOP WHRE THERE ARE NO OUTL ANY MORE
+#==========================================
+#==========================================
+outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iterations) {
+#LOAD()
+create_datasets(questionnaire_dataset_file)
+#LOOP OUTLS IMPUTE
+for(iteration_imputation in 1:10) {
+	items <- identify_and_make_na_outlaiers(items)
+	#IMPUTE()
+	#check there are not outs left and  stop the loop
+	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
+    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
+	}
+#Remaining of the original impute fvgunction
+mice_imputation_items (maximum_iterations)
+compute_reversed_scales_factors()
+#
+}
+
+#==========================================
+#==========================================
+#==========================================
+#==========================================
+#==========================================
+
+
 
 #==========================================
 #==========================================
