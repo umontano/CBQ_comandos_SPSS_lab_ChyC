@@ -320,13 +320,13 @@ sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations) {
 #LOAD()
 create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 #LOOP OUTLS IMPUTE
-for(iteration_imputation in 1:10) {
+#for(iteration_imputation in 1:10) {
 	items <- identify_and_make_na_outlaiers(items)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
     if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
-	}
+	#}
 #Remaining of the original impute fvgunction
 mice_imputation_items (maximum_iterations)
 generate_unreversed_items()
@@ -344,13 +344,13 @@ outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iteratio
 #LOAD()
 create_datasets(questionnaire_dataset_file)
 #LOOP OUTLS IMPUTE
-for(iteration_imputation in 1:10) {
+#for(iteration_imputation in 1:10) {
 	items <- identify_and_make_na_outlaiers(items)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
     if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
-	}
+	#}
 #Remaining of the original impute fvgunction
 mice_imputation_items (maximum_iterations)
 compute_reversed_scales_factors()
