@@ -205,6 +205,9 @@ items$cbq135r <<- 8-cbq135
 items$cbq165r <<- 8-cbq165
 detach(items)
 
+#REMOVE THE NON INVERTED ORIGINAL ITEMS
+trailingr <<- gsub('r$', '', names(items)[grep('cbq\\d{1,3}r', names(items), perl=T)])
+items[, trailingr] <<- list(NULL)
 
 #CALCULATE DIMENSIONS
 attach(items)
