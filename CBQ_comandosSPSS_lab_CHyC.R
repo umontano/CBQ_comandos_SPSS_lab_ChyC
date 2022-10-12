@@ -325,7 +325,7 @@ create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
-    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
+    #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
 mice_imputation_items (maximum_iterations)
@@ -349,7 +349,7 @@ create_datasets(questionnaire_dataset_file)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
-    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
+    #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
 mice_imputation_items (maximum_iterations)
