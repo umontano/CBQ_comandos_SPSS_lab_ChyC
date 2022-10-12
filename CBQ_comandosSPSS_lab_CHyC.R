@@ -25,7 +25,7 @@ mice_imputation_items <- function(maximum_iterations=50) {
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
 library(mice)
-temp_data <<- mice(items, m=1, maxit=maximum_iterations, meth='pmm', seed=500)
+temp_data <<- mice(items, m=5, maxit=maximum_iterations, meth='pmm', seed=500)
 items <<- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
