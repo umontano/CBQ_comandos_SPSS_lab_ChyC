@@ -2,9 +2,7 @@
 #TEST GIT
 title: "NO ATTSHI NO ATTCON (ATTFOC ONLY), Factor Analysis"
 output:
-  html_document:
-    theme: flatly
-    highlight: textmate
+  pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -13,17 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 
-fit$total$raw_alpha
-
 
 #LOAD DATA
-raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
+#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv' , header=TRUE )
 #CORRE EL SCRIPT con datos SIN INVERTIR de MAFER-SERRANO+VALE+KAREN
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIR_vale_karen_mfserrano.R')
+#source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_SIN_INVERTIR_vale_karen_mfserrano.R')
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/factor_analysis_graph_function.R')
 
 complet <- scales %>%
-       select(-attshi, -attcon)
+       select(-attshi, -attfoc)
 
 ```
 
