@@ -393,3 +393,4 @@ compute_reversed_scales_factors()
 #'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv'
 
 #cbq('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv')
+#sin_invertidos_outlaiers_before_impute(50, 5) 
