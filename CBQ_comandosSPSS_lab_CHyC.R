@@ -319,7 +319,7 @@ identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 #OUTLAIERS NA AND THEN IMPUTES
 #==========================================
 #==========================================
-sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations) {
+sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, matrices_number) {
 #LOAD()
 create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 #LOOP OUTLS IMPUTE
@@ -375,14 +375,14 @@ create_datasets(questionnaire_dataset_file)
 compute_reversed_scales_factors()
 }
 
-imputed_cbq  <- function(maximum_iterations) {
+imputed_cbq  <- function(maximum_iterations, matrices_number) {
 create_datasets(questionnaire_dataset_file)
 mice_imputation_items(maximum_iterations, matrices_number)
 compute_reversed_scales_factors()
 }
 
 
-imputed_sin_invertidos  <- function(maximum_iterations) {
+imputed_sin_invertidos  <- function(maximum_iterations, matrices_number) {
 create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 mice_imputation_items(maximum_iterations, matrices_number)
 generate_unreversed_items()
