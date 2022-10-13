@@ -230,22 +230,22 @@ scales$sad <<- rowMeans(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72r, cb
 scales$shy <<- rowMeans(data.frame(cbq7, cbq17r, cbq23r, cbq37, cbq45r, cbq57r, cbq74, cbq89, cbq106, cbq119r, cbq129r, cbq143, cbq158r) , na.rm=TRUE )
 scales$smi <<- rowMeans(data.frame(cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq135r, cbq152, cbq163, cbq165r, cbq179, cbq194) , na.rm=TRUE )
 detach(items)
-##CALCULA 3 FACTORES, CE, AN, Y SURG  
+##CALCULA 3 FACTORES, EC, NA, Y SU  
 attach(scales)
-factors$CE <<- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
-factors$AN <<- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
-factors$SURG <<- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
+factors$EC <<- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
+factors$NA <<- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
+factors$SU <<- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
 detach(scales)
 
 ##################################
 #PERFILES
 attach(factors)
-cem  <<- median(CE)
-anm  <<- median(AN)
-factors$perfil[CE >= cem & AN <  anm] <<- 'easy'
-factors$perfil[CE >= cem & AN >= anm] <<- 'intense'
-factors$perfil[CE <  cem & AN <  anm] <<- 'disengaged'
-factors$perfil[CE <  cem & AN >= anm] <<- 'risky'
+cem  <<- median(EC)
+anm  <<- median(NA)
+factors$perfil[EC >= cem & NA <  anm] <<- 'easy'
+factors$perfil[EC >= cem & NA >= anm] <<- 'intense'
+factors$perfil[EC <  cem & NA <  anm] <<- 'disengaged'
+factors$perfil[EC <  cem & NA >= anm] <<- 'risky'
 detach(factors)
 factors$perfil  <<- as.factor(factors$perfil)
 
