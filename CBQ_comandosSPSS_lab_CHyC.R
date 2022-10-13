@@ -309,7 +309,7 @@ identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 	    checked_out_cleaned_vector <- unlist(lapply(outlaieree_dataset, check_is_cleaned))
 	    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_dataset))
 	}
-	if(iteration_dataset > 9) print(paste0(iteration_dataset, '== MAQXIMUM I REACHED =========='))
+	if(iteration_dataset > 9) print(paste0(iteration_dataset, '== MAXIMUM I REACHED =========='))
 	write.csv(outlaieree_dataset, 'xOUTLAIERS_CLEANED_ITEMS.csv')
 	return(outlaieree_dataset)
 }
@@ -351,7 +351,7 @@ create_datasets(questionnaire_dataset_file)
 	items <- identify_and_make_na_outlaiers(items)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
-	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
+	#checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
     #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
