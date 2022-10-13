@@ -21,11 +21,11 @@ row.names(items) <<- raw_information$identificador
 row.names(calif) <<- raw_information$identificador
 }
 
-mice_imputation_items <- function(maximum_iterations=50, matrices_number=5) {
+mice_imputation_items <- function(maximum_iterations=50, number_of_imputations=5) {
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
 library(mice)
-temp_data <<- mice(items, m=matrices_number, maxit=maximum_iterations, meth='pmm', seed=500)
+temp_data <<- mice(items, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
 items <<- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
@@ -319,7 +319,7 @@ identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 #OUTLAIERS NA AND THEN IMPUTES
 #==========================================
 #==========================================
-sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, matrices_number) {
+sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, number_of_imputations) {
 #LOAD()
 create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 #LOOP OUTLS IMPUTE
@@ -331,7 +331,7 @@ create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/
     #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
-mice_imputation_items(maximum_iterations, matrices_number)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 #
@@ -355,7 +355,7 @@ create_datasets(questionnaire_dataset_file)
     #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
-mice_imputation_items(maximum_iterations, matrices_number)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
 #
 }
@@ -375,16 +375,16 @@ create_datasets(questionnaire_dataset_file)
 compute_reversed_scales_factors()
 }
 
-imputed_cbq  <- function(maximum_iterations, matrices_number) {
+imputed_cbq  <- function(maximum_iterations, number_of_imputations) {
 create_datasets(questionnaire_dataset_file)
-mice_imputation_items(maximum_iterations, matrices_number)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
 }
 
 
-imputed_sin_invertidos  <- function(maximum_iterations, matrices_number) {
+imputed_sin_invertidos  <- function(maximum_iterations, number_of_imputations) {
 create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
-mice_imputation_items(maximum_iterations, matrices_number)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 }
