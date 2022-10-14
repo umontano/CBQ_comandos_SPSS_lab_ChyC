@@ -266,15 +266,11 @@ write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.
 #==========================================
 #==========================================
 sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
-create_datasets(questionnaire_dataset_file)
+create_datasets(valkar)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 }
 
-#==========================================
-#==========================================
-#==========================================
-#==========================================
 #==========================================
     #Function to clean-up outlaiers
 #==========================================
@@ -287,7 +283,6 @@ place_na_in_otlaiers <- function(column_outlaieree) {
         }
 	return(column_outlaieree)
 }
-#==========================================
 #==========================================
 
 
@@ -318,10 +313,9 @@ identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 #SIN INVERTIDOS
 #OUTLAIERS NA AND THEN IMPUTES
 #==========================================
-#==========================================
 sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, number_of_imputations) {
 #LOAD()
-create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+create_datasets(valkar)
 #LOOP OUTLS IMPUTE
 #for(iteration_imputation in 1:10) {
 	items <- identify_and_make_na_outlaiers(items)
@@ -342,8 +336,7 @@ compute_reversed_scales_factors()
 #==========================================
 #IN MAKING THE ORIGINAL CBQ CALCULATION IT MAKES OUTLAIERS NA AND THEN IMPUTES, STOPINGG THE LOOP WHRE THERE ARE NO OUTL ANY MORE
 #==========================================
-#==========================================
-outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iterations) {
+outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 #LOAD()
 create_datasets(questionnaire_dataset_file)
 #LOOP OUTLS IMPUTE
@@ -360,12 +353,6 @@ compute_reversed_scales_factors()
 #
 }
 
-#==========================================
-#==========================================
-#==========================================
-#==========================================
-#==========================================
-
 
 
 #==========================================
@@ -375,7 +362,7 @@ create_datasets(questionnaire_dataset_file)
 compute_reversed_scales_factors()
 }
 
-imputed_cbq  <- function(maximum_iterations, number_of_imputations) {
+imputed_cbq  <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 create_datasets(questionnaire_dataset_file)
 mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
@@ -383,14 +370,21 @@ compute_reversed_scales_factors()
 
 
 imputed_sin_invertidos  <- function(maximum_iterations, number_of_imputations) {
-create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+create_datasets(valkar)
 mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 }
-#sin_invertidos_val_kar_mfs('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 
-#'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv'
 
-#cbq('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv')
+#==========================================
+#==========================================
+#==========================================
+valkar <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv'
+
+raven_url <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv'
+
+mfs <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv'
+('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+#sin_invertidos_val_kar_mfs(valkar)
 #sin_invertidos_outlaiers_before_impute(50, 5) 
