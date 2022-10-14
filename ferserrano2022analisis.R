@@ -1,3 +1,5 @@
+library(Hmisc)
+
 #xxxxbbbbxxxx
 #LOAD DATA
 raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
@@ -22,6 +24,12 @@ raven_numeric[] <- lapply(raven_numeric, as.numeric)
 temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
 print(cor(temperament_numeric, raven_numeric), digits=1)
+
+Example
+
+library(Hmisc)
+rcorr(as.matrix(df1),type="pearson")
+
 }
 
 
