@@ -25,11 +25,11 @@ raven_numeric[] <- lapply(raven_numeric, as.numeric)
 temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
 raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
-print(cor(temperament_numeric, raven_numeric), digits=1)
+#print(cor(temperament_numeric, raven_numeric), digits=1)
 
 library(Hmisc)
 #rcorr(as.matrix(df1),type="pearson")
-rcor(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')
+rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')
 
 }
 
