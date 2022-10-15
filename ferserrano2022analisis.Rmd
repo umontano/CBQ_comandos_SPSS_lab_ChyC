@@ -1,6 +1,6 @@
 ---
 #TEST GIT
-title: "RESULTAODS CORRELACIONES M. F. SERRANO 2022"
+title: "RESULTADOS CORRELACIONES M. F. SERRANO 2022"
 output:
   pdf_document
 ---
