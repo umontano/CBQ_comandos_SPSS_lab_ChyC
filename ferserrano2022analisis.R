@@ -29,7 +29,7 @@ raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'pun
 
 library(Hmisc)
 #rcorr(as.matrix(df1),type="pearson")
-rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')
+print(rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson'))
 
 }
 
