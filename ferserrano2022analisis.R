@@ -1,4 +1,4 @@
-library(Hmisc)
+#library(Hmisc)
 
 #xxxxbbbbxxxx
 #LOAD DATA
@@ -7,7 +7,7 @@ raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperamen
 #raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
 
 #CORRE EL SCRIPT con datos 
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R', echo=T)
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
 cbq(mfs)
 
 analysis_raven_temperament <- function(analizee_dataset) {
