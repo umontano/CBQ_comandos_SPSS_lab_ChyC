@@ -29,7 +29,7 @@ raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'pun
 
 library(Hmisc)
 #rcorr(as.matrix(df1),type="pearson")
-print(rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson'))
+return(print(rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')))
 
 }
 
@@ -78,6 +78,6 @@ summary(lm(dx ~ AN, data=mergednumeric))
 cor(temperament_numeric, raven_numeric)
 }
 
-analysis_raven_temperament(scales)
-analysis_raven_temperament(factors[ , 1:3])
+ressca <- analysis_raven_temperament(scales)
+resfac <- analysis_raven_temperament(factors[ , 1:3])
 #xxxxeeeexxxx
