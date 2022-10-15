@@ -21,11 +21,11 @@ row.names(items) <<- raw_information$identificador
 row.names(calif) <<- raw_information$identificador
 }
 
-mice_imputation_items <- function(maximum_iterations=50) {
+mice_imputation_items <- function(maximum_iterations=50, number_of_imputations=5) {
 #REMOVE OUTLAYERS (BY MAKING THEM NA)
 #IMPUTE MISSING VALUES
 library(mice)
-temp_data <<- mice(items, m=5, maxit=maximum_iterations, meth='pmm', seed=500)
+temp_data <<- mice(items, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
 items <<- complete(temp_data, 1)
 
 #SET THE ROW NAMES USING THE ID COLUMN
@@ -230,11 +230,11 @@ scales$sad <<- rowMeans(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72r, cb
 scales$shy <<- rowMeans(data.frame(cbq7, cbq17r, cbq23r, cbq37, cbq45r, cbq57r, cbq74, cbq89, cbq106, cbq119r, cbq129r, cbq143, cbq158r) , na.rm=TRUE )
 scales$smi <<- rowMeans(data.frame(cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq135r, cbq152, cbq163, cbq165r, cbq179, cbq194) , na.rm=TRUE )
 detach(items)
-##CALCULA 3 FACTORES, CE, AN, Y SURG  
+##CALCULA 3 FACTORES, CE, AN, Y SU  
 attach(scales)
 factors$CE <<- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
 factors$AN <<- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
-factors$SURG <<- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
+factors$SU <<- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
 detach(scales)
 
 ##################################
@@ -266,15 +266,11 @@ write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.
 #==========================================
 #==========================================
 sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
-create_datasets(questionnaire_dataset_file)
+create_datasets(valkar)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 }
 
-#==========================================
-#==========================================
-#==========================================
-#==========================================
 #==========================================
     #Function to clean-up outlaiers
 #==========================================
@@ -287,7 +283,6 @@ place_na_in_otlaiers <- function(column_outlaieree) {
         }
 	return(column_outlaieree)
 }
-#==========================================
 #==========================================
 
 
@@ -318,10 +313,9 @@ identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 #SIN INVERTIDOS
 #OUTLAIERS NA AND THEN IMPUTES
 #==========================================
-#==========================================
-sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations) {
+sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, number_of_imputations) {
 #LOAD()
-create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+create_datasets(valkar)
 #LOOP OUTLS IMPUTE
 #for(iteration_imputation in 1:10) {
 	items <- identify_and_make_na_outlaiers(items)
@@ -331,7 +325,7 @@ create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/
     #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
-mice_imputation_items (maximum_iterations)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 #
@@ -342,8 +336,7 @@ compute_reversed_scales_factors()
 #==========================================
 #IN MAKING THE ORIGINAL CBQ CALCULATION IT MAKES OUTLAIERS NA AND THEN IMPUTES, STOPINGG THE LOOP WHRE THERE ARE NO OUTL ANY MORE
 #==========================================
-#==========================================
-outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iterations) {
+outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 #LOAD()
 create_datasets(questionnaire_dataset_file)
 #LOOP OUTLS IMPUTE
@@ -355,16 +348,10 @@ create_datasets(questionnaire_dataset_file)
     #if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_imputation))
 	#}
 #Remaining of the original impute fvgunction
-mice_imputation_items (maximum_iterations)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
 #
 }
-
-#==========================================
-#==========================================
-#==========================================
-#==========================================
-#==========================================
 
 
 
@@ -375,21 +362,29 @@ create_datasets(questionnaire_dataset_file)
 compute_reversed_scales_factors()
 }
 
-imputed_cbq  <- function(maximum_iterations) {
+imputed_cbq  <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 create_datasets(questionnaire_dataset_file)
-mice_imputation_items (maximum_iterations)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
 }
 
 
-imputed_sin_invertidos  <- function(maximum_iterations) {
-create_datasets('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
-mice_imputation_items (maximum_iterations)
+imputed_sin_invertidos  <- function(maximum_iterations, number_of_imputations) {
+create_datasets(valkar)
+mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
 }
-#sin_invertidos_val_kar_mfs('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
 
-#'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv'
 
-#cbq('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv')
+#==========================================
+#==========================================
+#==========================================
+valkar <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv'
+
+raven_url <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv'
+
+mfs <- 'https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv'
+('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/cbqLab_serrano2022.csv')
+#sin_invertidos_val_kar_mfs(valkar)
+#sin_invertidos_outlaiers_before_impute(50, 5) 
