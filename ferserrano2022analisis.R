@@ -1,3 +1,15 @@
+---
+#TEST GIT
+title: "NO ATTSHI NO ATTCON (ATTFOC ONLY), Factor Analysis"
+output:
+  pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
 #library(Hmisc)
 
 #xxxxbbbbxxxx
@@ -81,6 +93,17 @@ summary(lm(dx ~ AN, data=mergednumeric))
 cor(temperament_numeric, raven_numeric)
 }
 
+```
+
+
+# RESULTADOS CORRELACIONES  SUBDIMENSIONES
+```{r, echo=FALSE}
 ressca <- analysis_raven_temperament(scales)
+```
+
+
+# RESULTADOS CORRELACIONES  SUBDIMENSIONES
+```{r, echo=FALSE}
 resfac <- analysis_raven_temperament(factors[ , 1:3])
-#xxxxeeeexxxx
+```
+
