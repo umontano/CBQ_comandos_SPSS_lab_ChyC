@@ -4,10 +4,11 @@ library(Hmisc)
 #LOAD DATA
 raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
 
-raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
+#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
 
 #CORRE EL SCRIPT con datos 
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R', echo=T)
+cbq(mfs)
 
 analysis_raven_temperament <- function(analizee_dataset) {
 raven$numero <- gsub('.*(\\d{4})\\s*$', '\\1', raven$identificador, perl=TRUE) 
@@ -23,12 +24,12 @@ raven_numeric <- mergedraven[, names(raven)]
 raven_numeric[] <- lapply(raven_numeric, as.numeric)
 temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
+raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
 print(cor(temperament_numeric, raven_numeric), digits=1)
 
-Example
-
 library(Hmisc)
-rcorr(as.matrix(df1),type="pearson")
+#rcorr(as.matrix(df1),type="pearson")
+rcor(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')
 
 }
 
@@ -78,4 +79,5 @@ cor(temperament_numeric, raven_numeric)
 }
 
 analysis_raven_temperament(scales)
+analysis_raven_temperament(factors[ , 1:3])
 #xxxxeeeexxxx
