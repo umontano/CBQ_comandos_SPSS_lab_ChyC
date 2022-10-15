@@ -102,7 +102,7 @@ ressca <- analysis_raven_temperament(scales)
 ```
 
 
-# RESULTADOS CORRELACIONES  SUBDIMENSIONES
+# RESULTADOS CORRELACIONES  DIMENSIONES AMPLIAS (broad dims)
 ```{r, echo=FALSE}
 resfac <- analysis_raven_temperament(factors[ , 1:3])
 ```
