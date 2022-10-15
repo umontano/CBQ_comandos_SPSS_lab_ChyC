@@ -24,12 +24,13 @@ raven_numeric <- mergedraven[, names(raven)]
 raven_numeric[] <- lapply(raven_numeric, as.numeric)
 temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
+temperament_numeric[, 'numero'] <- NULL
 raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
 #print(cor(temperament_numeric, raven_numeric), digits=1)
 
 library(Hmisc)
 #rcorr(as.matrix(df1),type="pearson")
-return(print(rcorr(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')))
+return(print(rcorr(temperament_numeric, raven_numeric, type='pearson')))
 
 }
 
