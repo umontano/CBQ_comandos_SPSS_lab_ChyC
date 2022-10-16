@@ -54,10 +54,11 @@ cor_test_mat <- corr.test(raven_numeric, temperament_numeric)$p    # Apply corr.
 cor_test_mat                         # Print matrix of p-values
 
 library(corrplot)
-return(corrplot(cor_mat,                    # Draw corrplot with p-values
+return(
+       corrplot(cor_mat,  # Draw corrplot with p-values
 		p.mat = cor_test_mat,
 		sig.level = 0.05,
-		#insig = 'label_sig',
+		insig = 'label_sig',
 		pch = '*',
 		pch.col = "black",
 		pch.cex = 3)
