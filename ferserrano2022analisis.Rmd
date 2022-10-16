@@ -57,8 +57,8 @@ library(corrplot)
 return(corrplot(cor_mat,                    # Draw corrplot with p-values
 		p.mat = cor_test_mat,
 		sig.level = 0.05,
-		insig = 'label_sig',
-		pch = 4,
+		#insig = 'label_sig',
+		pch = '*',
 		pch.col = "black",
 		pch.cex = 3)
 )
