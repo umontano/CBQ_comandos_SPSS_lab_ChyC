@@ -48,9 +48,9 @@ raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'pun
 #return(print(rcorr(as.matrix(temperament_numeric), as.matrix(raven_numeric), type='pearson')))
 #return(print(apa.cor.table(data.frame(temperament_numeric, raven_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 
-cor_mat <- cor(temperament_numeric, raven_numeric)
+cor_mat <- cor(raven_numeric, temperament_numeric)
 library(psych)
-cor_test_mat <- corr.test(temperament_numeric, raven_numeric)$p    # Apply corr.test function
+cor_test_mat <- corr.test(raven_numeric, temperament_numeric)$p    # Apply corr.test function
 cor_test_mat                         # Print matrix of p-values
 
 library(corrplot)
