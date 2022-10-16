@@ -44,7 +44,7 @@ raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'pun
 
 library(Hmisc)
 #rcorr(as.matrix(df1),type="pearson")
-return(print(rcorr(as.matrix(temperament_numeric), as.matrix(raven_numeric), type='pearson')))
+#return(print(rcorr(as.matrix(temperament_numeric), as.matrix(raven_numeric), type='pearson')))
 return(print(apa.cor.table(temperament_numeric, raven_numeric, filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 }
 
