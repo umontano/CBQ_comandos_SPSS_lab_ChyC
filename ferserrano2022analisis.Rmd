@@ -1,3 +1,15 @@
+---
+#TEST GIT
+title: "RESULTADOS CORRELACIONES M. F. SERRANO 2022"
+output:
+  pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
 #library(Hmisc)
 
 #xxxxbbbbxxxx
@@ -24,13 +36,17 @@ raven_numeric <- mergedraven[, names(raven)]
 raven_numeric[] <- lapply(raven_numeric, as.numeric)
 temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
+
+#SET UP FINAL PROCESSING
+temperament_numeric[, 'numero'] <- NULL
 raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
-print(cor(temperament_numeric, raven_numeric), digits=1)
+#print(cor(temperament_numeric, raven_numeric), digits=1)
 
 library(Hmisc)
+library(apaTables)
 #rcorr(as.matrix(df1),type="pearson")
-rcor(as.matrix(data.frame(temperament_numeric, raven_numeric)), type='pearson')
-
+#return(print(rcorr(as.matrix(temperament_numeric), as.matrix(raven_numeric), type='pearson')))
+return(print(apa.cor.table(data.frame(temperament_numeric, raven_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 }
 
 
@@ -78,6 +94,17 @@ summary(lm(dx ~ AN, data=mergednumeric))
 cor(temperament_numeric, raven_numeric)
 }
 
-analysis_raven_temperament(scales)
-analysis_raven_temperament(factors[ , 1:3])
-#xxxxeeeexxxx
+```
+
+
+# RESULTADOS CORRELACIONES  SUBDIMENSIONES
+```{r, echo=FALSE}
+ressca <- analysis_raven_temperament(scales)
+```
+
+
+# RESULTADOS CORRELACIONES  DIMENSIONES AMPLIAS (broad dims)
+```{r, echo=FALSE}
+resfac <- analysis_raven_temperament(factors[ , 1:3])
+```
+
