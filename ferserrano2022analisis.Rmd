@@ -55,11 +55,11 @@ cor_test_mat                         # Print matrix of p-values
 
 library(corrplot)
 return(
-       corrplot(cor_mat,  # Draw corrplot with p-values
+       corrplot(cor_mat,                    # Draw corrplot with p-values
 		p.mat = cor_test_mat,
 		sig.level = 0.05,
-		insig = 'label_sig',
-		pch = '*',
+		insig = c("p-value", "blank", "n", "label_sig"),
+		pch = 4,
 		pch.col = "black",
 		pch.cex = 3)
 )
