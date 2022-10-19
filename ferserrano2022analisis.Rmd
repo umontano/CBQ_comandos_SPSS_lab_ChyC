@@ -1,6 +1,5 @@
 ---
-#TEST GIT
-title: "RESULTADOS CORRELACIONES M. F. SERRANO 2022"
+title: "RESULTADOS CON DATOS CURAODS E IMPUTADOS, CORRELACIONES M. F. SERRANO 2022"
 output:
   pdf_document
 ---
@@ -15,12 +14,20 @@ knitr::opts_chunk$set(echo = TRUE)
 #xxxxbbbbxxxx
 #LOAD DATA
 raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
+boxplot(raven$puntaje)
+#CLEAN OUTLAIERS AND IMPUTE RAVEN DATA
+raven <- identify_and_make_na_outlaiers(raven)
+raven <- impute_any_dataset_mice(raven)
+
 
 #raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
 
-#CORRE EL SCRIPT con datos 
+#CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
-cbq(mfs)
+#Clean outlaiers and impute questionnaire data
+#con datos DE M F SERRANO (MFS)
+#cbq(mfs)
+outlaiers_before_impute(mfs)
 
 analysis_raven_temperament <- function(analizee_dataset) {
 raven$numero <- gsub('.*(\\d{4})\\s*$', '\\1', raven$identificador, perl=TRUE) 
@@ -110,6 +117,7 @@ summary(lm(dx ~ AN, data=mergednumeric))
 
 cor(temperament_numeric, raven_numeric)
 }
+
 
 ```
 
