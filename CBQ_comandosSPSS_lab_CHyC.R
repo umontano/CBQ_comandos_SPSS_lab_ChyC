@@ -21,12 +21,17 @@ row.names(items) <<- raw_information$identificador
 row.names(calif) <<- raw_information$identificador
 }
 
-mice_imputation_items <- function(maximum_iterations=50, number_of_imputations=5) {
-#REMOVE OUTLAYERS (BY MAKING THEM NA)
-#IMPUTE MISSING VALUES
+
+#IMPUTE MISSING VALUES IN ANY DATASET
+impute_any_dataset_mice <- function(imputee_dataset, maximum_iterations=50, number_of_imputations=5) {
 library(mice)
-temp_data <<- mice(items, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
-items <<- complete(temp_data, 1)
+temp_data <- mice(imputee_dataset, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
+return(complete(temp_data, 1))
+}
+
+#ITEMS ARE IMPUTED WITH MICE
+mice_imputation_items <- function(maximum_iterations, number_of_imputations) {
+items <<-impute_any_dataset_mice(items, maximum_iterations, number_of_imputations)
 
 #SET THE ROW NAMES USING THE ID COLUMN
 row.names(scales)  <<- raw_information$identificador
