@@ -11,23 +11,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, echo=FALSE}
 #library(Hmisc)
 
-#xxxxbbbbxxxx
-#LOAD DATA
-raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
-boxplot(raven$puntaje)
-#CLEAN OUTLAIERS AND IMPUTE RAVEN DATA
-raven <- identify_and_make_na_outlaiers(raven)
-raven <- impute_any_dataset_mice(raven)
-
-
-#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
-
 #CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
 #Clean outlaiers and impute questionnaire data
 #con datos DE M F SERRANO (MFS)
 #cbq(mfs)
 outlaiers_before_impute(mfs)
+
+var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
+#xxxxbbbbxxxx
+#LOAD DATA
+raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
+
+#==========================================
+#CLEAN OUTLAIERS AND IMPUTE RAVEN DATA
+#==========================================
+rav_to_impute  <- raven[, var_raven]
+boxplot(rav_to_impute)
+rav_to_impute[]  <- lapply(rav_to_impute, as.numeric)
+rav_to_impute <- identify_and_make_na_outlaiers(rav_to_impute)
+rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
+boxplot(rav_to_impute)
+raven[, var_raven] <- list(NULL)
+raven  <- cbind(raven, rav_to_impute)
+
+
+
+
+
+
+
+#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
 
 analysis_raven_temperament <- function(analizee_dataset) {
 raven$numero <- gsub('.*(\\d{4})\\s*$', '\\1', raven$identificador, perl=TRUE) 
