@@ -16,7 +16,7 @@ source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/ma
 #Clean outlaiers and impute questionnaire data
 #con datos DE M F SERRANO (MFS)
 #cbq(mfs)
-outlaiers_before_impute(mfs)
+outlaiers_before_impute(mfs, 50, 5)
 
 var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
 #xxxxbbbbxxxx
