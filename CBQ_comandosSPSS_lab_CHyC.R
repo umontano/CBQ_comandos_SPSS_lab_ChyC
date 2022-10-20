@@ -131,7 +131,7 @@ detach(items)
 #################################################################
 
 #CALCULATE REVERSED QUESTIONS
-compute_reversed_scales_factors <- function() {
+compute_scales_factors <- function() {
 attach(items)
 items$cbq41r <<- 8-cbq41
 items$cbq88r <<- 8-cbq88
@@ -324,7 +324,7 @@ create_datasets(valkar)
 #Remaining of the original impute fvgunction
 mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 
@@ -344,7 +344,7 @@ create_datasets(questionnaire_dataset_file)
 	#}
 #Remaining of the original impute fvgunction
 mice_imputation_items(maximum_iterations, number_of_imputations)
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 
@@ -353,13 +353,13 @@ compute_reversed_scales_factors()
 #==========================================
 cbq  <- function(questionnaire_dataset_file) {
 create_datasets(questionnaire_dataset_file)
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 imputed_cbq  <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 create_datasets(questionnaire_dataset_file)
 mice_imputation_items(maximum_iterations, number_of_imputations)
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 #==========================================
@@ -367,7 +367,7 @@ compute_reversed_scales_factors()
 sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
 create_datasets(valkar)
 generate_unreversed_items()
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 
@@ -375,7 +375,7 @@ imputed_sin_invertidos  <- function(maximum_iterations, number_of_imputations) {
 create_datasets(valkar)
 mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
-compute_reversed_scales_factors()
+compute_scales_factors()
 }
 
 
