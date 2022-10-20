@@ -1,5 +1,5 @@
 ---
-title: "RESULTADOS CON DATOS CURAODS E IMPUTADOS, CORRELACIONES M. F. SERRANO 2022"
+title: "RESULTADOS CON DATOS CURADOS E IMPUTADOS, CORRELACIONES M. F. SERRANO 2022"
 output:
   pdf_document
 ---
@@ -8,14 +8,39 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo=FALSE}
-#library(Hmisc)
 
+```{r, include=FALSE}
+#Load and impute scales datasets
+scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
+#scales <- identify_and_make_na_outlaiers(scales)
+#scales <- impute_any_dataset_mice(scales, 10, 5)
+scales[]  <- lapply(scales, as.numeric)
+rownames(scales) <-  read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, 1]
+
+#Load and process facrors dataset
+factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
+factors[] <- lapply(factors, as.numeric)
+rownames(factors) <-  read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, 1]
+```
+
+
+
+# BOXPLOT SUBDIMENSIONES
+```{r}
+boxplot(scales)
+```
+
+# BOXPLOT SUBDIMENSIONES
+```{r}
+boxplot(factors)
+```
+
+```{r, include=FALSE}
 #CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
 #Clean outlaiers and impute questionnaire data
 #con datos DE M F SERRANO (MFS)
-cbq(mfs)
+#cbq(mfs)
 #outlaiers_before_impute(mfs, 50, 5)
 
 var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
@@ -31,7 +56,20 @@ boxplot(rav_to_impute)
 rav_to_impute[]  <- lapply(rav_to_impute, as.numeric)
 rav_to_impute <- identify_and_make_na_outlaiers(rav_to_impute)
 rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
+#==========================================
+#SHOW BOXPLOT
+#==========================================
+```
+
+# BOXPLOT RAVEN
+```{r}
 boxplot(rav_to_impute)
+```
+
+```{r, include=FALSE}
+#==========================================
+#CONTINUE PROCESSIN NOT PRINTING
+#==========================================
 raven[, var_raven] <- list(NULL)
 raven  <- cbind(raven, rav_to_impute)
 
