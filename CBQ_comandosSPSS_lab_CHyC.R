@@ -26,8 +26,7 @@ row.names(calif) <<- raw_information$identificador
 impute_any_dataset_mice <- function(imputee_dataset, maximum_iterations=50, number_of_imputations=5) {
 library(mice)
 temp_data <- mice(imputee_dataset, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
-imputee_dataset <- complete(temp_data, 1)
-return(imputee_dataset)
+return(complete(temp_data, 1))
 }
 
 #ITEMS ARE IMPUTED WITH MICE
