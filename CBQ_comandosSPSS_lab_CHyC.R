@@ -26,7 +26,8 @@ row.names(calif) <<- raw_information$identificador
 impute_any_dataset_mice <- function(imputee_dataset, maximum_iterations=50, number_of_imputations=5) {
 library(mice)
 temp_data <- mice(imputee_dataset, m=number_of_imputations, maxit=maximum_iterations, meth='pmm', seed=500)
-return(complete(temp_data, 1))
+imputee_dataset <- complete(temp_data, 1)
+return(imputee_dataset)
 }
 
 #ITEMS ARE IMPUTED WITH MICE
@@ -269,14 +270,6 @@ write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.
 
 
 #==========================================
-#==========================================
-sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
-create_datasets(valkar)
-generate_unreversed_items()
-compute_reversed_scales_factors()
-}
-
-#==========================================
     #Function to clean-up outlaiers
 #==========================================
 place_na_in_otlaiers <- function(column_outlaieree) {
@@ -323,7 +316,7 @@ sin_invertidos_outlaiers_before_impute  <- function(maximum_iterations, number_o
 create_datasets(valkar)
 #LOOP OUTLS IMPUTE
 #for(iteration_imputation in 1:10) {
-	items <- identify_and_make_na_outlaiers(items)
+	items <<- identify_and_make_na_outlaiers(items)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
@@ -333,9 +326,7 @@ create_datasets(valkar)
 mice_imputation_items(maximum_iterations, number_of_imputations)
 generate_unreversed_items()
 compute_reversed_scales_factors()
-#
 }
-#
 
 
 #==========================================
@@ -346,7 +337,7 @@ outlaiers_before_impute <- function(questionnaire_dataset_file, maximum_iteratio
 create_datasets(questionnaire_dataset_file)
 #LOOP OUTLS IMPUTE
 #for(iteration_imputation in 1:10) {
-	items <- identify_and_make_na_outlaiers(items)
+	items <<- identify_and_make_na_outlaiers(items)
 	#IMPUTE()
 	#check there are not outs left and  stop the loop
 	#checked_out_cleaned_vector <- unlist(lapply(items, check_is_cleaned))
@@ -355,7 +346,6 @@ create_datasets(questionnaire_dataset_file)
 #Remaining of the original impute fvgunction
 mice_imputation_items(maximum_iterations, number_of_imputations)
 compute_reversed_scales_factors()
-#
 }
 
 
@@ -370,6 +360,14 @@ compute_reversed_scales_factors()
 imputed_cbq  <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
 create_datasets(questionnaire_dataset_file)
 mice_imputation_items(maximum_iterations, number_of_imputations)
+compute_reversed_scales_factors()
+}
+
+#==========================================
+#==========================================
+sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
+create_datasets(valkar)
+generate_unreversed_items()
 compute_reversed_scales_factors()
 }
 
