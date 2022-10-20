@@ -31,7 +31,7 @@ return(complete(temp_data, 1))
 
 #ITEMS ARE IMPUTED WITH MICE
 mice_imputation_items <- function(maximum_iterations, number_of_imputations) {
-items <<-impute_any_dataset_mice(items, maximum_iterations, number_of_imputations)
+items <<- impute_any_dataset_mice(items, maximum_iterations, number_of_imputations)
 
 #SET THE ROW NAMES USING THE ID COLUMN
 row.names(scales)  <<- raw_information$identificador
@@ -297,13 +297,13 @@ check_is_cleaned <- function(column_outlaieree) {
 identify_and_make_na_outlaiers <- function(outlaieree_dataset) {
 	for(iteration_dataset in 1:10) {
 		print(paste0(iteration_dataset, '===ITER WHOLE DATASET======'))
-	    outlaieree_dataset <- data.frame(lapply(outlaieree_dataset, place_na_in_otlaiers))
-	    checked_out_cleaned_vector <- unlist(lapply(outlaieree_dataset, check_is_cleaned))
+	    na_ed_dataset <- data.frame(lapply(outlaieree_dataset, place_na_in_otlaiers))
+	    checked_out_cleaned_vector <- unlist(lapply(na_ed_dataset, check_is_cleaned))
 	    if(all(checked_out_cleaned_vector)) break else print(paste0('===== CLEANING ========', iteration_dataset))
 	}
 	if(iteration_dataset > 9) print(paste0(iteration_dataset, '== MAXIMUM I REACHED =========='))
-	write.csv(outlaieree_dataset, 'xOUTLAIERS_CLEANED_ITEMS.csv')
-	return(outlaieree_dataset)
+	write.csv(na_ed_dataset, 'xOUTLAIERS_CLEANED_ITEMS.csv')
+	return(na_ed_dataset)
 }
 
 #==========================================
