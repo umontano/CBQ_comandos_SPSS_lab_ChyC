@@ -1,7 +1,7 @@
 ---
 title: "RESULTADOS CON DATOS CURADOS E IMPUTADOS, CORRELACIONES M. F. SERRANO 2022"
 output:
-  pdf_document
+  html_document
 ---
 
 ```{r setup, include=FALSE}
