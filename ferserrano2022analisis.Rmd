@@ -185,3 +185,26 @@ ressca <- analysis_raven_temperament(scales)
 resfac <- analysis_raven_temperament(factors[ , 1:3])
 ```
 
+
+
+
+#Example: Leaving blank on no significance level
+```{r, echo=FALSE}
+library(ggplot2)
+library(ggcorrplot)
+
+# Reading the data
+data(USArrests)
+
+# Computing correlation matrix
+correlation_matrix <- round(cor(USArrests),1)
+
+# Computing correlation matrix with p-values
+corrp.mat <- cor_pmat(USArrests)
+
+# Leaving blank on no significance level
+ggcorrplot(correlation_matrix, hc.order =TRUE,
+		  type ="lower", p.mat = corrp.mat, insig="blank")
+```
+
+
