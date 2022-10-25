@@ -58,10 +58,10 @@ library(psych)
 cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply corr.test function
 
 library(corrplot)
-return(
+print(
        corrplot(cor_mat,                    # Draw corrplot with p-values
 		p.mat = cor_test_mat,
-		sig.level = 0.10,
+		sig.level = 0.05,
 		insig = 'p-value',
 		pch = 4,
 		pch.cex = 3)
@@ -69,9 +69,9 @@ return(
 cor_mat
 cor_test_mat                         # Print matrix of p-values
 cor_mat[cor_test_mat > 0.05] <- NA
-cor_mat
+print(cor_mat)
 cor_test_mat[cor_test_mat > 0.05] <- NA
-cor_test_mat
+print(cor_test_mat)
 }
 ```
 
