@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, include=FALSE}
 #BLOCK TOrrance
 torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
+rownames(torrance) <- torrance$identificador
 torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
 torrance[, grep('_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
 #Removed problematic
@@ -45,7 +46,6 @@ mergednumeric <- data.frame(lapply(mergedtorrance, as.numeric))
 temperament_numeric[, 'numero'] <- NULL
 torrance_numeric <- torrance_numeric[ , names(torrance)]
 torrance_numeric[, 'numero'] <- NULL
-#print(cor(temperament_numeric, torrance_numeric), digits=1)
 
 #library(Hmisc)
 #library(apaTables)
@@ -57,8 +57,16 @@ cor_mat <- cor(torrance_numeric, temperament_numeric)
 library(psych)
 cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply corr.test function
 
+# Print matrix of p-values
+showr <- cor_mat
+showpv <- cor_test_mat
+showr[showpv > 0.05] <- NA
+print(showr)
+showpv[showpv > 0.05] <- NA
+print(showpv)
+
 library(corrplot)
-print(
+return(
        corrplot(cor_mat,                    # Draw corrplot with p-values
 		p.mat = cor_test_mat,
 		sig.level = 0.05,
@@ -66,12 +74,6 @@ print(
 		pch = 4,
 		pch.cex = 3)
 )
-cor_mat
-cor_test_mat                         # Print matrix of p-values
-cor_mat[cor_test_mat > 0.05] <- NA
-print(cor_mat)
-cor_test_mat[cor_test_mat > 0.05] <- NA
-print(cor_test_mat)
 }
 ```
 
@@ -114,6 +116,8 @@ var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
 #xxxxbbbbxxxx
 #LOAD DATA
 raven <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_raven.csv', header=TRUE)
+#Set indentificador as column names
+rownames(raven) <- raven$identificador
 
 #==========================================
 #CLEAN OUTLAIERS AND IMPUTE RAVEN DATA
@@ -257,6 +261,12 @@ analysis_torrance_temperament(scales)
 analysis_torrance_temperament(factors[ , 1:3])
 ```
 
+
+# TORRANCE RAVEN
+```{r, echo=FALSE}
+cols <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
+analysis_torrance_temperament(raven[, cols])
+```
 
 # RESULTADOS CORRELACIONES  SUBDIMENSIONES
 ```{r, echo=FALSE}
