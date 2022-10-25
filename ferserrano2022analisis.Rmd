@@ -60,10 +60,9 @@ cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply co
 # Print matrix of p-values
 showr <- cor_mat
 showpv <- cor_test_mat
-showr[showpv > 0.05] <- NA
+showr[showpv > 0.10] <- NA
 print(showr)
 showpv[showpv > 0.05] <- NA
-print(showpv)
 
 library(corrplot)
 return(
@@ -92,17 +91,6 @@ factors[] <- lapply(factors, as.numeric)
 rownames(factors) <-  read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, 1]
 ```
 
-
-
-# BOXPLOT SUBDIMENSIONES
-```{r}
-boxplot(scales)
-```
-
-# BOXPLOT SUBDIMENSIONES
-```{r}
-boxplot(factors)
-```
 
 ```{r, include=FALSE}
 #CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
@@ -137,11 +125,6 @@ rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
 #==========================================
 #SHOW BOXPLOT
 #==========================================
-```
-
-# BOXPLOT RAVEN
-```{r}
-boxplot(rav_to_impute)
 ```
 
 ```{r, include=FALSE}
@@ -290,10 +273,10 @@ library(ggcorrplot)
 data(USArrests)
 
 # Computing correlation matrix
-correlation_matrix <- round(cor(USArrests),1)
+correlation_matrix <- round(cor(scales),1)
 
 # Computing correlation matrix with p-values
-corrp.mat <- cor_pmat(USArrests)
+corrp.mat <- cor_pmat(scales)
 
 # Leaving blank on no significance level
 ggcorrplot(correlation_matrix, hc.order =TRUE,
@@ -301,3 +284,18 @@ ggcorrplot(correlation_matrix, hc.order =TRUE,
 ```
 
 
+
+
+# BOXPLOT SUBDIMENSIONES
+```{r}
+boxplot(scales)
+```
+# BOXPLOT SUBDIMENSIONES
+```{r}
+boxplot(factors)
+```
+
+# BOXPLOT RAVEN
+```{r}
+boxplot(rav_to_impute)
+```
