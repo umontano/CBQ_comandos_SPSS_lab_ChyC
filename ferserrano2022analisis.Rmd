@@ -80,8 +80,6 @@ return(
 ```{r, include=FALSE}
 #Load and impute scales datasets
 scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
-#scales <- identify_and_make_na_outlaiers(scales)
-#scales <- impute_any_dataset_mice(scales, 10, 5)
 scales[]  <- lapply(scales, as.numeric)
 rownames(scales) <-  read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, 1]
 
@@ -98,7 +96,6 @@ source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/ma
 #Clean outlaiers and impute questionnaire data
 #con datos DE M F SERRANO (MFS)
 #cbq(mfs)
-#outlaiers_before_impute(mfs, 50, 5)
 
 var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
 #xxxxbbbbxxxx
