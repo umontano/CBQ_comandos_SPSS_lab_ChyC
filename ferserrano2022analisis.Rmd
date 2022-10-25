@@ -20,9 +20,59 @@ knitr::opts_chunk$set(echo = TRUE)
 #BLOCK TOrrance
 torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
 torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
-torrance[, grep('dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
+torrance[, grep('_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
+#Removed problematic
+torrance[, c('orig2_6')] <- list(NULL)
 names(torrance)
-tail(torrance[, 11:21])
+tail(torrance[, 10:11])
+
+#function to merge with temp
+#analizee_dataset <- scales
+#analizee_dataset <- factors[, 1:3]
+
+analysis_torrance_temperament <- function(analizee_dataset) {
+analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
+
+mergedtorrance <- merge(analizee_dataset, torrance, by='numero')
+
+temperament_numeric <- mergedtorrance[, names(analizee_dataset)]
+torrance_numeric <- mergedtorrance[, names(torrance)]
+torrance_numeric[] <- lapply(torrance_numeric, as.numeric)
+temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
+mergednumeric <- data.frame(lapply(mergedtorrance, as.numeric))
+
+#SET UP FINAL PROCESSING
+temperament_numeric[, 'numero'] <- NULL
+torrance_numeric <- torrance_numeric[ , names(torrance)]
+torrance_numeric[, 'numero'] <- NULL
+#print(cor(temperament_numeric, torrance_numeric), digits=1)
+
+#library(Hmisc)
+#library(apaTables)
+#rcorr(as.matrix(df1),type="pearson")
+#return(print(rcorr(as.matrix(temperament_numeric), as.matrix(torrance_numeric), type='pearson')))
+#return(print(apa.cor.table(data.frame(temperament_numeric, torrance_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
+
+cor_mat <- cor(torrance_numeric, temperament_numeric)
+library(psych)
+cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply corr.test function
+
+library(corrplot)
+return(
+       corrplot(cor_mat,                    # Draw corrplot with p-values
+		p.mat = cor_test_mat,
+		sig.level = 0.10,
+		insig = 'p-value',
+		pch = 4,
+		pch.cex = 3)
+)
+cor_mat
+cor_test_mat                         # Print matrix of p-values
+cor_mat[cor_test_mat > 0.05] <- NA
+cor_mat
+cor_test_mat[cor_test_mat > 0.05] <- NA
+cor_test_mat
+}
 ```
 
 
@@ -197,12 +247,21 @@ cor(temperament_numeric, raven_numeric)
 
 ```
 
+# TORRANCE SUBDIMENSIONES
+```{r, echo=FALSE}
+analysis_torrance_temperament(scales)
+```
+
+# TORRANCE DIMENSIONES AMPLIAS (broad dims)
+```{r, echo=FALSE}
+analysis_torrance_temperament(factors[ , 1:3])
+```
+
 
 # RESULTADOS CORRELACIONES  SUBDIMENSIONES
 ```{r, echo=FALSE}
 ressca <- analysis_raven_temperament(scales)
 ```
-
 
 # RESULTADOS CORRELACIONES  DIMENSIONES AMPLIAS (broad dims)
 ```{r, echo=FALSE}
