@@ -268,12 +268,14 @@ library(ggcorrplot)
 
 # Reading the data
 data(USArrests)
+tttt <- torrance
+tttt[, c('numero')] <- NULL
 
 # Computing correlation matrix
-correlation_matrix <- round(cor(scales),1)
+correlation_matrix <- round(cor(tttt), 1)
 
 # Computing correlation matrix with p-values
-corrp.mat <- cor_pmat(scales)
+corrp.mat <- cor_pmat(tttt)
 
 # Leaving blank on no significance level
 ggcorrplot(correlation_matrix, hc.order =TRUE,
