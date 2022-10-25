@@ -15,6 +15,17 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+
+```{r, include=FALSE}
+#BLOCK TOrrance
+torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
+torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
+torrance[, grep('dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
+names(torrance)
+tail(torrance[, 11:21])
+```
+
+
 ```{r, include=FALSE}
 #Load and impute scales datasets
 scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
