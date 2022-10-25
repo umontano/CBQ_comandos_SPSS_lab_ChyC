@@ -1,7 +1,13 @@
 ---
 title: "RESULTADOS CON DATOS CURADOS E IMPUTADOS, CORRELACIONES M. F. SERRANO 2022"
 output:
-  html_document
+  html_document:
+    theme: flatly
+    highlight: haddock
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
 ---
 
 ```{r setup, include=FALSE}
