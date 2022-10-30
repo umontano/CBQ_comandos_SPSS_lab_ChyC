@@ -60,14 +60,14 @@ cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply co
 # Print matrix of p-values
 showr <- cor_mat
 showpv <- cor_test_mat
-showr[showpv > 0.10] <- NA
+showr[showpv > 0.05] <- NA
 print(showr)
 showpv[showpv > 0.05] <- NA
 
 library(corrplot)
 library(ggcorrplot)
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-return(ggcorrplot(cor_mat, lab=T, p.mat=cor_test_mat, pch='blank'))
+return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_gray, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
 ```
 
@@ -168,54 +168,8 @@ cor_test_mat                         # Print matrix of p-values
 library(corrplot)
 library(ggcorrplot)
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-return(ggcorrplot(cor_mat, lab=T, p.mat=cor_test_mat, pch='blank'))
+return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_gray, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
-
-
-exploratory_regressions <- function(merged_dataset) {
-summary(lm(CE ~ dx , data=mergedraven))
-summary(lm(AN ~ dx , data=mergedraven))
-summary(lm(SURG ~ dx , data=mergedraven))
-summary(lm(CE ~ puntaje , data=mergedraven))
-summary(lm(AN ~ puntaje , data=mergedraven))
-summary(lm(SURG ~ puntaje , data=mergedraven))
-summary(lm(puntaje ~ perfil , data=mergedraven))
-summary(lm(puntaje ~ CE + AN + SURG , data=mergedraven))
-summary(lm(columna_a ~ CE + AN + SURG , data=mergedraven))
-summary(lm(columna_b ~ CE + AN + SURG , data=mergedraven))
-summary(lm(columna_ab ~ CE + AN + SURG , data=mergedraven))
-
-summary(lm(columna_b ~ SURG * AN , data=mergedraven))
-summary(lm(CE ~ rango , data=mergedraven))
-summary(lm(SURG ~ rango , data=mergedraven))
-summary(lm(CE ~ percentil , data=mergedraven))
-summary(lm(AN ~ percentil , data=mergedraven))
-summary(lm(SURG ~ percentil , data=mergedraven))
-
-
-summary(lm(rango ~ AN + SURG , data=mergedraven))
-summary(lm(percentil ~ AN + SURG , data=mergedraven))
-summary(glm(altos ~ AN + SURG , data=mergedraven,family=binomial))
-summary(lm(CE ~ altos , data=mergedraven))
-summary(lm(AN ~ altos , data=mergedraven))
-summary(lm(SURG ~ altos , data=mergedraven))
-
-summary(lm(dx ~ CE + AN + SURG , data=mergednumeric))
-summary(lm(dx ~ AN + SURG , data=mergednumeric))
-summary(lm(dx ~ AN, data=mergednumeric))
-summary(lm(dx ~ SURG , data=mergednumeric))
-summary(lm(AN ~ dx , data=mergedraven))
-#------------------------------------------------------------
-#Resultados Significativos
-summary(lm(columna_b ~ SURG , data=mergedraven))
-summary(lm(columna_b ~ SURG + AN , data=mergedraven))
-summary(lm(columna_b ~ SURG + CE , data=mergedraven))
-summary(lm(AN ~ rango , data=mergedraven))
-summary(lm(dx ~ AN, data=mergednumeric))
-
-cor(temperament_numeric, raven_numeric)
-}
-
 
 ```
 
@@ -266,7 +220,7 @@ correlation_matrix <- round(cor(tttt), 1)
 corrp.mat <- cor_pmat(tttt)
 
 # Leaving blank on no significance level
-ggcorrplot(correlation_matrix, hc.order =TRUE,
+ggcorrplot(t(correlation_matrix), hc.order =TRUE,
 		  type ="lower", p.mat = corrp.mat, insig="blank")
 ```
 
