@@ -67,7 +67,7 @@ showpv[showpv > 0.05] <- NA
 library(corrplot)
 library(ggcorrplot)
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_gray, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
+return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
 ```
 
@@ -168,7 +168,7 @@ cor_test_mat                         # Print matrix of p-values
 library(corrplot)
 library(ggcorrplot)
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_gray, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
+return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
 
 ```
