@@ -65,14 +65,8 @@ print(showr)
 showpv[showpv > 0.05] <- NA
 
 library(corrplot)
-return(
-       corrplot(cor_mat,                    # Draw corrplot with p-values
-		p.mat = cor_test_mat,
-		sig.level = 0.05,
-		insig = 'p-value',
-		pch = 4,
-		pch.cex = 3)
-)
+#return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
+return(ggcorrplot(cor_mat, lab=T, p.mat=cor_test_mat, pch='blank'))
 }
 ```
 
