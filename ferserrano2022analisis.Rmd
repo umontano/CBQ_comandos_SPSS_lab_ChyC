@@ -74,14 +74,18 @@ return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(c
 
 ```{r, include=FALSE}
 #Load and impute scales datasets
-scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
+#scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
+scales <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq15dimensiones_imputado.csv')
+rownames(scales) <- scales[, 1]
+scales <- scales[, -1]
 scales[]  <- lapply(scales, as.numeric)
-rownames(scales) <-  read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, 1]
 
 #Load and process facrors dataset
-factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
+#factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
+factors <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq3factores_imputado.csv')
+rownames(factors) <- factors[, 1]
+factors <- factors[, -1]
 factors[] <- lapply(factors, as.numeric)
-rownames(factors) <-  read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, 1]
 ```
 
 
