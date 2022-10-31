@@ -24,8 +24,6 @@ torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=T
 torrance[, grep('_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
 #Removed problematic
 torrance[, c('orig2_6')] <- list(NULL)
-names(torrance)
-tail(torrance[, 10:11])
 
 #function to merge with temp
 #analizee_dataset <- scales
@@ -108,11 +106,9 @@ rownames(raven) <- raven$identificador
 #==========================================
 rav_to_impute  <- raven[, var_raven]
 rav_to_impute[]  <- lapply(rav_to_impute, as.numeric)
+raven_raw <- rav_to_impute
 ```
-# BOXPLOT RAVEN CON OUTLAIERS
-```{r}
-boxplot(rav_to_impute)
-```
+
 
 
 ```{r, include=FALSE}
@@ -240,7 +236,12 @@ boxplot(scales)
 boxplot(factors)
 ```
 
-# BOXPLOT RAVEN
+
+# BOXPLOT RAVEN CON OUTLAIERS
+```{r}
+boxplot(raven_raw)
+```
+# BOXPLOT RAVEN CURADO
 ```{r}
 boxplot(rav_to_impute)
 ```
