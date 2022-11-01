@@ -11,8 +11,73 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
+
+
+```{r, include=FALSE}
+#==========================================================================
+#DEFINE THE FUNCTIONS to generate SCATTER PLOTS AND SUBROUTINES
+#==========================================================================
+scatterp_with_regression_lines <- function(plotee_pair, rows_dataset, columns_dataset)
+{
+variablex <- plotee_pair[2]
+variabley <- plotee_pair[1]
+merged_dataset <- cbind(rows_dataset, columns_dataset)
+library(ggplot2)
+ggplot(merged_dataset, aes(
+	merged_dataset[, variablex],
+	merged_dataset[, variabley]
+	)
+) +
+geom_point(alpha=0.5) +
+geom_smooth(method="lm", se=TRUE, fullrange=TRUE) +
+         annotate( "point", x=mean(merged_dataset[, variablex]), y=mean(merged_dataset[, variabley]), col="red4", size=3) +
+labs(title = paste(variablex, '-- correl --', variabley)) +
+xlab(variablex) +
+ylab(variabley)
+}
+
+#================================================================
+#================================================================
+#scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
+scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
+{
+#Matrices for correlations and pvalues
+cor_mat <- round(cor(rows_dataset, columns_dataset), 2)
+library('psych')
+pmat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
+	#Extract rows and columns
+	rows <- rownames(cor_mat)
+	cols <- colnames(cor_mat)
+	#Initialize empty list
+	pairs_list <- NULL
+	for(eachcol in cols) {
+		for(eachrow in rows) {
+			if(
+            !is.na(pmat[eachrow , eachcol]) &&
+            eachrow != eachcol &&
+            pmat[eachrow , eachcol] < 0.05
+            ) {
+				pairs_list[[ length(pairs_list) +1 ]] <- c(eachrow, eachcol);
+				print(paste(eachrow, eachcol));
+				}
+		}
+	}
+
+		if(length(pairs_list) > 0)
+		{
+			#Send list of names to generate plots
+			scatters_list <- lapply(pairs_list, scatterp_with_regression_lines, rows_dataset, columns_dataset)
+			#make asingle graph from the list of scatters
+			library('gridExtra')
+			graph_grid <- arrangeGrob(grobs=scatters_list, ncol=3)
+			return(scatters_list)
+		}
+		else {return(NULL)}
+}
+```
+
 
 
 
@@ -51,9 +116,13 @@ torrance_numeric[, 'numero'] <- NULL
 #return(print(rcorr(as.matrix(temperament_numeric), as.matrix(torrance_numeric), type='pearson')))
 #return(print(apa.cor.table(data.frame(temperament_numeric, torrance_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 
+#Store the corresponding significant scaterplots
+scaterp_list <- scatterplot_significant_correlations(torrance_numeric, temperament_numeric)
+
 cor_mat <- cor(torrance_numeric, temperament_numeric)
 library(psych)
 cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply corr.test function
+
 
 # Print matrix of p-values
 showr <- cor_mat
@@ -65,7 +134,9 @@ showpv[showpv > 0.05] <- NA
 library(corrplot)
 library(ggcorrplot)
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
+scaterp_list[[length(scaterp_list)+1]] <- 
+    ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank')
+return(scaterp_list)
 }
 ```
 
