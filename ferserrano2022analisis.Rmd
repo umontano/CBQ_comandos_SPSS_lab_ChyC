@@ -71,8 +71,7 @@ pmat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 			scatters_list <- lapply(pairs_list, scatterp_with_regression_lines, rows_dataset, columns_dataset)
 			#make asingle graph from the list of scatters
 			library('gridExtra')
-			graph_grid <- arrangeGrob(grobs=scatters_list, ncol=3)
-			return(scatters_list)
+			print(gridExtra::grid.arrange(grobs = scatters_list, ncol = 3, nrow = 2))
 		}
 		else {return(NULL)}
 }
@@ -111,12 +110,9 @@ torrance_numeric <- torrance_numeric[ , names(torrance)]
 torrance_numeric[, 'numero'] <- NULL
 
 #library(Hmisc)
-#library(apaTables)
-#rcorr(as.matrix(df1),type="pearson")
-#return(print(rcorr(as.matrix(temperament_numeric), as.matrix(torrance_numeric), type='pearson')))
-#return(print(apa.cor.table(data.frame(temperament_numeric, torrance_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 
 #Store the corresponding significant scaterplots
+scatters_list <- NULL
 scaterp_list <- scatterplot_significant_correlations(torrance_numeric, temperament_numeric)
 
 cor_mat <- cor(torrance_numeric, temperament_numeric)
@@ -133,10 +129,11 @@ showpv[showpv > 0.05] <- NA
 
 library(corrplot)
 library(ggcorrplot)
+corr_graph <- ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank')
+
 #return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-scaterp_list[[length(scaterp_list)+1]] <- 
-    ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank')
-return(scaterp_list)
+#scaterp_list[[length(scaterp_list)+1]] <- corr_graph
+return(corr_graph)
 }
 ```
 
