@@ -46,7 +46,7 @@ scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 #Matrices for correlations and pvalues
 cor_mat <- round(cor(rows_dataset, columns_dataset), 2)
 library('psych')
-pmat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
+cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 	#Extract rows and columns
 	rows <- rownames(cor_mat)
 	cols <- colnames(cor_mat)
@@ -55,9 +55,9 @@ pmat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 	for(eachcol in cols) {
 		for(eachrow in rows) {
 			if(
-            !is.na(pmat[eachrow , eachcol]) &&
+            !is.na(cor_test_mat[eachrow , eachcol]) &&
             eachrow != eachcol &&
-            pmat[eachrow , eachcol] < 0.05
+            cor_test_mat[eachrow , eachcol] < 0.05
             ) {
 				pairs_list[[ length(pairs_list) +1 ]] <- c(eachrow, eachcol);
 				print(paste(eachrow, eachcol));
@@ -65,15 +65,34 @@ pmat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 		}
 	}
 
+		#Show results only in case there exists significant values
 		if(length(pairs_list) > 0)
 		{
-			#Send list of names to generate plots
+			#Show p-values text
+			showr <- cor_mat
+			showpv <- cor_test_mat
+			showr[showpv > 0.05] <- NA
+			print(showr)
+			showpv[showpv > 0.05] <- NA
+
+			#Send list of names to generate scatterplots
 			scatters_list <- lapply(pairs_list, scatterp_with_regression_lines, rows_dataset, columns_dataset)
-			#make asingle graph from the list of scatters
+			#Show a single graph from the list of scatters
 			library('gridExtra')
 			print(gridExtra::grid.arrange(grobs = scatters_list, ncol = 3, nrow = 2))
+
+			#Graphic correlation matrix
+			library(ggcorrplot)
+			corr_graph <- ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank')
+			print(corr_graph)
+
+			return(list(corr_graph, scatters_list))
 		}
-		else {return(NULL)}
+		else
+		{
+		lapply(1:4, function(x) print('=== NO SIGN CORRELATIONS FOUND ==='));
+		return(NULL)
+		}
 }
 ```
 
@@ -112,28 +131,10 @@ torrance_numeric[, 'numero'] <- NULL
 #library(Hmisc)
 
 #Store the corresponding significant scaterplots
-scatters_list <- NULL
-scaterp_list <- scatterplot_significant_correlations(torrance_numeric, temperament_numeric)
+graphics_list <- NULL
+graphics_list <- scatterplot_significant_correlations(torrance_numeric, temperament_numeric)
 
-cor_mat <- cor(torrance_numeric, temperament_numeric)
-library(psych)
-cor_test_mat <- corr.test(torrance_numeric, temperament_numeric)$p    # Apply corr.test function
-
-
-# Print matrix of p-values
-showr <- cor_mat
-showpv <- cor_test_mat
-showr[showpv > 0.05] <- NA
-print(showr)
-showpv[showpv > 0.05] <- NA
-
-library(corrplot)
-library(ggcorrplot)
-corr_graph <- ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank')
-
-#return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
-#scaterp_list[[length(scaterp_list)+1]] <- corr_graph
-return(corr_graph)
+return(graphics_list)
 }
 ```
 
@@ -243,19 +244,19 @@ return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(c
 
 # TORRANCE SUBDIMENSIONES
 ```{r, echo=FALSE}
-analysis_torrance_temperament(scales)
+ggscales <- analysis_torrance_temperament(scales)
 ```
 
 # TORRANCE DIMENSIONES AMPLIAS (broad dims)
 ```{r, echo=FALSE}
-analysis_torrance_temperament(factors[ , 1:3])
+ggfactors <- analysis_torrance_temperament(factors[ , 1:3])
 ```
 
 
 # TORRANCE RAVEN
 ```{r, echo=FALSE}
 cols <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
-analysis_torrance_temperament(raven[, cols])
+ggraven <- analysis_torrance_temperament(raven[, cols])
 ```
 
 # RESULTADOS CORRELACIONES  SUBDIMENSIONES
@@ -269,28 +270,6 @@ resfac <- analysis_raven_temperament(factors[ , 1:3])
 ```
 
 
-
-
-#Example: Leaving blank on no significance level
-```{r, echo=FALSE}
-library(ggplot2)
-library(ggcorrplot)
-
-# Reading the data
-data(USArrests)
-tttt <- torrance
-tttt[, c('numero')] <- NULL
-
-# Computing correlation matrix
-correlation_matrix <- round(cor(tttt), 1)
-
-# Computing correlation matrix with p-values
-corrp.mat <- cor_pmat(tttt)
-
-# Leaving blank on no significance level
-ggcorrplot(t(correlation_matrix), hc.order =TRUE,
-		  type ="lower", p.mat = corrp.mat, insig="blank")
-```
 
 
 
