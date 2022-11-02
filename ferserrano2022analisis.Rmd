@@ -31,7 +31,7 @@ ggplot(merged_dataset, aes(
 	merged_dataset[, variabley]
 	)
 ) +
-geom_point(alpha=0.5) +
+geom_jitter(alpha=0.5) +
 geom_smooth(method="lm", se=TRUE, fullrange=TRUE) +
          annotate( "point", x=mean(merged_dataset[, variablex]), y=mean(merged_dataset[, variabley]), col="red4", size=3) +
 labs(title = paste(variablex, '-- correl --', variabley)) +
@@ -45,7 +45,7 @@ ylab(variabley)
 scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 {
 #Matrices for correlations and pvalues
-cor_mat <- round(cor(rows_dataset, columns_dataset), 2)
+cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
 library('psych')
 cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 	#Extract rows and columns
