@@ -52,20 +52,23 @@ cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 	rows <- rownames(cor_mat)
 	cols <- colnames(cor_mat)
 	#Initialize empty list
-	pairs_list <- NULL
-	for(eachcol in cols) {
-		for(eachrow in rows) {
+	pairs_list <<- NULL
+#Implementation of search by currying nested mapping functions
+lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.05) llll[[length(llll)+1]] <<- c(y,x) 
+	#for(eachcol in cols) {
+		#for(eachrow in rows) {
 			if(
             !is.na(cor_test_mat[eachrow , eachcol]) &&
             eachrow != eachcol &&
             cor_test_mat[eachrow , eachcol] < 0.05
             ) {
-				pairs_list[[ length(pairs_list) +1 ]] <- c(eachrow, eachcol);
+				pairs_list[[ length(pairs_list) +1 ]] <<- c(eachrow, eachcol);
 				print(paste(eachrow, eachcol));
 				}
-		}
-	}
-
+		#}
+	#}
+#nested lapply ends here
+} ) )
 		#Show results only in case there exists significant values
 		if(length(pairs_list) > 0)
 		{
@@ -224,13 +227,7 @@ mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
 #SET UP FINAL PROCESSING
 temperament_numeric[, 'numero'] <- NULL
 raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
-#print(cor(temperament_numeric, raven_numeric), digits=1)
 
-#library(Hmisc)
-#library(apaTables)
-#rcorr(as.matrix(df1),type="pearson")
-#return(print(rcorr(as.matrix(temperament_numeric), as.matrix(raven_numeric), type='pearson')))
-#return(print(apa.cor.table(data.frame(temperament_numeric, raven_numeric), filename = "mfs2022corrapa.doc", table.number = 3, show.conf.interval = F)))
 
 cor_mat <- cor(raven_numeric, temperament_numeric)
 library(psych)
@@ -239,36 +236,35 @@ cor_test_mat                         # Print matrix of p-values
 
 library(corrplot)
 library(ggcorrplot)
-#return( corrplot(cor_mat, p.mat = cor_test_mat, insig = 'p-value'))
 return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
 
 ```
 
 # TORRANCE SUBDIMENSIONES
-```{r, echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 ggscales <- analysis_torrance_temperament(scales)
 ```
 
 # TORRANCE DIMENSIONES AMPLIAS (broad dims)
-```{r, echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 ggfactors <- analysis_torrance_temperament(factors[ , 1:3])
 ```
 
 
 # TORRANCE RAVEN
-```{r, echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 cols <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
 ggraven <- analysis_torrance_temperament(raven[, cols])
 ```
 
 # RESULTADOS CORRELACIONES  SUBDIMENSIONES
-```{r, echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 ressca <- analysis_raven_temperament(scales)
 ```
 
 # RESULTADOS CORRELACIONES  DIMENSIONES AMPLIAS (broad dims)
-```{r, echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 resfac <- analysis_raven_temperament(factors[ , 1:3])
 ```
 
@@ -278,20 +274,20 @@ resfac <- analysis_raven_temperament(factors[ , 1:3])
 
 
 # BOXPLOT SUBDIMENSIONES
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 boxplot(scales)
 ```
 # BOXPLOT SUBDIMENSIONES
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 boxplot(factors)
 ```
 
 
 # BOXPLOT RAVEN CON OUTLAIERS
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 boxplot(raven_raw)
 ```
 # BOXPLOT RAVEN CURADO
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 boxplot(rav_to_impute)
 ```
