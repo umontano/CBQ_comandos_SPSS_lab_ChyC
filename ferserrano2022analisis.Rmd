@@ -47,7 +47,7 @@ scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 #Matrices for correlations and pvalues
 cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
 library('psych')
-cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
+cor_test_mat <- round(corr.test(rows_dataset, columns_dataset, adjust='bonferroni')$p, 3)
 	#Extract rows and columns
 	rows <- rownames(cor_mat)
 	cols <- colnames(cor_mat)
@@ -113,6 +113,11 @@ torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=T
 torrance[, grep('_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
 #Removed problematic
 torrance[, c('orig2_6')] <- list(NULL)
+#Ouliers cleanup
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
+torrance <- lapply(torrance, as.numeric)
+torrance <- identify_and_make_na_outlaiers(torrance)
+torrance <- impute_any_dataset_mice(torrance)
 
 #function to merge with temp
 #analizee_dataset <- scales
