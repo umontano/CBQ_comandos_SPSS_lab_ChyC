@@ -134,7 +134,7 @@ rownames(scales) <- scales[, 1]
 scales <- scales[, -1]
 scales[]  <- lapply(scales, as.numeric)
 
-#Load and process facrors dataset
+#Load and impute factors dataset
 #factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
 factors <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq3factores_imputado.csv')
 rownames(factors) <- factors[, 1]
@@ -207,9 +207,9 @@ raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'pun
 cor_mat <- cor(raven_numeric, temperament_numeric)
 library(psych)
 cor_test_mat <- corr.test(raven_numeric, temperament_numeric)$p    # Apply corr.test function
-cor_test_mat                         # Print matrix of p-values
 
-library(corrplot)
 library(ggcorrplot)
 return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
+
+
