@@ -63,7 +63,7 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 			scatters_list <- lapply(pairs_list, scatterp_with_regression_lines, rows_dataset, columns_dataset)
 			#Show a single graph from the list of scatters
 			library('gridExtra')
-			gridExtra::marrangeGrob(grobs = scatters_list, ncol = 3, nrow = 2)
+			print(gridExtra::marrangeGrob(grobs = scatters_list, ncol = 3, nrow = 2))
 
 			#Graphic correlation matrix
 			library(ggcorrplot)
