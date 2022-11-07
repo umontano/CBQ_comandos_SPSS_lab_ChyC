@@ -75,7 +75,8 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 		else
 		{
 			#Mesagge there are no significants
-			lapply(1:4, function(x) print('=== NO SIGN CORRELATIONS FOUND ==='));
+			lapply(1:4, function(x) print('=== NO SIGNIFICANT CORRELATIONS FOUND ==='));
+            print('==== THESE ARE THE P-VALUES: ====')
 			print(cor_test_mat)
 			return(NULL)
 		}
