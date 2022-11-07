@@ -94,6 +94,7 @@ torrance[, c('orig2_6')] <- list(NULL)
 #Ouliers cleanup
 source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
 torrance <- lapply(torrance, as.numeric)
+torrance_raw <- torrance
 torrance <- identify_and_make_na_outlaiers(torrance)
 torrance <- impute_any_dataset_mice(torrance)
 
