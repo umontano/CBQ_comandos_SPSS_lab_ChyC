@@ -14,7 +14,7 @@ ggplot(merged_dataset, aes(
 geom_jitter(alpha=0.5) +
 geom_smooth(method="lm", se=TRUE, fullrange=TRUE) +
          annotate( "point", x=mean(merged_dataset[, variablex]), y=mean(merged_dataset[, variabley]), col="red4", size=3) +
-labs(title = paste(variablex, '-- correl --', variabley)) +
+labs(title = paste(variablex, '~', variabley)) +
 xlab(variablex) +
 ylab(variabley)
 }
