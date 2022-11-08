@@ -37,6 +37,16 @@
     </item>
     
     <item>
+      <title>Torrance Histogramas y Frecuencias</title>
+      <link>/2022/09/06/torrance-histogramas-y-frecuencias/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/torrance-histogramas-y-frecuencias/</guid>
+      <description>TORRANCE Histogrames Shows raw and oulaiers-cleaned datasets frequency distribution, for each variable
+Notas  Cleaning changes the distribution   </description>
+    </item>
+    
+    <item>
       <title>Torrance ggplots Boxplot con outlaiers</title>
       <link>/2022/01/01/torrance-ggplots-boxplot-con-outlaiers/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
