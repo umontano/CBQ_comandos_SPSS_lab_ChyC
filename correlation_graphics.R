@@ -19,6 +19,7 @@ xlab(variablex) +
 ylab(variabley)
 }
 
+#rows_dataset <- torrance
 #================================================================
 #================================================================
 #scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
@@ -28,7 +29,7 @@ scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
 library('psych')
 #option adjust='bonferroni'
-cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
+cor_test_mat <- round(corr.test(rows_dataset, columns_dataset, adjust='bonferroni')$p, 3)
 	#Extract rows and columns
 	rows <- rownames(cor_mat)
 	cols <- colnames(cor_mat)
@@ -107,11 +108,12 @@ torrance[, c('orig2_6')] <- list(NULL)
 
 torrance <- data.frame(lapply(torrance, as.numeric))
 torrance_raw <- torrance
-#torrance <- identify_and_make_na_outlaiers(torrance)
-#torrance <- data.frame(impute_any_dataset_mice(torrance))
+torrance <- identify_and_make_na_outlaiers(torrance)
+torrance <- data.frame(impute_any_dataset_mice(torrance))
 
 #==========================================
 #TORRANCE TEMPERAMENT FUNCTION
+analizee_dataset <- factors[, 1:3]
 #==========================================
 analysis_torrance_temperament <- function(analizee_dataset) {
 analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
@@ -144,18 +146,16 @@ return(graphics_list)
 #==========================================
 #scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
 scales <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq15dimensiones_imputado.csv')
-rownames(scales) <- scales[, 1]
+row.names(scales) <- scales[, 1]
 scales <- scales[, -1]
-scales  <- data.frame(lapply(scales, as.numeric))
 
 #==========================================
 #Load and impute factors dataset
 #==========================================
 #factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
 factors <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq3factores_imputado.csv')
-rownames(factors) <- factors[, 1]
+row.names(factors) <- factors[, 1]
 factors <- factors[, -1]
-factors <- data.frame(lapply(factors, as.numeric))
 
 
 #==========================================
