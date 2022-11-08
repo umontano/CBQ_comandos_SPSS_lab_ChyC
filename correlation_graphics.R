@@ -74,7 +74,7 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 		}
 		else
 		{
-			#Mesagge there are no significants
+			#Message no significants
 			lapply(1:4, function(x) print('=== NO SIGNIFICANT CORRELATIONS FOUND ==='));
             print('==== THESE ARE THE P-VALUES: ====')
 			print(cor_test_mat)
@@ -85,24 +85,33 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 
 
 
+#Outlaiers cleanup
+#==========================================
+#CBQ CMOMMANDOS SPSS
+#==========================================
+source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
+#Clean outlaiers and impute questionnaire data
+#con datos DE M F SERRANO (MFS)
+#cbq(mfs)
+
+#==========================================
 #BLOCK TOrrance
+#==========================================
 torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
 rownames(torrance) <- torrance$identificador
 torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
 torrance[, grep('^X|_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
 #Removed problematic
 torrance[, c('orig2_6')] <- list(NULL)
-#Ouliers cleanup
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
-torrance <- lapply(torrance, as.numeric)
+
+torrance <- data.frame(lapply(torrance, as.numeric))
 torrance_raw <- torrance
 torrance <- identify_and_make_na_outlaiers(torrance)
-torrance <- impute_any_dataset_mice(torrance)
+torrance <- data.frame(impute_any_dataset_mice(torrance))
 
-#function to merge with temp
-#analizee_dataset <- scales
-#analizee_dataset <- factors[, 1:3]
-
+#==========================================
+#TORRANCE TEMPERAMENT FUNCTION
+#==========================================
 analysis_torrance_temperament <- function(analizee_dataset) {
 analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
 
@@ -129,14 +138,18 @@ return(graphics_list)
 }
 
 
+#==========================================
 #Load and impute scales datasets
+#==========================================
 #scales <- read.csv('~/p/tmfs/imp30/xCBQ_15DIMENSIONES.csv')[, -1]
 scales <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq15dimensiones_imputado.csv')
 rownames(scales) <- scales[, 1]
 scales <- scales[, -1]
 scales  <- data.frame(lapply(scales, as.numeric))
 
+#==========================================
 #Load and impute factors dataset
+#==========================================
 #factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
 factors <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq3factores_imputado.csv')
 rownames(factors) <- factors[, 1]
@@ -144,12 +157,9 @@ factors <- factors[, -1]
 factors <- data.frame(lapply(factors, as.numeric))
 
 
-#CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
-source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/main/CBQ_comandosSPSS_lab_CHyC.R')
-#Clean outlaiers and impute questionnaire data
-#con datos DE M F SERRANO (MFS)
-#cbq(mfs)
-
+#==========================================
+#RAVEN BLOCK
+#==========================================
 var_raven  <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
 #xxxxbbbbxxxx
 #LOAD DATA
@@ -163,8 +173,6 @@ rownames(raven) <- raven$identificador
 rav_to_impute  <- raven[, var_raven]
 rav_to_impute  <- data.frame(lapply(rav_to_impute, as.numeric))
 raven_raw <- rav_to_impute
-
-
 
 rav_to_impute <- identify_and_make_na_outlaiers(rav_to_impute)
 rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
