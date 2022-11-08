@@ -27,7 +27,8 @@ scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 #Matrices for correlations and pvalues
 cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
 library('psych')
-cor_test_mat <- round(corr.test(rows_dataset, columns_dataset, adjust='bonferroni')$p, 3)
+#option adjust='bonferroni'
+cor_test_mat <- round(corr.test(rows_dataset, columns_dataset)$p, 3)
 	#Extract rows and columns
 	rows <- rownames(cor_mat)
 	cols <- colnames(cor_mat)
