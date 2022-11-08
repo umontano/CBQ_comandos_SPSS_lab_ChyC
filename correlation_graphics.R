@@ -110,8 +110,8 @@ mergedtorrance <- merge(analizee_dataset, torrance, by='numero')
 
 temperament_numeric <- mergedtorrance[, names(analizee_dataset)]
 torrance_numeric <- mergedtorrance[, names(torrance)]
-torrance_numeric[] <- lapply(torrance_numeric, as.numeric)
-temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
+torrance_numeric <- data.frame(lapply(torrance_numeric, as.numeric))
+temperament_numeric <- data.frame(lapply(temperament_numeric, as.numeric))
 mergednumeric <- data.frame(lapply(mergedtorrance, as.numeric))
 
 #SET UP FINAL PROCESSING
@@ -134,14 +134,14 @@ return(graphics_list)
 scales <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq15dimensiones_imputado.csv')
 rownames(scales) <- scales[, 1]
 scales <- scales[, -1]
-scales[]  <- lapply(scales, as.numeric)
+scales  <- data.frame(lapply(scales, as.numeric))
 
 #Load and impute factors dataset
 #factors <- read.csv('~/p/tmfs/imp30/xCBQ_3FACTORES.csv')[, -1]
 factors <- read.csv('https://raw.githubusercontent.com/umontano/kar/master/mfs/mfs22cbq3factores_imputado.csv')
 rownames(factors) <- factors[, 1]
 factors <- factors[, -1]
-factors[] <- lapply(factors, as.numeric)
+factors <- data.frame(lapply(factors, as.numeric))
 
 
 #CORRE EL SCRIPT CBQ CMOMMANDOS SPSS
@@ -161,7 +161,7 @@ rownames(raven) <- raven$identificador
 #CLEAN OUTLAIERS AND IMPUTE RAVEN DATA
 #==========================================
 rav_to_impute  <- raven[, var_raven]
-rav_to_impute[]  <- lapply(rav_to_impute, as.numeric)
+rav_to_impute  <- data.frame(lapply(rav_to_impute, as.numeric))
 raven_raw <- rav_to_impute
 
 
@@ -197,8 +197,8 @@ mergedraven$altos[mergedraven$puntaje < median(mergedraven$puntaje)] <- 0
 
 temperament_numeric <- mergedraven[, names(analizee_dataset)]
 raven_numeric <- mergedraven[, names(raven)]
-raven_numeric[] <- lapply(raven_numeric, as.numeric)
-temperament_numeric[] <- lapply(temperament_numeric, as.numeric)
+raven_numeric <- data.frame(lapply(raven_numeric, as.numeric))
+temperament_numeric <- data.frame(lapply(temperament_numeric, as.numeric))
 mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
 
 #SET UP FINAL PROCESSING
