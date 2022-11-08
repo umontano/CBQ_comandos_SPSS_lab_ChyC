@@ -106,8 +106,8 @@ torrance[, c('orig2_6')] <- list(NULL)
 
 torrance <- data.frame(lapply(torrance, as.numeric))
 torrance_raw <- torrance
-torrance <- identify_and_make_na_outlaiers(torrance)
-torrance <- data.frame(impute_any_dataset_mice(torrance))
+#torrance <- identify_and_make_na_outlaiers(torrance)
+#torrance <- data.frame(impute_any_dataset_mice(torrance))
 
 #==========================================
 #TORRANCE TEMPERAMENT FUNCTION
