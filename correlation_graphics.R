@@ -89,7 +89,7 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
 rownames(torrance) <- torrance$identificador
 torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
-torrance[, grep('_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
+torrance[, grep('^X|_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
 #Removed problematic
 torrance[, c('orig2_6')] <- list(NULL)
 #Ouliers cleanup
