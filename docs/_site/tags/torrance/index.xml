@@ -42,7 +42,8 @@
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/01/01/torrance-ggplots-boxplot-con-outlaiers/</guid>
-      <description>TORRANCE outlaiers Notas   In scatterplos there seem to be a few extreme values
+      <description>TORRANCE OUTLAIERS Shows raw and oulaiers-cleaned dataset for torrance test for each variable
+Notas   In scatterplos there seem to be a few extreme values
   Cleaning changes the correlations
   Valores cambian al quitar valores extremos (i.e., outlaiers)
   Con extremos: mejores predictores son actividad y sonrisa
