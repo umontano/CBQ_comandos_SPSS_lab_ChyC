@@ -24,9 +24,9 @@ ylab(variabley)
 #================================================================
 #================================================================
 #================================================================
-# Function to fisnd significant correlation in pairs of items 
+# Function to find significant correlation in pairs of items 
 #================================================================
-find_significant_correltions_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset)
+find_significant_correlations_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset)
 {
     #Matrices for correlations and pvalues
     cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
@@ -43,15 +43,15 @@ find_significant_correltions_from_rows_and_cols_datasets <- function(rows_datase
         #for(eachcol in cols) {
             #for(eachrow in rows) {
 			if(
-            !is.na(cor_test_mat[eachrow , eachcol]) &&
-            eachrow != eachcol &&
-            cor_test_mat[eachrow , eachcol] < 0.05
-            ) {
-				pairs_list[[ length(pairs_list) +1 ]] <<- c(eachrow, eachcol);
-				print(paste(eachrow, eachcol));
-				}
+                !is.na(cor_test_mat[eachrow , eachcol]) &&
+                eachrow != eachcol &&
+                cor_test_mat[eachrow , eachcol] < 0.05
+                ) {
+                    pairs_list[[ length(pairs_list) +1 ]] <<- c(eachrow, eachcol);
+                    print(paste(eachrow, eachcol));
+                    }
+                #}
             #}
-        #}
     #nested lapply ends here
     } ) )
 return(pairs_list)
@@ -60,8 +60,8 @@ return(pairs_list)
 #scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
 scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
 {
-#find significat pairs
-pairs_list <- find_significant_correltions_from_rows_and_cols_datasets(rows_dataset, columns_dataset)
+#find pairs
+pairs_list <- find_significant_correlations_from_rows_and_cols_datasets(rows_dataset, columns_dataset)
 		#Show results only in case there exists significant values
 		if(length(pairs_list) > 0)
 		{
