@@ -19,26 +19,29 @@ xlab(variablex) +
 ylab(variabley)
 }
 
+#================================================================
 #rows_dataset <- torrance
 #================================================================
 #================================================================
-#scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
-scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
+#================================================================
+# Function to fisnd significant correlation in pairs of items 
+#================================================================
+find_significant_correltions_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset)
 {
-#Matrices for correlations and pvalues
-cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
-library('psych')
-#option adjust='bonferroni'
-cor_test_mat <- round(corr.test(rows_dataset, columns_dataset, adjust='bonferroni')$p, 3)
+    #Matrices for correlations and pvalues
+    cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
+    library('psych')
+    #option adjust='bonferroni'
+    cor_test_mat <- round(corr.test(rows_dataset, columns_dataset, adjust='bonferroni')$p, 3)
 	#Extract rows and columns
-	rows <- rownames(cor_mat)
-	cols <- colnames(cor_mat)
+        rows <- rownames(cor_mat)
+        cols <- colnames(cor_mat)
 	#Initialize empty list
 	pairs_list <<- NULL
-#Implementation of search by currying nested mapping functions
-lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.05) llll[[length(llll)+1]] <<- c(y,x) 
-	#for(eachcol in cols) {
-		#for(eachrow in rows) {
+    #Implementation of search by currying nested mapping functions
+    lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.05) llll[[length(llll)+1]] <<- c(y,x) 
+        #for(eachcol in cols) {
+            #for(eachrow in rows) {
 			if(
             !is.na(cor_test_mat[eachrow , eachcol]) &&
             eachrow != eachcol &&
@@ -47,10 +50,18 @@ lapply(cols, function(eachcol) lapply(rows, function(eachrow){ #if(pmat[y,x]<0.0
 				pairs_list[[ length(pairs_list) +1 ]] <<- c(eachrow, eachcol);
 				print(paste(eachrow, eachcol));
 				}
-		#}
-	#}
-#nested lapply ends here
-} ) )
+            #}
+        #}
+    #nested lapply ends here
+    } ) )
+return(pairs_list)
+}
+
+#scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
+scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
+{
+#find significat pairs
+pairs_list <- find_significant_correltions_from_rows_and_cols_datasets(rows_dataset, columns_dataset)
 		#Show results only in case there exists significant values
 		if(length(pairs_list) > 0)
 		{
