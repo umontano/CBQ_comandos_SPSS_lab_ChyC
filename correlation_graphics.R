@@ -26,6 +26,7 @@ ylab(variabley)
 #================================================================
 # Function to find significant correlation in pairs of items 
 #================================================================
+
 find_significant_correlations_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset)
 {
     #Matrices for correlations and pvalues
@@ -108,6 +109,28 @@ source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/ma
 #cbq(mfs)
 
 #==========================================
+#Aggregated/Total variables Torrance
+#==========================================
+totals_torrance <- function()
+{
+torrance_csv_original <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
+
+torrance_totals <- torrance_csv_original %>%
+remove_rownames %>% 
+tibble::column_to_rownames(var='identificador') %>%
+mutate_if(is.numeric, ~replace_na(.,0)) %>%
+mutate(originalidad=orig1 + orig2_1 + orig2_2 + orig2_3 + orig2_4 + orig2_5 + orig2_6 + orig2_7 + orig2_8 + orig2_9 + orig2_10 + orig3) %>%
+mutate(fluidez=flui2 + flui3) %>%
+mutate(elaboracion=elab1 + elab2 + elab3) %>%
+mutate(flexibilidad=flex2 + flex3) %>%
+mutate(pdirecta=originalidad + fluidez + elaboracion + flexibilidad) %>%
+select(originalidad, fluidez, elaboracion, flexibilidad, pdirecta) %>%
+data.frame
+
+return(torrance_totals)
+}
+
+
 #BLOCK TOrrance
 #==========================================
 torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
@@ -124,7 +147,14 @@ torrance <- data.frame(impute_any_dataset_mice(torrance))
 
 #==========================================
 #TORRANCE TEMPERAMENT FUNCTION
-analizee_dataset <- factors[, 1:3]
+#==========================================
+
+add_id_column_numero <- function(analizee_dataset)
+{
+if(!exists('numero', where=analizee_dataset)) analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
+return(analizee_dataset)
+}
+
 #==========================================
 analysis_torrance_temperament <- function(analizee_dataset) {
 analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
