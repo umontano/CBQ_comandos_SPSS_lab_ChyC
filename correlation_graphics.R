@@ -131,19 +131,6 @@ return(torrance_totals)
 }
 
 
-#BLOCK TOrrance
-#==========================================
-torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
-rownames(torrance) <- torrance$identificador
-torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
-torrance[, grep('^X|_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
-#Removed problematic
-torrance[, c('orig2_6')] <- list(NULL)
-
-torrance <- data.frame(lapply(torrance, as.numeric))
-torrance_raw <- torrance
-torrance <- identify_and_make_na_outlaiers(torrance)
-torrance <- data.frame(impute_any_dataset_mice(torrance))
 
 #==========================================
 #TORRANCE TEMPERAMENT FUNCTION
@@ -182,6 +169,58 @@ return(graphics_list)
 }
 
 
+
+
+
+#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
+
+analysis_raven_temperament <- function(analizee_dataset) {
+raven$numero <- gsub('.*(\\d{4})\\s*$', '\\1', raven$identificador, perl=TRUE) 
+
+analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
+
+mergedraven <- merge(analizee_dataset, raven, by='numero')
+mergedraven$altos[mergedraven$puntaje >= median(mergedraven$puntaje)] <- 1
+mergedraven$altos[mergedraven$puntaje < median(mergedraven$puntaje)] <- 0
+
+temperament_numeric <- mergedraven[, names(analizee_dataset)]
+raven_numeric <- mergedraven[, names(raven)]
+raven_numeric <- data.frame(lapply(raven_numeric, as.numeric))
+temperament_numeric <- data.frame(lapply(temperament_numeric, as.numeric))
+mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
+
+#SET UP FINAL PROCESSING
+temperament_numeric[, 'numero'] <- NULL
+raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
+
+
+cor_mat <- cor(raven_numeric, temperament_numeric)
+library(psych)
+cor_test_mat <- corr.test(raven_numeric, temperament_numeric)$p    # Apply corr.test function
+
+library(ggcorrplot)
+return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
+}
+
+
+
+#==========================================
+#LOAD DATASETS
+#BLOCK TOrrance
+#==========================================
+load_datasets_cbq_raven_torrance <- function()
+{
+torrance <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
+rownames(torrance) <- torrance$identificador
+torrance$numero <- gsub('.*(\\d{4})\\s*$', '\\1', torrance$identificador, perl=TRUE) 
+torrance[, grep('^X|_|dibujo|titulo|observaciones|experimentadora|escuela|grupo|edad|sexo|identificador|Parte', names(torrance))] <- list(NULL)
+#Removed problematic
+torrance[, c('orig2_6')] <- list(NULL)
+torrance <- data.frame(lapply(torrance, as.numeric))
+torrance_raw <- torrance
+torrance <- identify_and_make_na_outlaiers(torrance)
+torrance <- data.frame(impute_any_dataset_mice(torrance))
+
 #==========================================
 #Load and impute scales datasets
 #==========================================
@@ -218,9 +257,6 @@ raven_raw <- rav_to_impute
 
 rav_to_impute <- identify_and_make_na_outlaiers(rav_to_impute)
 rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
-#==========================================
-#SHOW BOXPLOT
-#==========================================
 
 #==========================================
 #CONTINUE PROCESSIN NOT PRINTING
@@ -228,40 +264,6 @@ rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
 raven[, var_raven] <- list(NULL)
 raven  <- cbind(raven, rav_to_impute)
 
-
-
-
-
-
-
-#raw_information <- read.csv('https://raw.githubusercontent.com/Laboratorio-CHyC/Temperament/main/ferserrano2022_cbq.csv', header=TRUE)
-
-analysis_raven_temperament <- function(analizee_dataset) {
-raven$numero <- gsub('.*(\\d{4})\\s*$', '\\1', raven$identificador, perl=TRUE) 
-
-analizee_dataset$numero <- gsub('.*(\\d{4})\\s*$', '\\1', row.names(analizee_dataset), perl=TRUE) 
-
-mergedraven <- merge(analizee_dataset, raven, by='numero')
-mergedraven$altos[mergedraven$puntaje >= median(mergedraven$puntaje)] <- 1
-mergedraven$altos[mergedraven$puntaje < median(mergedraven$puntaje)] <- 0
-
-temperament_numeric <- mergedraven[, names(analizee_dataset)]
-raven_numeric <- mergedraven[, names(raven)]
-raven_numeric <- data.frame(lapply(raven_numeric, as.numeric))
-temperament_numeric <- data.frame(lapply(temperament_numeric, as.numeric))
-mergednumeric <- data.frame(lapply(mergedraven, as.numeric))
-
-#SET UP FINAL PROCESSING
-temperament_numeric[, 'numero'] <- NULL
-raven_numeric <- raven_numeric[ , c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')]
-
-
-cor_mat <- cor(raven_numeric, temperament_numeric)
-library(psych)
-cor_test_mat <- corr.test(raven_numeric, temperament_numeric)$p    # Apply corr.test function
-
-library(ggcorrplot)
-return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(cor_test_mat), insig='blank'))
 }
 
 
