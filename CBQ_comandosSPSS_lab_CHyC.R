@@ -23,9 +23,10 @@ row.names(calif) <<- raw_information$identificador
 
 
 #IMPUTE MISSING VALUES IN ANY DATASET
-impute_any_dataset_mice <- function(imputee_dataset, maximum_iterations=50, number_of_imputations=5) {
+impute_any_dataset_mice <- function(imputee_dataset, maximum_iterations=50, number_of_imputations=5, method_string='sample', ridge_decimal=0.001)
+{
 library(mice)
-temp_data <- mice(imputee_dataset, m=number_of_imputations, maxit=maximum_iterations, seed=500)
+temp_data <- mice(imputee_dataset, m=number_of_imputations, maxit=maximum_iterations, seed=500, method=method_string, ridge=ridge_decimal)
 return(complete(temp_data, 1))
 }
 
