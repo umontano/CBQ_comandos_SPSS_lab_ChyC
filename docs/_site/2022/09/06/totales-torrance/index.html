@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -59,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">3 min read</span>
     
 
     <h1 class="article-title">Totales Torrance</h1>
@@ -70,14 +75,84 @@
 
     <div class="article-content">
       <h1 id="totals-in-torrance">TOTALS IN TORRANCE</h1>
-<h2 id="paired-correlations">PAIRED CORRELATIONS</h2>
+<h1 id="correlation-matrix">Correlation Matrix</h1>
+<p>Only significant, p &lt; 0.05, correlations</p>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            originalidad    fluidez elaboracion flexibilidad   pdirecta</span></span>
+<span><span class='c'>#&gt; CE           -0.2623397 -0.2114765  -0.2319202           NA -0.2873956</span></span>
+<span><span class='c'>#&gt; AN                   NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; SU                   NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; act                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; fru                  NA         NA   0.2693739           NA         NA</span></span>
+<span><span class='c'>#&gt; app                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; attfoc       -0.2202071 -0.2059690          NA           NA -0.2374962</span></span>
+<span><span class='c'>#&gt; attshi               NA         NA          NA   -0.2523904 -0.2385132</span></span>
+<span><span class='c'>#&gt; attcon       -0.2652232 -0.2509161  -0.2209377           NA -0.2997329</span></span>
+<span><span class='c'>#&gt; dis                  NA         NA   0.3292718   -0.2147124         NA</span></span>
+<span><span class='c'>#&gt; sth          -0.2253470         NA  -0.2167063           NA -0.2630455</span></span>
+<span><span class='c'>#&gt; fea           0.2843426  0.2379703          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; hip                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; imp                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; inh          -0.2490485 -0.2347775  -0.3101759           NA -0.2929208</span></span>
+<span><span class='c'>#&gt; lip                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; per                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; sad                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; shy          -0.2044280         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; smi                  NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; escuela       0.3342620  0.2719163          NA    0.2172832  0.2636171</span></span>
+<span><span class='c'>#&gt; grupo         0.2981489  0.2840822          NA    0.2106177  0.2501755</span></span>
+<span><span class='c'>#&gt; edad          0.2398332  0.2768105          NA           NA  0.2742450</span></span>
+<span><span class='c'>#&gt; sexo          0.2038745         NA  -0.2721537    0.2068457         NA</span></span>
+<span><span class='c'>#&gt; percentil            NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; rango                NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_a            NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_ab           NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_b            NA         NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; puntaje              NA         NA          NA           NA         NA</span></span></code></pre>
+</div>
+<h1 id="p-values-matrix">P-values Matrix</h1>
+<p>all p-values</p>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            originalidad   fluidez elaboracion flexibilidad   pdirecta</span></span>
+<span><span class='c'>#&gt; CE           0.14024174 0.2374370  0.19404659    0.5588499 0.10486208</span></span>
+<span><span class='c'>#&gt; AN           0.90855218 0.7506332  0.64969506    0.3040696 0.90936029</span></span>
+<span><span class='c'>#&gt; SU           0.94597847 0.8061145  0.99163098    0.8775246 0.94809117</span></span>
+<span><span class='c'>#&gt; act          0.56812432 0.5362185  0.93891705    0.6475969 0.67030427</span></span>
+<span><span class='c'>#&gt; fru          0.94303382 0.8667372  0.12953242    0.5371781 0.72551254</span></span>
+<span><span class='c'>#&gt; app          0.77256714 0.4941664  0.32398944    0.6195353 0.54102700</span></span>
+<span><span class='c'>#&gt; attfoc       0.21817285 0.2501597  0.32705095    0.7445662 0.18324148</span></span>
+<span><span class='c'>#&gt; attshi       0.27170948 0.2887880  0.32930705    0.1564746 0.18131742</span></span>
+<span><span class='c'>#&gt; attcon       0.13577603 0.1589907  0.21661066    0.3225803 0.09014049</span></span>
+<span><span class='c'>#&gt; dis          0.48747935 0.4197331  0.06132441    0.2301681 0.80020136</span></span>
+<span><span class='c'>#&gt; sth          0.20734530 0.2776616  0.22576483    0.3019608 0.13913886</span></span>
+<span><span class='c'>#&gt; fea          0.10877039 0.1823427  0.27003303    0.5586462 0.27742043</span></span>
+<span><span class='c'>#&gt; hip          0.62046622 0.7024978  0.71795286    0.9383506 0.76205578</span></span>
+<span><span class='c'>#&gt; imp          0.31767724 0.5350153  0.74117194    0.8803897 0.47001845</span></span>
+<span><span class='c'>#&gt; inh          0.16221949 0.1884556  0.07896210    0.9170908 0.09805979</span></span>
+<span><span class='c'>#&gt; lip          0.51567605 0.9136887  0.40470841    0.4989734 0.53395516</span></span>
+<span><span class='c'>#&gt; per          0.79594545 0.5169419  0.40668155    0.7513902 0.59915005</span></span>
+<span><span class='c'>#&gt; sad          0.88911838 0.9343466  0.85954818    0.9145747 0.88425320</span></span>
+<span><span class='c'>#&gt; shy          0.25379905 0.3388283  0.64443933    0.8163397 0.39849174</span></span>
+<span><span class='c'>#&gt; smi          0.61945105 0.9541833  0.39419113    0.8774753 0.55070113</span></span>
+<span><span class='c'>#&gt; escuela      0.05726995 0.1258142  0.46464954    0.2245016 0.13825037</span></span>
+<span><span class='c'>#&gt; grupo        0.09193680 0.1091088  0.61926380    0.2393916 0.16026552</span></span>
+<span><span class='c'>#&gt; edad         0.17884153 0.1188800  0.26480649    0.5033775 0.12247838</span></span>
+<span><span class='c'>#&gt; sexo         0.25511462 0.4463889  0.12547115    0.2481047 0.52674670</span></span>
+<span><span class='c'>#&gt; percentil    0.37016983 0.5475964  0.85667458    0.9101919 0.43623223</span></span>
+<span><span class='c'>#&gt; rango        0.30965190 0.5285169  0.93528771    0.7710594 0.39027347</span></span>
+<span><span class='c'>#&gt; columna_a    0.37549121 0.6811387  0.98117051    0.3452631 0.43075443</span></span>
+<span><span class='c'>#&gt; columna_ab   0.55235020 0.7159446  0.62306018    0.5339645 0.59133820</span></span>
+<span><span class='c'>#&gt; columna_b    0.75425133 0.5735450  0.44331929    0.9660331 0.61821490</span></span>
+<span><span class='c'>#&gt; puntaje      0.39389110 0.5303713  0.52052847    0.9641663 0.39135964</span></span></code></pre>
+</div>
+<h2 id="graphics-paired-correlations">GRAPHICS PAIRED CORRELATIONS</h2>
 <h3 id="grouped-by-totals-in-torrance">Grouped by Totals in Torrance</h3>
 <div class="highlight">
-<p><img src="figs/torrance_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/totals_torrance_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>
 <h3 id="grouped-by-temperament-raven-and-other-variables">Grouped by Temperament, Raven and Other Variables</h3>
 <div class="highlight">
-<p><img src="figs/nontor_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/other_variables_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>
 
     </div>
@@ -101,6 +176,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 

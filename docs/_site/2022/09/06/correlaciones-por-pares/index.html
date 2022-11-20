@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -59,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">5 min read</span>
     
 
     <h1 class="article-title">Correlaciones por Pares</h1>
@@ -77,6 +82,136 @@
 <h2 id="grouped-by-temperament-raven-and-other-variables">Grouped by Temperament, Raven and Other Variables</h2>
 <div class="highlight">
 <p><img src="figs/nontor_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
+</div>
+<h1 id="correlation-matrix">Correlation Matrix</h1>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            orig1       elab1      orig2      flui2      elab2      flex2</span></span>
+<span><span class='c'>#&gt; CE            NA 0.048429202 0.40050026 0.60702460 0.38508135 0.84046308</span></span>
+<span><span class='c'>#&gt; AN            NA 0.271613533 0.54860454 0.75701005 0.40000492 0.80196876</span></span>
+<span><span class='c'>#&gt; SU            NA 0.337593888 0.07248363 0.02249742 0.86490853 0.17210113</span></span>
+<span><span class='c'>#&gt; act           NA 0.306321959 0.12479909 0.15343998 0.83510919 0.94768821</span></span>
+<span><span class='c'>#&gt; fru           NA 0.413266984 0.68841655 0.54379053 0.14108578 0.65619386</span></span>
+<span><span class='c'>#&gt; app           NA 0.994075403 0.19152605 0.03679491 0.73596659 0.14006839</span></span>
+<span><span class='c'>#&gt; attfoc        NA 0.630294693 0.60895048 0.79285568 0.73321085 0.73812586</span></span>
+<span><span class='c'>#&gt; attshi        NA 0.003385515 0.23166572 0.11647367 0.56578965 0.22489352</span></span>
+<span><span class='c'>#&gt; attcon        NA 0.058291714 0.30092357 0.29603831 0.57579929 0.36290690</span></span>
+<span><span class='c'>#&gt; dis           NA 0.411367106 0.36217603 0.46978220 0.05203187 0.96134398</span></span>
+<span><span class='c'>#&gt; sth           NA 0.323644160 0.12925173 0.07892281 0.44396298 0.76448800</span></span>
+<span><span class='c'>#&gt; fea           NA 0.039158180 0.68686931 0.94018709 0.46607729 0.55982018</span></span>
+<span><span class='c'>#&gt; hip           NA 0.155905524 0.07951774 0.17371785 0.85283098 0.40986799</span></span>
+<span><span class='c'>#&gt; imp           NA 0.217233423 0.17494475 0.12325237 0.77470473 0.75898155</span></span>
+<span><span class='c'>#&gt; inh           NA 0.232874180 0.39167080 0.54721125 0.14643113 0.85477794</span></span>
+<span><span class='c'>#&gt; lip           NA 0.839533739 0.67739040 0.96962741 0.41579689 0.54570867</span></span>
+<span><span class='c'>#&gt; per           NA 0.564804644 0.36628355 0.06791328 0.70216634 0.23619353</span></span>
+<span><span class='c'>#&gt; sad           NA 0.919715692 0.20581391 0.29448897 0.89658419 0.49094321</span></span>
+<span><span class='c'>#&gt; shy           NA 0.179449276 0.78691623 0.45208589 0.34518483 0.12621222</span></span>
+<span><span class='c'>#&gt; smi           NA 0.132133325 0.62026238 0.99099420 0.08344986 0.77200729</span></span>
+<span><span class='c'>#&gt; escuela       NA 0.178349185 0.88347013 0.63885320 0.33516126 0.78182750</span></span>
+<span><span class='c'>#&gt; grupo         NA 0.038732668 0.55728772 0.44023044 0.21069945 0.92971638</span></span>
+<span><span class='c'>#&gt; edad          NA 0.835019211 0.68492840 0.59497504 0.13414768 0.85493166</span></span>
+<span><span class='c'>#&gt; sexo          NA 0.165770645 0.14336290 0.34829488 0.07131034 0.07720023</span></span>
+<span><span class='c'>#&gt; percentil     NA 0.466851119 0.34203613 0.16266109 0.36784646 0.84414281</span></span>
+<span><span class='c'>#&gt; rango         NA 0.579441803 0.23954922 0.15403184 0.40388678 0.63899268</span></span>
+<span><span class='c'>#&gt; columna_a     NA 0.415248494 0.11784062 0.10125517 0.72288837 0.18369481</span></span>
+<span><span class='c'>#&gt; columna_ab    NA 0.400944734 0.44367726 0.48419530 0.10903801 0.87556575</span></span>
+<span><span class='c'>#&gt; columna_b     NA 0.641550355 0.97328571 0.72555997 0.82705562 0.64977471</span></span>
+<span><span class='c'>#&gt; puntaje       NA 0.525206411 0.27417713 0.22245358 0.22535564 0.54192527</span></span>
+<span><span class='c'>#&gt;                 orig3     flui3      elab3     flex3</span></span>
+<span><span class='c'>#&gt; CE         0.17302705 0.1225536 0.52233121 0.4591893</span></span>
+<span><span class='c'>#&gt; AN         0.49296547 0.6337643 0.18334953 0.3505472</span></span>
+<span><span class='c'>#&gt; SU         0.92144613 0.5515607 0.66788767 0.3954747</span></span>
+<span><span class='c'>#&gt; act        0.69270673 0.7564842 0.72456501 0.5177286</span></span>
+<span><span class='c'>#&gt; fru        0.99606282 0.9596272 0.02227746 0.7471596</span></span>
+<span><span class='c'>#&gt; app        0.33022695 0.3456013 0.44025997 0.9215413</span></span>
+<span><span class='c'>#&gt; attfoc     0.07054985 0.2336345 0.70168885 0.6772719</span></span>
+<span><span class='c'>#&gt; attshi     0.24017888 0.1620745 0.87592565 0.1975753</span></span>
+<span><span class='c'>#&gt; attcon     0.04761170 0.1005084 0.71868478 0.3165394</span></span>
+<span><span class='c'>#&gt; dis        0.35227834 0.6403167 0.01492814 0.2358629</span></span>
+<span><span class='c'>#&gt; sth        0.13911352 0.1868955 0.45988647 0.1668411</span></span>
+<span><span class='c'>#&gt; fea        0.10268227 0.1786334 0.23058040 0.2864963</span></span>
+<span><span class='c'>#&gt; hip        0.72811086 0.4813129 0.81108738 0.6628628</span></span>
+<span><span class='c'>#&gt; imp        0.63573693 0.8203725 0.79324943 0.9381510</span></span>
+<span><span class='c'>#&gt; inh        0.34931492 0.1180668 0.07101536 0.8026334</span></span>
+<span><span class='c'>#&gt; lip        0.84167404 0.7774568 0.49011697 0.6509855</span></span>
+<span><span class='c'>#&gt; per        0.47262187 0.8450693 0.37939627 0.8794740</span></span>
+<span><span class='c'>#&gt; sad        0.49888850 0.5757836 0.71848313 0.7631338</span></span>
+<span><span class='c'>#&gt; shy        0.10593576 0.2315294 0.68219197 0.2550656</span></span>
+<span><span class='c'>#&gt; smi        0.40938715 0.9424463 0.82613677 0.9390234</span></span>
+<span><span class='c'>#&gt; escuela    0.10682878 0.3130760 0.35922559 0.2209900</span></span>
+<span><span class='c'>#&gt; grupo      0.03726370 0.3046541 0.54152140 0.1935974</span></span>
+<span><span class='c'>#&gt; edad       0.94499465 0.1343969 0.24740297 0.4040723</span></span>
+<span><span class='c'>#&gt; sexo       0.65489056 0.3796209 0.15611096 0.6753914</span></span>
+<span><span class='c'>#&gt; percentil  0.87643144 0.4846394 0.16245114 0.9923595</span></span>
+<span><span class='c'>#&gt; rango      0.82840860 0.4424734 0.24950324 0.9565257</span></span>
+<span><span class='c'>#&gt; columna_a  0.74995407 0.5010882 0.40956580 0.7040131</span></span>
+<span><span class='c'>#&gt; columna_ab 0.64468488 0.9835957 0.25398732 0.4286248</span></span>
+<span><span class='c'>#&gt; columna_b  0.57461370 0.6547052 0.64542870 0.8276008</span></span>
+<span><span class='c'>#&gt; puntaje    0.86511985 0.6599027 0.21972738 0.6670841</span></span></code></pre>
+</div>
+<h1 id="p-values-matrix">P-values Matrix</h1>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            orig1      elab1      orig2      flui2      elab2      flex2</span></span>
+<span><span class='c'>#&gt; CE            NA         NA         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; AN            NA  0.2073328         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; SU            NA         NA  0.3326402         NA         NA  0.2560024</span></span>
+<span><span class='c'>#&gt; act           NA         NA  0.2865020  0.2672095         NA         NA</span></span>
+<span><span class='c'>#&gt; fru           NA         NA         NA         NA  0.2751791         NA</span></span>
+<span><span class='c'>#&gt; app           NA         NA  0.2452156         NA         NA  0.2758576</span></span>
+<span><span class='c'>#&gt; attfoc        NA         NA         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; attshi        NA         NA -0.2251221 -0.2927152         NA -0.2283361</span></span>
+<span><span class='c'>#&gt; attcon        NA -0.3495612         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; dis           NA         NA         NA         NA  0.3580710         NA</span></span>
+<span><span class='c'>#&gt; sth           NA         NA -0.2833037 -0.3258035         NA         NA</span></span>
+<span><span class='c'>#&gt; fea           NA         NA         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; hip           NA -0.2656748  0.3251938  0.2550729         NA         NA</span></span>
+<span><span class='c'>#&gt; imp           NA -0.2320512  0.2543716  0.2876326         NA         NA</span></span>
+<span><span class='c'>#&gt; inh           NA -0.2245553         NA         NA -0.2716713         NA</span></span>
+<span><span class='c'>#&gt; lip           NA         NA         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; per           NA         NA         NA  0.3377836         NA  0.2230084</span></span>
+<span><span class='c'>#&gt; sad           NA         NA  0.2377590         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; shy           NA  0.2518261         NA         NA         NA  0.2854780</span></span>
+<span><span class='c'>#&gt; smi           NA -0.2812768         NA         NA -0.3212498         NA</span></span>
+<span><span class='c'>#&gt; escuela       NA  0.2524436         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; grupo         NA         NA         NA         NA -0.2352912         NA</span></span>
+<span><span class='c'>#&gt; edad          NA         NA         NA         NA  0.2798791         NA</span></span>
+<span><span class='c'>#&gt; sexo          NA -0.2597026  0.2736732         NA -0.3339361  0.3275890</span></span>
+<span><span class='c'>#&gt; percentil     NA         NA         NA  0.2615571         NA         NA</span></span>
+<span><span class='c'>#&gt; rango         NA         NA -0.2214592 -0.2668395         NA         NA</span></span>
+<span><span class='c'>#&gt; columna_a     NA         NA  0.2916730  0.3049843         NA  0.2494677</span></span>
+<span><span class='c'>#&gt; columna_ab    NA         NA         NA         NA  0.2985496         NA</span></span>
+<span><span class='c'>#&gt; columna_b     NA         NA         NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; puntaje       NA         NA  0.2062515  0.2295100  0.2281147         NA</span></span>
+<span><span class='c'>#&gt;                 orig3      flui3      elab3      flex3</span></span>
+<span><span class='c'>#&gt; CE         -0.2554693 -0.2881468         NA         NA</span></span>
+<span><span class='c'>#&gt; AN                 NA         NA  0.2496581         NA</span></span>
+<span><span class='c'>#&gt; SU                 NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; act                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; fru                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; app                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; attfoc     -0.3347849 -0.2241997         NA         NA</span></span>
+<span><span class='c'>#&gt; attshi     -0.2211701 -0.2619098         NA -0.2420132</span></span>
+<span><span class='c'>#&gt; attcon             NA -0.3056210         NA         NA</span></span>
+<span><span class='c'>#&gt; dis                NA         NA         NA -0.2231618</span></span>
+<span><span class='c'>#&gt; sth        -0.2764977 -0.2477149         NA -0.2590700</span></span>
+<span><span class='c'>#&gt; fea         0.3037773  0.2522838 -0.2256329  0.2011441</span></span>
+<span><span class='c'>#&gt; hip                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; imp                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; inh                NA -0.2915014 -0.3342645         NA</span></span>
+<span><span class='c'>#&gt; lip                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; per                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; sad                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; shy        -0.3010719 -0.2251862         NA -0.2144775</span></span>
+<span><span class='c'>#&gt; smi                NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; escuela     0.3003402         NA         NA  0.2302184</span></span>
+<span><span class='c'>#&gt; grupo              NA         NA         NA  0.2441113</span></span>
+<span><span class='c'>#&gt; edad               NA  0.2797072  0.2178891         NA</span></span>
+<span><span class='c'>#&gt; sexo               NA         NA -0.2655477         NA</span></span>
+<span><span class='c'>#&gt; percentil          NA         NA  0.2616832         NA</span></span>
+<span><span class='c'>#&gt; rango              NA         NA -0.2169472         NA</span></span>
+<span><span class='c'>#&gt; columna_a          NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; columna_ab         NA         NA  0.2149535         NA</span></span>
+<span><span class='c'>#&gt; columna_b          NA         NA         NA         NA</span></span>
+<span><span class='c'>#&gt; puntaje            NA         NA  0.2308321         NA</span></span></code></pre>
 </div>
 
     </div>
@@ -100,6 +235,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
