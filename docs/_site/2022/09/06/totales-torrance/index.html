@@ -76,42 +76,47 @@
     <div class="article-content">
       <h1 id="totals-in-torrance">TOTALS IN TORRANCE</h1>
 <h1 id="correlation-matrix">Correlation Matrix</h1>
-<p>Only significant, p &lt; 0.05, correlations</p>
+<h2 id="notas">Notas</h2>
+<ul>
+<li>
+<p>Only Marginaly significant, p &lt; 0.1, correlations</p>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            originalidad    fluidez elaboracion flexibilidad   pdirecta</span></span>
-<span><span class='c'>#&gt; CE           -0.2623397 -0.2114765  -0.2319202           NA -0.2873956</span></span>
-<span><span class='c'>#&gt; AN                   NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; SU                   NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; act                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; fru                  NA         NA   0.2693739           NA         NA</span></span>
-<span><span class='c'>#&gt; app                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; attfoc       -0.2202071 -0.2059690          NA           NA -0.2374962</span></span>
-<span><span class='c'>#&gt; attshi               NA         NA          NA   -0.2523904 -0.2385132</span></span>
-<span><span class='c'>#&gt; attcon       -0.2652232 -0.2509161  -0.2209377           NA -0.2997329</span></span>
-<span><span class='c'>#&gt; dis                  NA         NA   0.3292718   -0.2147124         NA</span></span>
-<span><span class='c'>#&gt; sth          -0.2253470         NA  -0.2167063           NA -0.2630455</span></span>
-<span><span class='c'>#&gt; fea           0.2843426  0.2379703          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; hip                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; imp                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; inh          -0.2490485 -0.2347775  -0.3101759           NA -0.2929208</span></span>
-<span><span class='c'>#&gt; lip                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; per                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; sad                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; shy          -0.2044280         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; smi                  NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; escuela       0.3342620  0.2719163          NA    0.2172832  0.2636171</span></span>
-<span><span class='c'>#&gt; grupo         0.2981489  0.2840822          NA    0.2106177  0.2501755</span></span>
-<span><span class='c'>#&gt; edad          0.2398332  0.2768105          NA           NA  0.2742450</span></span>
-<span><span class='c'>#&gt; sexo          0.2038745         NA  -0.2721537    0.2068457         NA</span></span>
-<span><span class='c'>#&gt; percentil            NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; rango                NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; columna_a            NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; columna_ab           NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; columna_b            NA         NA          NA           NA         NA</span></span>
-<span><span class='c'>#&gt; puntaje              NA         NA          NA           NA         NA</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            originalidad fluidez elaboracion flexibilidad   pdirecta</span></span>
+<span><span class='c'>#&gt; CE                   NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; AN                   NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; SU                   NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; act                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; fru                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; app                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; attfoc               NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; attshi               NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; attcon               NA      NA          NA           NA -0.2997329</span></span>
+<span><span class='c'>#&gt; dis                  NA      NA   0.3292718           NA         NA</span></span>
+<span><span class='c'>#&gt; sth                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; fea                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; hip                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; imp                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; inh                  NA      NA  -0.3101759           NA -0.2929208</span></span>
+<span><span class='c'>#&gt; lip                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; per                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; sad                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; shy                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; smi                  NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; escuela       0.3342620      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; grupo         0.2981489      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; edad                 NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; sexo                 NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; percentil            NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; rango                NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_a            NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_ab           NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; columna_b            NA      NA          NA           NA         NA</span></span>
+<span><span class='c'>#&gt; puntaje              NA      NA          NA           NA         NA</span></span></code></pre>
 </div>
+</li>
+</ul>
 <h1 id="p-values-matrix">P-values Matrix</h1>
-<p>all p-values</p>
+<p>All p-values</p>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            originalidad   fluidez elaboracion flexibilidad   pdirecta</span></span>
 <span><span class='c'>#&gt; CE           0.14024174 0.2374370  0.19404659    0.5588499 0.10486208</span></span>
