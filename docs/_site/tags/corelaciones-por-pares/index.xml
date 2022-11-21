@@ -13,7 +13,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/correlaciones-por-pares/</guid>
-      <description>PAIRED CORRELATIONS Correlation Matrix #&amp;gt; orig1 elab1 orig2 flui2 elab2 flex2 orig3 flui3 #&amp;gt; CE NA NA NA NA NA NA NA NA #&amp;gt; AN NA NA NA NA NA NA NA NA #&amp;gt; SU NA NA NA 0.4133396 NA NA NA NA #&amp;gt; act NA NA NA NA NA NA NA NA #&amp;gt; fru NA NA NA NA NA NA NA NA #&amp;gt; app NA NA NA 0.3828280 NA NA NA NA #&amp;gt; attfoc NA NA NA NA NA NA NA NA #&amp;gt; attshi NA NA NA NA NA NA NA NA #&amp;gt; attcon NA NA NA NA NA NA -0.</description>
+      <description>SCATTER PLOTS #&amp;gt; [1] &#34;flui2 SU&#34; #&amp;gt; [1] &#34;elab3 fru&#34; #&amp;gt; [1] &#34;flui2 app&#34; #&amp;gt; [1] &#34;orig3 attcon&#34; #&amp;gt; [1] &#34;elab3 dis&#34; #&amp;gt; [1] &#34;elab1 grupo&#34; #&amp;gt; [1] &#34;orig3 grupo&#34; #&amp;gt; CE AN SU act fru app attfoc attshi attcon dis #&amp;gt; orig1 NA NA NA NA NA NA NA NA NA NA #&amp;gt; elab1 NA NA NA NA NA NA NA NA NA NA #&amp;gt; orig2 NA NA NA NA NA NA NA NA NA NA #&amp;gt; flui2 NA NA 0.</description>
     </item>
     
     <item>

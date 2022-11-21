@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">5 min read</span>
+    <span class="article-duration">7 min read</span>
     
 
     <h1 class="article-title">Correlaciones por Pares</h1>
@@ -74,7 +74,51 @@
     
 
     <div class="article-content">
-      <h1 id="paired-correlations">PAIRED CORRELATIONS</h1>
+      <h1 id="scatter-plots">SCATTER PLOTS</h1>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "flui2 SU"</span></span>
+<span><span class='c'>#&gt; [1] "elab3 fru"</span></span>
+<span><span class='c'>#&gt; [1] "flui2 app"</span></span>
+<span><span class='c'>#&gt; [1] "orig3 attcon"</span></span>
+<span><span class='c'>#&gt; [1] "elab3 dis"</span></span>
+<span><span class='c'>#&gt; [1] "elab1 grupo"</span></span>
+<span><span class='c'>#&gt; [1] "orig3 grupo"</span></span>
+<span><span class='c'>#&gt;       CE AN        SU act       fru      app attfoc attshi     attcon       dis</span></span>
+<span><span class='c'>#&gt; orig1 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; elab1 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; orig2 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; flui2 NA NA 0.4133396  NA        NA 0.382828     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; elab2 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; flex2 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; orig3 NA NA        NA  NA        NA       NA     NA     NA -0.3645813        NA</span></span>
+<span><span class='c'>#&gt; flui3 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt; elab3 NA NA        NA  NA 0.4158596       NA     NA     NA         NA 0.4401565</span></span>
+<span><span class='c'>#&gt; flex3 NA NA        NA  NA        NA       NA     NA     NA         NA        NA</span></span>
+<span><span class='c'>#&gt;       sth fea hip imp inh lip per sad shy smi escuela     grupo edad sexo</span></span>
+<span><span class='c'>#&gt; orig1  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; elab1  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA 0.3792686   NA   NA</span></span>
+<span><span class='c'>#&gt; orig2  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; flui2  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; elab2  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; flex2  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; orig3  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA 0.3819533   NA   NA</span></span>
+<span><span class='c'>#&gt; flui3  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; elab3  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt; flex3  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA        NA   NA   NA</span></span>
+<span><span class='c'>#&gt;       percentil rango columna_a columna_ab columna_b puntaje</span></span>
+<span><span class='c'>#&gt; orig1        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; elab1        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; orig2        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; flui2        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; elab2        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; flex2        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; orig3        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; flui3        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; elab3        NA    NA        NA         NA        NA      NA</span></span>
+<span><span class='c'>#&gt; flex3        NA    NA        NA         NA        NA      NA</span></span></code></pre>
+<p><img src="figs/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-2-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-2-3.png" width="700px" style="display: block; margin: auto;" /></p>
+</div>
+<h1 id="paired-correlations">PAIRED CORRELATIONS</h1>
 <h1 id="correlation-matrix">Correlation Matrix</h1>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt;            orig1     elab1 orig2     flui2 elab2 flex2      orig3 flui3</span></span>
