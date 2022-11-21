@@ -108,28 +108,6 @@ source('https://raw.githubusercontent.com/umontano/CBQ_comandos_SPSS_lab_ChyC/ma
 #con datos DE M F SERRANO (MFS)
 #cbq(mfs)
 
-#==========================================
-#Aggregated/Total variables Torrance
-#==========================================
-totals_torrance <- function()
-{
-torrance_csv_original <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
-
-torrance_totals <- torrance_csv_original %>%
-remove_rownames %>% 
-tibble::column_to_rownames(var='identificador') %>%
-mutate_if(is.numeric, ~replace_na(.,0)) %>%
-mutate(originalidad=orig1 + orig2_1 + orig2_2 + orig2_3 + orig2_4 + orig2_5 + orig2_6 + orig2_7 + orig2_8 + orig2_9 + orig2_10 + orig3) %>%
-mutate(fluidez=flui2 + flui3) %>%
-mutate(elaboracion=elab1 + elab2 + elab3) %>%
-mutate(flexibilidad=flex2 + flex3) %>%
-mutate(pdirecta=originalidad + fluidez + elaboracion + flexibilidad) %>%
-select(originalidad, fluidez, elaboracion, flexibilidad, pdirecta) %>%
-data.frame
-
-return(torrance_totals)
-}
-
 
 
 #==========================================
@@ -205,6 +183,28 @@ return(ggcorrplot(t(cor_mat), ggtheme = ggplot2::theme_dark, lab=TRUE, p.mat=t(c
 
 
 #==========================================
+#Aggregated/Total variables Torrance
+#==========================================
+totals_torrance <- function()
+{
+torrance_csv_original <- read.csv('https://github.com/Laboratorio-CHyC/Temperament/raw/main/torrance1_2022.csv')
+
+torrance_totals <- torrance_csv_original %>%
+remove_rownames %>% 
+tibble::column_to_rownames(var='identificador') %>%
+mutate_if(is.numeric, ~replace_na(.,0)) %>%
+mutate(originalidad=orig1 + orig2_1 + orig2_2 + orig2_3 + orig2_4 + orig2_5 + orig2_6 + orig2_7 + orig2_8 + orig2_9 + orig2_10 + orig3) %>%
+mutate(fluidez=flui2 + flui3) %>%
+mutate(elaboracion=elab1 + elab2 + elab3) %>%
+mutate(flexibilidad=flex2 + flex3) %>%
+mutate(pdirecta=originalidad + fluidez + elaboracion + flexibilidad) %>%
+select(originalidad, fluidez, elaboracion, flexibilidad, pdirecta) %>%
+data.frame
+
+return(torrance_totals)
+}
+
+#==========================================
 #LOAD DATASETS
 #BLOCK TOrrance
 #==========================================
@@ -263,6 +263,30 @@ rav_to_impute <- impute_any_dataset_mice(rav_to_impute)
 #==========================================
 raven[, var_raven] <- list(NULL)
 raven  <- cbind(raven, rav_to_impute)
+
+
+#CLEAN OUTLAIERS IN CBQ39PARTICIPANTS AND TORRANCE TOTALS
+
+
+
+iiii <- identify_and_make_na_outlaiers(scales)
+i1 <- impute_any_dataset_mice(iiii)
+scales <- i1
+rownames(scales) <- cbqcsv$identificador
+ attach(scales)
+ factors$CE <- rowMeans(data.frame(attcon, lip,inh, per, attfoc, attshi) , na.rm=TRUE )
+ factors$AN <- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
+ factors$SU <- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
+ detach(scales)
+ attach(factors)
+ cem  <- median(CE)
+ anm  <- median(AN)
+ factors$perfil[CE >= cem & AN <  anm] <- 'easy'
+ factors$perfil[CE >= cem & AN >= anm] <- 'intense'
+ factors$perfil[CE <  cem & AN <  anm] <- 'disengaged'
+ factors$perfil[CE <  cem & AN >= anm] <- 'risky'
+ detach(factors)
+ factors$perfil  <- as.factor(factors$perfil)
 
 }
 
