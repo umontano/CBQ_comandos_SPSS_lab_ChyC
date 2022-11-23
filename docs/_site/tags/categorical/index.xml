@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>categorical on testing_labchyc_site</title>
+    <link>/tags/categorical/</link>
+    <description>Recent content in categorical on testing_labchyc_site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/categorical/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ANOVAS Variables Categoricas</title>
+      <link>/2022/09/06/anovas-variables-categoricas/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/anovas-variables-categoricas/</guid>
+      <description>Results from Categorical Variables Analysis used as predictors and Torrance as responses #&amp;gt; $originalidad #&amp;gt; $originalidad$grupo #&amp;gt; as.factor(.x)2 as.factor(.x)4  #&amp;gt; 0.03039469 0.03787579  #&amp;gt;  #&amp;gt; $originalidad$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.02026583  #&amp;gt;  #&amp;gt;  #&amp;gt; $fluidez #&amp;gt; $fluidez$grupo #&amp;gt; as.factor(.x)4  #&amp;gt; 0.03174777  #&amp;gt;  #&amp;gt; $fluidez$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.02982713  #&amp;gt;  #&amp;gt;  #&amp;gt; $pdirecta #&amp;gt; $pdirecta$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -37,6 +37,15 @@
     </item>
     
     <item>
+      <title>ANOVAS Variables Categoricas</title>
+      <link>/2022/09/06/anovas-variables-categoricas/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/anovas-variables-categoricas/</guid>
+      <description>Results from Categorical Variables Analysis used as predictors and Torrance as responses #&amp;gt; $originalidad #&amp;gt; $originalidad$grupo #&amp;gt; as.factor(.x)2 as.factor(.x)4  #&amp;gt; 0.03039469 0.03787579  #&amp;gt;  #&amp;gt; $originalidad$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.02026583  #&amp;gt;  #&amp;gt;  #&amp;gt; $fluidez #&amp;gt; $fluidez$grupo #&amp;gt; as.factor(.x)4  #&amp;gt; 0.03174777  #&amp;gt;  #&amp;gt; $fluidez$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.02982713  #&amp;gt;  #&amp;gt;  #&amp;gt; $pdirecta #&amp;gt; $pdirecta$edad #&amp;gt; as.factor(.x)8  #&amp;gt; 0.</description>
+    </item>
+    
+    <item>
       <title>Correlaciones por Pares</title>
       <link>/2022/09/06/correlaciones-por-pares/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
