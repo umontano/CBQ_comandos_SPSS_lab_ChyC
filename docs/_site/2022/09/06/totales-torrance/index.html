@@ -75,34 +75,41 @@
 
     <div class="article-content">
       <h1 id="totals-in-torrance">TOTALS IN TORRANCE</h1>
+<h2 id="analyses-by-percentile">ANALYSES BY PERCENTILE</h2>
+<h2 id="notes">Notes:</h2>
+<ul>
+<li>Check &ldquo;elaboracion&rdquo; variable</li>
+<li>Three children above 30</li>
+</ul>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "perc_creatividad CE"</span></span>
-<span><span class='c'>#&gt; [1] "perc_elaboracion act"</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "perc_elaboracion CE"</span></span>
+<span><span class='c'>#&gt; [1] "perc_creatividad CE"</span></span>
 <span><span class='c'>#&gt; [1] "perc_elaboracion dis"</span></span>
-<span><span class='c'>#&gt;                           CE AN SU        act fru app attfoc attshi attcon</span></span>
-<span><span class='c'>#&gt; perc_originalidad         NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
-<span><span class='c'>#&gt; perc_elaboracion          NA NA NA -0.3996674  NA  NA     NA     NA     NA</span></span>
-<span><span class='c'>#&gt; perc_fluidez              NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
-<span><span class='c'>#&gt; perc_flexibilidad         NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
-<span><span class='c'>#&gt; perc_creatividad  -0.3478637 NA NA         NA  NA  NA     NA     NA     NA</span></span>
-<span><span class='c'>#&gt;                         dis sth fea hip imp inh lip per sad shy smi escuela</span></span>
-<span><span class='c'>#&gt; perc_originalidad        NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
-<span><span class='c'>#&gt; perc_elaboracion  0.4405644  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
-<span><span class='c'>#&gt; perc_fluidez             NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
-<span><span class='c'>#&gt; perc_flexibilidad        NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
-<span><span class='c'>#&gt; perc_creatividad         NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
-<span><span class='c'>#&gt;                   grupo edad sexo percentil rango columna_a columna_ab</span></span>
-<span><span class='c'>#&gt; perc_originalidad    NA   NA   NA        NA    NA        NA         NA</span></span>
-<span><span class='c'>#&gt; perc_elaboracion     NA   NA   NA        NA    NA        NA         NA</span></span>
-<span><span class='c'>#&gt; perc_fluidez         NA   NA   NA        NA    NA        NA         NA</span></span>
-<span><span class='c'>#&gt; perc_flexibilidad    NA   NA   NA        NA    NA        NA         NA</span></span>
-<span><span class='c'>#&gt; perc_creatividad     NA   NA   NA        NA    NA        NA         NA</span></span>
-<span><span class='c'>#&gt;                   columna_b puntaje</span></span>
-<span><span class='c'>#&gt; perc_originalidad        NA      NA</span></span>
-<span><span class='c'>#&gt; perc_elaboracion         NA      NA</span></span>
-<span><span class='c'>#&gt; perc_fluidez             NA      NA</span></span>
-<span><span class='c'>#&gt; perc_flexibilidad        NA      NA</span></span>
-<span><span class='c'>#&gt; perc_creatividad         NA      NA</span></span></code></pre>
+<span><span class='c'>#&gt; [1] "perc_elaboracion inh"</span></span>
+<span><span class='c'>#&gt;                           CE AN SU act fru app attfoc attshi attcon       dis</span></span>
+<span><span class='c'>#&gt; perc_originalidad         NA NA NA  NA  NA  NA     NA     NA     NA        NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion  -0.3977748 NA NA  NA  NA  NA     NA     NA     NA 0.5816309</span></span>
+<span><span class='c'>#&gt; perc_fluidez              NA NA NA  NA  NA  NA     NA     NA     NA        NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad         NA NA NA  NA  NA  NA     NA     NA     NA        NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad  -0.3478637 NA NA  NA  NA  NA     NA     NA     NA        NA</span></span>
+<span><span class='c'>#&gt;                   sth fea hip imp        inh lip per sad shy smi escuela grupo</span></span>
+<span><span class='c'>#&gt; perc_originalidad  NA  NA  NA  NA         NA  NA  NA  NA  NA  NA      NA    NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion   NA  NA  NA  NA -0.3877422  NA  NA  NA  NA  NA      NA    NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez       NA  NA  NA  NA         NA  NA  NA  NA  NA  NA      NA    NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad  NA  NA  NA  NA         NA  NA  NA  NA  NA  NA      NA    NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad   NA  NA  NA  NA         NA  NA  NA  NA  NA  NA      NA    NA</span></span>
+<span><span class='c'>#&gt;                   edad sexo percentil rango columna_a columna_ab columna_b</span></span>
+<span><span class='c'>#&gt; perc_originalidad   NA   NA        NA    NA        NA         NA        NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion    NA   NA        NA    NA        NA         NA        NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez        NA   NA        NA    NA        NA         NA        NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad   NA   NA        NA    NA        NA         NA        NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad    NA   NA        NA    NA        NA         NA        NA</span></span>
+<span><span class='c'>#&gt;                   puntaje</span></span>
+<span><span class='c'>#&gt; perc_originalidad      NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion       NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez           NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad      NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad       NA</span></span></code></pre>
 <p><img src="figs/percentil_torrance_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/percentil_torrance_paired_correlations_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/percentil_torrance_paired_correlations_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>
 <h3 id="grouped-by-temperament-raven-and-other-variables">Grouped by Temperament, Raven and Other Variables</h3>
