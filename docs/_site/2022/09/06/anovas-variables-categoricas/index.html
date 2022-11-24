@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">2 min read</span>
     
 
     <h1 class="article-title">ANOVAS Variables Categoricas</h1>
@@ -74,7 +74,57 @@
     
 
     <div class="article-content">
-      <h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
+      <div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $attcon</span></span>
+<span><span class='c'>#&gt; $attcon$three_groups</span></span>
+<span><span class='c'>#&gt; as.factor(.x)below40 </span></span>
+<span><span class='c'>#&gt;           0.04079459 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $inh</span></span>
+<span><span class='c'>#&gt; $inh$three_groups</span></span>
+<span><span class='c'>#&gt; as.factor(.x)mid </span></span>
+<span><span class='c'>#&gt;       0.02160658</span></span><span><span class='c'>#&gt; $CE</span></span>
+<span><span class='c'>#&gt; $CE$three_groups</span></span>
+<span><span class='c'>#&gt; as.factor(.x)below40 </span></span>
+<span><span class='c'>#&gt;           0.04419433</span></span><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Call:</span></span>
+<span><span class='c'>#&gt; lm(formula = CE ~ three_groups, data = tttt)</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Residuals:</span></span>
+<span><span class='c'>#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class='c'>#&gt; -0.5340 -0.2114 -0.1041  0.2393  0.6960 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Coefficients:</span></span>
+<span><span class='c'>#&gt;                     Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class='c'>#&gt; (Intercept)          4.65582    0.08591  54.194   &lt;2e-16 ***</span></span>
+<span><span class='c'>#&gt; three_groupsbelow40  0.34506    0.16451   2.098   0.0442 *  </span></span>
+<span><span class='c'>#&gt; three_groupsmid      0.14012    0.13123   1.068   0.2939    </span></span>
+<span><span class='c'>#&gt; ---</span></span>
+<span><span class='c'>#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Residual standard error: 0.3436 on 31 degrees of freedom</span></span>
+<span><span class='c'>#&gt; Multiple R-squared:  0.1277,  Adjusted R-squared:  0.07144 </span></span>
+<span><span class='c'>#&gt; F-statistic: 2.269 on 2 and 31 DF,  p-value: 0.1203</span></span><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Call:</span></span>
+<span><span class='c'>#&gt; lm(formula = CE ~ two_groups, data = tttt)</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Residuals:</span></span>
+<span><span class='c'>#&gt;      Min       1Q   Median       3Q      Max </span></span>
+<span><span class='c'>#&gt; -0.49411 -0.24486 -0.09368  0.25951  0.91458 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Coefficients:</span></span>
+<span><span class='c'>#&gt;                   Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class='c'>#&gt; (Intercept)        4.74853    0.06676  71.133   &lt;2e-16 ***</span></span>
+<span><span class='c'>#&gt; two_groupsbelow50  0.11990    0.17408   0.689    0.496    </span></span>
+<span><span class='c'>#&gt; ---</span></span>
+<span><span class='c'>#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; Residual standard error: 0.3595 on 32 degrees of freedom</span></span>
+<span><span class='c'>#&gt; Multiple R-squared:  0.01461,  Adjusted R-squared:  -0.01619 </span></span>
+<span><span class='c'>#&gt; F-statistic: 0.4744 on 1 and 32 DF,  p-value: 0.4959</span></span></code></pre>
+</div>
+<h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
 <ul>
 <li>Categorical Variables are used as predictors</li>
 <li>Torrance Numeric Variables are used as responses</li>
@@ -126,8 +176,8 @@
 <span><span class='c'>#&gt;     0.02982713 </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pdirecta</span></span>
-<span><span class='c'>#&gt; $pdirecta$edad</span></span>
+<span><span class='c'>#&gt; $creatividad</span></span>
+<span><span class='c'>#&gt; $creatividad$edad</span></span>
 <span><span class='c'>#&gt; as.factor(.x)8 </span></span>
 <span><span class='c'>#&gt;      0.0246007</span></span></code></pre>
 </div>

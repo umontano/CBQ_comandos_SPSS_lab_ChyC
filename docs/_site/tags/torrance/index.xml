@@ -42,7 +42,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/anovas-variables-categoricas/</guid>
-      <description>Results from Analysis of Differences Among Groups  Categorical Variables are used as predictors Torrance Numeric Variables are used as responses  Partial Variables #&amp;gt; $elab1 #&amp;gt; $elab1$grupo #&amp;gt; as.factor(.x)4  #&amp;gt; 0.04169034  #&amp;gt;  #&amp;gt;  #&amp;gt; $orig2 #&amp;gt; $orig2$rango #&amp;gt; as.factor(.x)4  #&amp;gt; 0.02103123  #&amp;gt;  #&amp;gt;  #&amp;gt; $flui2 #&amp;gt; $flui2$rango #&amp;gt; as.factor(.x)4  #&amp;gt; 0.009731103  #&amp;gt;  #&amp;gt;  #&amp;gt; $orig3 #&amp;gt; $orig3$grupo #&amp;gt; as.</description>
+      <description>#&amp;gt; $attcon #&amp;gt; $attcon$three_groups #&amp;gt; as.factor(.x)below40  #&amp;gt; 0.04079459  #&amp;gt;  #&amp;gt;  #&amp;gt; $inh #&amp;gt; $inh$three_groups #&amp;gt; as.factor(.x)mid  #&amp;gt; 0.02160658#&amp;gt; $CE #&amp;gt; $CE$three_groups #&amp;gt; as.factor(.x)below40  #&amp;gt; 0.04419433#&amp;gt;  #&amp;gt; Call: #&amp;gt; lm(formula = CE ~ three_groups, data = tttt) #&amp;gt;  #&amp;gt; Residuals: #&amp;gt; Min 1Q Median 3Q Max  #&amp;gt; -0.5340 -0.2114 -0.1041 0.2393 0.6960  #&amp;gt;  #&amp;gt; Coefficients: #&amp;gt; Estimate Std. Error t value Pr(&amp;gt;|t|)  #&amp;gt; (Intercept) 4.</description>
     </item>
     
     <item>
