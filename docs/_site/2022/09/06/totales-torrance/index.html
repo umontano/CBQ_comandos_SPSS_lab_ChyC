@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">3 min read</span>
     
 
     <h1 class="article-title">Totales Torrance</h1>
@@ -75,17 +75,55 @@
 
     <div class="article-content">
       <h1 id="totals-in-torrance">TOTALS IN TORRANCE</h1>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "perc_creatividad CE"</span></span>
+<span><span class='c'>#&gt; [1] "perc_elaboracion act"</span></span>
+<span><span class='c'>#&gt; [1] "perc_elaboracion dis"</span></span>
+<span><span class='c'>#&gt;                           CE AN SU        act fru app attfoc attshi attcon</span></span>
+<span><span class='c'>#&gt; perc_originalidad         NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion          NA NA NA -0.3996674  NA  NA     NA     NA     NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez              NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad         NA NA NA         NA  NA  NA     NA     NA     NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad  -0.3478637 NA NA         NA  NA  NA     NA     NA     NA</span></span>
+<span><span class='c'>#&gt;                         dis sth fea hip imp inh lip per sad shy smi escuela</span></span>
+<span><span class='c'>#&gt; perc_originalidad        NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion  0.4405644  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez             NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad        NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad         NA  NA  NA  NA  NA  NA  NA  NA  NA  NA  NA      NA</span></span>
+<span><span class='c'>#&gt;                   grupo edad sexo percentil rango columna_a columna_ab</span></span>
+<span><span class='c'>#&gt; perc_originalidad    NA   NA   NA        NA    NA        NA         NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion     NA   NA   NA        NA    NA        NA         NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez         NA   NA   NA        NA    NA        NA         NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad    NA   NA   NA        NA    NA        NA         NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad     NA   NA   NA        NA    NA        NA         NA</span></span>
+<span><span class='c'>#&gt;                   columna_b puntaje</span></span>
+<span><span class='c'>#&gt; perc_originalidad        NA      NA</span></span>
+<span><span class='c'>#&gt; perc_elaboracion         NA      NA</span></span>
+<span><span class='c'>#&gt; perc_fluidez             NA      NA</span></span>
+<span><span class='c'>#&gt; perc_flexibilidad        NA      NA</span></span>
+<span><span class='c'>#&gt; perc_creatividad         NA      NA</span></span></code></pre>
+<p><img src="figs/percentil_torrance_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/percentil_torrance_paired_correlations_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/percentil_torrance_paired_correlations_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
+</div>
+<h3 id="grouped-by-temperament-raven-and-other-variables">Grouped by Temperament, Raven and Other Variables</h3>
+<div class="highlight">
+<p><img src="figs/percentil_other_variables_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
+</div>
+<div class="highlight">
+</div>
+<div class="highlight">
+</div>
 <h1 id="correlation-matrix">Correlation Matrix</h1>
 <h2 id="notas">Notas</h2>
 <ul>
 <li>
 <p>Only Marginaly significant, p &lt; 0.1, correlations # P-values Matrix All p-values</p>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "pdirecta CE"</span></span>
-<span><span class='c'>#&gt; [1] "pdirecta attcon"</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "creatividad CE"</span></span>
+<span><span class='c'>#&gt; [1] "creatividad attcon"</span></span>
 <span><span class='c'>#&gt; [1] "elaboracion dis"</span></span>
 <span><span class='c'>#&gt; [1] "elaboracion inh"</span></span>
-<span><span class='c'>#&gt; [1] "pdirecta inh"</span></span>
+<span><span class='c'>#&gt; [1] "creatividad inh"</span></span>
 <span><span class='c'>#&gt; [1] "originalidad escuela"</span></span>
 <span><span class='c'>#&gt; [1] "originalidad grupo"</span></span>
 <span><span class='c'>#&gt;                      CE AN SU act fru app attfoc attshi     attcon       dis</span></span>
@@ -93,19 +131,19 @@
 <span><span class='c'>#&gt; fluidez              NA NA NA  NA  NA  NA     NA     NA         NA        NA</span></span>
 <span><span class='c'>#&gt; elaboracion          NA NA NA  NA  NA  NA     NA     NA         NA 0.3292718</span></span>
 <span><span class='c'>#&gt; flexibilidad         NA NA NA  NA  NA  NA     NA     NA         NA        NA</span></span>
-<span><span class='c'>#&gt; pdirecta     -0.3234595 NA NA  NA  NA  NA     NA     NA -0.2997329        NA</span></span>
+<span><span class='c'>#&gt; creatividad  -0.3234595 NA NA  NA  NA  NA     NA     NA -0.2997329        NA</span></span>
 <span><span class='c'>#&gt;              sth fea hip imp        inh lip per sad shy smi  escuela     grupo</span></span>
 <span><span class='c'>#&gt; originalidad  NA  NA  NA  NA         NA  NA  NA  NA  NA  NA 0.334262 0.2981489</span></span>
 <span><span class='c'>#&gt; fluidez       NA  NA  NA  NA         NA  NA  NA  NA  NA  NA       NA        NA</span></span>
 <span><span class='c'>#&gt; elaboracion   NA  NA  NA  NA -0.3101759  NA  NA  NA  NA  NA       NA        NA</span></span>
 <span><span class='c'>#&gt; flexibilidad  NA  NA  NA  NA         NA  NA  NA  NA  NA  NA       NA        NA</span></span>
-<span><span class='c'>#&gt; pdirecta      NA  NA  NA  NA -0.2929208  NA  NA  NA  NA  NA       NA        NA</span></span>
+<span><span class='c'>#&gt; creatividad   NA  NA  NA  NA -0.2929208  NA  NA  NA  NA  NA       NA        NA</span></span>
 <span><span class='c'>#&gt;              edad sexo percentil rango columna_a columna_ab columna_b puntaje</span></span>
 <span><span class='c'>#&gt; originalidad   NA   NA        NA    NA        NA         NA        NA      NA</span></span>
 <span><span class='c'>#&gt; fluidez        NA   NA        NA    NA        NA         NA        NA      NA</span></span>
 <span><span class='c'>#&gt; elaboracion    NA   NA        NA    NA        NA         NA        NA      NA</span></span>
 <span><span class='c'>#&gt; flexibilidad   NA   NA        NA    NA        NA         NA        NA      NA</span></span>
-<span><span class='c'>#&gt; pdirecta       NA   NA        NA    NA        NA         NA        NA      NA</span></span></code></pre>
+<span><span class='c'>#&gt; creatividad    NA   NA        NA    NA        NA         NA        NA      NA</span></span></code></pre>
 <p><img src="figs/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-2-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-2-3.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>
 </li>
@@ -119,7 +157,7 @@
 <div class="highlight">
 <p><img src="figs/totals_torrance_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>
-<h3 id="grouped-by-temperament-raven-and-other-variables">Grouped by Temperament, Raven and Other Variables</h3>
+<h3 id="grouped-by-temperament-raven-and-other-variables-1">Grouped by Temperament, Raven and Other Variables</h3>
 <div class="highlight">
 <p><img src="figs/other_variables_paired_correlations_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 </div>

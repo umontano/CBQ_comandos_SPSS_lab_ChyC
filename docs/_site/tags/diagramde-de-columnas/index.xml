@@ -16,15 +16,5 @@
       <description>SCATTER PLOTS Correlation Matrix P-values Matrix #&amp;gt; [1] &#34;flui2 SU&#34; #&amp;gt; [1] &#34;elab3 fru&#34; #&amp;gt; [1] &#34;flui2 app&#34; #&amp;gt; [1] &#34;orig3 attcon&#34; #&amp;gt; [1] &#34;elab3 dis&#34; #&amp;gt; [1] &#34;elab1 grupo&#34; #&amp;gt; [1] &#34;orig3 grupo&#34; #&amp;gt; CE AN SU act fru app attfoc attshi attcon dis #&amp;gt; orig1 NA NA NA NA NA NA NA NA NA NA #&amp;gt; elab1 NA NA NA NA NA NA NA NA NA NA #&amp;gt; orig2 NA NA NA NA NA NA NA NA NA NA #&amp;gt; flui2 NA NA 0.</description>
     </item>
     
-    <item>
-      <title>Totales Torrance</title>
-      <link>/2022/09/06/totales-torrance/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/09/06/totales-torrance/</guid>
-      <description>TOTALS IN TORRANCE Correlation Matrix Notas   Only Marginaly significant, p &amp;lt; 0.1, correlations # P-values Matrix All p-values
-#&amp;gt; [1] &#34;pdirecta CE&#34; #&amp;gt; [1] &#34;pdirecta attcon&#34; #&amp;gt; [1] &#34;elaboracion dis&#34; #&amp;gt; [1] &#34;elaboracion inh&#34; #&amp;gt; [1] &#34;pdirecta inh&#34; #&amp;gt; [1] &#34;originalidad escuela&#34; #&amp;gt; [1] &#34;originalidad grupo&#34; #&amp;gt; CE AN SU act fru app attfoc attshi attcon dis #&amp;gt; originalidad NA NA NA NA NA NA NA NA NA NA #&amp;gt; fluidez NA NA NA NA NA NA NA NA NA NA #&amp;gt; elaboracion NA NA NA NA NA NA NA NA NA 0.</description>
-    </item>
-    
   </channel>
 </rss>
