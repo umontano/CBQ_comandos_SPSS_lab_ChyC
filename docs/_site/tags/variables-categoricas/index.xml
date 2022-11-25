@@ -13,7 +13,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/anovas-variables-categoricas/</guid>
-      <description>#&amp;gt; $attcon #&amp;gt; $attcon$three_groups #&amp;gt; as.factor(.x)below40  #&amp;gt; 0.04079459  #&amp;gt;  #&amp;gt;  #&amp;gt; $inh #&amp;gt; $inh$three_groups #&amp;gt; as.factor(.x)mid  #&amp;gt; 0.02160658#&amp;gt; $CE #&amp;gt; $CE$three_groups #&amp;gt; as.factor(.x)below40  #&amp;gt; 0.04419433#&amp;gt;  #&amp;gt; Call: #&amp;gt; lm(formula = CE ~ three_groups, data = tttt) #&amp;gt;  #&amp;gt; Residuals: #&amp;gt; Min 1Q Median 3Q Max  #&amp;gt; -0.5340 -0.2114 -0.1041 0.2393 0.6960  #&amp;gt;  #&amp;gt; Coefficients: #&amp;gt; Estimate Std. Error t value Pr(&amp;gt;|t|)  #&amp;gt; (Intercept) 4.</description>
+      <description>Significant differences among groups Divided by percentiles  Two groups above and below 70 percentile Three groups with 55 and 80 percentiles  Results with subdimensions #&amp;gt; $attcon #&amp;gt; $attcon$two_groups #&amp;gt; [1] 0.02067217 #&amp;gt;  #&amp;gt; $attcon$three_groups #&amp;gt; as.factor(.x)below55  #&amp;gt; 0.04079459  #&amp;gt;  #&amp;gt;  #&amp;gt; $inh #&amp;gt; $inh$two_groups #&amp;gt; [1] 0.009151812 #&amp;gt;  #&amp;gt; $inh$three_groups #&amp;gt; as.factor(.x)mid55_80  #&amp;gt; 0.02160658  Results with the three broad dimensions #&amp;gt; $CE #&amp;gt; $CE$two_groups #&amp;gt; [1] 0.</description>
     </item>
     
   </channel>
