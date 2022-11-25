@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/variables-categoricas/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ANOVAS Variables Categoricas</title>
+      <title>ANOVAs Variables Categoricas</title>
       <link>/2022/09/06/anovas-variables-categoricas/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/anovas-variables-categoricas/</guid>
-      <description>Significant differences among groups Divided by percentiles  Two groups above and below 70 percentile Three groups with 55 and 80 percentiles  Results with subdimensions #&amp;gt; $attcon #&amp;gt; $attcon$two_groups #&amp;gt; [1] 0.02067217 #&amp;gt;  #&amp;gt; $attcon$three_groups #&amp;gt; as.factor(.x)below55  #&amp;gt; 0.04079459  #&amp;gt;  #&amp;gt;  #&amp;gt; $inh #&amp;gt; $inh$two_groups #&amp;gt; [1] 0.009151812 #&amp;gt;  #&amp;gt; $inh$three_groups #&amp;gt; as.factor(.x)mid55_80  #&amp;gt; 0.02160658  Results with the three broad dimensions #&amp;gt; $CE #&amp;gt; $CE$two_groups #&amp;gt; [1] 0.</description>
+      <description>Significant differences among groups Divided by percentiles  Two groups above and below 70 percentile Three groups with 55 and 80 percentiles  Results with Raven #&amp;gt; $columna_ab #&amp;gt; $columna_ab$three_groups #&amp;gt; .xmid55_80  #&amp;gt; 0.03065915#&amp;gt; $columna_ab #&amp;gt; $columna_ab$three_groups #&amp;gt; .xmid55_80  #&amp;gt; 0.03065915  Results with subdimensions #&amp;gt; $attcon #&amp;gt; $attcon$two_groups #&amp;gt; [1] 0.02067217 #&amp;gt;  #&amp;gt; $attcon$three_groups #&amp;gt; .xbelow55  #&amp;gt; 0.04079459  #&amp;gt;  #&amp;gt;  #&amp;gt; $inh #&amp;gt; $inh$two_groups #&amp;gt; [1] 0.</description>
     </item>
     
   </channel>

@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.80.0" />
 
 
-<title>ANOVAS Variables Categoricas - Analisis de Escuela, Grupo, Sexo, Dx etc.  - testing_labchyc_site</title>
-<meta property="og:title" content="ANOVAS Variables Categoricas - testing_labchyc_site">
+<title>ANOVAs Variables Categoricas - Analisis por Grupos de Percentiles y por Escuela, Grupo, Sexo, Dx etc.  - testing_labchyc_site</title>
+<meta property="og:title" content="ANOVAs Variables Categoricas - testing_labchyc_site">
 
 
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -64,10 +64,10 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">2 min read</span>
     
 
-    <h1 class="article-title">ANOVAS Variables Categoricas</h1>
+    <h1 class="article-title">ANOVAs Variables Categoricas</h1>
 
     
     <span class="article-date">2022-09-06</span>
@@ -80,6 +80,16 @@
 <li>Two groups above and below 70 percentile</li>
 <li>Three groups with 55 and 80 percentiles</li>
 </ul>
+<h3 id="results-with-raven">Results with Raven</h3>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $columna_ab</span></span>
+<span><span class='c'>#&gt; $columna_ab$three_groups</span></span>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.03065915</span></span><span><span class='c'>#&gt; $columna_ab</span></span>
+<span><span class='c'>#&gt; $columna_ab$three_groups</span></span>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.03065915</span></span></code></pre>
+</div>
 <h3 id="results-with-subdimensions">Results with subdimensions</h3>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $attcon</span></span>
@@ -87,8 +97,8 @@
 <span><span class='c'>#&gt; [1] 0.02067217</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $attcon$three_groups</span></span>
-<span><span class='c'>#&gt; as.factor(.x)below55 </span></span>
-<span><span class='c'>#&gt;           0.04079459 </span></span>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04079459 </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $inh</span></span>
@@ -96,8 +106,23 @@
 <span><span class='c'>#&gt; [1] 0.009151812</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $inh$three_groups</span></span>
-<span><span class='c'>#&gt; as.factor(.x)mid55_80 </span></span>
-<span><span class='c'>#&gt;            0.02160658</span></span></code></pre>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.02160658</span></span><span><span class='c'>#&gt; $attcon</span></span>
+<span><span class='c'>#&gt; $attcon$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.02067217</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $attcon$three_groups</span></span>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04079459 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $inh</span></span>
+<span><span class='c'>#&gt; $inh$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.009151812</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $inh$three_groups</span></span>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.02160658</span></span></code></pre>
 </div>
 <h3 id="results-with-the-three-broad-dimensions">Results with the three broad dimensions</h3>
 <div class="highlight">
@@ -106,22 +131,21 @@
 <span><span class='c'>#&gt; [1] 0.0034092</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $CE$three_groups</span></span>
-<span><span class='c'>#&gt; as.factor(.x)below55 </span></span>
-<span><span class='c'>#&gt;           0.04419433</span></span></code></pre>
-</div>
-<h3 id="results-with-raven">Results with Raven</h3>
-<div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $columna_ab</span></span>
-<span><span class='c'>#&gt; $columna_ab$three_groups</span></span>
-<span><span class='c'>#&gt; as.factor(.x)mid55_80 </span></span>
-<span><span class='c'>#&gt;            0.03065915</span></span></code></pre>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04419433</span></span><span><span class='c'>#&gt; $CE</span></span>
+<span><span class='c'>#&gt; $CE$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.0034092</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $CE$three_groups</span></span>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04419433</span></span></code></pre>
 </div>
 <h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
 <ul>
 <li>Categorical Variables are used as predictors</li>
 <li>Torrance Numeric Variables are used as responses</li>
 </ul>
-<h2 id="partial-variables">Partial Variables</h2>
+<h2 id="torrance-partials">Torrance Partials</h2>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $elab1</span></span>
 <span><span class='c'>#&gt; $elab1$grupo</span></span>
@@ -146,7 +170,7 @@
 <span><span class='c'>#&gt; as.factor(.x)4 </span></span>
 <span><span class='c'>#&gt;     0.01866077</span></span></code></pre>
 </div>
-<h2 id="totals-aggregated-variables">Totals (Aggregated Variables)</h2>
+<h2 id="torrance-totals-aggregated-variables">Torrance Totals (Aggregated Variables)</h2>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $originalidad</span></span>
 <span><span class='c'>#&gt; $originalidad$grupo</span></span>
