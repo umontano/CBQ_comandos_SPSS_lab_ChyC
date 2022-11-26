@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">2 min read</span>
     
 
     <h1 class="article-title">ANOVAs Variables Categoricas</h1>
@@ -121,6 +121,50 @@
 <li>Categorical Variables are used as predictors</li>
 <li>Torrance Numeric Variables are used as responses</li>
 </ul>
+<h2 id="torrance-percentiles">Torrance Percentiles</h2>
+<ul>
+<li>Only marginally significant, p &lt; 0.10, differences</li>
+</ul>
+<div class="highlight">
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $perc_originalidad</span></span>
+<span><span class='c'>#&gt; $perc_originalidad$grupo</span></span>
+<span><span class='c'>#&gt; as.factor(.x)2 as.factor(.x)4 </span></span>
+<span><span class='c'>#&gt;     0.05038873     0.07281470 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_originalidad$edad</span></span>
+<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
+<span><span class='c'>#&gt;     0.09000819 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_originalidad$rango</span></span>
+<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
+<span><span class='c'>#&gt;     0.06297054 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_fluidez</span></span>
+<span><span class='c'>#&gt; $perc_fluidez$grupo</span></span>
+<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
+<span><span class='c'>#&gt;     0.08970761 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_fluidez$edad</span></span>
+<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
+<span><span class='c'>#&gt;     0.06581025 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_fluidez$rango</span></span>
+<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
+<span><span class='c'>#&gt;      0.0980242 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_flexibilidad</span></span>
+<span><span class='c'>#&gt; $perc_flexibilidad$edad</span></span>
+<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
+<span><span class='c'>#&gt;     0.08573308 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $perc_creatividad</span></span>
+<span><span class='c'>#&gt; $perc_creatividad$rango</span></span>
+<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
+<span><span class='c'>#&gt;       0.050447</span></span></code></pre>
+</div>
 <h2 id="torrance-partials">Torrance Partials</h2>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $elab1</span></span>
