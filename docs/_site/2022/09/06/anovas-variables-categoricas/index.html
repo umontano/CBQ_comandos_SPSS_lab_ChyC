@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">1 min read</span>
     
 
     <h1 class="article-title">ANOVAs Variables Categoricas</h1>
@@ -90,7 +90,7 @@
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [1] "columna_ab three_groups"</span></span>
 <span><span class='c'>#&gt; [[1]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/raven_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-subdimensions">Percentile-groups Differences in Subdimensions</h3>
@@ -118,16 +118,16 @@
 <span><span class='c'>#&gt; [1] "inh two_groups"</span></span>
 <span><span class='c'>#&gt; [1] "inh three_groups"</span></span>
 <span><span class='c'>#&gt; [[1]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-3-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/subdims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [[2]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-3-2.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/subdims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [[3]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-3-3.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/subdims_percgroups_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [[4]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-3-4.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/subdims_percgroups_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-the-three-broad-dimensions">Percentile-groups Differences in the three broad dimensions</h3>
@@ -144,10 +144,10 @@
 <span><span class='c'>#&gt; [1] "CE two_groups"</span></span>
 <span><span class='c'>#&gt; [1] "CE three_groups"</span></span>
 <span><span class='c'>#&gt; [[1]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/dims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [[2]]</span></span></code></pre>
-<p><img src="figs/unnamed-chunk-4-2.png" width="700px" style="display: block; margin: auto;" /></p>
+<p><img src="figs/dims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
 </div>
 <h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
@@ -156,101 +156,22 @@
 <li>Torrance Numeric Variables are used as responses</li>
 </ul>
 <h2 id="torrance-percentiles">Torrance Percentiles</h2>
-<ul>
-<li>Only marginally significant, p &lt; 0.10, differences</li>
-</ul>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $perc_originalidad</span></span>
-<span><span class='c'>#&gt; $perc_originalidad$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)2 as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.05038873     0.07281470 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_originalidad$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;     0.09000819 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_originalidad$rango</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.06297054 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_fluidez</span></span>
-<span><span class='c'>#&gt; $perc_fluidez$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.08970761 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_fluidez$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;     0.06581025 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_fluidez$rango</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;      0.0980242 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_flexibilidad</span></span>
-<span><span class='c'>#&gt; $perc_flexibilidad$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;     0.08573308 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $perc_creatividad</span></span>
-<span><span class='c'>#&gt; $perc_creatividad$rango</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;       0.050447</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== NO SIGNIFICANT RESEULTS ==="</span></span></code></pre>
 </div>
 <h2 id="torrance-partials">Torrance Partials</h2>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $elab1</span></span>
-<span><span class='c'>#&gt; $elab1$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.04169034 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $orig2</span></span>
-<span><span class='c'>#&gt; $orig2$rango</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.02103123 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $flui2</span></span>
-<span><span class='c'>#&gt; $flui2$rango</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;    0.009731103 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $orig3</span></span>
-<span><span class='c'>#&gt; $orig3$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.01866077</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== NO SIGNIFICANT RESEULTS ==="</span></span></code></pre>
 </div>
 <h2 id="torrance-totals-aggregated-variables">Torrance Totals (Aggregated Variables)</h2>
+<ul>
+<li>
+<p>Only marginally significant, p &lt; 0.10, differences</p>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $originalidad</span></span>
-<span><span class='c'>#&gt; $originalidad$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)2 as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.03039469     0.03787579 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $originalidad$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;     0.02026583 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $fluidez</span></span>
-<span><span class='c'>#&gt; $fluidez$grupo</span></span>
-<span><span class='c'>#&gt; as.factor(.x)4 </span></span>
-<span><span class='c'>#&gt;     0.03174777 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $fluidez$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;     0.02982713 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $creatividad</span></span>
-<span><span class='c'>#&gt; $creatividad$edad</span></span>
-<span><span class='c'>#&gt; as.factor(.x)8 </span></span>
-<span><span class='c'>#&gt;      0.0246007</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== NO SIGNIFICANT RESEULTS ==="</span></span></code></pre>
 </div>
+</li>
+</ul>
 
     </div>
   </article>
