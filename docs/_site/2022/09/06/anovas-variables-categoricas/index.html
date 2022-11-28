@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">6 min read</span>
+    <span class="article-duration">5 min read</span>
     
 
     <h1 class="article-title">ANOVAs Variables Categoricas</h1>
@@ -82,118 +82,57 @@
 </ul>
 <h3 id="percentile-groups-differences-in-raven">Percentile-groups Differences in Raven</h3>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $columna_ab</span></span>
-<span><span class='c'>#&gt; $columna_ab$three_groups</span></span>
-<span><span class='c'>#&gt; .xmid55_80 </span></span>
-<span><span class='c'>#&gt; 0.03065915 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [1] "columna_ab three_groups"</span></span>
-<span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       7.81</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       7   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      6   </span></span>
-<span><span class='c'>#&gt; [[1]]</span></span></code></pre>
-<p><img src="figs/raven_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== NO SIGNIFICANT RESULTS ==="</span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-subdimensions">Percentile-groups Differences in Subdimensions</h3>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $attcon</span></span>
-<span><span class='c'>#&gt; $attcon$two_groups</span></span>
-<span><span class='c'>#&gt; [1] 0.02067217</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $attcon$three_groups</span></span>
-<span><span class='c'>#&gt;  .xbelow55 </span></span>
-<span><span class='c'>#&gt; 0.04079459 </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $fea</span></span>
+<span><span class='c'>#&gt; $fea$median_grp</span></span>
+<span><span class='c'>#&gt; [1] 0.04427987</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $inh</span></span>
-<span><span class='c'>#&gt; $inh$two_groups</span></span>
-<span><span class='c'>#&gt; [1] 0.009151812</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $inh$three_groups</span></span>
-<span><span class='c'>#&gt; .xmid55_80 </span></span>
-<span><span class='c'>#&gt; 0.02160658 </span></span>
+<span><span class='c'>#&gt; $inh$median_grp</span></span>
+<span><span class='c'>#&gt; [1] 0.01145101</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [1] "attcon two_groups"</span></span>
-<span><span class='c'>#&gt; [1] "attcon three_groups"</span></span>
-<span><span class='c'>#&gt; [1] "inh two_groups"</span></span>
-<span><span class='c'>#&gt; [1] "inh three_groups"</span></span>
+<span><span class='c'>#&gt; [1] "fea median_grp"</span></span>
+<span><span class='c'>#&gt; [1] "inh median_grp"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 2</span></span></span>
-<span><span class='c'>#&gt;   two_groups  mean</span></span>
+<span><span class='c'>#&gt;   median_grp  mean</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.34</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     4.75</span></span>
-<span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.35</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       4.85</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      4.48</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1below75   4.08</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2above75   4.51</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 2</span></span></span>
-<span><span class='c'>#&gt;   two_groups  mean</span></span>
+<span><span class='c'>#&gt;   median_grp  mean</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.55</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     5.08</span></span>
-<span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.49</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       4.87</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      5   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1below75   5.05</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2above75   4.54</span></span>
 <span><span class='c'>#&gt; [[1]]</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; [[2]]</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [[3]]</span></span></code></pre>
-<p><img src="figs/subdims_percgroups_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [[4]]</span></span></code></pre>
-<p><img src="figs/subdims_percgroups_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-the-three-broad-dimensions">Percentile-groups Differences in the three broad dimensions</h3>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $CE</span></span>
-<span><span class='c'>#&gt; $CE$two_groups</span></span>
-<span><span class='c'>#&gt; [1] 0.0034092</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $CE$three_groups</span></span>
-<span><span class='c'>#&gt;  .xbelow55 </span></span>
-<span><span class='c'>#&gt; 0.04419433 </span></span>
+<span><span class='c'>#&gt; $CE$median_grp</span></span>
+<span><span class='c'>#&gt; [1] 0.01972686</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [1] "CE two_groups"</span></span>
-<span><span class='c'>#&gt; [1] "CE three_groups"</span></span>
+<span><span class='c'>#&gt; [1] "CE median_grp"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 2</span></span></span>
-<span><span class='c'>#&gt;   two_groups  mean</span></span>
+<span><span class='c'>#&gt;   median_grp  mean</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.64</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     5.00</span></span>
-<span><span class='c'>#&gt; [1] "=== GROUPS DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.66</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       5.00</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      4.80</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1below75   4.94</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2above75   4.66</span></span>
 <span><span class='c'>#&gt; [[1]]</span></span></code></pre>
 <p><img src="figs/dims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [[2]]</span></span></code></pre>
-<p><img src="figs/dims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span></code></pre>
 </div>
 <h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
