@@ -64,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">6 min read</span>
+    <span class="article-duration">8 min read</span>
     
 
     <h1 class="article-title">ANOVAs Variables Categoricas</h1>
@@ -82,107 +82,112 @@
 </ul>
 <h3 id="percentile-groups-differences-in-raven">Percentile-groups Differences in Raven</h3>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== NO SIGNIFICANT RESULTS ==="</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $columna_ab</span></span>
+<span><span class='c'>#&gt; $columna_ab$three_groups</span></span>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.03065915 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; [1] "columna_ab three_groups"</span></span>
+<span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
+<p><img src="figs/raven_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF columna_ab IN three_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   three_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       7.81  1.72    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       7     2.12     9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      6     2.69    14</span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-subdimensions">Percentile-groups Differences in Subdimensions</h3>
 <div class="highlight">
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $attfoc</span></span>
-<span><span class='c'>#&gt; $attfoc$three_groups</span></span>
-<span><span class='c'>#&gt; .xg2mid66_85 </span></span>
-<span><span class='c'>#&gt;   0.02424647 </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $attcon</span></span>
+<span><span class='c'>#&gt; $attcon$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.02067217</span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $attcon</span></span>
 <span><span class='c'>#&gt; $attcon$three_groups</span></span>
-<span><span class='c'>#&gt; .xg2mid66_85 </span></span>
-<span><span class='c'>#&gt;   0.02412713 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $fea</span></span>
-<span><span class='c'>#&gt; $fea$three_groups</span></span>
-<span><span class='c'>#&gt; .xg2mid66_85 </span></span>
-<span><span class='c'>#&gt;   0.04849844 </span></span>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04079459 </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $inh</span></span>
-<span><span class='c'>#&gt; $inh$median_grp</span></span>
-<span><span class='c'>#&gt; [1] 0.03230483</span></span>
+<span><span class='c'>#&gt; $inh$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.009151812</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $inh$three_groups</span></span>
+<span><span class='c'>#&gt; .xmid55_80 </span></span>
+<span><span class='c'>#&gt; 0.02160658 </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $lip</span></span>
-<span><span class='c'>#&gt; $lip$three_groups</span></span>
-<span><span class='c'>#&gt; .xg2mid66_85 </span></span>
-<span><span class='c'>#&gt;   0.01570031 </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; [1] "attfoc three_groups"</span></span>
+<span><span class='c'>#&gt; [1] "attcon two_groups"</span></span>
 <span><span class='c'>#&gt; [1] "attcon three_groups"</span></span>
-<span><span class='c'>#&gt; [1] "fea three_groups"</span></span>
-<span><span class='c'>#&gt; [1] "inh median_grp"</span></span>
-<span><span class='c'>#&gt; [1] "lip three_groups"</span></span>
+<span><span class='c'>#&gt; [1] "inh two_groups"</span></span>
+<span><span class='c'>#&gt; [1] "inh three_groups"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1bbibelow65  4.86</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2mid66_85    4.33</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> g3above86     4.56</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF attcon IN two_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 4</span></span></span>
+<span><span class='c'>#&gt;   two_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.34 0.447    22</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     4.75 0.514    12</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1bbibelow65  4.78</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2mid66_85    4.31</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> g3above86     4.44</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF attcon IN three_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   three_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.35 0.504    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       4.85 0.574     6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      4.48 0.414    12</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1bbibelow65  4.03</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2mid66_85    4.54</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> g3above86     4.38</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF inh IN two_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 4</span></span></span>
+<span><span class='c'>#&gt;   two_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.55 0.403    22</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     5.08 0.730    12</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/subdims_percgroups_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 2</span></span></span>
-<span><span class='c'>#&gt;   median_grp  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1below75   4.95</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2above75   4.52</span></span>
-<span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
-<p><img src="figs/subdims_percgroups_multi_lm_graph-5.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1bbibelow65  5.52</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2mid66_85    5.09</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> g3above86     5.41</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF inh IN three_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   three_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.49 0.427    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       4.87 0.849     6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      5    0.541    12</span></span></code></pre>
 </div>
 <h3 id="percentile-groups-differences-in-the-three-broad-dimensions">Percentile-groups Differences in the three broad dimensions</h3>
 <div class="highlight">
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $CE</span></span>
+<span><span class='c'>#&gt; $CE$two_groups</span></span>
+<span><span class='c'>#&gt; [1] 0.0034092</span></span>
+<span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $CE$three_groups</span></span>
-<span><span class='c'>#&gt; .xg2mid66_85 </span></span>
-<span><span class='c'>#&gt;  0.009695796 </span></span>
+<span><span class='c'>#&gt;  .xbelow55 </span></span>
+<span><span class='c'>#&gt; 0.04419433 </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; [1] "CE two_groups"</span></span>
 <span><span class='c'>#&gt; [1] "CE three_groups"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/dims_percgroups_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   three_groups  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> g1bbibelow65  5.01</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> g2mid66_85    4.64</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> g3above86     4.71</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF CE IN two_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 4</span></span></span>
+<span><span class='c'>#&gt;   two_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above70     4.64 0.257    22</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below70     5.00 0.406    12</span></span>
+<span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
+<p><img src="figs/dims_percgroups_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF CE IN three_groups GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   three_groups  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> above80       4.66 0.277    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> below55       5.00 0.495     6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> mid55_80      4.80 0.341    12</span></span></code></pre>
 </div>
 <h1 id="results-from-analysis-of-differences-among-groups">Results from Analysis of Differences Among Groups</h1>
 <ul>
@@ -219,43 +224,43 @@
 <span><span class='c'>#&gt; [1] "perc_creatividad rango"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/percentile_torrance_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      60.2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      84.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      65.1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      77.2</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF perc_originalidad IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      60.2  14.7    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      84.3  12.3     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      65.1  20.9    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      77.2  22.9     6</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/percentile_torrance_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   rango  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      71.2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      68.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      51.8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      71  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF perc_originalidad IN rango GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   rango  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      71.2  16.2    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      68.5  17.7    14</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      51.8  28.9     5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      71    <span style='color: #BB0000;'>NA</span>       1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/percentile_torrance_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   edad   mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      58.8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      64.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      97  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF perc_fluidez IN edad GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   edad   mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      58.8  20.4    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      64.9  18.4    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      97    <span style='color: #BB0000;'>NA</span>       1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/percentile_torrance_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   rango  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      78.1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      74.8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      61  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      75</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF perc_creatividad IN rango GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   rango  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      78.1  14.2    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      74.8  14.8    14</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      61    22.8     5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      75    <span style='color: #BB0000;'>NA</span>       1</span></span></code></pre>
 </div>
 <h2 id="torrance-partials">Torrance Partials</h2>
 <div class="highlight">
@@ -289,44 +294,44 @@
 <span><span class='c'>#&gt; [1] "orig3 grupo"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/partials_torrance_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      1.77</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      1.33</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      2.44</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      3.4 </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF elab1 IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      1.77 1.74     13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      1.33 1.53      3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      2.44 1.13      9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      3.4  0.894     5</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/partials_torrance_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   rango  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      35.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      38.6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      23  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      40  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF orig2 IN rango GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   rango  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      35.5  8.61    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      38.6  8.48    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      23   13.2      5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5      40   <span style='color: #BB0000;'>NA</span>        1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/partials_torrance_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   rango  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      9   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      9.08</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      6.6 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5     10   </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF flui2 IN rango GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   rango  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 2      9     1.41    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 3      9.08  1.38    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 4      6.6   2.41     5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 5     10    <span style='color: #BB0000;'>NA</span>        1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/partials_torrance_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      27.2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      33.7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      31.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      47.2</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF orig3 IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      27.2  12.9    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      33.7  10.6     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      31.9  16.3     9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      47.2  20.2     5</span></span></code></pre>
 </div>
 <h2 id="torrance-totals-aggregated-variables">Torrance Totals (Aggregated Variables)</h2>
 <ul>
@@ -382,78 +387,78 @@
 <span><span class='c'>#&gt; [1] "creatividad edad"</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-1.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 2</span></span></span>
-<span><span class='c'>#&gt;   escuela  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1        66.8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2        83.8</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF originalidad IN escuela GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 4</span></span></span>
+<span><span class='c'>#&gt;   escuela  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1        66.8  14.5    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2        83.8  28.6    20</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-2.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      66.8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     101  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      74.7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      92  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF originalidad IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      66.8  14.5    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     101    29.3     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      74.7  26.1    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      92    31.2     6</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-3.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   edad   mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      73.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      76.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8     134  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF originalidad IN edad GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   edad   mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      73.9  26.6    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      76.9  20.6    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8     134    <span style='color: #BB0000;'>NA</span>       1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-4.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      15.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      21  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      16.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      21  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF fluidez IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      15.5  2.67    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      21    6.24     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      16.3  4.82    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      21    7.77     6</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-5.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   edad   mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      16.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      17.6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      28  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF fluidez IN edad GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   edad   mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      16.3  4.76    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      17.6  5.18    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      28   <span style='color: #BB0000;'>NA</span>        1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-6.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   edad   mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      13.6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      13.2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      21  </span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF flexibilidad IN edad GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   edad   mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      13.6  3.38    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      13.2  3.68    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      21   <span style='color: #BB0000;'>NA</span>        1</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-7.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 2</span></span></span>
-<span><span class='c'>#&gt;   grupo  mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      111.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      151.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      117.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      143.</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF creatividad IN grupo GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grupo  mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1      111.  25.1    13</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      151.  42.1     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 3      117.  33.5    11</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 4      143.  48.3     6</span></span>
 <span><span class='c'>#&gt; [1] "=== GROUP DIFFERENCES GRAPH ==="</span></span></code></pre>
 <p><img src="figs/totals_torrance_multi_lm_graph-8.png" width="700px" style="display: block; margin: auto;" /></p>
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== GROUP DESCRIPTIVE STATISTICS ==="</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 2</span></span></span>
-<span><span class='c'>#&gt;   edad   mean</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      116.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      124.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      199</span></span></code></pre>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "=== DESCRIPTIVE STATS OF creatividad IN edad GROUPS ==="</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
+<span><span class='c'>#&gt;   edad   mean    sd   num</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6      116.  33.6    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 7      124.  34.2    16</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 8      199   <span style='color: #BB0000;'>NA</span>       1</span></span></code></pre>
 </div>
 </li>
 </ul>
