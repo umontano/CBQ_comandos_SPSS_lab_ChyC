@@ -42,7 +42,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/anovas-variables-categoricas/</guid>
-      <description>Significant differences among groups Divided by percentiles  Two groups above and below median (75 percentile) Three groups with 65 and 86 percentiles  Percentile-groups Differences in Raven #&amp;gt; $columna_ab #&amp;gt; $columna_ab$three_groups #&amp;gt; .xmid55_80  #&amp;gt; 0.03065915  #&amp;gt;  #&amp;gt;  #&amp;gt; [1] &#34;columna_ab three_groups&#34; #&amp;gt; [1] &#34;=== GROUP DIFFERENCES GRAPH ===&#34; #&amp;gt; [1] &#34;=== DESCRIPTIVE STATS OF columna_ab IN three_groups GROUPS ===&#34; #&amp;gt; # A tibble: 3 × 4 #&amp;gt; three_groups mean sd num #&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; #&amp;gt; 1 above80 7.</description>
+      <description>Significant differences among groups Divided by percentiles  Two groups above and below-equal median (75 percentile) Three groups with 66 and 86 percentiles  Percentile-groups Differences in Raven #&amp;gt; [1] &#34;=== NO SIGNIFICANT RESULTS ===&#34;  Percentile-groups Differences in Subdimensions #&amp;gt; $attfoc #&amp;gt; $attfoc$three_groups #&amp;gt; .xg2mid66_85  #&amp;gt; 0.02424647  #&amp;gt;  #&amp;gt;  #&amp;gt; $attcon #&amp;gt; $attcon$three_groups #&amp;gt; .xg2mid66_85  #&amp;gt; 0.02412713  #&amp;gt;  #&amp;gt;  #&amp;gt; $fea #&amp;gt; $fea$three_groups #&amp;gt; .</description>
     </item>
     
     <item>
