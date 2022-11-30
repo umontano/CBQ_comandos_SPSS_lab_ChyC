@@ -60,7 +60,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/estadisticas-descriptivas/</guid>
-      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; ── Data Summary ──────────────────────── #&amp;gt; Values  #&amp;gt; Name descriptee_dataset #&amp;gt; Number of rows 39  #&amp;gt; Number of columns 3  #&amp;gt; _______________________  #&amp;gt; Column type frequency:  #&amp;gt; numeric 3  #&amp;gt; ________________________  #&amp;gt; Group variables None  #&amp;gt;  #&amp;gt; ── Variable type: numeric ────────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate mean sd p0 p25 p50 p75 p100 #&amp;gt; 1 CE 0 1 4.</description>
+      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; ── Data Summary ──────────────────────── #&amp;gt; Values  #&amp;gt; Name descriptee_dataset #&amp;gt; Number of rows 40  #&amp;gt; Number of columns 5  #&amp;gt; _______________________  #&amp;gt; Column type frequency:  #&amp;gt; numeric 5  #&amp;gt; ________________________  #&amp;gt; Group variables None  #&amp;gt;  #&amp;gt; ── Variable type: numeric ────────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate mean sd p0 p25 p50 p75 p100 #&amp;gt; 1 perc_originalidad 0 1 64.</description>
     </item>
     
     <item>
