@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>raven on testing_labchyc_site</title>
-    <link>/tags/raven/</link>
-    <description>Recent content in raven on testing_labchyc_site</description>
+    <title>descriptivo on testing_labchyc_site</title>
+    <link>/tags/descriptivo/</link>
+    <description>Recent content in descriptivo on testing_labchyc_site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/raven/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Torrance Completo y Raven</title>
-      <link>/2022/11/07/torrance-completo-y-raven/</link>
-      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/11/07/torrance-completo-y-raven/</guid>
-      <description>TORRANCE RAVEN Notas   No hay correlaciones
-  Los valores extremos estaban afectando
-#&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; columna_a columna_ab columna_b puntaje dx #&amp;gt; orig1 NA NA NA NA NA #&amp;gt; elab1 0.184 0.567 0.233 0.638 NA #&amp;gt; orig2 0.426 0.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/descriptivo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Estadisticas Descriptivas</title>
       <link>/2022/09/06/estadisticas-descriptivas/</link>

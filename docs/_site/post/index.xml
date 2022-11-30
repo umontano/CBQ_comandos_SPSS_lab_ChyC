@@ -55,6 +55,15 @@
     </item>
     
     <item>
+      <title>Estadisticas Descriptivas</title>
+      <link>/2022/09/06/estadisticas-descriptivas/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/09/06/estadisticas-descriptivas/</guid>
+      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; ── Data Summary ──────────────────────── #&amp;gt; Values  #&amp;gt; Name descriptee_dataset #&amp;gt; Number of rows 47  #&amp;gt; Number of columns 14  #&amp;gt; _______________________  #&amp;gt; Column type frequency:  #&amp;gt; character 3  #&amp;gt; factor 1  #&amp;gt; numeric 10  #&amp;gt; ________________________  #&amp;gt; Group variables None  #&amp;gt;  #&amp;gt; ── Variable type: character ──────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate min max empty n_unique whitespace #&amp;gt; 1 experimentadora 0 1 6 6 0 1 0 #&amp;gt; 2 identificador 0 1 6 9 0 47 0 #&amp;gt; 3 X 0 1 0 1 45 2 0 #&amp;gt;  #&amp;gt; ── Variable type: factor ─────────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate ordered n_unique #&amp;gt; 1 dx 0 1 FALSE 5 #&amp;gt; top_counts  #&amp;gt; 1 sup: 18, ter: 18, inf: 7, def: 3 #&amp;gt;  #&amp;gt; ── Variable type: numeric ────────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate mean sd p0 p25 p50 p75 p100 hist  #&amp;gt; 1 escuela 0 1 1.</description>
+    </item>
+    
+    <item>
       <title>Torrance Histogramas y Frecuencias</title>
       <link>/2022/09/06/torrance-histogramas-y-frecuencias/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
