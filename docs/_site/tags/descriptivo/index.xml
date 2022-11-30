@@ -13,7 +13,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/estadisticas-descriptivas/</guid>
-      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; # A tibble: 5 × 10 #&amp;gt; skim_type var mean sd p0 p25 p50 p75 p100 numeri…¹ #&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;  #&amp;gt; 1 numeric perc_originalidad 64.9 21.8 13 51 71 78.2 98 ▁▂▃▇▂  #&amp;gt; 2 numeric perc_elaboracion 77.3 23.2 19 61 90 98 99 ▁▂▂▁▇  #&amp;gt; 3 numeric perc_fluidez 60.2 22.7 9 43 62 81 98 ▁▇▇▃▇  #&amp;gt; 4 numeric perc_flexibilidad 50.</description>
+      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; # A tibble: 5 × 10 #&amp;gt; skim_type var mean sd p0 p25 p50 p75 p100 hist  #&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; #&amp;gt; 1 numeric perc_originalidad 64.9 21.8 13 51 71 78.2 98 ▁▂▃▇▂ #&amp;gt; 2 numeric perc_elaboracion 77.3 23.2 19 61 90 98 99 ▁▂▂▁▇ #&amp;gt; 3 numeric perc_fluidez 60.2 22.7 9 43 62 81 98 ▁▇▇▃▇ #&amp;gt; 4 numeric perc_flexibilidad 50.</description>
     </item>
     
   </channel>
