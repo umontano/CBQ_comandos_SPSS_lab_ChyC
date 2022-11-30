@@ -60,7 +60,7 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/estadisticas-descriptivas/</guid>
-      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; ── Data Summary ──────────────────────── #&amp;gt; Values  #&amp;gt; Name descriptee_dataset #&amp;gt; Number of rows 40  #&amp;gt; Number of columns 5  #&amp;gt; _______________________  #&amp;gt; Column type frequency:  #&amp;gt; numeric 5  #&amp;gt; ________________________  #&amp;gt; Group variables None  #&amp;gt;  #&amp;gt; ── Variable type: numeric ────────────────────────────────────────────────────── #&amp;gt; skim_variable n_missing complete_rate mean sd p0 p25 p50 p75 p100 #&amp;gt; 1 perc_originalidad 0 1 64.</description>
+      <description>DESCRIPTIVE STATISTICS Percentile Torrance #&amp;gt; # A tibble: 5 × 9 #&amp;gt; skim_variable numer…¹ numer…² numer…³ numer…⁴ numer…⁵ numer…⁶ numer…⁷ numer…⁸ #&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;  #&amp;gt; 1 perc_original… 64.9 21.8 13 51 71 78.2 98 ▁▂▃▇▂  #&amp;gt; 2 perc_elaborac… 77.3 23.2 19 61 90 98 99 ▁▂▂▁▇  #&amp;gt; 3 perc_fluidez 60.2 22.7 9 43 62 81 98 ▁▇▇▃▇  #&amp;gt; 4 perc_flexibil… 50.</description>
     </item>
     
     <item>
