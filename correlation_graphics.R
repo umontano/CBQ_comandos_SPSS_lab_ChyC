@@ -27,7 +27,7 @@ ylab(variabley)
 # Function to find significant correlation in pairs of items 
 #================================================================
 
-find_significant_correlations_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset)
+find_significant_correlations_from_rows_and_cols_datasets <- function(rows_dataset, columns_dataset, sign=0.05)
 {
     #Matrices for correlations and pvalues
     cor_mat <- round(cor(rows_dataset, columns_dataset), 8)
@@ -46,10 +46,10 @@ find_significant_correlations_from_rows_and_cols_datasets <- function(rows_datas
 			if(
                 !is.na(cor_test_mat[eachrow , eachcol]) &&
                 eachrow != eachcol &&
-                cor_test_mat[eachrow , eachcol] < 0.05
+                cor_test_mat[eachrow , eachcol] < sign
                 ) {
                     pairs_list[[ length(pairs_list) +1 ]] <<- c(eachrow, eachcol);
-                    print(paste(eachrow, eachcol));
+                    print(paste(eachrow, eachcol, '_ r =', cor_mat[eachrow, eachcol], '_ pval =', cor_test_mat[eachrow, eachcol]));
                     }
                 #}
             #}
@@ -59,19 +59,21 @@ return(pairs_list)
 }
 
 #scatterp_with_regression_lines <- function(plotee_pair) { return(plot(torrance[, variablex], torrance[, variabley]) ) }
-scatterplot_significant_correlations <- function(rows_dataset, columns_dataset)
+scatterplot_significant_correlations <- function(rows_dataset, columns_dataset, sign=0.05)
 {
-#find pairs
-pairs_list <- find_significant_correlations_from_rows_and_cols_datasets(rows_dataset, columns_dataset)
+cor_mat <- cor(rows_dataset, columns_dataset)
+library(psych)
+cor_test_mat <- corr.test(rows_dataset, columns_dataset)$p    # Apply corr.test function
+pairs_list <- find_significant_correlations_from_rows_and_cols_datasets(rows_dataset, columns_dataset, sign)
 		#Show results only in case there exists significant values
 		if(length(pairs_list) > 0)
 		{
 			#Show p-values text
 			showr <- cor_mat
 			showpv <- cor_test_mat
-			showr[showpv > 0.05] <- NA
+			showr[showpv > sign] <- NA
 			print(showr)
-			showpv[showpv > 0.05] <- NA
+			showpv[showpv > sign] <- NA
 
 			#Send list of names to generate scatterplots
 			scatters_list <- lapply(pairs_list, scatterp_with_regression_lines, rows_dataset, columns_dataset)
