@@ -14,7 +14,7 @@ calif  <<- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl
 
 #REMOVE UNUSED ITEMS 3, 33, 49
 unused_items <- c('cbq3', 'cbq33', 'cbq49')
-items <- items[, !names(items) %in% unused_items]
+items <<- items[, !names(items) %in% unused_items]
 #REMOVE LESS THAN 1 AND ABOVE 7
 items[items<1 | items>7] <<- NA
 #SET THE ROW NAMES USING THE ID COLUMN
