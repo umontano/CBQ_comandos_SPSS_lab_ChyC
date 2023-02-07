@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>/tags/raven/</loc>
-    <lastmod>2022-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/subdimensiones/</loc>
     <lastmod>2022-11-07T00:00:00+00:00</lastmod>
   </url>
@@ -44,16 +39,6 @@
   
   <url>
     <loc>/tags/torrance-completo/</loc>
-    <lastmod>2022-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2022/11/07/torrance-completo-y-raven/</loc>
-    <lastmod>2022-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2022/11/07/torrance-completo-y-subdims-temperamento/</loc>
     <lastmod>2022-11-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,6 +108,11 @@
   </url>
   
   <url>
+    <loc>/tags/raven/</loc>
+    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2022/09/06/torrance-histogramas-y-frecuencias/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url>
@@ -159,6 +149,14 @@
   
   <url>
     <loc>/fer/redirect/</loc>
+  </url>
+  
+  <url>
+    <loc>/1/01/01/</loc>
+  </url>
+  
+  <url>
+    <loc>/1/01/01/</loc>
   </url>
   
   <url>

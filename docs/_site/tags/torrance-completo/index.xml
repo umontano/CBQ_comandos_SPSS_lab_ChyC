@@ -1,32 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>torrance completo on testing_labchyc_site</title>
+    <title>Torrance Completo on testing_labchyc_site</title>
     <link>/tags/torrance-completo/</link>
-    <description>Recent content in torrance completo on testing_labchyc_site</description>
+    <description>Recent content in Torrance Completo on testing_labchyc_site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/torrance-completo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Torrance Completo y Raven</title>
-      <link>/2022/11/07/torrance-completo-y-raven/</link>
-      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/11/07/torrance-completo-y-raven/</guid>
-      <description>TORRANCE RAVEN Notas   No hay correlaciones
-  Los valores extremos estaban afectando
-#&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; columna_a columna_ab columna_b puntaje dx #&amp;gt; orig1 NA NA NA NA NA #&amp;gt; elab1 0.184 0.567 0.233 0.638 NA #&amp;gt; orig2 0.426 0.</description>
-    </item>
-    
-    <item>
-      <title>Torrance Completo y Subdims Temperamento</title>
-      <link>/2022/11/07/torrance-completo-y-subdims-temperamento/</link>
-      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/11/07/torrance-completo-y-subdims-temperamento/</guid>
-      <description>TORRANCE SUBDIMENSIONES Notas  Dataset Torrance ya completo Ocho correlaciones encontradas El num de correlaciones aumento Todas entre 0.35 y 0.6 Vease seccion Torrance-Raven, desapareceron las correlaciones parciales ## Datos muy disperson en attencion Los scatterplot muestran poca agrupacion alrededor de la linea de regresion Da algo de desconfianza  Frustracion  A mas frustraci&amp;rsquo;on mas elab3. Super interesante, a mas emocion negativa mas creatividad  #&amp;gt; [1] &#34;elab3 fru&#34; #&amp;gt; [1] &#34;</description>
-    </item>
-    
     <item>
       <title>Torrance Completo, Notas y observaciones</title>
       <link>/2022/11/07/torrance-completo-notas-y-observaciones/</link>

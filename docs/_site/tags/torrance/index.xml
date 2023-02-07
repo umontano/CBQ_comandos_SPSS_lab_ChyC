@@ -8,26 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/torrance/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Torrance Completo y Raven</title>
-      <link>/2022/11/07/torrance-completo-y-raven/</link>
-      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/11/07/torrance-completo-y-raven/</guid>
-      <description>TORRANCE RAVEN Notas   No hay correlaciones
-  Los valores extremos estaban afectando
-#&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; [1] &#34;=== NO SIGN CORRELATIONS FOUND ===&#34; #&amp;gt; columna_a columna_ab columna_b puntaje dx #&amp;gt; orig1 NA NA NA NA NA #&amp;gt; elab1 0.184 0.567 0.233 0.638 NA #&amp;gt; orig2 0.426 0.</description>
-    </item>
-    
-    <item>
-      <title>Torrance Completo y Subdims Temperamento</title>
-      <link>/2022/11/07/torrance-completo-y-subdims-temperamento/</link>
-      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/2022/11/07/torrance-completo-y-subdims-temperamento/</guid>
-      <description>TORRANCE SUBDIMENSIONES Notas  Dataset Torrance ya completo Ocho correlaciones encontradas El num de correlaciones aumento Todas entre 0.35 y 0.6 Vease seccion Torrance-Raven, desapareceron las correlaciones parciales ## Datos muy disperson en attencion Los scatterplot muestran poca agrupacion alrededor de la linea de regresion Da algo de desconfianza  Frustracion  A mas frustraci&amp;rsquo;on mas elab3. Super interesante, a mas emocion negativa mas creatividad  #&amp;gt; [1] &#34;elab3 fru&#34; #&amp;gt; [1] &#34;</description>
-    </item>
-    
-    <item>
       <title>Torrance Completo, Notas y observaciones</title>
       <link>/2022/11/07/torrance-completo-notas-y-observaciones/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
@@ -79,8 +59,7 @@ Notas  Cleaning changes the distribution   </description>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/09/06/totales-torrance/</guid>
-      <description>TOTALS IN TORRANCE ANALYSES BY PERCENTILE Notes:  Check &amp;ldquo;elaboracion&amp;rdquo; variable Three children above 30  #&amp;gt; [1] &#34;perc_elaboracion CE r=-0.39777479 pval=0.022&#34; #&amp;gt; [1] &#34;perc_creatividad CE r=-0.34786373 pval=0.047&#34; #&amp;gt; [1] &#34;perc_elaboracion dis r=0.58163087 pval=0&#34; #&amp;gt; [1] &#34;perc_elaboracion inh r=-0.38774219 pval=0.026&#34;  Grouped by Temperament, Raven and Other Variables    ANALYSES BY TOTALS Notas   Only Marginaly significant, p &amp;lt; 0.1, correlations # P-values Matrix All p-values
-#&amp;gt; [1] &#34;</description>
+      <description>TOTALS IN TORRANCE ANALYSES BY PERCENTILE Notes:  Check &amp;ldquo;elaboracion&amp;rdquo; variable Three children above 30  #&amp;gt; [1] &#34;perc_elaboracion CE _ r = -0.40399564 _ pval = 0.02&#34; #&amp;gt; [1] &#34;perc_elaboracion dis _ r = 0.58163087 _ pval = 0&#34; #&amp;gt; [1] &#34;perc_elaboracion inh _ r = -0.38774219 _ pval = 0.026&#34; #&amp;gt; CE AN SU act fru app attfoc attshi attcon dis #&amp;gt; perc_originalidad NA NA NA NA NA NA NA NA NA NA #&amp;gt; perc_elaboracion -0.</description>
     </item>
     
     <item>
