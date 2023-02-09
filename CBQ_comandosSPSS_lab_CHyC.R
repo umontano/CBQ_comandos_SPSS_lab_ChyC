@@ -1,4 +1,5 @@
-create_datasets <- function(questionnaire_dataset_file) {
+create_datasets <- function(questionnaire_dataset_file)
+{
 #LOAD DATA
 raw_information <<- read.csv(questionnaire_dataset_file , header=TRUE )
 
@@ -42,8 +43,11 @@ row.names(scales)  <<- raw_information$identificador
 row.names(factors) <<- raw_information$identificador
 row.names(items) <<- raw_information$identificador
 row.names(calif) <<- raw_information$identificador
+
 #SAVE TO DISK
-write.csv(items, 'xCBQ_IMPUTED_ITEMS.csv', row.names=TRUE)
+date_time <- format(Sys.time(), 'x%y%m%d_%Hh%Mm%Ss_')
+file_name_items <- paste0('xCBQ_IMPUTED_ITEMS', date_time, '.csv')
+write.csv(items, file_name_items, row.names=TRUE)
 }
 
 
@@ -267,7 +271,6 @@ write.csv(scales, 'xCBQ_15DIMENSIONES.csv', row.names=TRUE)
 write.csv(factors, 'xCBQ_3FACTORES.csv', row.names=TRUE)
 write.csv(calif, 'xCBQ_OTROS_DATOS.csv', row.names=TRUE)
 write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.names=TRUE)
-
 }
 
 
