@@ -170,6 +170,24 @@
     </item>
     
     <item>
+      <title>draft</title>
+      <link>/tags/draft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/draft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>español</title>
+      <link>/tags/espa%C3%B1ol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/espa%C3%B1ol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>fabrica</title>
       <link>/tags/fabrica/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -184,15 +202,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tags/lectura/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spanish</title>
-      <link>/tags/spanish/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/spanish/</guid>
       <description></description>
     </item>
     
