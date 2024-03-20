@@ -16,6 +16,25 @@ source('https://github.com/umontano/ferserrano/raw/main/categoric.R')
 ## LOAD DATASET for PERSEVERANCIA PERFECCIONISMO ALTAS CAPACIDADES
 #https://github.com/Mafer-sg/Altas-Capacidades.git
 
+
+# EMPF CATEGORIZING FUNCTION
+categorize_empf <- function(empf_levelee_dframe)
+{
+	  # Specify the ranges and corresponding labels
+	  ranges <- c(5, 17, 20, 22, 25)
+          labels <- c("bajo", "medio", "alto", "superior")
+    
+    # Loop through each variable and categorize
+    for (i in 1:35) 
+        {
+	        var_name <- paste0("empf", i)
+              empf_levelee_dframe[[paste0(var_name, "_cat")]] <- cut(empf_levelee_dframe[[var_name]], breaks = ranges, labels = labels, include.lowest = TRUE)
+        }
+    
+    # Return the modified data frame
+    return(empf_levelee_dframe)
+}
+
 # GRIT CATEGORIZATION FUNCTION
 categorize_grit <- function(grit_levelee_dframe) {
   # Specify the ranges and corresponding labels
