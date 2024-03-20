@@ -1,0 +1,56 @@
+---
+title: 'Tenacidad, Perfeccionismo. Descriptivos GRIT por grupos.'
+subtitle: 'Altas Capacidades, Perfeccionismo y Tenacidad.'
+author: 'Ma. Fernanda Serrano'
+date: 2024
+tags: ['descriptivo', 'altas capacidades', 'numeric variables', 'Fer Serrano', 'tenacidad', 'perfeccionismo']
+toc: TRUE
+toc_depth: 3
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+## LOAD SCRIPT FOR REGRESSION ANALYZING GROUPS AND CATEGORICAL VARIABLES. INCULDING MAKING DESCRIPTIOVE BOXPLOTS AND HISTOGRAMS
+source('https://github.com/umontano/ferserrano/raw/main/categoric.R')
+## LOAD DATASET for PERSEVERANCIA PERFECCIONISMO ALTAS CAPACIDADES
+#https://github.com/Mafer-sg/Altas-Capacidades.git
+
+# GRIT CATEGORIZATION FUNCTION
+categorize_grit <- function(grit_levelee_dframe) {
+  # Specify the ranges and corresponding labels
+  ranges <- c(1, 4.5, 6.1, 8.0)
+  labels <- c("bajo", "medio", "alto")
+  
+  # Loop through each variable and categorize
+  for (i in 1:8) {
+    var_name <- paste0("grit", i)
+    grit_levelee_dframe[[paste0(var_name, "_cat")]] <- cut(grit_levelee_dframe[[var_name]], breaks = ranges, labels = labels, include.lowest = TRUE)
+  }
+  # Return the modified data frame
+  return(grit_levelee_dframe)
+}
+
+
+persev <- read.csv('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/cpt.csv')
+persev_categorized <- categorize_grit(persev)
+empf_categorized <- categorize_empf(persev)
+
+## RANGOS: BAJO (1 - 4.5), MEDIO (4.6 - 6.1) Y ALTO (6.2 – 8.0) 
+persev_categorical_names <- c('escuela', 'grado', 'sexo', 'edad')
+numerical_variables <- names(persev)[grep('grit[1-8]', names(persev), perl=TRUE)]
+grit1_8 <- persev[, numerical_variables]
+```
+
+##################################################
+##################################################
+# GRIT DESCRIPTIVE STATISTICS
+
+## Descriptivos GRIT continuous.
+```{r, raven_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(grit1_8)
+```
+
+## SÓLO SE ANALIZARÁN ESTAS DOS PRUEBAS QUE YA ESTÁN VALIDADAS PARA LOS INFORMES: grit (va de grit1-grit8). 
+## RANGOS: BAJO (1 - 4.5), MEDIO (4.6 - 6.1) Y ALTO (6.2 – 8.0) 
+## EMPF (EMPF1-EMPF35). RANGOS: BAJO (5 – 17), MEDIO (18 – 20), ALTO (21 – 22) Y SUPERIOR (23 – 25). 
