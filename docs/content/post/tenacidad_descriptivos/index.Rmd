@@ -2,7 +2,7 @@
 title: 'Tenacidad, Perfeccionismo. Descriptivos GRIT por grupos.'
 subtitle: 'Altas Capacidades, Perfeccionismo y Tenacidad.'
 author: 'Ma. Fernanda Serrano'
-date: 2024
+date: 2024-03-01
 tags: ['descriptivo', 'altas capacidades', 'numeric variables', 'Fer Serrano', 'tenacidad', 'perfeccionismo']
 toc: TRUE
 toc_depth: 3
@@ -36,13 +36,15 @@ categorize_empf <- function(empf_levelee_dframe)
 }
 
 # GRIT CATEGORIZATION FUNCTION
-categorize_grit <- function(grit_levelee_dframe) {
+categorize_grit <- function(grit_levelee_dframe)
+{
   # Specify the ranges and corresponding labels
   ranges <- c(1, 4.5, 6.1, 8.0)
   labels <- c("bajo", "medio", "alto")
   
   # Loop through each variable and categorize
-  for (i in 1:8) {
+  for (i in 1:8)
+  {
     var_name <- paste0("grit", i)
     grit_levelee_dframe[[paste0(var_name, "_cat")]] <- cut(grit_levelee_dframe[[var_name]], breaks = ranges, labels = labels, include.lowest = TRUE)
   }

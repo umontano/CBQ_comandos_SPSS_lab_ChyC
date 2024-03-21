@@ -1,0 +1,22 @@
+---
+title: "Torrance Completo y Raven"
+author: "Ma Fernanda Serrano"
+date: 2022-11-07
+tags: ["Fer Serrano", "torrance", "torrance completo", "raven"]
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+```
+
+
+# TORRANCE RAVEN
+## Notas
+- No hay correlaciones
+- Los valores extremos estaban afectando
+```{r, torrance_complete_raven_correlations_function, echo = FALSE, warning = FALSE, message = FALSE}
+cols <- c('columna_a', 'columna_ab', 'columna_b', 'puntaje', 'dx')
+ggraven <- analysis_torrance_temperament(raven[, cols])
+```
+

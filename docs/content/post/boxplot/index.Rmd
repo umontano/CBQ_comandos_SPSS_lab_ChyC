@@ -1,0 +1,66 @@
+---
+title: 'Torrance ggplots Boxplot con outlaiers'
+author: 'Ma Fernanda Serrano'
+date: 2022-01-01
+tags: ['Fer Serrano', 'Torrance', 'Temperamento', 'Subdimensiones']
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+```
+
+
+# TORRANCE OUTLAIERS
+Shows raw and oulaiers-cleaned dataset for torrance test for each variable
+
+## Notas
+* In scatterplos there seem to be a few extreme values
+* Cleaning changes the correlations
+
+- Valores cambian al quitar valores extremos (i.e., outlaiers)
+- Con extremos:
+mejores predictores son *actividad* y *sonrisa*
+- Sin extremos:
+*atencion* es el mejor predictor
+
+
+```{r, torrance_raw_vs_cleaned_ouliers_boxplot_violin_graph, echo = FALSE, warning = FALSE, message = FALSE}
+#raw_dataset     <- data.frame(torrance_raw)
+#cleaned_dataset <- data.frame(torrance)
+
+boxplots_raw_cleaned_outlaiers <- function(raw_dataset, cleaned_dataset)
+{
+raw_dataset <- data.frame(lapply(raw_dataset, as.numeric))
+#library('ggbeeswarm')
+library('ggplot2')
+library('dplyr')
+library('tidyr')
+
+
+#lambda definition pipeline
+long <- . %>% select(!starts_with('numero'), !starts_with('X')) %>%
+	pivot_longer( cols=everything(),
+		names_to='variable',
+		values_to='value')
+
+#Creates longtidy formats and assign outlaiers status in variable imputation
+#raw to long pipeline
+raw_dataset     <- raw_dataset     %>% long %>% mutate(imputation='raw')
+#cleaned to long pipeline
+cleaned_dataset <- cleaned_dataset %>% long %>% mutate(imputation='cleaned')
+#Merge into a single long df
+merged_dataset <- rbind(raw_dataset, cleaned_dataset)
+
+return(
+ggplot(merged_dataset, aes(imputation, value, fill=imputation)) +
+#geom_beeswarm(groupOnX=FALSE, alpha=0.15) +
+#geom_violin(alpha=0.5) +
+geom_boxplot(alpha=0.5) +
+facet_wrap(~ variable, scales='free')
+)
+}
+
+boxplots_raw_cleaned_outlaiers(torrance_raw, torrance)
+
+```

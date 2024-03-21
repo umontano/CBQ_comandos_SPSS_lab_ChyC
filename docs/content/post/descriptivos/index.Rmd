@@ -1,0 +1,50 @@
+---
+title: 'Estadisticas Descriptivas'
+subtitle: 'Torrance, Percentiles, Temperamento,Raven'
+author: 'Ma Fernanda Serrano'
+date: 2022-09-06
+tags: ['descriptivo', 'temperamento', 'categoricas', 'Fer Serrano', 'Torrance', 'raven']
+toc: TRUE
+toc_depth: 3
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/CBQ_comandosSPSS_lab_CHyC.R')
+#source('https://github.com/umontano/ferserrano/raw/main/categoric.R')
+source('/a/ferserrano/categoric.R')
+```
+
+# DESCRIPTIVE STATISTICS
+
+## Partials Torrance
+
+```{r, partials_torrance_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(torrance[, names(torrance) != 'numero'])
+```
+
+## Percentile Torrance 
+
+```{r, percentiles_torrance_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(torrance_percentil)
+```
+
+## Torrance Totals
+```{r, totals_torrance_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(torrance_totals)
+```
+
+## Temperament Dimensions
+```{r, subdim_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(scales)
+```
+
+## Temperament Broad Dimensions
+```{r, dim_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(factors[, 1:3])
+```
+## Raven
+```{r, raven_descriptive, warning = FALSE}
+descriptives_skim_boxplot_histo_polygon(raven[, raven_names])
+```

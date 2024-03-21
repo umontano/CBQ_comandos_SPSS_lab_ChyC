@@ -1,0 +1,142 @@
+---
+title: 'Totales Torrance'
+subtitle: 'Correlaciones por Pares'
+author: 'Ma Fernanda Serrano'
+date: 2022-09-06
+tags: ['totales', 'diagrama de columnas', 'corelaciones por pares', 'Fer Serrano', 'Torrance']
+toc: TRUE
+toc_depth: 3
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/CBQ_comandosSPSS_lab_CHyC.R')
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+#source('/a/CBQ_comandos_SPSS_lab_ChyC/correlation_graphics.R')
+```
+
+```{r, include=FALSE, echo=FALSE}
+
+library('tidytext')
+library('widyr')
+library('ggplot2')
+library('dplyr')
+library('tidyr')
+library('tibble')
+library('psych')
+col_graphic_paired_significant_corrs <- function(columns_dataset, sign=0.05)
+{
+
+merged_dataset <- factors %>%
+	add_id_column_numero %>%
+	merge(add_id_column_numero(scales), by='numero') %>%
+	merge(add_id_column_numero(raven), by='numero') %>%
+	merge(add_id_column_numero(columns_dataset), by='numero') %>%
+	mutate(numero=as.numeric(numero)) %>%
+	select(!starts_with('X')) %>%
+	select(where(is.numeric))
+
+tor <- merged_dataset %>%
+    select(c(names(columns_dataset), -numero))
+torrest <- merged_dataset %>%
+    select(-numero) %>%
+    select(!names(columns_dataset))
+
+#call scaterplots
+corr_graph_scatters_list <- scatterplot_significant_correlations(tor, torrest, sign=sign)
+
+	pmat <- corr.test(torrest, tor)$p
+	cor_test_mat <- pmat
+	rmat <- cor(torrest, tor)
+	rmat[pmat > sign] <- NA
+	rmat[abs(rmat) < 0.20] <- NA
+
+    gpairs_by_others <- rmat %>%
+		data.frame %>%
+		mutate(item1=rownames(.)) %>%
+		pivot_longer(!item1, names_to='item2', values_to='correlation') %>%
+		filter(! is.na(correlation)) %>%
+		mutate(item2=reorder_within(item2, correlation, item1)) %>%
+		#mutate(item2=gsub('___.+', '', item2, perl=T)) %>%
+		ggplot(aes(correlation, item2)) + 
+		geom_col() +
+		scale_y_reordered() +
+		facet_wrap(~item1, scale='free_y')
+
+
+
+    gpairs_by_columns_dataset <- rmat %>%
+		data.frame %>%
+		mutate(item2=rownames(.)) %>%
+		pivot_longer(!item2, names_to='item1', values_to='correlation') %>%
+		filter(! is.na(correlation)) %>%
+		mutate(item2=reorder_within(item2, correlation, item1)) %>%
+		#mutate(item2=gsub('___.+', '', item2, perl=T)) %>%
+		ggplot(aes(correlation, item2, fill=item1)) + 
+		geom_col() +
+		scale_y_reordered() +
+		facet_wrap(~item1, scale='free_y')
+
+        gglist <- list(gpairs_by_columns_dataset, gpairs_by_others, rmat, pmat, unlist(corr_graph_scatters_list))
+
+        
+return(gglist)
+}
+
+```
+
+
+#  TOTALS IN TORRANCE
+## ANALYSES BY PERCENTILE
+## Notes:
+- Check "elaboracion" variable 
+- Three children above 30
+
+
+```{r, percentil_torrance_paired_correlations_graph, echo=FALSE}
+percgglist <- col_graphic_paired_significant_corrs(torrance_percentil, sign=0.05)
+percgglist[[1]]
+```
+### Grouped by Temperament, Raven and Other Variables
+
+```{r, percentil_other_variables_paired_correlations_graph, echo=FALSE}
+percgglist[[2]]
+```
+
+
+```{r, duplicateprint_corr_matrix}
+#print(gglist[[3]])
+```
+```{r, duplicateprint_pvalues_matrix}
+#print(gglist[[4]])
+```
+
+# Correlation Matrix
+## Notas
+- Only Marginaly significant, p < 0.1, correlations
+#  P-values Matrix
+All p-values 
+```{r}
+gglist <- col_graphic_paired_significant_corrs(torrance_totals, sign=0.10)
+```
+
+```{r, print_corr_matrix}
+#print(gglist[[3]])
+```
+```{r, print_pvalues_matrix}
+#print(gglist[[4]])
+```
+
+## GRAPHICS PAIRED CORRELATIONS
+### Grouped by Totals in Torrance
+
+```{r, totals_torrance_paired_correlations_graph, echo=FALSE}
+gglist[[1]]
+```
+### Grouped by Temperament, Raven and Other Variables
+
+```{r, other_variables_paired_correlations_graph, echo=FALSE}
+gglist[[2]]
+```
+

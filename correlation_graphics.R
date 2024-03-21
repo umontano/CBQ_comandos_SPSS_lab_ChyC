@@ -1,3 +1,9 @@
+#==========================================================================
+# CONTAINS THE FUNCTION DEFINITIONS TO CHECK FOR CORRELATIONS
+# IN THE MA FER SERRANO DATASET TORRANCE_CREATIVITY CBQ_TEMPERAMENT RAVEN_ABSTRACT_THOUGHT 
+# ONCE THE SIGNIFICANT CORRELATIONS HAVE BEEN IDENTIFIED THEIR  P ARE PRINTED
+# AND THEY ARE PLOTTED USING GGPLOT
+#==========================================================================
 #DEFINE THE FUNCTIONS to generate SCATTER PLOTS AND SUBROUTINES
 #==========================================================================
 scatterp_with_regression_lines <- function(plotee_pair, rows_dataset, columns_dataset)
@@ -72,7 +78,7 @@ pairs_list <- find_significant_correlations_from_rows_and_cols_datasets(rows_dat
 			showr <- cor_mat
 			showpv <- cor_test_mat
 			showr[showpv > sign] <- NA
-			print(showr)
+			#print(showr)
 			showpv[showpv > sign] <- NA
 
 			#Send list of names to generate scatterplots

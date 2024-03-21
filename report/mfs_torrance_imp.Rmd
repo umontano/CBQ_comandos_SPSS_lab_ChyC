@@ -1,0 +1,24 @@
+---
+title: 'Torrance Subdimensiones Temperamento'
+subtitle: 'Correlaciones'
+author: 'Ma. Fernanda Serrano'
+date: 2022-01-01
+tags: ['Fer Serrano', 'Torrance', 'Temperamento', 'Subdimensiones']
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+```
+
+
+# TORRANCE SUBDIMENSIONES
+## Notas
+- Valores cambian al quitar valores extremos (i.e., outlaiers)
+- Con extremos:
+mejores predictores son *actividad* y *sonrisa*
+- Sin extremos:
+*atencion* es el mejor predictor
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+ggscales <- analysis_torrance_temperament(scales)
+```

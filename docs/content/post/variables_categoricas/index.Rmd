@@ -1,0 +1,74 @@
+---
+title: 'ANOVAs Variables Categoricas'
+subtitle: 'Analisis por Grupos de Percentiles y por Escuela, Grupo, Sexo, Dx etc.'
+author: 'Ma Fernanda Serrano'
+date: 2022-09-06
+tags: ['anova', 'categorical', 'variables categoricas', 'Fer Serrano', 'Torrance']
+toc: TRUE
+toc_depth: 3
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/CBQ_comandosSPSS_lab_CHyC.R')
+#source('https://github.com/umontano/ferserrano/raw/main/categoric.R')
+source('/a/ferserrano/categoric.R')
+```
+
+# Significant differences among groups
+## Divided by percentiles
+- Two groups above and below-equal median (75 percentile)
+- Three groups with 66 and 86 percentiles
+
+### Percentile-groups Differences in Raven
+```{r, raven_percgroups_multi_lm_graph, warning = FALSE}
+raven_names <- c('percentil', 'rango', 'columna_a', 'columna_ab', 'columna_b', 'puntaje')
+#RAVEN
+rrrr <- merged_lm_responses_to_predictors(raven, torrance_groups_perc, raven_names, threshold_significance = 0.05, categorical_flag = FALSE)
+```
+
+### Percentile-groups Differences in Subdimensions
+```{r, subdims_percgroups_multi_lm_graph, warning = FALSE}
+#SUBDIMESIONS
+rrrr <- merged_lm_responses_to_predictors(scales, torrance_groups_perc, threshold_significance = 0.05, categorical_flag = FALSE)
+```
+
+### Percentile-groups Differences in the three broad dimensions
+```{r, dims_percgroups_multi_lm_graph, warning = FALSE}
+#DIMESIONS
+rrrr <- merged_lm_responses_to_predictors(factors, torrance_groups_perc, c('CE', 'AN', 'SU'), threshold_significance = 0.05, categorical_flag = FALSE)
+```
+
+
+# Results from Analysis of Differences Among Groups
+- Categorical Variables are used as predictors
+- Torrance Numeric Variables are used as responses
+
+## Torrance Percentiles
+
+```{r, percentile_torrance_multi_lm_graph, warning = FALSE}
+#using torrance partial variabels generate lm list
+perctor_categorical <- merged_categorical_and_torrance_totals(torrance_percentil)
+#partial torrance varisables sent to lm_mapped
+perctor_results <- merged_lm_responses_to_predictors(perctor_categorical[[1]], perctor_categorical[[2]], threshold_significance = 0.05, categorical_flag = FALSE)
+```
+
+## Torrance Partials
+```{r, partials_torrance_multi_lm_graph, warning = FALSE}
+#using torrance partial variabels generate lm list
+partor_categorical <- merged_categorical_and_torrance_totals(torrance)
+#partial torrance varisables sent to lm_mapped
+partialtor_results <- merged_lm_responses_to_predictors(partor_categorical[[1]],partor_categorical[[2]], threshold_significance = 0.05, categorical_flag = FALSE)
+#partialtor_results <- send_responses_to_predictors_lm(partor_categorical[[1]], partor_categorical[[2]], 0.05, TRUE)
+```
+
+## Torrance Totals (Aggregated Variables)
+- Only marginally significant, p < 0.06, differences
+```{r, totals_torrance_multi_lm_graph, warning = FALSE}
+#generate list of responses_torrancetorals and predictors_categorical for lm
+tor_categorical <- merged_categorical_and_torrance_totals(torrance_totals)
+#Send list to lm_mapped function
+categorical_results <- merged_lm_responses_to_predictors(tor_categorical[[1]],tor_categorical[[2]], threshold_significance = 0.06, categorical_flag = FALSE)
+#categorical_results <- send_responses_to_predictors_lm(tor_categorical[[1]], tor_categorical[[2]], 0.05, TRUE)
+```

@@ -1,0 +1,75 @@
+Help files with alias or concept or title matching ‘append’ using fuzzy
+matching:
+
+
+base::append            Vector Merging
+  Aliases: append
+base::files             File Manipulation
+  Aliases: file.append
+bslib::nav_prepend      Append or prepend nav item to a dropdown menu
+  Aliases: nav_append
+DBI::dbAppendTable      Insert rows into a table
+  Aliases: dbAppendTable
+DBI::hidden_aliases     Internal page for hidden aliases
+  Aliases: dbAppendTable_DBIConnection,
+    dbAppendTable,DBIConnection-method, sqlAppendTable_DBIConnection,
+    sqlAppendTable,DBIConnection-method
+DBI::sqlAppendTable     Compose query to insert rows into a table
+  Aliases: sqlAppendTable, sqlAppendTableTemplate
+DBItest::spec_sql_append_table
+                        spec_sql_append_table
+  Aliases: spec_sql_append_table
+dplyr::rows             Manipulate individual rows
+  Aliases: rows_append
+htmlTable::addHtmlTableStyle
+                        Add/set css and other style options
+  Aliases: appendHtmlTableStyle
+htmltools::tagAppendAttributes
+                        Append tag attributes
+  Aliases: tagAppendAttributes
+htmltools::tagAppendChild
+                        Modify tag contents
+  Aliases: tagAppendChild, tagAppendChildren
+htmlwidgets::prependContent
+                        Prepend/append extra HTML content to a widget
+  Aliases: appendContent
+metaSEM::bootuniR2      Fit Models on the bootstrapped correlation
+                        matrices
+mice::appendbreak       Appends specified break to the data
+  Aliases: appendbreak
+OpenMx::mxBootstrapEval
+                        Evaluate Values in a bootstrapped MxModel
+psych::corCi            Bootstrapped and normal confidence intervals
+                        for raw and composite correlations
+purrr::faq-adverbs-export
+                        Best practices for exporting adverb-wrapped
+                        functions
+R.methodsS3::Non-documented objects
+                        Non-documented objects
+  Aliases: appendVarArgs, appendVarArgs.function
+rlang::topic-inject-out-of-context
+                        What happens if I use injection operators out
+                        of context?
+RSQLite::SQLiteConnection-class
+                        Class SQLiteConnection (and methods)
+  Aliases: dbAppendTable,SQLiteConnection-method
+shiny::insertTab        Dynamically insert/remove a tabPanel
+  Aliases: appendTab
+shiny::reexports        Objects exported from other packages
+  Aliases: tagAppendAttributes, tagAppendChild, tagAppendChildren
+tcltk::TkCommands       Tk non-widget commands
+  Aliases: tkclipboard.append
+xfun::read_utf8         Read / write files encoded in UTF-8
+  Aliases: append_utf8, append_unique
+XML::append.xmlNode     Add children to an XML node
+  Aliases: append.xmlNode, append.XMLNode
+zip::zip                Compress Files into 'zip' Archives
+  Aliases: zip_append, zipr_append
+
+
+Type '?PKG::FOO' to inspect entries 'PKG::FOO', or 'TYPE?PKG::FOO' for
+entries like 'PKG::FOO-TYPE'.
+
+
+
+
