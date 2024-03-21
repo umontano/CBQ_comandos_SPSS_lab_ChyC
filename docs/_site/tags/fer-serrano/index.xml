@@ -77,5 +77,16 @@ Notas   In scatterplos there seem to be a few extreme values
    </description>
     </item>
     
+    <item>
+      <title>Tenacidad, Perfeccionismo. Descriptivos GRIT por grupos.</title>
+      <link>/1969/12/31/tenacidad-perfeccionismo.-descriptivos-grit-por-grupos./</link>
+      <pubDate>Wed, 31 Dec 1969 18:33:44 -0600</pubDate>
+      
+      <guid>/1969/12/31/tenacidad-perfeccionismo.-descriptivos-grit-por-grupos./</guid>
+      <description>##################################################
+##################################################
+GRIT DESCRIPTIVE STATISTICS Descriptivos GRIT continuous. #&amp;gt; # A tibble: 8 × 10 #&amp;gt; skim_type var mean sd p0 p25 p50 p75 p100 hist  #&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; #&amp;gt; 1 numeric grit1 2.24 0.928 1 2 2 3 4 ▃▇▁▂▂ #&amp;gt; 2 numeric grit2 2.31 0.932 1 2 2 3 4 ▃▇▁▅▂ #&amp;gt; 3 numeric grit3 2.40 0.994 1 2 2 3 4 ▆▇▁▇▃ #&amp;gt; 4 numeric grit4 2.</description>
+    </item>
+    
   </channel>
 </rss>
