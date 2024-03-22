@@ -1,14 +1,8 @@
 ---
-title: 'Tenacidad, Perfeccionismo. Descriptivos GRIT por grupos.'
-subtitle: 'Altas Capacidades, Perfeccionismo y Tenacidad.'
+title: 'zzzz test'
+subtitle: 'more zzz'
 author: 'Ma. Fernanda Serrano'
 date: 2024-03-21
-tags: ['descriptivo', 'altas capacidades', 'numeric variables', 'Fer Serrano', 'tenacidad', 'perfeccionismo']
-toc: TRUE
-toc_depth: 3
-output: hugodown::md_document
-rmd_hash: 38bc2781d005b677
-
 ---
 
 EMPF DESCRIPTIVE STATISTICS
