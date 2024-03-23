@@ -1,6 +1,9 @@
 ---
 title: 'xTenacidad, xPerfeccionismo. xDescriptivos'
+subtitle: 'Altas Capacidades'
+author: 'Ma. Fernanda Serrano'
 date: 2024-03-21
+tags: ['descriptivo', 'altas capacidades', 'numeric variables', 'Fer Serrano', 'tenacidad', 'perfeccionismo']
 
 ---
 
