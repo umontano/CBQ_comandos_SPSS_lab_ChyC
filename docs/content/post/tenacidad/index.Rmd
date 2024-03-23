@@ -27,7 +27,7 @@ EMPF (EMPF1-EMPF35). RANGOS: BAJO (5 – 17), MEDIO (18 – 20), ALTO (21 – 22
 #boxplots_takes_1numeric_many_categoricals(grit_means, categorical_data)
 
 ## COMPUTE USING LAPPLY WITH MULTINUM AND MULTICAT DATAFRAMES
-plots_list <- boxplots_multinumeric_multicat_lapply(numeric_data, categorical_data)
+plots_list <- boxplots_multinum_multicat_mapped(numeric_data, categorical_data)
 ## SHOW FIRT PLOT IN LIST
 print(plots_list[[1]])
 ```

@@ -5,7 +5,7 @@ author: 'Ma. Fernanda Serrano'
 date: 2024-03-21
 tags: ['descriptivo', 'altas capacidades', 'numeric variables', 'Fer Serrano', 'tenacidad', 'perfeccionismo']
 output: hugodown::md_document
-rmd_hash: c45e1bbe88c529c6
+rmd_hash: cccf4db7a861951a
 
 ---
 
