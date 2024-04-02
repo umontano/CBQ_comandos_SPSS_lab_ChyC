@@ -20,10 +20,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Import data
+      - name: R head mtcars
         run: R --vanilla -e 'head(mtcars)'
 
-      - name: Commit results
+      - name: Commit res
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
