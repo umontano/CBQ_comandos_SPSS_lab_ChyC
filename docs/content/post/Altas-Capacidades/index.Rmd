@@ -1,0 +1,64 @@
+---
+title: " grit, Esfuerzo,  Preocupacion"
+author: "Ma. Fernanda Serrano"
+date: 2024-04-10
+tags: ["descriptivo", "altas capacidades", "numeric variables", "Fer Serrano", "tenacidad", "perfeccionismo"]
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+## RUN DATASET WRANGLING AND COMPUTATIONS.
+source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
+
+## LOAD DESCRIPTIVE GRAPHICS FUNCTIONS.
+source('https://github.com/umontano/analysis/raw/main/boxbar.R')
+#https://github.com/Mafer-sg/Altas-Capacidades.git
+```
+# PROFILE - LEVELS
+Results profiles and levels.
+```{r}
+head(levels_grit_esfuer_preoc)
+```
+# NUMERIC RESULTS
+
+## MEANS AND LEVELS EMPF AND GRIT
+```{r}
+print('==GRIT SD==:')
+head(scores_grit_esfuer_preoc)
+head(levels_grit_esfuer_preoc)
+```
+
+## STACKED BARS FOR LEVELS OF EMPF AND GRIT
+```{r, dodge, echo = FALSE, warning = FALSE, message = FALSE}
+## VERSION DODGE
+barplots_list <- bars_multicat_multicat_mapped(levels_grit_esfuer_preoc, categorical_info, 'dodge')
+# SHOW PLOTS
+barplots_list[[1]]
+barplots_list[[2]]
+```
+
+```{r, range_levels, echo = FALSE, warning = FALSE, message = FALSE}
+barplots_list <- bars_multicat_multicat_mapped(levels_grit_esfuer_preoc, categorical_info, 'fill')
+# SHOW PLOTS
+barplots_list[[1]]
+barplots_list[[2]]
+```
+
+## BOXPLOTS GRIT
+```{r,tenacidad_grit, echo = FALSE, warning = FALSE, message = FALSE}
+#boxplots_takes_1numeric_many_categoricals(grit_means, categorical_info)
+
+## COMPUTE USING LAPPLY WITH MULTINUM AND MULTICAT DATAFRAMES
+plots_list <- boxplots_multinum_multicat_mapped(scores_grit_esfuer_preoc, categorical_info)
+## SHOW FIRT PLOT IN LIST
+print(plots_list[[1]])
+```
+
+## BOXPLOTS EMPF
+```{r, empf, echo = FALSE, warning = FALSE, message = FALSE}
+## THE SINGLE NUMERICAL COLUM FUNCTION IS
+#boxplots_takes_1numeric_many_categoricals(empf_means, categorical_info)
+
+## SHOW SECOND PLOT IN LIST
+print(plots_list[[2]])
+```
