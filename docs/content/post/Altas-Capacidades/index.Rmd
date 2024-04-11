@@ -35,13 +35,16 @@ barplots_list <- bars_multicat_multicat_mapped(levels_grit_esfuer_preoc, categor
 # SHOW PLOTS
 barplots_list[[1]]
 barplots_list[[2]]
+barplots_list[[3]]
 ```
 
-```{r, range_levels, echo = FALSE, warning = FALSE, message = FALSE}
+## GRIT, ESFUERZO AND PREOCUPACION, PROPORTION VERSION.
+```{r, proportions, echo = FALSE, warning = FALSE, message = FALSE}
 barplots_list <- bars_multicat_multicat_mapped(levels_grit_esfuer_preoc, categorical_info, 'fill')
 # SHOW PLOTS
 barplots_list[[1]]
 barplots_list[[2]]
+barplots_list[[3]]
 ```
 
 ## BOXPLOTS GRIT
@@ -60,5 +63,9 @@ print(plots_list[[1]])
 #boxplots_takes_1numeric_many_categoricals(empf_means, categorical_info)
 
 ## SHOW SECOND PLOT IN LIST
-print(plots_list[[2]])
+plots_list[[2]]
+```
+
+```{r}
+plots_list[[3]]
 ```

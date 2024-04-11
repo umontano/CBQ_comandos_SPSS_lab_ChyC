@@ -66,13 +66,16 @@ STACKED BARS FOR LEVELS OF EMPF AND GRIT
 
 <div class="highlight">
 
-<img src="figs/dodge-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/dodge-2.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/dodge-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/dodge-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/dodge-3.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
+GRIT, ESFUERZO AND PREOCUPACION, PROPORTION VERSION.
+----------------------------------------------------
+
 <div class="highlight">
 
-<img src="figs/range_levels-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/range_levels-2.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/proportions-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/proportions-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/proportions-3.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -91,6 +94,12 @@ BOXPLOTS EMPF
 <div class="highlight">
 
 <img src="figs/empf-1.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+<div class="highlight">
+
+<img src="figs/unnamed-chunk-3-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
