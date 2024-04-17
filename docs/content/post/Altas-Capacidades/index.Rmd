@@ -17,9 +17,9 @@ source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 
 # SCORE MEANS AND SD TABLES
 These are the resulting tables containing the mean and sd for:
-* grit
-* Esfuerzo
-* Preocupacion
+- grit
+- Esfuerzo
+- Preocupacion
 
 ```{r, score_means_sd_tables}
 print(list_of_mean_sd_tables_by_school_group)

@@ -9,7 +9,7 @@ tags: ["descriptivo", "altas capacidades", "numeric variables", "Fer Serrano", "
 SCORE MEANS AND SD TABLES
 =========================
 
-These are the resulting tables containing the mean and sd for: \* grit \* Esfuerzo \* Preocupacion
+These are the resulting tables containing the mean and sd for: - grit - Esfuerzo - Preocupacion
 
 <div class="highlight">
 
