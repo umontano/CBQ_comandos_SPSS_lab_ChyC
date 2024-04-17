@@ -6,10 +6,67 @@ tags: ["descriptivo", "altas capacidades", "numeric variables", "Fer Serrano", "
 
 ---
 
-PROFILE - LEVELS
-================
+SCORE MEANS AND SD TABLES
+=========================
 
-Results profiles and levels. \#\# table by schoo, raw version
+These are the resulting tables containing the mean and sd for: \* grit \* Esfuerzo \* Preocupacion
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [[1]]</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 8</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># Groups:   escuela [1]</span></span></span>
+<span><span class='c'>#&gt;   escuela grado grit_score_Promedio grit_score_DS esfuerzo_score_Promedio</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>         <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> pidahi  1a                   3.44         0.526                    49.9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> pidahi  2                    3.44        <span style='color: #BB0000;'>NA</span>                        52  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> pidahi  2a                   3.12         0.472                    45.1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># ℹ 3 more variables: esfuerzo_score_DS &lt;dbl&gt;,</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>#   preocupacion_score_Promedio &lt;dbl&gt;, preocupacion_score_DS &lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; [[2]]</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 8</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># Groups:   escuela [1]</span></span></span>
+<span><span class='c'>#&gt;   escuela      grado grit_score_Promedio grit_score_DS esfuerzo_score_Promedio</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>         <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> primcongreso 6a                   2.74         0.578                    43.4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> primcongreso 6b                   2.97         0.470                    46.4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> primcongreso 6c                   2.66         0.714                    44.1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> primcongreso 6d                   3.22         0.567                    46.4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># ℹ 3 more variables: esfuerzo_score_DS &lt;dbl&gt;,</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>#   preocupacion_score_Promedio &lt;dbl&gt;, preocupacion_score_DS &lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; [[3]]</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 8</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># Groups:   escuela [1]</span></span></span>
+<span><span class='c'>#&gt;    escuela    grado grit_score_Promedio grit_score_DS esfuerzo_score_Promedio</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>         <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> secaugusto 1a                   3.18         0.616                    48.9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> secaugusto 1b                   3.04         0.649                    45.7</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> secaugusto 1c                   3.33         0.779                    46.0</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> secaugusto 1d                   2.89         0.805                    46.1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> secaugusto 2a                   3.31         0.671                    50.2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> secaugusto 2b                   2.91         0.648                    43  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> secaugusto 2c                   3.10         0.513                    44.6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> secaugusto 2d                   3.03         0.728                    44.6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> secaugusto 3a                   3.02         0.448                    42.7</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> secaugusto 3b                   3.35         0.643                    50.3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> secaugusto 3c                   3.12         0.457                    46.5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> secaugusto 3d                   3.12         0.609                    48  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># ℹ 3 more variables: esfuerzo_score_DS &lt;dbl&gt;,</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>#   preocupacion_score_Promedio &lt;dbl&gt;, preocupacion_score_DS &lt;dbl&gt;</span></span></span></code></pre>
+
+</div>
+
+PROFILE LEVELS
+==============
+
+Results profiles and levels.
+
+TABLES BY SCHOOLS. RAW VERSION
+------------------------------
+
+These are the tables containting the percentages of subjects under each level.
 
 <div class="highlight">
 

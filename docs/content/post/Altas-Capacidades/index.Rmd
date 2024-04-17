@@ -14,9 +14,23 @@ source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
 source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 #https://github.com/Mafer-sg/Altas-Capacidades.git
 ```
-# PROFILE - LEVELS
+
+# SCORE MEANS AND SD TABLES
+These are the resulting tables containing the mean and sd for:
+* grit
+* Esfuerzo
+* Preocupacion
+
+```{r, score_means_sd_tables}
+print(list_of_mean_sd_tables_by_school_group)
+```
+
+
+# PROFILE  LEVELS
 Results profiles and levels.
-## table by schoo, raw version
+
+## TABLES BY SCHOOLS. RAW VERSION
+These are the tables containting the percentages of subjects under each level.
 
 ```{r, tables_school_grade}
 print(tables_by_grado_list)
