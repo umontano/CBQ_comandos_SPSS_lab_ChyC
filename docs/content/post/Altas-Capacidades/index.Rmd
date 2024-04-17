@@ -16,8 +16,10 @@ source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 ```
 # PROFILE - LEVELS
 Results profiles and levels.
-```{r}
-head(levels_grit_esfuer_preoc)
+## table by schoo, raw version
+
+```{r, tables_school_grade}
+print(tables_by_grado_list)
 ```
 # NUMERIC RESULTS
 
