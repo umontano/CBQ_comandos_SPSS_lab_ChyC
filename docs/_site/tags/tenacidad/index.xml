@@ -13,8 +13,10 @@
       <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>/2024/04/10/grit-esfuerzo-preocupacion/</guid>
-      <description>SCORE MEANS AND SD TABLES These are the resulting tables containing the mean and sd for: - grit - Esfuerzo - Preocupacion
-#&amp;gt; [[1]] #&amp;gt; # A tibble: 3 × 8 #&amp;gt; # Groups: escuela [1] #&amp;gt; escuela grado grit_score_Promedio grit_score_DS esfuerzo_score_Promedio #&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; #&amp;gt; 1 pidahi 1a 3.44 0.526 49.9 #&amp;gt; 2 pidahi 2 3.44 NA 52  #&amp;gt; 3 pidahi 2a 3.12 0.472 45.1 #&amp;gt; # ℹ 3 more variables: esfuerzo_score_DS &amp;lt;dbl&amp;gt;, #&amp;gt; # preocupacion_score_Promedio &amp;lt;dbl&amp;gt;, preocupacion_score_DS &amp;lt;dbl&amp;gt; #&amp;gt;  #&amp;gt; [[2]] #&amp;gt; # A tibble: 4 × 8 #&amp;gt; # Groups: escuela [1] #&amp;gt; escuela grado grit_score_Promedio grit_score_DS esfuerzo_score_Promedio #&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; #&amp;gt; 1 primcongreso 6a 2.</description>
+      <description>SCORE MEANS AND SD TABLES These are the resulting tables containing the mean and sd for:
+ GRIT Esfuerzo Preocupacion  EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS   list_by_school_levels_percents_tables[[&amp;lsquo;secaugusto&amp;rsquo;]][[3]][[&amp;lsquo;table&amp;rsquo;]]
+  list_by_school_mean_sd_tables[[&amp;lsquo;secaugusto&amp;rsquo;]]
+  #&amp;gt; $pidahi #&amp;gt; # A tibble: 3 × 4 #&amp;gt; grado grit_score_Prom esfuerzo_score_Prom preocupacion_score_Prom #&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; #&amp;gt; 1 1a 3.44 49.9 63.9 #&amp;gt; 2 2 3.44 52 36  #&amp;gt; 3 2a 3.</description>
     </item>
     
     <item>

@@ -17,12 +17,20 @@ source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 
 # SCORE MEANS AND SD TABLES
 These are the resulting tables containing the mean and sd for:
-- grit
+
+- GRIT
 - Esfuerzo
 - Preocupacion
 
+
+## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
+
+- list_by_school_levels_percents_tables[['secaugusto']][[3]][['table']]
+
+- list_by_school_mean_sd_tables[['secaugusto']]
+
 ```{r, score_means_sd_tables}
-print(list_of_mean_sd_tables_by_school_group)
+print(list_by_school_mean_sd_tables)
 ```
 
 
@@ -33,7 +41,7 @@ Results profiles and levels.
 These are the tables containting the percentages of subjects under each level.
 
 ```{r, tables_school_grade}
-print(tables_by_grado_list)
+print(list_by_school_levels_percents_tables)
 ```
 # NUMERIC RESULTS
 
