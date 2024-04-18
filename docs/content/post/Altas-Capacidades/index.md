@@ -18,7 +18,9 @@ These are the resulting tables containing the mean and sd for:
 EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
 -------------------------------------------
 
--   list\_by\_school\_levels\_percents\_tables\[\['secaugusto'\]\]\[\[3\]\]\[\['table'\]\]
+The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys. The means table is a 3 items list with school name keys.
+
+-   list\_by\_school\_levels\_percents\_tables\[\['secaugusto'\]\]\[\['preocupacion\_level'\]\]\[\['table'\]\]
 
 -   list\_by\_school\_mean\_sd\_tables\[\['secaugusto'\]\]
 
@@ -73,8 +75,8 @@ These are the tables containting the percentages of subjects under each level.
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
-<span><span class='c'>#&gt; $pidahi[[1]]</span></span>
-<span><span class='c'>#&gt; $pidahi[[1]]$table</span></span>
+<span><span class='c'>#&gt; $pidahi$grit_level</span></span>
+<span><span class='c'>#&gt; $pidahi$grit_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
 <span><span class='c'>#&gt;   grado Medio  Alto  Bajo</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -82,12 +84,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     100   <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     88.2  5.88  5.88</span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi[[1]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $pidahi$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-1.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi[[2]]</span></span>
-<span><span class='c'>#&gt; $pidahi[[2]]$table</span></span>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 5</span></span></span>
 <span><span class='c'>#&gt;   grado  Bajo  Alto Superior Medio</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -95,12 +97,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>      100   <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     <span style='color: #BB0000;'>NA</span>    64.7     29.4  5.88</span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi[[2]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-2.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi[[3]]</span></span>
-<span><span class='c'>#&gt; $pidahi[[3]]$table</span></span>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 5</span></span></span>
 <span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -108,14 +110,14 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     100    <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>       <span style='color: #BB0000;'>NA</span>  </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     11.8  64.7  23.5     <span style='color: #BB0000;'>NA</span>  </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi[[3]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-3.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso</span></span>
-<span><span class='c'>#&gt; $primcongreso[[1]]</span></span>
-<span><span class='c'>#&gt; $primcongreso[[1]]$table</span></span>
+<span><span class='c'>#&gt; $primcongreso$grit_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$grit_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
 <span><span class='c'>#&gt;   grado  Bajo Medio  Alto</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -124,12 +126,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c    42.1   57.9 <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     8     80   12   </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso[[1]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $primcongreso$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-4.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso[[2]]</span></span>
-<span><span class='c'>#&gt; $primcongreso[[2]]$table</span></span>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
 <span><span class='c'>#&gt;   grado Medio  Alto Superior  Bajo</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -138,12 +140,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c     15.8  42.1     36.8  5.26</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d      8    64       24    4   </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso[[2]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-5.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso[[3]]</span></span>
-<span><span class='c'>#&gt; $primcongreso[[3]]$table</span></span>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
 <span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
 <span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -152,14 +154,14 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c    15.8   42.1  31.6    10.5 </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     8     44    40       8   </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso[[3]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-6.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto</span></span>
-<span><span class='c'>#&gt; $secaugusto[[1]]</span></span>
-<span><span class='c'>#&gt; $secaugusto[[1]]$table</span></span>
+<span><span class='c'>#&gt; $secaugusto$grit_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$grit_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 4</span></span></span>
 <span><span class='c'>#&gt;    grado  Bajo Medio  Alto</span></span>
 <span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -176,12 +178,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c    <span style='color: #BB0000;'>NA</span>     86.7 13.3 </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    11.8   76.5 11.8 </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto[[1]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $secaugusto$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-7.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto[[2]]</span></span>
-<span><span class='c'>#&gt; $secaugusto[[2]]$table</span></span>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
 <span><span class='c'>#&gt;    grado Medio  Alto Superior  Bajo</span></span>
 <span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -198,12 +200,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c     6.67  73.3     20   <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    11.8   52.9     35.3 <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto[[2]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-8.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto[[3]]</span></span>
-<span><span class='c'>#&gt; $secaugusto[[3]]$table</span></span>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level$table</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
 <span><span class='c'>#&gt;    grado  Bajo Medio  Alto Superior</span></span>
 <span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
@@ -220,7 +222,7 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c     6.67  53.3  33.3     6.67</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d     5.88  47.1  47.1    <span style='color: #BB0000;'>NA</span>   </span></span>
 <span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto[[3]]$graph</span></span></code></pre>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-9.png" width="700px" style="display: block; margin: auto;" />
 <pre class='chroma'><code class='language-r' data-lang='r'><span></span>
 <span></span>

@@ -24,8 +24,10 @@ These are the resulting tables containing the mean and sd for:
 
 
 ## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
+The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys.
+The means table is a 3 items list with school name keys.
 
-- list_by_school_levels_percents_tables[['secaugusto']][[3]][['table']]
+- list_by_school_levels_percents_tables[['secaugusto']][['preocupacion_level']][['table']]
 
 - list_by_school_mean_sd_tables[['secaugusto']]
 
