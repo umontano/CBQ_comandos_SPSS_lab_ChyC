@@ -24,10 +24,12 @@ These are the resulting tables containing the mean and sd for:
 
 ## PUBLICATION READY _OR BEAUTIFUL_ TABLES
 Tables with the default formatting for publication on scientific journals.
+
 ```{r, beautiful_tables}
 library(gt)
 list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
 list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
+
 ## extract list of tables
 list_beauty_tables_levels
 list_beauty_tables_meansd
