@@ -27,6 +27,7 @@ Tables with the default formatting for publication on scientific journals.
 
 ```{r, beautiful_tables}
 library(gt)
+
 list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
 list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
 
