@@ -75,12 +75,12 @@ jobs:
       - name: Capture last files pushed
         run: |
           # Get the SHA of the previous commit
-          curr=$(git rev-parse --verify HEAD)
-          prev=$(git rev-parse --verify HEAD^)
+          git rev-parse --verify HEAD
+          git rev-parse --verify HEAD^
           # Capture the files changed or added in the last push
           #CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r $prev $curr)
-          echo $curr
-          echo $prev
-          echo "Files changed or added in the last push:"
+          #echo $curr
+          #echo $prev
+          #echo "Files changed or added in the last push:"
           #echo "$CHANGED_FILES"
 
