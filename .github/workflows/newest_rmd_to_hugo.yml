@@ -74,7 +74,7 @@ jobs:
       - name: Capture latest Rmd file
         run: |
           # Get the SHA of the previous commit
-          PREV_COMMIT=$(git rev-parse HEAD^1)
+          PREV_COMMIT=$(git rev-parse -- HEAD^1)
 
           # Capture the latest .Rmd file pushed
           LATEST_RMD=$(git diff-tree --no-commit-id --name-only -r $PREV_COMMIT HEAD | grep '\.Rmd$' | head -n 1)
