@@ -26,7 +26,9 @@ jobs:
 
     - name: Render Rmd file using Docker
       run: |
-        docker run --rm -v $(pwd):/workdir umontano/rhugodown Rscript -e "rmarkdown::render('$(basename $newest_file)')"
+        cd $(dirname $newest_file)
+        echo "Changed directory to $(pwd)"
+        docker run --rm -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('$(basename $newest_file)')"
 
     - name: Commit and push changes
       run: |
