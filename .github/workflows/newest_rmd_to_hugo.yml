@@ -78,7 +78,7 @@ jobs:
           PREV_COMMIT=$(git rev-parse HEAD^1)
 
           # Capture the files changed or added in the last push
-          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r $PREV_COMMIT HEAD)
+          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD^ HEAD)
 
           echo "Files changed or added in the last push:"
           echo "$CHANGED_FILES"
