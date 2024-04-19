@@ -1,21 +1,22 @@
-name: find heweds rmd and then Render, Push, and Build Markdown File
-
-on:
-  push:
-    branches: main
-
-jobs:
-  find-newest-Rmd:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Find newest Rmd file
-      run: |
-        sh rmd_new.sh
-        
+#name: find heweds rmd and then Render, Push, and Build Markdown File
+#
+#on:
+  #push:
+    #branches: main
+#
+#jobs:
+  #find-newest-Rmd:
+    #runs-on: ubuntu-latest
+#
+    #steps:
+    #- name: Checkout code
+      #uses: actions/checkout@v2
+#
+    #- name: Find newest Rmd file
+      #run: |
+        #sh rmd_new.sh
+        #
+#######################################
         #
         #run: |
         #newest_file=$(find . -name "*.Rmd" -type f -mmin -5 | sort -n | tail -n 1)
@@ -55,3 +56,29 @@ jobs:
         #git commit -m "Built Markdown files with Hugo 0.80.0"
         #git push
         #
+
+name: Capture Latest Rmd File
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  capture-rmd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Capture latest Rmd file
+        run: |
+          # Get the SHA of the previous commit
+          PREV_COMMIT=$(git rev-parse HEAD^1)
+
+          # Capture the latest .Rmd file pushed
+          LATEST_RMD=$(git diff-tree --no-commit-id --name-only -r $PREV_COMMIT HEAD | grep '\.Rmd$' | head -n 1)
+
+          echo "Latest .Rmd file pushed:"
+          echo "$LATEST_RMD"
+
