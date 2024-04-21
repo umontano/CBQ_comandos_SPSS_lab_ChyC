@@ -1,0 +1,86 @@
+#name: find heweds rmd and then Render, Push, and Build Markdown File
+#
+#on:
+  #push:
+    #branches: main
+#
+#jobs:
+  #find-newest-Rmd:
+    #runs-on: ubuntu-latest
+#
+    #steps:
+    #- name: Checkout code
+      #uses: actions/checkout@v2
+#
+    #- name: Find newest Rmd file
+      #run: |
+        #sh rmd_new.sh
+        #
+#######################################
+        #
+        #run: |
+        #newest_file=$(find . -name "*.Rmd" -type f -mmin -5 | sort -n | tail -n 1)
+        #echo "Newest Rmd file found: $newest_file"
+        #cd $(dirname $newest_file)
+        #echo "Changed directory to $(pwd)"
+        #
+        #- name: Set up Docker
+        #uses: actions/setup-python@v2
+        #with:
+        #python-version: '3.x'
+        #
+        #- name: Render Rmd file using Docker
+        #run: |
+        #cd $(dirname $newest_file)
+        #echo "Changed directory to $(pwd)"
+        #docker run --rm -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('$(basename $newest_file)')"
+        #
+        #- name: Commit and push changes
+        #run: |
+        #git config --global user.email "actions@github.com"
+        #git config --global user.name "GitHub Actions"
+        #git add .
+        #git commit -m "Rendered and pushed Rmd file"
+        #git push
+        #
+        #- name: Build Markdown file using Hugo 0.80.0
+        #uses: peaceiris/actions-hugo@v2
+        #with:
+        #hugo-version: '0.80.0'
+        #args: --source . --destination ../markdown-output
+        #
+        #- name: Commit and push built Markdown files
+        #run: |
+        #cd ..
+        #git add markdown-output
+        #git commit -m "Built Markdown files with Hugo 0.80.0"
+        #git push
+        #
+
+name: Capture Last Files Pushed
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  capture-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Capture last files pushed
+        run: |
+          # Get the SHA of the previous commit
+          git rev-parse --verify HEAD
+          git rev-parse --verify HEAD^
+          # Capture the files changed or added in the last push
+          #CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r $prev $curr)
+          #echo $curr
+          #echo $prev
+          #echo "Files changed or added in the last push:"
+          #echo "$CHANGED_FILES"
+

@@ -21,10 +21,25 @@ These are the resulting tables containing the mean and sd for:
 - Esfuerzo
 - Preocupacion
 
+<<<<<<< HEAD
 ```{r, beautiful_tables}
 #library(gt)
 #list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
 #list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
+=======
+## PUBLICATION READY _OR BEAUTIFUL_ TABLES
+Tables with the default formatting for publication on scientific journals.
+
+```{r, beautiful_tables}
+library(gt)
+
+list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
+list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
+
+## extract list of tables
+list_beauty_tables_levels
+list_beauty_tables_meansd
+>>>>>>> 970370c33ddb05315fc77f84880f06b66253c7ec
 ```
 
 ## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
