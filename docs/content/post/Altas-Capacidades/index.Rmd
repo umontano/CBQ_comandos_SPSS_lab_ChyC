@@ -35,7 +35,7 @@ The means table is a 3 items list with school name keys.
 
 - list_by_school_mean_sd_tables[['secaugusto']]
 
-## PUBLICATION READY _OR BEAUTIFUL_ TABLES
+## PDF PUBLICATION READY TABLES
 Tables with the default formatting for publication on scientific journals.
 ```{r, score_means_sd_beautiful_tables}
 list_by_school_mean_sd_tables

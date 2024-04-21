@@ -28,8 +28,8 @@ The levels percents tables are list of 3x3x2 with school names, level name and t
 
 -   list\_by\_school\_mean\_sd\_tables\[\['secaugusto'\]\]
 
-PUBLICATION READY *OR BEAUTIFUL* TABLES
----------------------------------------
+PDF PUBLICATION READY TABLES
+----------------------------
 
 Tables with the default formatting for publication on scientific journals.
 

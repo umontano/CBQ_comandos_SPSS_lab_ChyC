@@ -17,7 +17,7 @@
  GRIT Esfuerzo Preocupacion   EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys. The means table is a 3 items list with school name keys.
   list_by_school_levels_percents_tables[[&amp;lsquo;secaugusto&amp;rsquo;]][[&amp;lsquo;preocupacion_level&amp;rsquo;]][[&amp;lsquo;table&amp;rsquo;]]
   list_by_school_mean_sd_tables[[&amp;lsquo;secaugusto&amp;rsquo;]]
-  PUBLICATION READY OR BEAUTIFUL TABLES Tables with the default formatting for publication on scientific journals.</description>
+  PDF PUBLICATION READY TABLES Tables with the default formatting for publication on scientific journals.</description>
     </item>
     
     <item>
