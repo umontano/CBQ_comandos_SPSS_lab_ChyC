@@ -14,10 +14,10 @@
       
       <guid>/2024/04/10/grit-esfuerzo-preocupacion/</guid>
       <description>SCORE MEANS AND SD TABLES These are the resulting tables containing the mean and sd for:
- GRIT Esfuerzo Preocupacion  EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys. The means table is a 3 items list with school name keys.
+ GRIT Esfuerzo Preocupacion   EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys. The means table is a 3 items list with school name keys.
   list_by_school_levels_percents_tables[[&amp;lsquo;secaugusto&amp;rsquo;]][[&amp;lsquo;preocupacion_level&amp;rsquo;]][[&amp;lsquo;table&amp;rsquo;]]
   list_by_school_mean_sd_tables[[&amp;lsquo;secaugusto&amp;rsquo;]]
-  #&amp;gt; $pidahi #&amp;gt; # A tibble: 3 × 4 #&amp;gt; grado grit_score_Prom esfuerzo_score_Prom preocupacion_score_Prom #&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; #&amp;gt; 1 1a 3.</description>
+  PUBLICATION READY OR BEAUTIFUL TABLES Tables with the default formatting for publication on scientific journals.</description>
     </item>
     
     <item>

@@ -9,7 +9,6 @@ output: hugodown::md_document
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ## RUN DATASET WRANGLING AND COMPUTATIONS.
 source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
-
 ## LOAD DESCRIPTIVE GRAPHICS FUNCTIONS.
 source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 #https://github.com/Mafer-sg/Altas-Capacidades.git
@@ -22,6 +21,11 @@ These are the resulting tables containing the mean and sd for:
 - Esfuerzo
 - Preocupacion
 
+```{r, beautiful_tables}
+#library(gt)
+#list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
+#list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
+```
 
 ## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
 The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys.
@@ -31,8 +35,10 @@ The means table is a 3 items list with school name keys.
 
 - list_by_school_mean_sd_tables[['secaugusto']]
 
-```{r, score_means_sd_tables}
-print(list_by_school_mean_sd_tables)
+## PUBLICATION READY _OR BEAUTIFUL_ TABLES
+Tables with the default formatting for publication on scientific journals.
+```{r, score_means_sd_beautiful_tables}
+list_by_school_mean_sd_tables
 ```
 
 
@@ -43,7 +49,7 @@ Results profiles and levels.
 These are the tables containting the percentages of subjects under each level.
 
 ```{r, tables_school_grade}
-print(list_by_school_levels_percents_tables)
+list_by_school_levels_percents_tables
 ```
 # NUMERIC RESULTS
 
@@ -84,7 +90,7 @@ print(plots_list[[1]])
 ```
 
 ## BOXPLOTS EMPF
-```{r, empf, echo = FALSE, warning = FALSE, message = FALSE}
+```{r, esfuerzo_boxplots, echo = FALSE, warning = FALSE, message = FALSE}
 ## THE SINGLE NUMERICAL COLUM FUNCTION IS
 #boxplots_takes_1numeric_many_categoricals(empf_means, categorical_info)
 
@@ -92,6 +98,6 @@ print(plots_list[[1]])
 plots_list[[2]]
 ```
 
-```{r}
+```{r, preocupacion_boxplots}
 plots_list[[3]]
 ```

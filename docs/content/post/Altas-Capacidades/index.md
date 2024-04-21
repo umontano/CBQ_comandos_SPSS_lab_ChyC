@@ -15,6 +15,10 @@ These are the resulting tables containing the mean and sd for:
 -   Esfuerzo
 -   Preocupacion
 
+<div class="highlight">
+
+</div>
+
 EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
 -------------------------------------------
 
@@ -24,41 +28,48 @@ The levels percents tables are list of 3x3x2 with school names, level name and t
 
 -   list\_by\_school\_mean\_sd\_tables\[\['secaugusto'\]\]
 
+PUBLICATION READY *OR BEAUTIFUL* TABLES
+---------------------------------------
+
+Tables with the default formatting for publication on scientific journals.
+
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
-<span><span class='c'>#&gt;   grado grit_score_Prom esfuerzo_score_Prom preocupacion_score_Prom</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a               3.44                49.9                    63.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2                3.44                52                      36  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a               3.12                45.1                    56.1</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
+<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
+<span><span class='c'>#&gt; |1a    |        3.437500|     0.5260159|            49.85714|         14.599413|                63.85714|              20.48112|</span></span>
+<span><span class='c'>#&gt; |2a    |        3.142361|     0.4637877|            45.44444|          6.354454|                54.94444|              15.06251|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
-<span><span class='c'>#&gt;   grado grit_score_Prom esfuerzo_score_Prom preocupacion_score_Prom</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a               2.74                43.4                    57.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b               2.97                46.4                    58.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c               2.66                44.1                    60.9</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d               3.22                46.4                    63.8</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
+<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
+<span><span class='c'>#&gt; |6a    |        2.738095|     0.5775315|            43.38095|          6.414641|                57.85714|              13.31272|</span></span>
+<span><span class='c'>#&gt; |6b    |        2.968750|     0.4704829|            46.37500|          7.228416|                58.50000|              11.97776|</span></span>
+<span><span class='c'>#&gt; |6c    |        2.656250|     0.7141307|            44.05263|         10.590739|                60.89474|              20.04687|</span></span>
+<span><span class='c'>#&gt; |6d    |        3.225000|     0.5667519|            46.44000|          8.386895|                63.76000|              19.87519|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 4</span></span></span>
-<span><span class='c'>#&gt;    grado grit_score_Prom esfuerzo_score_Prom preocupacion_score_Prom</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>               <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>                   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a               3.18                48.9                    66.7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b               3.04                45.7                    65.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c               3.33                46.0                    63.2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d               2.89                46.1                    59.7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a               3.31                50.2                    66.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b               2.91                43                      56.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c               3.10                44.6                    59.4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d               3.03                44.6                    60.7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a               3.02                42.7                    61.6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b               3.35                50.3                    64.4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c               3.12                46.5                    64.5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d               3.12                48                      63.4</span></span></code></pre>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
+<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
+<span><span class='c'>#&gt; |1a    |        3.177083|     0.6158754|            48.91667|          6.870964|                66.70833|              17.07905|</span></span>
+<span><span class='c'>#&gt; |1b    |        3.036685|     0.6490851|            45.73913|          5.682648|                65.26087|              14.52965|</span></span>
+<span><span class='c'>#&gt; |1c    |        3.329327|     0.7790835|            45.96154|         10.648871|                63.19231|              16.12456|</span></span>
+<span><span class='c'>#&gt; |1d    |        2.887228|     0.8048558|            46.13043|          7.545645|                59.69565|              11.29938|</span></span>
+<span><span class='c'>#&gt; |2a    |        3.311012|     0.6713644|            50.23810|          7.210442|                66.28571|              14.28336|</span></span>
+<span><span class='c'>#&gt; |2b    |        2.906250|     0.6480138|            43.00000|          7.511395|                56.50000|              13.74007|</span></span>
+<span><span class='c'>#&gt; |2c    |        3.097826|     0.5131703|            44.56522|          6.028916|                59.43478|              10.87460|</span></span>
+<span><span class='c'>#&gt; |2d    |        3.031250|     0.7283046|            44.60000|          7.775806|                60.70000|              13.52230|</span></span>
+<span><span class='c'>#&gt; |3a    |        3.018092|     0.4481971|            42.68421|         10.203772|                61.57895|              18.52421|</span></span>
+<span><span class='c'>#&gt; |3b    |        3.349609|     0.6428917|            50.31250|          6.446898|                64.43750|              15.17440|</span></span>
+<span><span class='c'>#&gt; |3c    |        3.125000|     0.4574532|            46.46667|          5.370111|                64.53333|              13.30879|</span></span>
+<span><span class='c'>#&gt; |3d    |        3.115809|     0.6088504|            48.00000|          7.322909|                63.41176|              13.77978|</span></span></code></pre>
 
 </div>
 
@@ -77,12 +88,12 @@ These are the tables containting the percentages of subjects under each level.
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
 <span><span class='c'>#&gt; $pidahi$grit_level</span></span>
 <span><span class='c'>#&gt; $pidahi$grit_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 4</span></span></span>
-<span><span class='c'>#&gt;   grado Medio  Alto  Bajo</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     71.4 28.6  <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     100   <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     88.2  5.88  5.88</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |    Medio|      Alto|     Bajo|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|---------:|--------:|</span></span>
+<span><span class='c'>#&gt; |1a    | 71.42857| 28.571429|       NA|</span></span>
+<span><span class='c'>#&gt; |2a    | 88.88889|  5.555556| 5.555556|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $pidahi$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-1.png" width="700px" style="display: block; margin: auto;" />
@@ -90,12 +101,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $pidahi$esfuerzo_level</span></span>
 <span><span class='c'>#&gt; $pidahi$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 5</span></span></span>
-<span><span class='c'>#&gt;   grado  Bajo  Alto Superior Medio</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     14.3  28.6     57.1 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2      <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>      100   <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     <span style='color: #BB0000;'>NA</span>    64.7     29.4  5.88</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |     Bajo|     Alto| Superior|    Medio|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
+<span><span class='c'>#&gt; |1a    | 14.28571| 28.57143| 57.14286|       NA|</span></span>
+<span><span class='c'>#&gt; |2a    |       NA| 61.11111| 33.33333| 5.555556|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $pidahi$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-2.png" width="700px" style="display: block; margin: auto;" />
@@ -103,12 +114,12 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $pidahi$preocupacion_level</span></span>
 <span><span class='c'>#&gt; $pidahi$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 3 × 5</span></span></span>
-<span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     14.3  57.1  14.3     14.3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2     100    <span style='color: #BB0000;'>NA</span>    <span style='color: #BB0000;'>NA</span>       <span style='color: #BB0000;'>NA</span>  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 2a     11.8  64.7  23.5     <span style='color: #BB0000;'>NA</span>  </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |     Bajo|    Medio|     Alto| Superior|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
+<span><span class='c'>#&gt; |1a    | 14.28571| 57.14286| 14.28571| 14.28571|</span></span>
+<span><span class='c'>#&gt; |2a    | 16.66667| 61.11111| 22.22222|       NA|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $pidahi$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-3.png" width="700px" style="display: block; margin: auto;" />
@@ -118,13 +129,14 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; $primcongreso</span></span>
 <span><span class='c'>#&gt; $primcongreso$grit_level</span></span>
 <span><span class='c'>#&gt; $primcongreso$grit_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
-<span><span class='c'>#&gt;   grado  Bajo Medio  Alto</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a    33.3   66.7 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     6.25  87.5  6.25</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c    42.1   57.9 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     8     80   12   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |     Bajo|    Medio|  Alto|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|--------:|-----:|</span></span>
+<span><span class='c'>#&gt; |6a    | 33.33333| 66.66667|    NA|</span></span>
+<span><span class='c'>#&gt; |6b    |  6.25000| 87.50000|  6.25|</span></span>
+<span><span class='c'>#&gt; |6c    | 42.10526| 57.89474|    NA|</span></span>
+<span><span class='c'>#&gt; |6d    |  8.00000| 80.00000| 12.00|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-4.png" width="700px" style="display: block; margin: auto;" />
@@ -132,13 +144,14 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso$esfuerzo_level</span></span>
 <span><span class='c'>#&gt; $primcongreso$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
-<span><span class='c'>#&gt;   grado Medio  Alto Superior  Bajo</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a     23.8  57.1     19.0 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     12.5  50       37.5 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c     15.8  42.1     36.8  5.26</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d      8    64       24    4   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |    Medio|     Alto| Superior|     Bajo|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
+<span><span class='c'>#&gt; |6a    | 23.80952| 57.14286| 19.04762|       NA|</span></span>
+<span><span class='c'>#&gt; |6b    | 12.50000| 50.00000| 37.50000|       NA|</span></span>
+<span><span class='c'>#&gt; |6c    | 15.78947| 42.10526| 36.84211| 5.263158|</span></span>
+<span><span class='c'>#&gt; |6d    |  8.00000| 64.00000| 24.00000| 4.000000|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-5.png" width="700px" style="display: block; margin: auto;" />
@@ -146,13 +159,14 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso$preocupacion_level</span></span>
 <span><span class='c'>#&gt; $primcongreso$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
-<span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
-<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a    14.3   66.7  19.0    <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     6.25  75    12.5     6.25</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c    15.8   42.1  31.6    10.5 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     8     44    40       8   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |     Bajo|    Medio|     Alto| Superior|</span></span>
+<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
+<span><span class='c'>#&gt; |6a    | 14.28571| 66.66667| 19.04762|       NA|</span></span>
+<span><span class='c'>#&gt; |6b    |  6.25000| 75.00000| 12.50000|  6.25000|</span></span>
+<span><span class='c'>#&gt; |6c    | 15.78947| 42.10526| 31.57895| 10.52632|</span></span>
+<span><span class='c'>#&gt; |6d    |  8.00000| 44.00000| 40.00000|  8.00000|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $primcongreso$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-6.png" width="700px" style="display: block; margin: auto;" />
@@ -162,21 +176,22 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; $secaugusto</span></span>
 <span><span class='c'>#&gt; $secaugusto$grit_level</span></span>
 <span><span class='c'>#&gt; $secaugusto$grit_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 4</span></span></span>
-<span><span class='c'>#&gt;    grado  Bajo Medio  Alto</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a    12.5   70.8 16.7 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b    17.4   78.3  4.35</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c    11.5   65.4 23.1 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d    26.1   60.9 13.0 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a    <span style='color: #BB0000;'>NA</span>     81.0 19.0 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b    25     70    5   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c     8.70  82.6  8.70</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d    15     70   15   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a    10.5   84.2  5.26</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b     6.25  75   18.8 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c    <span style='color: #BB0000;'>NA</span>     86.7 13.3 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    11.8   76.5 11.8 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |      Bajo|    Medio|      Alto|</span></span>
+<span><span class='c'>#&gt; |:-----|---------:|--------:|---------:|</span></span>
+<span><span class='c'>#&gt; |1a    | 12.500000| 70.83333| 16.666667|</span></span>
+<span><span class='c'>#&gt; |1b    | 17.391304| 78.26087|  4.347826|</span></span>
+<span><span class='c'>#&gt; |1c    | 11.538462| 65.38462| 23.076923|</span></span>
+<span><span class='c'>#&gt; |1d    | 26.086956| 60.86957| 13.043478|</span></span>
+<span><span class='c'>#&gt; |2a    |        NA| 80.95238| 19.047619|</span></span>
+<span><span class='c'>#&gt; |2b    | 25.000000| 70.00000|  5.000000|</span></span>
+<span><span class='c'>#&gt; |2c    |  8.695652| 82.60870|  8.695652|</span></span>
+<span><span class='c'>#&gt; |2d    | 15.000000| 70.00000| 15.000000|</span></span>
+<span><span class='c'>#&gt; |3a    | 10.526316| 84.21053|  5.263158|</span></span>
+<span><span class='c'>#&gt; |3b    |  6.250000| 75.00000| 18.750000|</span></span>
+<span><span class='c'>#&gt; |3c    |        NA| 86.66667| 13.333333|</span></span>
+<span><span class='c'>#&gt; |3d    | 11.764706| 76.47059| 11.764706|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto$grit_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-7.png" width="700px" style="display: block; margin: auto;" />
@@ -184,21 +199,22 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto$esfuerzo_level</span></span>
 <span><span class='c'>#&gt; $secaugusto$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
-<span><span class='c'>#&gt;    grado Medio  Alto Superior  Bajo</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a     8.33  45.8     45.8 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b    13.0   73.9     13.0 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c     7.69  50       34.6  7.69</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d    17.4   52.2     30.4 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a    <span style='color: #BB0000;'>NA</span>     42.9     57.1 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b    25     55       20   <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c    17.4   60.9     21.7 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d    20     60       20   <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a    10.5   68.4     15.8  5.26</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b    <span style='color: #BB0000;'>NA</span>     62.5     37.5 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c     6.67  73.3     20   <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    11.8   52.9     35.3 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |     Medio|     Alto| Superior|     Bajo|</span></span>
+<span><span class='c'>#&gt; |:-----|---------:|--------:|--------:|--------:|</span></span>
+<span><span class='c'>#&gt; |1a    |  8.333333| 45.83333| 45.83333|       NA|</span></span>
+<span><span class='c'>#&gt; |1b    | 13.043478| 73.91304| 13.04348|       NA|</span></span>
+<span><span class='c'>#&gt; |1c    |  7.692308| 50.00000| 34.61538| 7.692308|</span></span>
+<span><span class='c'>#&gt; |1d    | 17.391304| 52.17391| 30.43478|       NA|</span></span>
+<span><span class='c'>#&gt; |2a    |        NA| 42.85714| 57.14286|       NA|</span></span>
+<span><span class='c'>#&gt; |2b    | 25.000000| 55.00000| 20.00000|       NA|</span></span>
+<span><span class='c'>#&gt; |2c    | 17.391304| 60.86957| 21.73913|       NA|</span></span>
+<span><span class='c'>#&gt; |2d    | 20.000000| 60.00000| 20.00000|       NA|</span></span>
+<span><span class='c'>#&gt; |3a    | 10.526316| 68.42105| 15.78947| 5.263158|</span></span>
+<span><span class='c'>#&gt; |3b    |        NA| 62.50000| 37.50000|       NA|</span></span>
+<span><span class='c'>#&gt; |3c    |  6.666667| 73.33333| 20.00000|       NA|</span></span>
+<span><span class='c'>#&gt; |3d    | 11.764706| 52.94118| 35.29412|       NA|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto$esfuerzo_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-8.png" width="700px" style="display: block; margin: auto;" />
@@ -206,21 +222,22 @@ These are the tables containting the percentages of subjects under each level.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto$preocupacion_level</span></span>
 <span><span class='c'>#&gt; $secaugusto$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
-<span><span class='c'>#&gt;    grado  Bajo Medio  Alto Superior</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a     4.17  50    37.5     8.33</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b    <span style='color: #BB0000;'>NA</span>     60.9  30.4     8.70</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c     3.85  57.7  30.8     7.69</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d    13.0   60.9  26.1    <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a     4.76  42.9  42.9     9.52</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b    10     75    15      <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c     8.70  73.9  17.4    <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d     5     55    40      <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a    10.5   57.9  15.8    15.8 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b    12.5   37.5  43.8     6.25</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c     6.67  53.3  33.3     6.67</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d     5.88  47.1  47.1    <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; |grado |      Bajo|    Medio|     Alto|  Superior|</span></span>
+<span><span class='c'>#&gt; |:-----|---------:|--------:|--------:|---------:|</span></span>
+<span><span class='c'>#&gt; |1a    |  4.166667| 50.00000| 37.50000|  8.333333|</span></span>
+<span><span class='c'>#&gt; |1b    |        NA| 60.86957| 30.43478|  8.695652|</span></span>
+<span><span class='c'>#&gt; |1c    |  3.846154| 57.69231| 30.76923|  7.692308|</span></span>
+<span><span class='c'>#&gt; |1d    | 13.043478| 60.86957| 26.08696|        NA|</span></span>
+<span><span class='c'>#&gt; |2a    |  4.761905| 42.85714| 42.85714|  9.523810|</span></span>
+<span><span class='c'>#&gt; |2b    | 10.000000| 75.00000| 15.00000|        NA|</span></span>
+<span><span class='c'>#&gt; |2c    |  8.695652| 73.91304| 17.39130|        NA|</span></span>
+<span><span class='c'>#&gt; |2d    |  5.000000| 55.00000| 40.00000|        NA|</span></span>
+<span><span class='c'>#&gt; |3a    | 10.526316| 57.89474| 15.78947| 15.789474|</span></span>
+<span><span class='c'>#&gt; |3b    | 12.500000| 37.50000| 43.75000|  6.250000|</span></span>
+<span><span class='c'>#&gt; |3c    |  6.666667| 53.33333| 33.33333|  6.666667|</span></span>
+<span><span class='c'>#&gt; |3d    |  5.882353| 47.05882| 47.05882|        NA|</span></span>
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; $secaugusto$preocupacion_level$graph</span></span></code></pre>
 <img src="figs/tables_school_grade-9.png" width="700px" style="display: block; margin: auto;" />
@@ -286,13 +303,13 @@ BOXPLOTS EMPF
 
 <div class="highlight">
 
-<img src="figs/empf-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/esfuerzo_boxplots-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/preocupacion_boxplots-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
