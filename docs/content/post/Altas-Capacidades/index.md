@@ -138,6 +138,164 @@ Tables containing the distribution of subjets in the corresponding level profile
 
 </div>
 
+PERCENTAGE GRAPHICS
+===================
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
+<span><span class='c'>#&gt; $pidahi$grit_level</span></span>
+<span><span class='c'>#&gt; $pidahi$grit_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 4</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo Medio  Alto</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     14.3  28.6  57.1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2a     22.2  44.4  33.3</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $pidahi$grit_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-1.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 5</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo  Alto Superior Medio</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     28.6  14.3     57.1  <span style='color: #BB0000;'>NA</span>  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2a     27.8  33.3     11.1  27.8</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $pidahi$esfuerzo_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-2.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 2 × 5</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 1a     28.6  28.6  14.3     28.6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 2a     44.4  16.7  16.7     22.2</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $pidahi$preocupacion_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-3.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso</span></span>
+<span><span class='c'>#&gt; $primcongreso$grit_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$grit_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 4</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo Medio  Alto</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a     57.1  23.8  19.0</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     56.2  25    18.8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c     57.9  15.8  26.3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     24    36    40  </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso$grit_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-4.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a     38.1  38.1  9.52     14.3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     25    18.8 31.2      25  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c     42.1  10.5 10.5      36.8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     12    44   24        20  </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-5.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 4 × 5</span></span></span>
+<span><span class='c'>#&gt;   grado  Bajo Medio  Alto Superior</span></span>
+<span><span class='c'>#&gt;   <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>1</span> 6a     28.6  38.1  19.0    14.3 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>2</span> 6b     31.2  37.5  25       6.25</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>3</span> 6c     36.8  15.8  21.1    26.3 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>4</span> 6d     28    20    24      28   </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $primcongreso$preocupacion_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-6.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto</span></span>
+<span><span class='c'>#&gt; $secaugusto$grit_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$grit_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 4</span></span></span>
+<span><span class='c'>#&gt;    grado  Bajo Medio  Alto</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a    29.2   33.3  37.5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b    39.1   26.1  34.8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c    34.6   26.9  38.5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d    56.5   17.4  26.1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a    28.6   38.1  33.3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b    40     45    15  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c    30.4   39.1  30.4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d    35     35    30  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a    31.6   52.6  15.8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b     6.25  50    43.8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c    46.7   26.7  26.7</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    35.3   41.2  23.5</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto$grit_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-7.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
+<span><span class='c'>#&gt;    grado  Bajo Medio  Alto Superior</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a    16.7   20.8 29.2      33.3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b    26.1   34.8 26.1      13.0</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c    30.8   15.4 19.2      34.6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d    30.4   21.7 26.1      21.7</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a    14.3   23.8  9.52     52.4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b    40     30   15        15  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c    26.1   47.8 13.0      13.0</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d    30     40   10        20  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a    31.6   36.8 21.1      10.5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b     6.25  25   31.2      37.5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c    13.3   46.7 20        20  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d    17.6   23.5 29.4      29.4</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-8.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level</span></span>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level$table</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 12 × 5</span></span></span>
+<span><span class='c'>#&gt;    grado  Bajo Medio  Alto Superior</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 1a     20.8  20.8  20.8    37.5 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 1b     17.4  34.8  17.4    30.4 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 1c     23.1  30.8  11.5    34.6 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 1d     17.4  39.1  30.4    13.0 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 2a     19.0  19.0  28.6    33.3 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 2b     30    40    20      10   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 2c     21.7  26.1  43.5     8.70</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 2d     40    10    20      30   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 3a     31.6  26.3  15.8    26.3 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 3b     18.8  25    18.8    37.5 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>11</span> 3c     20    26.7  26.7    26.7 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>12</span> 3d     23.5  17.6  29.4    29.4 </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; $secaugusto$preocupacion_level$graph</span></span></code></pre>
+<img src="figs/percent_graphics-9.png" width="700px" style="display: block; margin: auto;" />
+<pre class='chroma'><code class='language-r' data-lang='r'><span></span>
+<span></span>
+<span></span></code></pre>
+
+</div>
+
 EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
 -------------------------------------------
 

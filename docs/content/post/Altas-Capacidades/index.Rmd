@@ -42,6 +42,12 @@ knitr::kable(list_extracted_levels_datasets[[3]][[2]], caption = 'Tenacidad', di
 knitr::kable(list_extracted_levels_datasets[[3]][[3]], caption = 'Tenacidad', digits = 1)
 ```
 
+# PERCENTAGE GRAPHICS
+```{r, percent_graphics}
+list_by_school_levels_percents_tables
+```
+
+
 ## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
 The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys.
 The means table is a 3 items list with school name keys.
