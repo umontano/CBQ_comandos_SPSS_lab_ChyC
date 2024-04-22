@@ -7,24 +7,39 @@ output: hugodown::md_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#https://github.com/Mafer-sg/Altas-Capacidades.git
 ## RUN DATASET WRANGLING AND COMPUTATIONS.
 source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
 ## LOAD DESCRIPTIVE GRAPHICS FUNCTIONS.
 source('https://github.com/umontano/analysis/raw/main/boxbar.R')
-#https://github.com/Mafer-sg/Altas-Capacidades.git
 ```
 
+
 # SCORE MEANS AND SD TABLES
-These are the resulting tables containing the mean and sd for:
+These are the tables containing the mean and SD.
 
 - GRIT
 - Esfuerzo
 - Preocupacion
 
-```{r, beautiful_tables}
-#library(gt)
-#list_beauty_tables_meansd <- lapply(list_by_school_mean_sd_tables, gt)
-#list_beauty_tables_levels <- lapply(list_by_school_levels_percents_tables, function(each_school) {
+Tables with the default formatting for publication on scientific journals.
+```{r, percent_beautiful_tables}
+knitr::kable(list_by_school_mean_sd_tables[[1]], caption = 'PIDAHI', digits = 1)
+knitr::kable(list_by_school_mean_sd_tables[[2]], caption = 'Congreso', digits = 1)
+knitr::kable(list_by_school_mean_sd_tables[[3]], caption = 'Augusto', digits = 1)
+```
+# LEVES PERCENTAGE TABLES.
+Tables containing the distribution of subjets in the corresponding level profiles.
+```{r, score_means_sd_beautiful_tables}
+knitr::kable(list_extracted_levels_datasets[[1]][[1]], caption = 'Tenacidad: Pocentaje Niveles', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[1]][[2]], caption = 'Esfuerzo', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[1]][[3]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[2]][[1]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[2]][[2]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[2]][[3]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[3]][[1]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[3]][[2]], caption = 'Tenacidad', digits = 1)
+knitr::kable(list_extracted_levels_datasets[[3]][[3]], caption = 'Tenacidad', digits = 1)
 ```
 
 ## EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS
@@ -35,32 +50,11 @@ The means table is a 3 items list with school name keys.
 
 - list_by_school_mean_sd_tables[['secaugusto']]
 
-## PDF PUBLICATION READY TABLES
-Tables with the default formatting for publication on scientific journals.
-```{r, score_means_sd_beautiful_tables}
-list_by_school_mean_sd_tables
-```
 
 
-# PROFILE  LEVELS
-Results profiles and levels.
 
-## TABLES BY SCHOOLS. RAW VERSION
-These are the tables containting the percentages of subjects under each level.
 
-```{r, tables_school_grade}
-list_by_school_levels_percents_tables
-```
-# NUMERIC RESULTS
-
-## MEANS AND LEVELS EMPF AND GRIT
-```{r}
-print('==GRIT SD==:')
-head(scores_grit_esfuer_preoc)
-head(levels_grit_esfuer_preoc)
-```
-
-## STACKED BARS FOR LEVELS OF EMPF AND GRIT
+# STACKED BARS FOR LEVELS OF EMPF AND GRIT
 ```{r, dodge, echo = FALSE, warning = FALSE, message = FALSE}
 ## VERSION DODGE
 barplots_list <- bars_multicat_multicat_mapped(levels_grit_esfuer_preoc, categorical_info, 'dodge')

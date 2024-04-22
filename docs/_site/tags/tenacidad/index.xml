@@ -13,11 +13,9 @@
       <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>/2024/04/10/grit-esfuerzo-preocupacion/</guid>
-      <description>SCORE MEANS AND SD TABLES These are the resulting tables containing the mean and sd for:
- GRIT Esfuerzo Preocupacion   EXAMPLES OF HOW TO EXTRACT ITEMS FROM LISTS The levels percents tables are list of 3x3x2 with school names, level name and table/graph keys. The means table is a 3 items list with school name keys.
-  list_by_school_levels_percents_tables[[&amp;lsquo;secaugusto&amp;rsquo;]][[&amp;lsquo;preocupacion_level&amp;rsquo;]][[&amp;lsquo;table&amp;rsquo;]]
-  list_by_school_mean_sd_tables[[&amp;lsquo;secaugusto&amp;rsquo;]]
-  PDF PUBLICATION READY TABLES Tables with the default formatting for publication on scientific journals.</description>
+      <description>SCORE MEANS AND SD TABLES These are the tables containing the mean and SD.
+ GRIT Esfuerzo Preocupacion  Tables with the default formatting for publication on scientific journals.
+   grado Tenaci P Tenaci d Esfuer P Esfuer d Preocu P Preocu d     1a 3.4 0.5 49.9 14.6 63.9 20.5   2a 3.1 0.5 45.4 6.4 54.9 15.1       grado Tenaci P Tenaci d Esfuer P Esfuer d Preocu P Preocu d     6a 2.</description>
     </item>
     
     <item>

@@ -9,13 +9,132 @@ tags: ["descriptivo", "altas capacidades", "numeric variables", "Fer Serrano", "
 SCORE MEANS AND SD TABLES
 =========================
 
-These are the resulting tables containing the mean and sd for:
+These are the tables containing the mean and SD.
 
 -   GRIT
 -   Esfuerzo
 -   Preocupacion
 
+Tables with the default formatting for publication on scientific journals.
+
 <div class="highlight">
+
+| grado |  Tenaci P|  Tenaci d|  Esfuer P|  Esfuer d|  Preocu P|  Preocu d|
+|:------|---------:|---------:|---------:|---------:|---------:|---------:|
+| 1a    |       3.4|       0.5|      49.9|      14.6|      63.9|      20.5|
+| 2a    |       3.1|       0.5|      45.4|       6.4|      54.9|      15.1|
+
+| grado |  Tenaci P|  Tenaci d|  Esfuer P|  Esfuer d|  Preocu P|  Preocu d|
+|:------|---------:|---------:|---------:|---------:|---------:|---------:|
+| 6a    |       2.7|       0.6|      43.4|       6.4|      57.9|      13.3|
+| 6b    |       3.0|       0.5|      46.4|       7.2|      58.5|      12.0|
+| 6c    |       2.7|       0.7|      44.1|      10.6|      60.9|      20.0|
+| 6d    |       3.2|       0.6|      46.4|       8.4|      63.8|      19.9|
+
+| grado |  Tenaci P|  Tenaci d|  Esfuer P|  Esfuer d|  Preocu P|  Preocu d|
+|:------|---------:|---------:|---------:|---------:|---------:|---------:|
+| 1a    |       3.2|       0.6|      48.9|       6.9|      66.7|      17.1|
+| 1b    |       3.0|       0.6|      45.7|       5.7|      65.3|      14.5|
+| 1c    |       3.3|       0.8|      46.0|      10.6|      63.2|      16.1|
+| 1d    |       2.9|       0.8|      46.1|       7.5|      59.7|      11.3|
+| 2a    |       3.3|       0.7|      50.2|       7.2|      66.3|      14.3|
+| 2b    |       2.9|       0.6|      43.0|       7.5|      56.5|      13.7|
+| 2c    |       3.1|       0.5|      44.6|       6.0|      59.4|      10.9|
+| 2d    |       3.0|       0.7|      44.6|       7.8|      60.7|      13.5|
+| 3a    |       3.0|       0.4|      42.7|      10.2|      61.6|      18.5|
+| 3b    |       3.3|       0.6|      50.3|       6.4|      64.4|      15.2|
+| 3c    |       3.1|       0.5|      46.5|       5.4|      64.5|      13.3|
+| 3d    |       3.1|       0.6|      48.0|       7.3|      63.4|      13.8|
+
+</div>
+
+LEVES PERCENTAGE TABLES.
+========================
+
+Tables containing the distribution of subjets in the corresponding level profiles.
+
+<div class="highlight">
+
+| grado |  Bajo|  Medio|  Alto|
+|:------|-----:|------:|-----:|
+| 1a    |  14.3|   28.6|  57.1|
+| 2a    |  22.2|   44.4|  33.3|
+
+| grado |  Bajo|  Alto|  Superior|  Medio|
+|:------|-----:|-----:|---------:|------:|
+| 1a    |  28.6|  14.3|      57.1|     NA|
+| 2a    |  27.8|  33.3|      11.1|   27.8|
+
+| grado |  Bajo|  Medio|  Alto|  Superior|
+|:------|-----:|------:|-----:|---------:|
+| 1a    |  28.6|   28.6|  14.3|      28.6|
+| 2a    |  44.4|   16.7|  16.7|      22.2|
+
+| grado |  Bajo|  Medio|  Alto|
+|:------|-----:|------:|-----:|
+| 6a    |  57.1|   23.8|  19.0|
+| 6b    |  56.2|   25.0|  18.8|
+| 6c    |  57.9|   15.8|  26.3|
+| 6d    |  24.0|   36.0|  40.0|
+
+| grado |  Bajo|  Medio|  Alto|  Superior|
+|:------|-----:|------:|-----:|---------:|
+| 6a    |  38.1|   38.1|   9.5|      14.3|
+| 6b    |  25.0|   18.8|  31.2|      25.0|
+| 6c    |  42.1|   10.5|  10.5|      36.8|
+| 6d    |  12.0|   44.0|  24.0|      20.0|
+
+| grado |  Bajo|  Medio|  Alto|  Superior|
+|:------|-----:|------:|-----:|---------:|
+| 6a    |  28.6|   38.1|  19.0|      14.3|
+| 6b    |  31.2|   37.5|  25.0|       6.2|
+| 6c    |  36.8|   15.8|  21.1|      26.3|
+| 6d    |  28.0|   20.0|  24.0|      28.0|
+
+| grado |  Bajo|  Medio|  Alto|
+|:------|-----:|------:|-----:|
+| 1a    |  29.2|   33.3|  37.5|
+| 1b    |  39.1|   26.1|  34.8|
+| 1c    |  34.6|   26.9|  38.5|
+| 1d    |  56.5|   17.4|  26.1|
+| 2a    |  28.6|   38.1|  33.3|
+| 2b    |  40.0|   45.0|  15.0|
+| 2c    |  30.4|   39.1|  30.4|
+| 2d    |  35.0|   35.0|  30.0|
+| 3a    |  31.6|   52.6|  15.8|
+| 3b    |   6.2|   50.0|  43.8|
+| 3c    |  46.7|   26.7|  26.7|
+| 3d    |  35.3|   41.2|  23.5|
+
+| grado |  Bajo|  Medio|  Alto|  Superior|
+|:------|-----:|------:|-----:|---------:|
+| 1a    |  16.7|   20.8|  29.2|      33.3|
+| 1b    |  26.1|   34.8|  26.1|      13.0|
+| 1c    |  30.8|   15.4|  19.2|      34.6|
+| 1d    |  30.4|   21.7|  26.1|      21.7|
+| 2a    |  14.3|   23.8|   9.5|      52.4|
+| 2b    |  40.0|   30.0|  15.0|      15.0|
+| 2c    |  26.1|   47.8|  13.0|      13.0|
+| 2d    |  30.0|   40.0|  10.0|      20.0|
+| 3a    |  31.6|   36.8|  21.1|      10.5|
+| 3b    |   6.2|   25.0|  31.2|      37.5|
+| 3c    |  13.3|   46.7|  20.0|      20.0|
+| 3d    |  17.6|   23.5|  29.4|      29.4|
+
+| grado |  Bajo|  Medio|  Alto|  Superior|
+|:------|-----:|------:|-----:|---------:|
+| 1a    |  20.8|   20.8|  20.8|      37.5|
+| 1b    |  17.4|   34.8|  17.4|      30.4|
+| 1c    |  23.1|   30.8|  11.5|      34.6|
+| 1d    |  17.4|   39.1|  30.4|      13.0|
+| 2a    |  19.0|   19.0|  28.6|      33.3|
+| 2b    |  30.0|   40.0|  20.0|      10.0|
+| 2c    |  21.7|   26.1|  43.5|       8.7|
+| 2d    |  40.0|   10.0|  20.0|      30.0|
+| 3a    |  31.6|   26.3|  15.8|      26.3|
+| 3b    |  18.8|   25.0|  18.8|      37.5|
+| 3c    |  20.0|   26.7|  26.7|      26.7|
+| 3d    |  23.5|   17.6|  29.4|      29.4|
 
 </div>
 
@@ -28,251 +147,8 @@ The levels percents tables are list of 3x3x2 with school names, level name and t
 
 -   list\_by\_school\_mean\_sd\_tables\[\['secaugusto'\]\]
 
-PDF PUBLICATION READY TABLES
-----------------------------
-
-Tables with the default formatting for publication on scientific journals.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
-<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
-<span><span class='c'>#&gt; |1a    |        3.437500|     0.5260159|            49.85714|         14.599413|                63.85714|              20.48112|</span></span>
-<span><span class='c'>#&gt; |2a    |        3.142361|     0.4637877|            45.44444|          6.354454|                54.94444|              15.06251|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
-<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
-<span><span class='c'>#&gt; |6a    |        2.738095|     0.5775315|            43.38095|          6.414641|                57.85714|              13.31272|</span></span>
-<span><span class='c'>#&gt; |6b    |        2.968750|     0.4704829|            46.37500|          7.228416|                58.50000|              11.97776|</span></span>
-<span><span class='c'>#&gt; |6c    |        2.656250|     0.7141307|            44.05263|         10.590739|                60.89474|              20.04687|</span></span>
-<span><span class='c'>#&gt; |6d    |        3.225000|     0.5667519|            46.44000|          8.386895|                63.76000|              19.87519|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado | grit_score_mean| grit_score_sd| esfuerzo_score_mean| esfuerzo_score_sd| preocupacion_score_mean| preocupacion_score_sd|</span></span>
-<span><span class='c'>#&gt; |:-----|---------------:|-------------:|-------------------:|-----------------:|-----------------------:|---------------------:|</span></span>
-<span><span class='c'>#&gt; |1a    |        3.177083|     0.6158754|            48.91667|          6.870964|                66.70833|              17.07905|</span></span>
-<span><span class='c'>#&gt; |1b    |        3.036685|     0.6490851|            45.73913|          5.682648|                65.26087|              14.52965|</span></span>
-<span><span class='c'>#&gt; |1c    |        3.329327|     0.7790835|            45.96154|         10.648871|                63.19231|              16.12456|</span></span>
-<span><span class='c'>#&gt; |1d    |        2.887228|     0.8048558|            46.13043|          7.545645|                59.69565|              11.29938|</span></span>
-<span><span class='c'>#&gt; |2a    |        3.311012|     0.6713644|            50.23810|          7.210442|                66.28571|              14.28336|</span></span>
-<span><span class='c'>#&gt; |2b    |        2.906250|     0.6480138|            43.00000|          7.511395|                56.50000|              13.74007|</span></span>
-<span><span class='c'>#&gt; |2c    |        3.097826|     0.5131703|            44.56522|          6.028916|                59.43478|              10.87460|</span></span>
-<span><span class='c'>#&gt; |2d    |        3.031250|     0.7283046|            44.60000|          7.775806|                60.70000|              13.52230|</span></span>
-<span><span class='c'>#&gt; |3a    |        3.018092|     0.4481971|            42.68421|         10.203772|                61.57895|              18.52421|</span></span>
-<span><span class='c'>#&gt; |3b    |        3.349609|     0.6428917|            50.31250|          6.446898|                64.43750|              15.17440|</span></span>
-<span><span class='c'>#&gt; |3c    |        3.125000|     0.4574532|            46.46667|          5.370111|                64.53333|              13.30879|</span></span>
-<span><span class='c'>#&gt; |3d    |        3.115809|     0.6088504|            48.00000|          7.322909|                63.41176|              13.77978|</span></span></code></pre>
-
-</div>
-
-PROFILE LEVELS
-==============
-
-Results profiles and levels.
-
-TABLES BY SCHOOLS. RAW VERSION
-------------------------------
-
-These are the tables containting the percentages of subjects under each level.
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $pidahi</span></span>
-<span><span class='c'>#&gt; $pidahi$grit_level</span></span>
-<span><span class='c'>#&gt; $pidahi$grit_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |    Medio|      Alto|     Bajo|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|---------:|--------:|</span></span>
-<span><span class='c'>#&gt; |1a    | 71.42857| 28.571429|       NA|</span></span>
-<span><span class='c'>#&gt; |2a    | 88.88889|  5.555556| 5.555556|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi$grit_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-1.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi$esfuerzo_level</span></span>
-<span><span class='c'>#&gt; $pidahi$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |     Bajo|     Alto| Superior|    Medio|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
-<span><span class='c'>#&gt; |1a    | 14.28571| 28.57143| 57.14286|       NA|</span></span>
-<span><span class='c'>#&gt; |2a    |       NA| 61.11111| 33.33333| 5.555556|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi$esfuerzo_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-2.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi$preocupacion_level</span></span>
-<span><span class='c'>#&gt; $pidahi$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |     Bajo|    Medio|     Alto| Superior|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
-<span><span class='c'>#&gt; |1a    | 14.28571| 57.14286| 14.28571| 14.28571|</span></span>
-<span><span class='c'>#&gt; |2a    | 16.66667| 61.11111| 22.22222|       NA|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $pidahi$preocupacion_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-3.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso</span></span>
-<span><span class='c'>#&gt; $primcongreso$grit_level</span></span>
-<span><span class='c'>#&gt; $primcongreso$grit_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |     Bajo|    Medio|  Alto|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|--------:|-----:|</span></span>
-<span><span class='c'>#&gt; |6a    | 33.33333| 66.66667|    NA|</span></span>
-<span><span class='c'>#&gt; |6b    |  6.25000| 87.50000|  6.25|</span></span>
-<span><span class='c'>#&gt; |6c    | 42.10526| 57.89474|    NA|</span></span>
-<span><span class='c'>#&gt; |6d    |  8.00000| 80.00000| 12.00|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso$grit_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-4.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso$esfuerzo_level</span></span>
-<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |    Medio|     Alto| Superior|     Bajo|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
-<span><span class='c'>#&gt; |6a    | 23.80952| 57.14286| 19.04762|       NA|</span></span>
-<span><span class='c'>#&gt; |6b    | 12.50000| 50.00000| 37.50000|       NA|</span></span>
-<span><span class='c'>#&gt; |6c    | 15.78947| 42.10526| 36.84211| 5.263158|</span></span>
-<span><span class='c'>#&gt; |6d    |  8.00000| 64.00000| 24.00000| 4.000000|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso$esfuerzo_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-5.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso$preocupacion_level</span></span>
-<span><span class='c'>#&gt; $primcongreso$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |     Bajo|    Medio|     Alto| Superior|</span></span>
-<span><span class='c'>#&gt; |:-----|--------:|--------:|--------:|--------:|</span></span>
-<span><span class='c'>#&gt; |6a    | 14.28571| 66.66667| 19.04762|       NA|</span></span>
-<span><span class='c'>#&gt; |6b    |  6.25000| 75.00000| 12.50000|  6.25000|</span></span>
-<span><span class='c'>#&gt; |6c    | 15.78947| 42.10526| 31.57895| 10.52632|</span></span>
-<span><span class='c'>#&gt; |6d    |  8.00000| 44.00000| 40.00000|  8.00000|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $primcongreso$preocupacion_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-6.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto</span></span>
-<span><span class='c'>#&gt; $secaugusto$grit_level</span></span>
-<span><span class='c'>#&gt; $secaugusto$grit_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |      Bajo|    Medio|      Alto|</span></span>
-<span><span class='c'>#&gt; |:-----|---------:|--------:|---------:|</span></span>
-<span><span class='c'>#&gt; |1a    | 12.500000| 70.83333| 16.666667|</span></span>
-<span><span class='c'>#&gt; |1b    | 17.391304| 78.26087|  4.347826|</span></span>
-<span><span class='c'>#&gt; |1c    | 11.538462| 65.38462| 23.076923|</span></span>
-<span><span class='c'>#&gt; |1d    | 26.086956| 60.86957| 13.043478|</span></span>
-<span><span class='c'>#&gt; |2a    |        NA| 80.95238| 19.047619|</span></span>
-<span><span class='c'>#&gt; |2b    | 25.000000| 70.00000|  5.000000|</span></span>
-<span><span class='c'>#&gt; |2c    |  8.695652| 82.60870|  8.695652|</span></span>
-<span><span class='c'>#&gt; |2d    | 15.000000| 70.00000| 15.000000|</span></span>
-<span><span class='c'>#&gt; |3a    | 10.526316| 84.21053|  5.263158|</span></span>
-<span><span class='c'>#&gt; |3b    |  6.250000| 75.00000| 18.750000|</span></span>
-<span><span class='c'>#&gt; |3c    |        NA| 86.66667| 13.333333|</span></span>
-<span><span class='c'>#&gt; |3d    | 11.764706| 76.47059| 11.764706|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto$grit_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-7.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto$esfuerzo_level</span></span>
-<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |     Medio|     Alto| Superior|     Bajo|</span></span>
-<span><span class='c'>#&gt; |:-----|---------:|--------:|--------:|--------:|</span></span>
-<span><span class='c'>#&gt; |1a    |  8.333333| 45.83333| 45.83333|       NA|</span></span>
-<span><span class='c'>#&gt; |1b    | 13.043478| 73.91304| 13.04348|       NA|</span></span>
-<span><span class='c'>#&gt; |1c    |  7.692308| 50.00000| 34.61538| 7.692308|</span></span>
-<span><span class='c'>#&gt; |1d    | 17.391304| 52.17391| 30.43478|       NA|</span></span>
-<span><span class='c'>#&gt; |2a    |        NA| 42.85714| 57.14286|       NA|</span></span>
-<span><span class='c'>#&gt; |2b    | 25.000000| 55.00000| 20.00000|       NA|</span></span>
-<span><span class='c'>#&gt; |2c    | 17.391304| 60.86957| 21.73913|       NA|</span></span>
-<span><span class='c'>#&gt; |2d    | 20.000000| 60.00000| 20.00000|       NA|</span></span>
-<span><span class='c'>#&gt; |3a    | 10.526316| 68.42105| 15.78947| 5.263158|</span></span>
-<span><span class='c'>#&gt; |3b    |        NA| 62.50000| 37.50000|       NA|</span></span>
-<span><span class='c'>#&gt; |3c    |  6.666667| 73.33333| 20.00000|       NA|</span></span>
-<span><span class='c'>#&gt; |3d    | 11.764706| 52.94118| 35.29412|       NA|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto$esfuerzo_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-8.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto$preocupacion_level</span></span>
-<span><span class='c'>#&gt; $secaugusto$preocupacion_level$table</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; |grado |      Bajo|    Medio|     Alto|  Superior|</span></span>
-<span><span class='c'>#&gt; |:-----|---------:|--------:|--------:|---------:|</span></span>
-<span><span class='c'>#&gt; |1a    |  4.166667| 50.00000| 37.50000|  8.333333|</span></span>
-<span><span class='c'>#&gt; |1b    |        NA| 60.86957| 30.43478|  8.695652|</span></span>
-<span><span class='c'>#&gt; |1c    |  3.846154| 57.69231| 30.76923|  7.692308|</span></span>
-<span><span class='c'>#&gt; |1d    | 13.043478| 60.86957| 26.08696|        NA|</span></span>
-<span><span class='c'>#&gt; |2a    |  4.761905| 42.85714| 42.85714|  9.523810|</span></span>
-<span><span class='c'>#&gt; |2b    | 10.000000| 75.00000| 15.00000|        NA|</span></span>
-<span><span class='c'>#&gt; |2c    |  8.695652| 73.91304| 17.39130|        NA|</span></span>
-<span><span class='c'>#&gt; |2d    |  5.000000| 55.00000| 40.00000|        NA|</span></span>
-<span><span class='c'>#&gt; |3a    | 10.526316| 57.89474| 15.78947| 15.789474|</span></span>
-<span><span class='c'>#&gt; |3b    | 12.500000| 37.50000| 43.75000|  6.250000|</span></span>
-<span><span class='c'>#&gt; |3c    |  6.666667| 53.33333| 33.33333|  6.666667|</span></span>
-<span><span class='c'>#&gt; |3d    |  5.882353| 47.05882| 47.05882|        NA|</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $secaugusto$preocupacion_level$graph</span></span></code></pre>
-<img src="figs/tables_school_grade-9.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span></span>
-<span></span>
-<span></span></code></pre>
-
-</div>
-
-NUMERIC RESULTS
-===============
-
-MEANS AND LEVELS EMPF AND GRIT
-------------------------------
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "==GRIT SD==:"</span></span><span><span class='c'>#&gt;   grit_score esfuerzo_score preocupacion_score</span></span>
-<span><span class='c'>#&gt; 1    3.28125             51                 63</span></span>
-<span><span class='c'>#&gt; 2    2.65625             44                 46</span></span>
-<span><span class='c'>#&gt; 3    3.59375             52                 52</span></span>
-<span><span class='c'>#&gt; 4    3.28125             40                 61</span></span>
-<span><span class='c'>#&gt; 5    3.12500             45                 62</span></span>
-<span><span class='c'>#&gt; 6    3.12500             45                 44</span></span><span><span class='c'>#&gt;   grit_level esfuerzo_level preocupacion_level</span></span>
-<span><span class='c'>#&gt; 1      Medio       Superior              Medio</span></span>
-<span><span class='c'>#&gt; 2      Medio           Alto              Medio</span></span>
-<span><span class='c'>#&gt; 3      Medio       Superior              Medio</span></span>
-<span><span class='c'>#&gt; 4      Medio           Alto              Medio</span></span>
-<span><span class='c'>#&gt; 5      Medio           Alto              Medio</span></span>
-<span><span class='c'>#&gt; 6      Medio           Alto              Medio</span></span></code></pre>
-
-</div>
-
 STACKED BARS FOR LEVELS OF EMPF AND GRIT
-----------------------------------------
+========================================
 
 <div class="highlight">
 
