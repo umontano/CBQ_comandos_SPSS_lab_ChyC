@@ -45,7 +45,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Capture last files pushed
+      - name: render with docker on workdir
         run: |
           docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
           cat index.pdf
@@ -61,6 +61,7 @@ jobs:
           #echo "Files changed or added in the last push:"
           #echo "$CHANGED_FILES"
         working-directory: docs/content/post/Altas-Capacidades
+
         #
         #- name: Render Rmd file using Docker
         #run: |
