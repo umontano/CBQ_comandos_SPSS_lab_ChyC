@@ -13,10 +13,9 @@ source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
 ## LOAD DESCRIPTIVE GRAPHICS FUNCTIONS.
 source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 ```
-
-
 # SCORE MEANS AND SD TABLES
-These are the tables containing the mean and SD.
+These are 
+the tables containing the mean and SD.
 
 - GRIT
 - Esfuerzo

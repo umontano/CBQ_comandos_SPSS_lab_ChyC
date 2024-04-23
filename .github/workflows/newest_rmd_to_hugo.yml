@@ -2,8 +2,7 @@ name: Workdir docker render
 on:
   push:
     paths:
-      - 'docs/content/post/*/*.Rmd' # Only trigger on post Rmd files
-      s
+      - 'docs/content/post/*/*.Rmd' # trigger on post Rmd files
     branches:
       - main
 
