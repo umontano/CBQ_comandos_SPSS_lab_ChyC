@@ -35,5 +35,6 @@ jobs:
           docker pull chainguard/hugo
           docker run --rm -w /tmp -v $(pwd):/tmp chainguard/hugo
           ls
+          echo doneeeee
           #docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
         working-directory: docs
