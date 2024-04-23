@@ -24,24 +24,24 @@ jobs:
           pwd
         working-directory: docs/content/post/Altas-Capacidades
 
-        - name: Commit and push changes
-          run: |
-            git config --global user.email "actions@github.com"
-            git config --global user.name "GitHub Actions"
-            git add .
-            git commit -m "Rendered and pushed Rmd file"
-            git push
-            #
-            #- name: Build Markdown file using Hugo 0.80.0
-            #uses: peaceiris/actions-hugo@v2
-            #with:
-            #hugo-version: '0.80.0'
-            #args: --source . --destination ../markdown-output
-            #
-            #- name: Commit and push built Markdown files
-            #run: |
-            #cd ..
-            #git add markdown-output
-            #git commit -m "Built Markdown files with Hugo 0.80.0"
-            #git push
-            #
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Rendered and pushed Rmd file"
+          git push
+          #
+          #- name: Build Markdown file using Hugo 0.80.0
+          #uses: peaceiris/actions-hugo@v2
+          #with:
+          #hugo-version: '0.80.0'
+          #args: --source . --destination ../markdown-output
+          #
+          #- name: Commit and push built Markdown files
+          #run: |
+          #cd ..
+          #git add markdown-output
+          #git commit -m "Built Markdown files with Hugo 0.80.0"
+          #git push
+          #
