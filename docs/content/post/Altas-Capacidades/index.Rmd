@@ -28,7 +28,8 @@ knitr::kable(list_by_school_mean_sd_tables[[1]], caption = 'PIDAHI', digits = 1)
 knitr::kable(list_by_school_mean_sd_tables[[2]], caption = 'Congreso', digits = 1)
 knitr::kable(list_by_school_mean_sd_tables[[3]], caption = 'Augusto', digits = 1)
 ```
-# LEVES PERCENTAGE TABLES.
+
+# LEVELS PERCENTAGE TABLES.
 Tables containing the distribution of subjets in the corresponding level profiles.
 ```{r, score_means_sd_beautiful_tables}
 knitr::kable(list_extracted_levels_datasets[[1]][[1]], caption = 'Tenacidad: Pocentaje Niveles', digits = 1)
