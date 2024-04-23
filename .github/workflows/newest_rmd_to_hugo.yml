@@ -23,3 +23,11 @@ jobs:
           ls
           pwd
         working-directory: docs/content/post/Altas-Capacidades
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Rendered and pushed Rmd file"
+          git push
