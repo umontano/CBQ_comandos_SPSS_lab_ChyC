@@ -18,8 +18,7 @@ jobs:
 
       - name: render with docker on workdir
         run: |
-          #docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
-          #cat index.pdf
+          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
           ls
           pwd
         working-directory: docs/content/post/Altas-Capacidades
