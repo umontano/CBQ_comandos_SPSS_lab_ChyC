@@ -16,7 +16,8 @@ source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 # SCORE MEANS AND SD TABLES
 These 
 are 
-the tables containing the mean and SD.
+the 
+tables containing the mean and SD.
 
 - GRIT
 - Esfuerzo
