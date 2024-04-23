@@ -18,9 +18,7 @@ jobs:
 
       - name: render with docker on workdir
         run: |
-          docker pull chainguard/hugo
-          docker login -u umontano -p "{{ secrets.DOCKER_TOKEN }}" docker.io
-          touch zzzz.zzz
+          echo xx >> zzzz.zzz
           #docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/Altas-Capacidades
 
@@ -34,6 +32,8 @@ jobs:
 
       - name: Build Hugo 0.80.0
         run: |
+          docker pull chainguard/hugo
+          docker run --rm -w /tmp -v $(pwd):/tmp chainguard/hugo hugo
           ls
           #docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
         working-directory: docs
