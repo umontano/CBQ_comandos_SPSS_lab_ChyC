@@ -19,8 +19,6 @@ jobs:
       - name: render with docker on workdir
         run: |
           docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
-          ls
-          pwd
         working-directory: docs/content/post/Altas-Capacidades
 
       - name: Commit and push changes
@@ -33,5 +31,6 @@ jobs:
 
       - name: Build Hugo 0.80.0
         run: |
-          docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
+          docker login -u umontano -p "{{ secrets.GITHUB_TOKEN }}"
+          #docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
         working-directory: docs
