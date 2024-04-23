@@ -60,6 +60,8 @@
 name: Capture Last Files Pushed
 on:
   push:
+    paths:
+      - 'docs/content/post/Altas-Capacidades/*.Rmd' # Only trigger on pushes involving Rmd files
     branches:
       - main
 
@@ -75,6 +77,7 @@ jobs:
         run: |
           ls
           pwd
+          cat index.Rmd
           # Get the SHA of the previous commit
           #git rev-parse --verify HEAD
           #git rev-parse --verify HEAD^
