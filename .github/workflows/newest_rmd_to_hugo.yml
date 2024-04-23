@@ -33,4 +33,3 @@ jobs:
 
       - name: Build Hugo 0.80.0
         uses: lowply/build-hugo@v0.80.0
-        working-directory: docs
