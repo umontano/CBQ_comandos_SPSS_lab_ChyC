@@ -18,8 +18,8 @@ jobs:
 
       - name: render with docker on workdir
         run: |
-          docker login -u umontano -p "{{ secrets.DOCKER_TOKEN }}" hub.docker.com
-          docker pull lowply/build-hugo:v0.80.0
+          docker pull chainguard/hugo
+          #docker login -u umontano -p "{{ secrets.DOCKER_TOKEN }}" hub.docker.com
           #docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/Altas-Capacidades
 
