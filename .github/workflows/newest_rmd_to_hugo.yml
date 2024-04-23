@@ -32,4 +32,4 @@ jobs:
           git push
 
       - name: Build Hugo 0.80.0
-        uses: lowply/build-hugo@v0.80
+        uses: lowply/build-hugo@v0.125.3
