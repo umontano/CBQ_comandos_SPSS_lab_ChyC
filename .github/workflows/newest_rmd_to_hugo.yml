@@ -19,8 +19,14 @@ jobs:
       - name: render with docker on workdir
         run: |
           echo xx >> zzzz.zzz
-          #docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
+          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'html_document')"
         working-directory: docs/content/post/Altas-Capacidades
+
+      - name: Hugo 0.80.0
+        run: |
+          docker run -v $(pwd):/app umontano/rhugodown hugo
+          echo doneeeee
+        working-directory: docs
 
       - name: Commit and push changes
         run: |
@@ -30,11 +36,3 @@ jobs:
           git commit -m "Rendered and pushed Rmd file"
           git push
 
-      - name: Build Hugo 0.80.0
-        run: |
-          docker run -v $(pwd):/app umontano/rhugodown hugo
-          #docker pull chainguard/hugo
-          #docker run -v $PWD/data:/home/data -p 8080:8080 chainguard/hugo
-          ls
-          echo doneeeee
-        working-directory: docs
