@@ -32,4 +32,6 @@ jobs:
           git push
 
       - name: Build Hugo 0.80.0
-        uses: lowply/build-hugo@v0.125.3
+        run: |
+          docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
+        working-directory: docs
