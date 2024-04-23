@@ -75,8 +75,8 @@ jobs:
 
       - name: Capture last files pushed
         run: |
-          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'html_document')"
-          cat index.html
+          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
+          cat index.pdf
           ls
           pwd
           # Get the SHA of the previous commit
