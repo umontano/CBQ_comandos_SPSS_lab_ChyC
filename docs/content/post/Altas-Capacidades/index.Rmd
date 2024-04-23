@@ -14,7 +14,8 @@ source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
 source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 ```
 # SCORE MEANS AND SD TABLES
-These are 
+These 
+are 
 the tables containing the mean and SD.
 
 - GRIT
