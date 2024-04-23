@@ -32,8 +32,9 @@ jobs:
 
       - name: Build Hugo 0.80.0
         run: |
-          docker pull chainguard/hugo
-          docker run -v $PWD/data:/home/data -p 8080:8080 chainguard/hugo
+          docker run -v $(pwd):/app umontano/rhugodown hugo
+          #docker pull chainguard/hugo
+          #docker run -v $PWD/data:/home/data -p 8080:8080 chainguard/hugo
           ls
           echo doneeeee
         working-directory: docs
