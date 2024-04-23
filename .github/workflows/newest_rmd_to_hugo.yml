@@ -28,34 +28,6 @@
         #uses: actions/setup-python@v2
         #with:
         #python-version: '3.x'
-        #
-        #- name: Render Rmd file using Docker
-        #run: |
-        #cd $(dirname $newest_file)
-        #echo "Changed directory to $(pwd)"
-        #docker run --rm -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('$(basename $newest_file)')"
-        #
-        #- name: Commit and push changes
-        #run: |
-        #git config --global user.email "actions@github.com"
-        #git config --global user.name "GitHub Actions"
-        #git add .
-        #git commit -m "Rendered and pushed Rmd file"
-        #git push
-        #
-        #- name: Build Markdown file using Hugo 0.80.0
-        #uses: peaceiris/actions-hugo@v2
-        #with:
-        #hugo-version: '0.80.0'
-        #args: --source . --destination ../markdown-output
-        #
-        #- name: Commit and push built Markdown files
-        #run: |
-        #cd ..
-        #git add markdown-output
-        #git commit -m "Built Markdown files with Hugo 0.80.0"
-        #git push
-        #
 
 name: Capture Last Files Pushed
 on:
@@ -89,3 +61,31 @@ jobs:
           #echo "Files changed or added in the last push:"
           #echo "$CHANGED_FILES"
         working-directory: docs/content/post/Altas-Capacidades
+        #
+        #- name: Render Rmd file using Docker
+        #run: |
+        #cd $(dirname $newest_file)
+        #echo "Changed directory to $(pwd)"
+        #docker run --rm -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('$(basename $newest_file)')"
+        #
+        - name: Commit and push changes
+        run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add .
+        git commit -m "Rendered and pushed Rmd file"
+        git push
+          #
+          #- name: Build Markdown file using Hugo 0.80.0
+          #uses: peaceiris/actions-hugo@v2
+          #with:
+          #hugo-version: '0.80.0'
+          #args: --source . --destination ../markdown-output
+          #
+          #- name: Commit and push built Markdown files
+          #run: |
+          #cd ..
+          #git add markdown-output
+          #git commit -m "Built Markdown files with Hugo 0.80.0"
+          #git push
+          #

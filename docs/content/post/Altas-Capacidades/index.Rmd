@@ -32,6 +32,7 @@ knitr::kable(list_by_school_mean_sd_tables[[3]], caption = 'Augusto', digits = 1
 # LEVEL PERCENTAGE TABLES.
 
 ## Tables 
+Here are the
 Containing the distribution of subjets in the corresponding level profiles.
 
 ```{r, score_means_sd_beautiful_tables}
