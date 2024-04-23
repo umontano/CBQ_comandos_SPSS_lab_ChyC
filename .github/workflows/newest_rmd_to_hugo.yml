@@ -2,7 +2,8 @@ name: Workdir docker render
 on:
   push:
     paths:
-      - 'docs/content/post/*/*.Rmd' # Only trigger on pushes involving Rmd files
+      - 'docs/content/post/*/*.Rmd' # Only trigger on post Rmd files
+      s
     branches:
       - main
 
@@ -13,7 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: render with docker on workdir
         run: |
           docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
