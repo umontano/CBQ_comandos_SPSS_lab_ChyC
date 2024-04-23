@@ -33,8 +33,7 @@ jobs:
       - name: Build Hugo 0.80.0
         run: |
           docker pull chainguard/hugo
-          docker run --rm -w /tmp -v $(pwd):/tmp chainguard/hugo
+          docker run -v $PWD/data:/home/data -p 8080:8080 chainguard/hugo
           ls
           echo doneeeee
-          #docker run --rm -w /tmp -v $(pwd):/tmp lowply/build-hugo:v0.80.0
         working-directory: docs
