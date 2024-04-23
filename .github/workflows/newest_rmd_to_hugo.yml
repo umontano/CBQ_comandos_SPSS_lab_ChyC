@@ -75,7 +75,7 @@ jobs:
 
       - name: Capture last files pushed
         run: |
-          ducker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'html_document')"
+          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'html_document')"
           cat index.html
           ls
           pwd
