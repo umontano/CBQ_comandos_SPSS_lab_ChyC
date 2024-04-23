@@ -58,7 +58,6 @@
         #
 
 name: Capture Last Files Pushed
-
 on:
   push:
     branches:
@@ -74,13 +73,15 @@ jobs:
 
       - name: Capture last files pushed
         run: |
+          ls
+          pwd
           # Get the SHA of the previous commit
-          git rev-parse --verify HEAD
-          git rev-parse --verify HEAD^
+          #git rev-parse --verify HEAD
+          #git rev-parse --verify HEAD^
           # Capture the files changed or added in the last push
           #CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r $prev $curr)
           #echo $curr
           #echo $prev
           #echo "Files changed or added in the last push:"
           #echo "$CHANGED_FILES"
-
+        working-directory: docs/content/post/Altas-Capacidades
