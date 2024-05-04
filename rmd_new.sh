@@ -1,22 +1,25 @@
 #!/bin/sh
 
-## TEST FOR CBQ ON HOME
-if test -d ~/CBQ*/
-then
-	echo __IN_LOCAL__
-	cd ~/CBQ*/ || exit 1
-else
-	echo _NON_LOC__
-fi
 ## TEST FOR PRESENCE OF CBQ ON A LINK
 if test -d ~/a/CBQ*/
 then
 	echo __IN_LOCAL__
 	cd ~/a/CBQ*/ || exit 1
+	root_git_dir=$(pwd)
 else
 	echo _NON_LOC__
 fi
-root_git_dir=$(pwd)
+
+## TEST FOR CBQ ON HOME
+if test -d ~/CBQ*/
+then
+	echo __IN_LOCAL__
+	cd ~/CBQ*/ || exit 1
+	root_git_dir=$(pwd)
+else
+	echo _NON_LOC__
+fi
+
 git pull
 posts_webpage_git_dir="$root_git_dir"/docs/content/post
 ls "$posts_webpage_git_dir"
