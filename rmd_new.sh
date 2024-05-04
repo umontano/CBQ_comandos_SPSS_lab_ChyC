@@ -1,5 +1,14 @@
 #!/bin/sh
 
+## TEST FOR CBQ ON HOME
+if test -d ~/CBQ*/
+then
+	echo __IN_LOCAL__
+	cd ~/CBQ*/ || exit 1
+else
+	echo _NON_LOC__
+fi
+## TEST FOR PRESENCE OF CBQ ON A LINK
 if test -d ~/a/CBQ*/
 then
 	echo __IN_LOCAL__
