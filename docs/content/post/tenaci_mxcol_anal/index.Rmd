@@ -20,7 +20,6 @@ source('https://github.com/umontano/analysis/raw/master/categoric_glm.R')
 source('https://github.com/umontano/analysis/raw/master/correlation_graphics.R')
 ```
 
-
 # CORRELATION ANALYSES
 
 - G
