@@ -39,7 +39,7 @@ echo "$searchee_dir"
 
 
 ## SET THE GITHUB ACTIONS WORKFLOWS YAML FILE
-workflow_file="$posts_webpage_git_dir"/.github/workflows/rmd_hugo.yml
+workflow_file="$root_git_dir"/.github/workflows/rmd_hugo.yml
 
 ls "$posts_webpage_git_dir"
 
@@ -81,6 +81,11 @@ if [ -n "$latest_rmd" ]; then
   dest_dir="$posts_webpage_git_dir/$rmd_base"
   mkdir -p "$dest_dir"
 
+###################################################################################
+## TEST WORKFLOW FILE
+  echo "$workflow_file"
+  cat "$workflow_file"
+  
   # Copy the Rmd file to the destination directory
   cp -f "$latest_rmd" "$dest_dir/"
 
