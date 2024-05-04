@@ -15,6 +15,7 @@ output: hugodown::md_document
 ## LOAD WRANGLING AND DATA PREPARATION
 source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
 ## LOAD ANALYSIS AND GRAPHICAL FUNCTIONS
+## NOTE THAT IT USES THE MASTER BRANCE
 source('https://github.com/umontano/analysis/raw/master/categoric_glm.R')
 source('https://github.com/umontano/analysis/raw/master/correlation_graphics.R')
 ```
