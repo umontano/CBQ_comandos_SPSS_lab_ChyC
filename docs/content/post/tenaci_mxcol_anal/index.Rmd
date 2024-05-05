@@ -1,25 +1,39 @@
 ---
 title: "report"
+subtitle: "G, Tenacidad, Perfeccionismo: Group Differnces and Correlation Analyses."
 author: "Ma. Fernanda Serrano"
 date: 2024-05-02
-tags: ["descriptivo", "altas capacidades", "numeric variables", "Fer Serrano", "tenacidad", "perfeccionismo"]
+tags: ["altas capacidades", "numeric variables", "Fer Serrano", "tenacidad", "perfeccionismo"]
 output: hugodown::md_document
 ---
 ```{r setup, include=FALSE}
 #knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #https://github.com/Mafer-sg/Altas-Capacidades.git
-## RUN DATASET WRANGLING AND COMPUTATIONS.
-#source('https://github.com/Mafer-sg/Altas-Capacidades/raw/main/tenacidad.R')
-## LOAD DESCRIPTIVE GRAPHICS FUNCTIONS.
-#source('https://github.com/umontano/analysis/raw/main/boxbar.R')
 ## LOAD WRANGLING AND DATA PREPARATION
-source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
+#source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
+#source('../mxco.R')
 ## LOAD ANALYSIS AND GRAPHICAL FUNCTIONS
 ## NOTE THAT IT USES THE MASTER BRANCE
-source('https://github.com/umontano/analysis/raw/master/categoric_glm.R')
 source('https://github.com/umontano/analysis/raw/master/correlation_graphics.R')
+source('https://github.com/umontano/analysis/raw/master/categoric_glm.R')
+#source('/mnt/Dropbox/y/p/hub/analysis/categoric_glm.R')
 ```
 
+
+# DIFFERENCES AMONG GROUPS
+## ANOVAS FOR CATEGORICAL INFORMATION
+
+1.  INCLUDING CAPACITY.
+1. Analyses of influence of categorical variables, groups, to G Tenaci and Perfec.
+
+```{r, anovas_G_tenaci_perfec_cat_info}
+## COMPUTE ANALYSES AND GRAPHICS
+categorical_results <- merged_lm_responses_to_predictors(scores_grit_esfuer_preoc, categorical_info, threshold_significance = 0.05, categorical_flag = FALSE,
+side = 1, cex = 0.5, pch = 1.1, alpha = 1/3, size = 1.1)
+
+# SHOW RESULTS
+categorical_results
+```
 # CORRELATION ANALYSES
 
 - G

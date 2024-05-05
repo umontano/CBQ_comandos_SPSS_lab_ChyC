@@ -18,12 +18,12 @@ jobs:
 
       - name: render with docker on workdir
         run: |
-          docker run -v $(pwd):/app umontano/rhugodown Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/tenaci_mxcol_anal
 
       - name: Hugo 0.80.0
         run: |
-          docker run -v $(pwd):/app umontano/rhugodown hugo
+          docker run -v $(pwd):/app umontano/verseh hugo
           echo doneeeee
         working-directory: docs
 
