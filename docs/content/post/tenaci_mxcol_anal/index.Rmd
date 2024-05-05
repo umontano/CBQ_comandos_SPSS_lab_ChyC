@@ -30,7 +30,6 @@ source('https://github.com/umontano/analysis/raw/master/categoric_glm.R')
 ## COMPUTE ANALYSES AND GRAPHICS
 categorical_results <- merged_lm_responses_to_predictors(scores_grit_esfuer_preoc, categorical_info, threshold_significance = 0.05, categorical_flag = FALSE,
 side = 1, cex = 0.5, pch = 1.1, alpha = 1/3, size = 1.1)
-
 # SHOW RESULTS
 categorical_results
 ```
