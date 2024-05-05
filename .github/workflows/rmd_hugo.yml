@@ -18,6 +18,8 @@ jobs:
 
       - name: render with docker on workdir
         run: |
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('index.Rmd')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('index.Rmd', output_format = 'html_document')"
           docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('index.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/tenaci_mxcol_anal
 
