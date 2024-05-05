@@ -10,8 +10,7 @@ output: hugodown::md_document
 #knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #https://github.com/Mafer-sg/Altas-Capacidades.git
 ## LOAD WRANGLING AND DATA PREPARATION
-#source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
-#source('../mxco.R')
+source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
 ## LOAD ANALYSIS AND GRAPHICAL FUNCTIONS
 ## NOTE THAT IT USES THE MASTER BRANCE
 source('https://github.com/umontano/analysis/raw/master/correlation_graphics.R')
