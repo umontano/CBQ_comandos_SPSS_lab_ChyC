@@ -34,6 +34,7 @@ side = 1, cex = 0.5, pch = 1.1, alpha = 1/3, size = 1.1)
 categorical_results
 ```
 # CORRELATION ANALYSES
+Analysis of association among the following variables:
 
 - G
 - GRIT
