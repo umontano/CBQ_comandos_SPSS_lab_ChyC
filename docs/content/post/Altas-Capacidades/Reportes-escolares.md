@@ -5,7 +5,7 @@ author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 
 output: hugodown::md_document
-rmd_hash: 4bad80183aebfb2e
+rmd_hash: c18950481ff11fdd
 
 ---
 
@@ -74,7 +74,9 @@ rmd_hash: 4bad80183aebfb2e
 
 ## TABLES EXAMPLES
 
-To show a level-percentage table by school: The elements of the list - First element:
+To show a level-percentage table by school: The elements of the list
+
+-   First element:
 
 \[1\] "andes" "bicentenario" "cepac" "coltec"
 
@@ -140,7 +142,9 @@ Augusto
 
 ## GRAPHICS EXAMPLES
 
-Showing a level-percentage graphic: Use the same elements as the level-percent table, but set 'graph' in the last element.
+Showing a level-percentage graphic:
+
+Use the same elements as the level-percent table, but set 'graph' in the last element.
 
 <div class="highlight">
 
@@ -150,7 +154,9 @@ Showing a level-percentage graphic: Use the same elements as the level-percent t
 
 ## MEAN AND SD GRAPHS
 
-Showing a main-sd point inverval plot: - First element is school name same as examples above.
+Showing a main-sd point inverval plot:
+
+-   First element is school name same as examples above.
 
 -   Second elemnt:
 
