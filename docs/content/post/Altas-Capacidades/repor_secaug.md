@@ -4,7 +4,7 @@ subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Pe
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 output: hugodown::md_document
-rmd_hash: 6966c0c386c61ab3
+rmd_hash: 0ccc6a185c006e11
 
 ---
 
@@ -70,7 +70,7 @@ Nivel de Inteligencia
 | 3c    | 46.7 |  33.3 | 20.0 |
 | 3d    | 41.2 |  41.2 | 17.6 |
 
-Nivel de Inteligencia
+Nivel de Tenacidad
 
 </div>
 
@@ -93,7 +93,7 @@ Nivel de Inteligencia
 | 3c    | 13.3 |  46.7 | 33.3 |      6.7 |
 | 3d    | 17.6 |  23.5 | 35.3 |     23.5 |
 
-Nivel de Inteligencia
+Nivel de Esfuerzo
 
 </div>
 
@@ -116,7 +116,7 @@ Nivel de Inteligencia
 | 3c    | 13.3 |  33.3 | 33.3 |     20.0 |
 | 3d    | 23.5 |  17.6 | 41.2 |     17.6 |
 
-Nivel de Inteligencia
+Nivel de Preocupacion
 
 </div>
 
@@ -124,7 +124,7 @@ Nivel de Inteligencia
 
 Note that there is only one mean-sd table by school
 
-### Table Augusto
+### Mean and Standard deviation Table for Augusto
 
 <div class="highlight">
 
@@ -143,35 +143,7 @@ Note that there is only one mean-sd table by school
 | 3c    | 88.3 |  8.5 |         3.1 |         0.5 |       46.5 |        5.4 |           64.5 |           13.3 |
 | 3d    | 95.6 | 13.6 |         3.1 |         0.6 |       48.0 |        7.3 |           63.4 |           13.8 |
 
-Augusto
-
-</div>
-
-### Table Congreso
-
-<div class="highlight">
-
-| grado | fG P | fG d | Tenacidad P | Tenacidad d | Esfuerzo P | Esfuerzo d | Preocupacion P | Preocupacion d |
-|:-----|----:|----:|---------:|---------:|--------:|--------:|-----------:|-----------:|
-| 6a    | 94.0 | 11.4 |         2.7 |         0.6 |       43.4 |        6.4 |           57.9 |           13.3 |
-| 6b    | 97.2 |  7.5 |         3.0 |         0.5 |       46.4 |        7.2 |           58.5 |           12.0 |
-| 6c    | 95.5 | 18.2 |         2.7 |         0.7 |       44.1 |       10.6 |           60.9 |           20.0 |
-| 6d    | 96.9 | 12.7 |         3.2 |         0.6 |       46.4 |        8.4 |           63.8 |           19.9 |
-
-Congreso
-
-</div>
-
-### Table Pidahi
-
-<div class="highlight">
-
-| grado |  fG P | fG d | Tenacidad P | Tenacidad d | Esfuerzo P | Esfuerzo d | Preocupacion P | Preocupacion d |
-|:-----|-----:|----:|---------:|---------:|--------:|--------:|-----------:|-----------:|
-| 1a    | 103.7 |  7.7 |         3.4 |         0.5 |       49.9 |       14.6 |           63.9 |           20.5 |
-| 2a    | 113.3 | 12.9 |         3.2 |         0.5 |       45.4 |        6.4 |           54.9 |           15.1 |
-
-Pidahi
+secaugusto
 
 </div>
 
@@ -185,7 +157,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-8-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-6-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -193,7 +165,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-9-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-7-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -201,7 +173,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-10-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-8-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -209,7 +181,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-11-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-9-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -227,7 +199,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-12-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-10-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -235,7 +207,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-13-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-11-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -243,7 +215,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-14-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-12-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -251,7 +223,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-15-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-13-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
