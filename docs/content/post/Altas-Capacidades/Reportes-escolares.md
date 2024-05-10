@@ -5,19 +5,31 @@ author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 
 output: hugodown::md_document
-rmd_hash: c18950481ff11fdd
+rmd_hash: 6064bd8c377391de
 
 ---
 
 # OUTLIERS BY SCHOOL
 
+## PIDAHI
+
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; $Esfuer</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_pidahi</span></span>
+<span><span class='c'>#&gt; $Esfuer</span></span>
 <span><span class='c'>#&gt; $Esfuer$pidahi</span></span>
 <span><span class='c'>#&gt;      escuela grado          id Esfuer</span></span>
 <span><span class='c'>#&gt; 1269  pidahi    1a DIF1a2dma1s     22</span></span>
-<span></span><span><span class='c'>#&gt; $fG</span></span>
+<span></span></code></pre>
+
+</div>
+
+## CONGRESO
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_primcongreso</span></span>
+<span><span class='c'>#&gt; $fG</span></span>
 <span><span class='c'>#&gt; $fG$primcongreso</span></span>
 <span><span class='c'>#&gt;          escuela grado          id fG</span></span>
 <span><span class='c'>#&gt; 298 primcongreso    6c PCC6c2rcc1n 60</span></span>
@@ -41,7 +53,16 @@ rmd_hash: c18950481ff11fdd
 <span><span class='c'>#&gt; $Preocu$primcongreso</span></span>
 <span><span class='c'>#&gt;          escuela grado          id Preocu</span></span>
 <span><span class='c'>#&gt; 318 primcongreso    6d PCC6d2mfr1n    109</span></span>
-<span></span><span><span class='c'>#&gt; $fG</span></span>
+<span></span></code></pre>
+
+</div>
+
+## AUGUSTO
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_secaugusto</span></span>
+<span><span class='c'>#&gt; $fG</span></span>
 <span><span class='c'>#&gt; $fG$secaugusto</span></span>
 <span><span class='c'>#&gt;        escuela grado          id fG</span></span>
 <span><span class='c'>#&gt; 186 secaugusto    1c ACS1c2ked1n 55</span></span>
