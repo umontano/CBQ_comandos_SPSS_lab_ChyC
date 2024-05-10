@@ -4,7 +4,7 @@ subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Pe
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 
-output: pdf_document
+output: hugodown::md_document
 ---
 ```{r setup, include=FALSE}
 #output: hugodown::md_document
