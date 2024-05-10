@@ -1,10 +1,11 @@
 ---
-title: "Augusto"
+title: "AUGUSTO"
 subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Perfeccionismo y Tenacidad "
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
+
 output: hugodown::md_document
-rmd_hash: 0ccc6a185c006e11
+rmd_hash: 145e1cc401df422a
 
 ---
 
@@ -12,7 +13,9 @@ rmd_hash: 0ccc6a185c006e11
 
 ## TABLES EXAMPLES
 
-To show a level-percentage table by school: The elements of the list
+To show a level-percentage table by school:
+
+The elements of the list
 
 -   First element:
 
@@ -29,6 +32,8 @@ To show a level-percentage table by school: The elements of the list
 \[4\] "preocupacion_level"
 
 ### Table Augusto Intelligence
+
+-   Use "caption" field to modify the title.
 
 <div class="highlight">
 
@@ -53,6 +58,8 @@ Nivel de Inteligencia
 
 ### Table Augusto Tenacidad
 
+-   Use "caption" field to modify the title.
+
 <div class="highlight">
 
 | grado | Bajo | Medio | Alto |
@@ -76,6 +83,8 @@ Nivel de Tenacidad
 
 ### Table Augusto Esfuerzo
 
+-   Use "caption" field to modify the title.
+
 <div class="highlight">
 
 | grado | Bajo | Medio | Alto | Superior |
@@ -98,6 +107,8 @@ Nivel de Esfuerzo
 </div>
 
 ### Table Augusto Preocupacion
+
+-   Use "caption" field to modify the title.
 
 <div class="highlight">
 
@@ -125,6 +136,8 @@ Nivel de Preocupacion
 Note that there is only one mean-sd table by school
 
 ### Mean and Standard deviation Table for Augusto
+
+-   Use "caption" field to modify the title.
 
 <div class="highlight">
 
