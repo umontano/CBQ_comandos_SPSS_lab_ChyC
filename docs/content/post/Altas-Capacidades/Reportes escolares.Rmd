@@ -43,30 +43,79 @@ The elements of the list
 
 - Second element:
 
-[1] "fG_level"           "grit_level"         "esfuerzo_level"
+[1] "fG_level"           "tenacidad_level"         "esfuerzo_level"
 
 [4] "preocupacion_level"
 
-```{r leves_table, echo=FALSE}
-knitr::kable(list_extracted_levels_datasets[['pidahi']][['fG_level']], caption = 'Nivel de Inteligencia', digits = 1)
+### Table Augusto Intelligence
+
+```{r, echo=FALSE}
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['fG_level']], caption = 'Nivel de Inteligencia', digits = 1)
+```
+### Table Augusto Tenacidad
+
+```{r, echo=FALSE}
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['tenacidad_level']], caption = 'Nivel de Inteligencia', digits = 1)
+```
+### Table Augusto Esfuerzo
+
+```{r, echo=FALSE}
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['esfuerzo_level']], caption = 'Nivel de Inteligencia', digits = 1)
+```
+### Table Augusto Preocupacion
+
+```{r, echo=FALSE}
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['preocupacion_level']], caption = 'Nivel de Inteligencia', digits = 1)
 ```
 
 ## Showing a mean-sd table by school
-```{r, meansd_table, echo=FALSE}
-knitr::kable(list_by_school_mean_sd_tables[['pidahi']], caption = 'PIDAHI', digits = 1)
-knitr::kable(list_by_school_mean_sd_tables[['primcongreso']], caption = 'Congreso', digits = 1)
+Note that there is only one mean-sd table by school
+
+### Table Augusto
+
+```{r, echo=FALSE}
 knitr::kable(list_by_school_mean_sd_tables[['secaugusto']], caption = 'Augusto', digits = 1)
 ```
 
+### Table Congreso
+
+```{r, echo=FALSE}
+knitr::kable(list_by_school_mean_sd_tables[['primcongreso']], caption = 'Congreso', digits = 1)
+```
+
+### Table Pidahi
+
+```{r, echo=FALSE}
+knitr::kable(list_by_school_mean_sd_tables[['pidahi']], caption = 'Pidahi', digits = 1)
+```
 
 ## GRAPHICS EXAMPLES
 Showing a level-percentage graphic:
 
 Use the same elements as the level-percent table, but set 'graph' in the last element.
 
-```{r meansd_grap, echo=FALSE}
-list_by_school_levels_percents_tables[['pidahi']][['fG_level']][['graph']]
+### Percent-Levels Augusto Intelligence
+
+```{r, echo=FALSE}
 list_by_school_levels_percents_tables[['secaugusto']][['fG_level']][['graph']]
+```
+
+### Percent-Levels Augusto Tenacity
+
+```{r, echo=FALSE}
+list_by_school_levels_percents_tables[['secaugusto']][['tenacidad_level']][['graph']]
+```
+
+### Percent-Levels Augusto Effort
+
+```{r, echo=FALSE}
+list_by_school_levels_percents_tables[['secaugusto']][['esfuerzo_level']][['graph']]
+```
+
+### Percent-Levels Augusto Preoccupation
+
+```{r, echo=FALSE}
+list_by_school_levels_percents_tables[['secaugusto']][['preocupacion_level']][['graph']]
 ```
 
 ## MEAN AND SD GRAPHS
@@ -78,14 +127,8 @@ Showing a main-sd point inverval plot:
 
  "fG"     "Tenaci" "Esfuer" "Preocu"
 
-```{r, echo=FALSE}
-list_by_school_mean_graphs[['secaugusto']][['Esfuer']]
-list_by_school_mean_graphs[['primcongreso']][['Preocu']]
-list_by_school_mean_graphs[['pidahi']][['fG']]
-```
 
-
-### Example Augusto G
+### Example Augusto Intelligence
 
 ```{r, echo=FALSE}
 list_by_school_mean_graphs[['secaugusto']][['fG']]
@@ -94,7 +137,19 @@ list_by_school_mean_graphs[['secaugusto']][['fG']]
 ### Example Augusto Tenacidad
 
 ```{r, echo=FALSE}
-list_by_school_mean_graphs[['secaugusto']][['Tenaci']]
+list_by_school_mean_graphs[['secaugusto']][['Tenacidad']]
+```
+
+### Example Augusto Esfuerzo
+
+```{r, echo=FALSE}
+list_by_school_mean_graphs[['secaugusto']][['Esfuerzo']]
+```
+
+### Example Augusto Preocupacion
+
+```{r, echo=FALSE}
+list_by_school_mean_graphs[['secaugusto']][['Preocupacion']]
 ```
 
 # Mafer's REPORT
