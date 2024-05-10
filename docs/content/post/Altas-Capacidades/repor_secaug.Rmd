@@ -1,5 +1,5 @@
 ---
-title: "Universidad Católica de Colombia"
+title: "Augusto"
 subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Perfeccionismo y Tenacidad "
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
@@ -10,20 +10,6 @@ output: hugodown::md_document
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ## load processing script
 source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
-```
-# OUTLIERS BY SCHOOL
-## PIDAHI
-```{r, echo=TRUE}
-outliers_pidahi
-```
-## CONGRESO
-```{r, echo=TRUE}
-outliers_primcongreso
-```
-
-## AUGUSTO
-```{r, echo=TRUE}
-outliers_secaugusto
 ```
 
 # USAGE DOCUMENTATION
