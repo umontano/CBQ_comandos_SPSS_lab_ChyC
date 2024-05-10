@@ -51,7 +51,7 @@ find . -name '*.Rmd' -type f
 
 
 # Find the latest file modified in the last five minutes
-latest_rmd=$(find . -name '*.Rmd' -type f -mmin -9955 -print0 | xargs -0  stat --format="%Y %n" | sort -nr | head -n1 | cut -d' ' -f2-)
+latest_rmd=$(find . -name '*.Rmd' -type f -mmin -5 -print0 | xargs -0  stat --format="%Y %n" | sort -nr | head -n1 | cut -d' ' -f2-)
 echo "$latest_rmd"
 
 name_rmd_file=$(basename "$latest_rmd")
