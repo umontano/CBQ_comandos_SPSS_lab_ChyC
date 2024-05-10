@@ -18,9 +18,9 @@ jobs:
 
       - name: render with docker on workdir
         run: |
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes-escolares.Rmd')"
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes-escolares.Rmd', output_format = 'html_document')"
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes-escolares.Rmd', output_format = 'pdf_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('repor_secaug.Rmd')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('repor_secaug.Rmd', output_format = 'html_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('repor_secaug.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/Altas-Capacidades
 
       - name: Hugo 0.80.0
