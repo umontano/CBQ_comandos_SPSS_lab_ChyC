@@ -79,10 +79,19 @@ Showing a main-sd point inverval plot:
 
  "fG"     "Tenaci" "Esfuer" "Preocu"
 
-```{r meansd_graph, echo=FALSE}
+```{r, echo=FALSE}
 list_by_school_mean_graphs[['secaugusto']][['Esfuer']]
 list_by_school_mean_graphs[['primcongreso']][['Preocu']]
 list_by_school_mean_graphs[['pidahi']][['fG']]
+```
+### Example Augusto G
+```{r, echo=FALSE}
+list_by_school_mean_graphs[['secaugusto']][['fG']]
+```
+
+### Example Augusto Tenacidad
+```{r, echo=FALSE}
+list_by_school_mean_graphs[['secaugusto']][['Tenaci']]
 ```
 
 # Mafer's REPORT
