@@ -14,7 +14,7 @@ source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
 ```
 # OUTLIERS BY SCHOOL
 
-```{r, echo=FALSE}
+```{r outliers}
 outliers_pidahi
 outliers_primcongreso
 outliers_secaugusto
@@ -24,6 +24,7 @@ outliers_secaugusto
 ## TABLES EXAMPLES
 To show a level-percentage table by school:
 The elements of the list
+
 - First element:
 
  [1] "andes"         "bicentenario"  "cepac"         "coltec"
@@ -52,7 +53,9 @@ knitr::kable(list_by_school_mean_sd_tables[['secaugusto']], caption = 'Augusto',
 
 ## GRAPHICS EXAMPLES
 Showing a level-percentage graphic:
+
 Use the same elements as the level-percent table, but set 'graph' in the last element.
+
 ```{r meansd_grap, echo=FALSE}
 list_by_school_levels_percents_tables[['pidahi']][['fG_level']][['graph']]
 list_by_school_levels_percents_tables[['secaugusto']][['fG_level']][['graph']]
@@ -60,6 +63,7 @@ list_by_school_levels_percents_tables[['secaugusto']][['fG_level']][['graph']]
 
 ## MEAN AND SD GRAPHS
 Showing a main-sd point inverval plot:
+
 - First element is school name same as examples above.
 
 - Second elemnt:
