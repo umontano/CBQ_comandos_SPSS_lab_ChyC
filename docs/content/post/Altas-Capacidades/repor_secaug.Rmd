@@ -39,38 +39,26 @@ knitr::kable(list_extracted_levels_datasets[['secaugusto']][['fG_level']], capti
 ### Table Augusto Tenacidad
 
 ```{r, echo=FALSE}
-knitr::kable(list_extracted_levels_datasets[['secaugusto']][['tenacidad_level']], caption = 'Nivel de Inteligencia', digits = 1)
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['tenacidad_level']], caption = 'Nivel de Tenacidad', digits = 1)
 ```
 ### Table Augusto Esfuerzo
 
 ```{r, echo=FALSE}
-knitr::kable(list_extracted_levels_datasets[['secaugusto']][['esfuerzo_level']], caption = 'Nivel de Inteligencia', digits = 1)
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['esfuerzo_level']], caption = 'Nivel de Esfuerzo', digits = 1)
 ```
 ### Table Augusto Preocupacion
 
 ```{r, echo=FALSE}
-knitr::kable(list_extracted_levels_datasets[['secaugusto']][['preocupacion_level']], caption = 'Nivel de Inteligencia', digits = 1)
+knitr::kable(list_extracted_levels_datasets[['secaugusto']][['preocupacion_level']], caption = 'Nivel de Preocupacion', digits = 1)
 ```
 
 ## Showing a mean-sd table by school
 Note that there is only one mean-sd table by school
 
-### Table Augusto
+### Mean and Standard deviation Table for Augusto
 
 ```{r, echo=FALSE}
-knitr::kable(list_by_school_mean_sd_tables[['secaugusto']], caption = 'Augusto', digits = 1)
-```
-
-### Table Congreso
-
-```{r, echo=FALSE}
-knitr::kable(list_by_school_mean_sd_tables[['primcongreso']], caption = 'Congreso', digits = 1)
-```
-
-### Table Pidahi
-
-```{r, echo=FALSE}
-knitr::kable(list_by_school_mean_sd_tables[['pidahi']], caption = 'Pidahi', digits = 1)
+knitr::kable(list_by_school_mean_sd_tables[['secaugusto']], caption = 'secaugusto', digits = 1)
 ```
 
 ## GRAPHICS EXAMPLES
