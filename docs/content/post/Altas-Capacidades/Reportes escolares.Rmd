@@ -49,20 +49,28 @@ The elements of the list
 
 ### Table Augusto Intelligence
 
+- Use "caption" field to modify the title.
+
 ```{r, echo=FALSE}
 knitr::kable(list_extracted_levels_datasets[['secaugusto']][['fG_level']], caption = 'Nivel de Inteligencia', digits = 1)
 ```
 ### Table Augusto Tenacidad
+
+- Use "caption" field to modify the title.
 
 ```{r, echo=FALSE}
 knitr::kable(list_extracted_levels_datasets[['secaugusto']][['tenacidad_level']], caption = 'Nivel de Inteligencia', digits = 1)
 ```
 ### Table Augusto Esfuerzo
 
+- Use "caption" field to modify the title.
+
 ```{r, echo=FALSE}
 knitr::kable(list_extracted_levels_datasets[['secaugusto']][['esfuerzo_level']], caption = 'Nivel de Inteligencia', digits = 1)
 ```
 ### Table Augusto Preocupacion
+
+- Use "caption" field to modify the title.
 
 ```{r, echo=FALSE}
 knitr::kable(list_extracted_levels_datasets[['secaugusto']][['preocupacion_level']], caption = 'Nivel de Inteligencia', digits = 1)
@@ -72,6 +80,8 @@ knitr::kable(list_extracted_levels_datasets[['secaugusto']][['preocupacion_level
 Note that there is only one mean-sd table by school
 
 ### Table Augusto
+
+- Use "caption" field to modify the title.
 
 ```{r, echo=FALSE}
 knitr::kable(list_by_school_mean_sd_tables[['secaugusto']], caption = 'Augusto', digits = 1)
