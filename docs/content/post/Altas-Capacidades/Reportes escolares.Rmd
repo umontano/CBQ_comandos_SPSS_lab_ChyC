@@ -3,7 +3,6 @@ title: "Universidad Católica de Colombia"
 subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Perfeccionismo y Tenacidad "
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
-
 output: hugodown::md_document
 ---
 ```{r setup, include=FALSE}
@@ -84,12 +83,16 @@ list_by_school_mean_graphs[['secaugusto']][['Esfuer']]
 list_by_school_mean_graphs[['primcongreso']][['Preocu']]
 list_by_school_mean_graphs[['pidahi']][['fG']]
 ```
+
+
 ### Example Augusto G
+
 ```{r, echo=FALSE}
 list_by_school_mean_graphs[['secaugusto']][['fG']]
 ```
 
 ### Example Augusto Tenacidad
+
 ```{r, echo=FALSE}
 list_by_school_mean_graphs[['secaugusto']][['Tenaci']]
 ```
