@@ -5,7 +5,7 @@ author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 
 output: hugodown::md_document
-rmd_hash: 6064bd8c377391de
+rmd_hash: a2d1284cdc745070
 
 ---
 
@@ -185,7 +185,23 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/meansd_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/meansd_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/meansd_graph-3.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-4-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/unnamed-chunk-4-3.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+### Example Augusto G
+
+<div class="highlight">
+
+<img src="figs/unnamed-chunk-5-1.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+### Example Augusto Tenacidad
+
+<div class="highlight">
+
+<img src="figs/unnamed-chunk-6-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
