@@ -1,94 +1,12 @@
 ---
-title: "Universidad Católica de Colombia"
+title: "Augusto"
 subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Perfeccionismo y Tenacidad "
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 output: hugodown::md_document
-rmd_hash: cb2557b49332ccec
+rmd_hash: 6966c0c386c61ab3
 
 ---
-
-# OUTLIERS BY SCHOOL
-
-## PIDAHI
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_pidahi</span></span>
-<span><span class='c'>#&gt; $Esfuerzo</span></span>
-<span><span class='c'>#&gt; $Esfuerzo$pidahi</span></span>
-<span><span class='c'>#&gt;      escuela grado          id Esfuerzo</span></span>
-<span><span class='c'>#&gt; 1269  pidahi    1a DIF1a2dma1s       22</span></span>
-<span></span></code></pre>
-
-</div>
-
-## CONGRESO
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_primcongreso</span></span>
-<span><span class='c'>#&gt; $fG</span></span>
-<span><span class='c'>#&gt; $fG$primcongreso</span></span>
-<span><span class='c'>#&gt;          escuela grado          id fG</span></span>
-<span><span class='c'>#&gt; 298 primcongreso    6c PCC6c2rcc1n 60</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $Tenacidad</span></span>
-<span><span class='c'>#&gt; $Tenacidad$primcongreso</span></span>
-<span><span class='c'>#&gt;          escuela grado          id Tenacidad</span></span>
-<span><span class='c'>#&gt; 259 primcongreso    6a PCC6a2jgf1n    1.5625</span></span>
-<span><span class='c'>#&gt; 286 primcongreso    6c PCC6c2chd1n    1.2500</span></span>
-<span><span class='c'>#&gt; 291 primcongreso    6c PCC6c2gnr1n    1.5625</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $Esfuerzo</span></span>
-<span><span class='c'>#&gt; $Esfuerzo$primcongreso</span></span>
-<span><span class='c'>#&gt;          escuela grado          id Esfuerzo</span></span>
-<span><span class='c'>#&gt; 286 primcongreso    6c PCC6c2chd1n       13</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $Preocupacion</span></span>
-<span><span class='c'>#&gt; $Preocupacion$primcongreso</span></span>
-<span><span class='c'>#&gt;          escuela grado          id Preocupacion</span></span>
-<span><span class='c'>#&gt; 318 primcongreso    6d PCC6d2mfr1n          109</span></span>
-<span></span></code></pre>
-
-</div>
-
-## AUGUSTO
-
-<div class="highlight">
-
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>outliers_secaugusto</span></span>
-<span><span class='c'>#&gt; $fG</span></span>
-<span><span class='c'>#&gt; $fG$secaugusto</span></span>
-<span><span class='c'>#&gt;        escuela grado          id fG</span></span>
-<span><span class='c'>#&gt; 186 secaugusto    1c ACS1c2ked1n 55</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $Tenacidad</span></span>
-<span><span class='c'>#&gt; $Tenacidad$secaugusto</span></span>
-<span><span class='c'>#&gt;        escuela grado          id Tenacidad</span></span>
-<span><span class='c'>#&gt; 41  secaugusto    3b ACS3b2jrv1n   4.84375</span></span>
-<span><span class='c'>#&gt; 84  secaugusto    2d ACS2d2btc1n   1.25000</span></span>
-<span><span class='c'>#&gt; 139 secaugusto    2a ACS2a2lgq1n   4.84375</span></span>
-<span><span class='c'>#&gt; 152 secaugusto    2a ACS2a2amm1n   5.00000</span></span>
-<span><span class='c'>#&gt; 171 secaugusto    1d ACS1d2asv1n   4.84375</span></span>
-<span><span class='c'>#&gt; 176 secaugusto    1c ACS1c2zja1n   5.00000</span></span>
-<span><span class='c'>#&gt; 177 secaugusto    1c ACS1c2vev1n   4.84375</span></span>
-<span><span class='c'>#&gt; 223 secaugusto    1b ACS1b2ach1n   1.25000</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; $Esfuerzo</span></span>
-<span><span class='c'>#&gt; $Esfuerzo$secaugusto</span></span>
-<span><span class='c'>#&gt;        escuela grado          id Esfuerzo</span></span>
-<span><span class='c'>#&gt; 50  secaugusto    3a ACS3a2ubr1n       15</span></span>
-<span><span class='c'>#&gt; 181 secaugusto    1c ACS1c2rga1n       22</span></span>
-<span><span class='c'>#&gt; 186 secaugusto    1c ACS1c2ked1n       22</span></span>
-<span></span></code></pre>
-
-</div>
 
 # USAGE DOCUMENTATION
 
@@ -267,7 +185,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-11-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-8-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -275,7 +193,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-12-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-9-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -283,7 +201,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-13-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-10-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -291,7 +209,7 @@ Use the same elements as the level-percent table, but set 'graph' in the last el
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-14-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-11-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -309,7 +227,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-15-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-12-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -317,7 +235,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-16-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-13-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -325,7 +243,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-17-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-14-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -333,7 +251,7 @@ Showing a main-sd point inverval plot:
 
 <div class="highlight">
 
-<img src="figs/unnamed-chunk-18-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/unnamed-chunk-15-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
