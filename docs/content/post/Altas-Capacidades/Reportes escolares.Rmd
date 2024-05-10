@@ -4,7 +4,7 @@ subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Pe
 author: "Psic. Ma. Fernanda Serrano García"
 date: 2024-05-08
 
-output: hugodown::md_document
+output: pdf_document
 ---
 ```{r setup, include=FALSE}
 #output: hugodown::md_document
@@ -14,9 +14,18 @@ source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
 ```
 # OUTLIERS BY SCHOOL
 
-```{r outliers}
+## PIDAHI
+
+```{r, echo=TRUE}
 outliers_pidahi
+```
+## CONGRESO
+```{r, echo=TRUE}
 outliers_primcongreso
+```
+
+## AUGUSTO
+```{r, echo=TRUE}
 outliers_secaugusto
 ```
 
