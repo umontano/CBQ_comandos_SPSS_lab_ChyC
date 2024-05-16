@@ -2,11 +2,12 @@ name: Workdir docker render
 on:
   push:
     paths:
-      - 'docs/content/post/*/*.Rmd' # trigger on post Rmd files
-      - 'docs/content/*/*.Rmd' # trigger on dir Rmd files
+      - 'docs/content/post/*/zzzz*.Rmd' # trigger on post Rmd files
+      - 'docs/content/*/zzzz*.Rmd' # trigger on dir Rmd files
       - '.github/workflows/*.yml' # trigger on workflows
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   capture-files:
@@ -14,13 +15,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: render with docker on workdir
         run: |
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes escolares.Rmd', output_format = 'hugodown::md_document')"
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes escolares.Rmd', output_format = 'html_document')"
-          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('Reportes escolares.Rmd', output_format = 'pdf_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('lista_mediciones_pidahi.Rmd', output_format = 'hugodown::md_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('lista_mediciones_pidahi.Rmd', output_format = 'html_document')"
+          docker run -v $(pwd):/app umontano/verseh Rscript -e "rmarkdown::render('lista_mediciones_pidahi.Rmd', output_format = 'pdf_document')"
         working-directory: docs/content/post/Altas-Capacidades
 
       - name: Hugo 0.80.0
@@ -29,6 +30,9 @@ jobs:
           echo doneeeee
         working-directory: docs
 
+      - name: test append
+        run: |
+          echo zzzzzzzz >> zzzz.zzz
       - name: Commit and push changes
         run: |
           git config --global user.email "actions@github.com"
