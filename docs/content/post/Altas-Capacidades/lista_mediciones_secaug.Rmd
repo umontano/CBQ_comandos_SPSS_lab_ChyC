@@ -1,5 +1,5 @@
 ---
-title: "List secaugusto"
+title: "Resultados secaugusto"
 subtitle: "G, Tenacidad, Perfeccionismo"
 author: "Ma. Fernanda Serrano"
 date: 2024-05-02
@@ -10,8 +10,9 @@ output: pdf_document
 ## LOAD WRANGLING AND DATA PREPARATION
 source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
 ```
-# MEASUREMENTS FOR secaugusto
+# Resultados secaugusto
 
 ```{r, echo = FALSE}
 knitr::kable(extract_school_from_custom_list('secaugusto'), caption='Lista de Niveles', digits=1)
 ```
+
