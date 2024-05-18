@@ -1,0 +1,19 @@
+---
+title: "List pidahi"
+subtitle: "G, Tenacidad, Perfeccionismo"
+author: "Ma. Fernanda Serrano"
+date: 2024-05-02
+output: pdf_document
+---
+```{r setup, include=FALSE}
+#https://github.com/Mafer-sg/Altas-Capacidades.git
+## LOAD WRANGLING AND DATA PREPARATION
+source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
+```
+
+# Lista de Resultados 
+
+```{r, echo = FALSE}
+knitr::kable(extract_school_from_custom_list('pidahi'), caption='Lista de Niveles', digits=1)
+```
+
