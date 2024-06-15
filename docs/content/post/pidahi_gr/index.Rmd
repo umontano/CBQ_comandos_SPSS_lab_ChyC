@@ -1,0 +1,46 @@
+---
+title: "PIDAHI"
+subtitle: "Informe Institucional de Resultados Caracterización Cuestionarios Perfeccionismo y Tenacidad "
+author: "Psic. Ma. Fernanda Serrano García"
+date: 2024-06-13
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+## LOAD PROCESSING SCRIPT
+source('https://github.com/Mafer-sg/altas-capacidades/raw/main/mxco.R')
+```
+
+# Reporte de Mediciones.
+
+## Grupo 1a
+
+```{r , echo = FALSE}
+knitr::kable(graphs_4constructs_pidahi[['1a']][['table']], caption = 'Porcentajes de Niveles')
+graphs_4constructs_pidahi[['1a']][['graph']]
+```
+
+
+## Grupo 2a
+
+```{r , echo = FALSE}
+knitr::kable(graphs_4constructs_pidahi[['2a']][['table']], caption = 'Porcentajes de Niveles')
+graphs_4constructs_pidahi[['2a']][['graph']]
+```
+
+
+## Grupo 2b
+
+```{r , echo = FALSE}
+knitr::kable(graphs_4constructs_pidahi[['2b']][['table']], caption = 'Porcentajes de Niveles')
+graphs_4constructs_pidahi[['2b']][['graph']]
+```
+
+
+## Grupo 3a
+
+```{r , echo = FALSE}
+knitr::kable(graphs_4constructs_pidahi[['3a']][['table']], caption = 'Porcentajes de Niveles')
+graphs_4constructs_pidahi[['3a']][['graph']]
+```
+
