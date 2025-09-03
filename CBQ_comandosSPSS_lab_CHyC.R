@@ -1,3 +1,7 @@
+#d <- make_reversed_trail_r(raw_information) |> compute_scales_and_factors(); setdiff(names(d), 'cbq' |> grep(names(d), value = T))
+
+
+
 create_datasets <- function(questionnaire_dataset_file)
 {
 #LOAD DATA
@@ -7,13 +11,13 @@ raw_information <<- read.csv(questionnaire_dataset_file , header=TRUE )
 names(raw_information) <<- gsub('investigadora', 'identificador', names(raw_information), perl=TRUE)
 
 #CREATE DATAFRAMES
-cbqee_items_dataset  <<- data.frame(lapply( raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
+cbqee_items_dataset  <<- data.frame(lapply(raw_information[, grep('^cbq\\d', names(raw_information)) ] , as.numeric))
 others_calif  <<- raw_information[, !grepl('^cbq\\d{1,3}', names(raw_information), perl=TRUE) ]
     # NOTE, CBQ ITEMS ARE COLUMNS 5:199
 
 #REMOVE UNUSED ITEMS 3, 33, 49
 unused_cbqee_items_dataset <<- c('cbq3', 'cbq33', 'cbq49')
-cbqee_items_dataset <<- cbqee_items_dataset[, !names(cbqee_items_dataset) %in% unused_cbqee_items_dataset]
+cbqee_items_dataset <<- cbqee_items_dataset[setdiff(names(cbqee_items_dataset), unused_cbqee_items_dataset)]
 #REMOVE LESS THAN 1 AND ABOVE 7
 cbqee_items_dataset[cbqee_items_dataset<1 | cbqee_items_dataset>7] <<- NA
 #SET THE ROW NAMES USING THE ID COLUMN
@@ -21,6 +25,7 @@ row.names(cbqee_items_dataset) <<- raw_information$identificador
 row.names(others_calif) <<- raw_information$identificador
 ## SAVE
 write.csv(others_calif, 'xCBQ_OTROS_DATOS.csv', row.names=TRUE)
+cbqee_items_dataset
 }
 
 
@@ -52,83 +57,85 @@ write.csv(cbqee_items_dataset, file_name_cbqee_items_dataset, row.names=TRUE)
 
 #==========================================
 #==========================================
-generate_unreversed_cbqee_items_dataset  <- function(cbqee_items_dataset)
+generate_unreversed_cbqee_items_dataset  <- function(xxxx)
 {
-cbqee_items_dataset$cbq41 <- 8-cbqee_items_dataset$cbq41
-cbqee_items_dataset$cbq88 <- 8-cbqee_items_dataset$cbq88
-cbqee_items_dataset$cbq102 <- 8-cbqee_items_dataset$cbq102
-cbqee_items_dataset$cbq123 <- 8-cbqee_items_dataset$cbq123
-cbqee_items_dataset$cbq126 <- 8-cbqee_items_dataset$cbq126
-cbqee_items_dataset$cbq145 <- 8-cbqee_items_dataset$cbq145
-cbqee_items_dataset$cbq192 <- 8-cbqee_items_dataset$cbq192
-cbqee_items_dataset$cbq19 <- 8-cbqee_items_dataset$cbq19
-cbqee_items_dataset$cbq120 <- 8-cbqee_items_dataset$cbq120
-cbqee_items_dataset$cbq156 <- 8-cbqee_items_dataset$cbq156
-cbqee_items_dataset$cbq131 <- 8-cbqee_items_dataset$cbq131
-cbqee_items_dataset$cbq175 <- 8-cbqee_items_dataset$cbq175
-cbqee_items_dataset$cbq188 <- 8-cbqee_items_dataset$cbq188
-cbqee_items_dataset$cbq191 <- 8-cbqee_items_dataset$cbq191
-cbqee_items_dataset$cbq38 <- 8-cbqee_items_dataset$cbq38
-cbqee_items_dataset$cbq47 <- 8-cbqee_items_dataset$cbq47
-cbqee_items_dataset$cbq171 <- 8-cbqee_items_dataset$cbq171
-cbqee_items_dataset$cbq195 <- 8-cbqee_items_dataset$cbq195
-cbqee_items_dataset$cbq6 <- 8-cbqee_items_dataset$cbq6
-cbqee_items_dataset$cbq95 <- 8-cbqee_items_dataset$cbq95
-cbqee_items_dataset$cbq184 <- 8-cbqee_items_dataset$cbq184
-cbqee_items_dataset$cbq5 <- 8-cbqee_items_dataset$cbq5
-cbqee_items_dataset$cbq101 <- 8-cbqee_items_dataset$cbq101
-cbqee_items_dataset$cbq190 <- 8-cbqee_items_dataset$cbq190
-cbqee_items_dataset$cbq14 <- 8-cbqee_items_dataset$cbq14
-cbqee_items_dataset$cbq53 <- 8-cbqee_items_dataset$cbq53
-cbqee_items_dataset$cbq68 <- 8-cbqee_items_dataset$cbq68
-cbqee_items_dataset$cbq150 <- 8-cbqee_items_dataset$cbq150
-cbqee_items_dataset$cbq167 <- 8-cbqee_items_dataset$cbq167
-cbqee_items_dataset$cbq15 <- 8-cbqee_items_dataset$cbq15
-cbqee_items_dataset$cbq58 <- 8-cbqee_items_dataset$cbq58
-cbqee_items_dataset$cbq70 <- 8-cbqee_items_dataset$cbq70
-cbqee_items_dataset$cbq138 <- 8-cbqee_items_dataset$cbq138
-cbqee_items_dataset$cbq161 <- 8-cbqee_items_dataset$cbq161
-cbqee_items_dataset$cbq176 <- 8-cbqee_items_dataset$cbq176
-cbqee_items_dataset$cbq30 <- 8-cbqee_items_dataset$cbq30
-cbqee_items_dataset$cbq51 <- 8-cbqee_items_dataset$cbq51
-cbqee_items_dataset$cbq60 <- 8-cbqee_items_dataset$cbq60
-cbqee_items_dataset$cbq159 <- 8-cbqee_items_dataset$cbq159
-cbqee_items_dataset$cbq71 <- 8-cbqee_items_dataset$cbq71
-cbqee_items_dataset$cbq79 <- 8-cbqee_items_dataset$cbq79
-cbqee_items_dataset$cbq90 <- 8-cbqee_items_dataset$cbq90
-cbqee_items_dataset$cbq137 <- 8-cbqee_items_dataset$cbq137
-cbqee_items_dataset$cbq169 <- 8-cbqee_items_dataset$cbq169
-cbqee_items_dataset$cbq183 <- 8-cbqee_items_dataset$cbq183
-cbqee_items_dataset$cbq32 <- 8-cbqee_items_dataset$cbq32
-cbqee_items_dataset$cbq93 <- 8-cbqee_items_dataset$cbq93
-cbqee_items_dataset$cbq108 <- 8-cbqee_items_dataset$cbq108
-cbqee_items_dataset$cbq162 <- 8-cbqee_items_dataset$cbq162
-cbqee_items_dataset$cbq12 <- 8-cbqee_items_dataset$cbq12
-cbqee_items_dataset$cbq66 <- 8-cbqee_items_dataset$cbq66
-cbqee_items_dataset$cbq86 <- 8-cbqee_items_dataset$cbq86
-cbqee_items_dataset$cbq111 <- 8-cbqee_items_dataset$cbq111
-cbqee_items_dataset$cbq28 <- 8-cbqee_items_dataset$cbq28
-cbqee_items_dataset$cbq83 <- 8-cbqee_items_dataset$cbq83
-cbqee_items_dataset$cbq122 <- 8-cbqee_items_dataset$cbq122
-cbqee_items_dataset$cbq142 <- 8-cbqee_items_dataset$cbq142
-cbqee_items_dataset$cbq170 <- 8-cbqee_items_dataset$cbq170
-cbqee_items_dataset$cbq72 <- 8-cbqee_items_dataset$cbq72
-cbqee_items_dataset$cbq109 <- 8-cbqee_items_dataset$cbq109
-cbqee_items_dataset$cbq112 <- 8-cbqee_items_dataset$cbq112
-cbqee_items_dataset$cbq149 <- 8-cbqee_items_dataset$cbq149
-cbqee_items_dataset$cbq17 <- 8-cbqee_items_dataset$cbq17
-cbqee_items_dataset$cbq23 <- 8-cbqee_items_dataset$cbq23
-cbqee_items_dataset$cbq45 <- 8-cbqee_items_dataset$cbq45
-cbqee_items_dataset$cbq57 <- 8-cbqee_items_dataset$cbq57
-cbqee_items_dataset$cbq119 <- 8-cbqee_items_dataset$cbq119
-cbqee_items_dataset$cbq129 <- 8-cbqee_items_dataset$cbq129
-cbqee_items_dataset$cbq158 <- 8-cbqee_items_dataset$cbq158
-cbqee_items_dataset$cbq43 <- 8-cbqee_items_dataset$cbq43
-cbqee_items_dataset$cbq99 <- 8-cbqee_items_dataset$cbq99
-cbqee_items_dataset$cbq84 <- 8-cbqee_items_dataset$cbq84
-cbqee_items_dataset$cbq121 <- 8-cbqee_items_dataset$cbq121
-cbqee_items_dataset$cbq135 <- 8-cbqee_items_dataset$cbq135
-cbqee_items_dataset$cbq165 <- 8-cbqee_items_dataset$cbq165
+	within(xxxx, {
+cbq41 <- 8-cbq41
+cbq88 <- 8-cbq88
+cbq102 <- 8-cbq102
+cbq123 <- 8-cbq123
+cbq126 <- 8-cbq126
+cbq145 <- 8-cbq145
+cbq192 <- 8-cbq192
+cbq19 <- 8-cbq19
+cbq120 <- 8-cbq120
+cbq156 <- 8-cbq156
+cbq131 <- 8-cbq131
+cbq175 <- 8-cbq175
+cbq188 <- 8-cbq188
+cbq191 <- 8-cbq191
+cbq38 <- 8-cbq38
+cbq47 <- 8-cbq47
+cbq171 <- 8-cbq171
+cbq195 <- 8-cbq195
+cbq6 <- 8-cbq6
+cbq95 <- 8-cbq95
+cbq184 <- 8-cbq184
+cbq5 <- 8-cbq5
+cbq101 <- 8-cbq101
+cbq190 <- 8-cbq190
+cbq14 <- 8-cbq14
+cbq53 <- 8-cbq53
+cbq68 <- 8-cbq68
+cbq150 <- 8-cbq150
+cbq167 <- 8-cbq167
+cbq15 <- 8-cbq15
+cbq58 <- 8-cbq58
+cbq70 <- 8-cbq70
+cbq138 <- 8-cbq138
+cbq161 <- 8-cbq161
+cbq176 <- 8-cbq176
+cbq30 <- 8-cbq30
+cbq51 <- 8-cbq51
+cbq60 <- 8-cbq60
+cbq159 <- 8-cbq159
+cbq71 <- 8-cbq71
+cbq79 <- 8-cbq79
+cbq90 <- 8-cbq90
+cbq137 <- 8-cbq137
+cbq169 <- 8-cbq169
+cbq183 <- 8-cbq183
+cbq32 <- 8-cbq32
+cbq93 <- 8-cbq93
+cbq108 <- 8-cbq108
+cbq162 <- 8-cbq162
+cbq12 <- 8-cbq12
+cbq66 <- 8-cbq66
+cbq86 <- 8-cbq86
+cbq111 <- 8-cbq111
+cbq28 <- 8-cbq28
+cbq83 <- 8-cbq83
+cbq122 <- 8-cbq122
+cbq142 <- 8-cbq142
+cbq170 <- 8-cbq170
+cbq72 <- 8-cbq72
+cbq109 <- 8-cbq109
+cbq112 <- 8-cbq112
+cbq149 <- 8-cbq149
+cbq17 <- 8-cbq17
+cbq23 <- 8-cbq23
+cbq45 <- 8-cbq45
+cbq57 <- 8-cbq57
+cbq119 <- 8-cbq119
+cbq129 <- 8-cbq129
+cbq158 <- 8-cbq158
+cbq43 <- 8-cbq43
+cbq99 <- 8-cbq99
+cbq84 <- 8-cbq84
+cbq121 <- 8-cbq121
+cbq135 <- 8-cbq135
+cbq165 <- 8-cbq165
+	})
 }
 
 
@@ -136,143 +143,137 @@ cbqee_items_dataset$cbq165 <- 8-cbqee_items_dataset$cbq165
 #CALCULATE REVERSED QUESTIONS
 make_reversed_trail_r <- function(non_reversed_dataset)
 {
-cbqee_items_dataset$cbq41r <- 8-cbqee_items_dataset$cbq41
-cbqee_items_dataset$cbq88r <- 8-cbqee_items_dataset$cbq88
-cbqee_items_dataset$cbq102r <- 8-cbqee_items_dataset$cbq102
-cbqee_items_dataset$cbq123r <- 8-cbqee_items_dataset$cbq123
-cbqee_items_dataset$cbq126r <- 8-cbqee_items_dataset$cbq126
-cbqee_items_dataset$cbq145r <- 8-cbqee_items_dataset$cbq145
-cbqee_items_dataset$cbq192r <- 8-cbqee_items_dataset$cbq192
-cbqee_items_dataset$cbq19r <- 8-cbqee_items_dataset$cbq19
-cbqee_items_dataset$cbq120r <- 8-cbqee_items_dataset$cbq120
-cbqee_items_dataset$cbq156r <- 8-cbqee_items_dataset$cbq156
-cbqee_items_dataset$cbq131r <- 8-cbqee_items_dataset$cbq131
-cbqee_items_dataset$cbq175r <- 8-cbqee_items_dataset$cbq175
-cbqee_items_dataset$cbq188r <- 8-cbqee_items_dataset$cbq188
-cbqee_items_dataset$cbq191r <- 8-cbqee_items_dataset$cbq191
-cbqee_items_dataset$cbq38r <- 8-cbqee_items_dataset$cbq38
-cbqee_items_dataset$cbq47r <- 8-cbqee_items_dataset$cbq47
-cbqee_items_dataset$cbq171r <- 8-cbqee_items_dataset$cbq171
-cbqee_items_dataset$cbq195r <- 8-cbqee_items_dataset$cbq195
-cbqee_items_dataset$cbq6r <- 8-cbqee_items_dataset$cbq6
-cbqee_items_dataset$cbq95r <- 8-cbqee_items_dataset$cbq95
-cbqee_items_dataset$cbq184r <- 8-cbqee_items_dataset$cbq184
-cbqee_items_dataset$cbq5r <- 8-cbqee_items_dataset$cbq5
-cbqee_items_dataset$cbq101r <- 8-cbqee_items_dataset$cbq101
-cbqee_items_dataset$cbq190r <- 8-cbqee_items_dataset$cbq190
-cbqee_items_dataset$cbq14r <- 8-cbqee_items_dataset$cbq14
-cbqee_items_dataset$cbq53r <- 8-cbqee_items_dataset$cbq53
-cbqee_items_dataset$cbq68r <- 8-cbqee_items_dataset$cbq68
-cbqee_items_dataset$cbq150r <- 8-cbqee_items_dataset$cbq150
-cbqee_items_dataset$cbq167r <- 8-cbqee_items_dataset$cbq167
-cbqee_items_dataset$cbq15r <- 8-cbqee_items_dataset$cbq15
-cbqee_items_dataset$cbq58r <- 8-cbqee_items_dataset$cbq58
-cbqee_items_dataset$cbq70r <- 8-cbqee_items_dataset$cbq70
-cbqee_items_dataset$cbq138r <- 8-cbqee_items_dataset$cbq138
-cbqee_items_dataset$cbq161r <- 8-cbqee_items_dataset$cbq161
-cbqee_items_dataset$cbq176r <- 8-cbqee_items_dataset$cbq176
-cbqee_items_dataset$cbq30r <- 8-cbqee_items_dataset$cbq30
-cbqee_items_dataset$cbq51r <- 8-cbqee_items_dataset$cbq51
-cbqee_items_dataset$cbq60r <- 8-cbqee_items_dataset$cbq60
-cbqee_items_dataset$cbq159r <- 8-cbqee_items_dataset$cbq159
-cbqee_items_dataset$cbq71r <- 8-cbqee_items_dataset$cbq71
-cbqee_items_dataset$cbq79r <- 8-cbqee_items_dataset$cbq79
-cbqee_items_dataset$cbq90r <- 8-cbqee_items_dataset$cbq90
-cbqee_items_dataset$cbq137r <- 8-cbqee_items_dataset$cbq137
-cbqee_items_dataset$cbq169r <- 8-cbqee_items_dataset$cbq169
-cbqee_items_dataset$cbq183r <- 8-cbqee_items_dataset$cbq183
-cbqee_items_dataset$cbq32r <- 8-cbqee_items_dataset$cbq32
-cbqee_items_dataset$cbq93r <- 8-cbqee_items_dataset$cbq93
-cbqee_items_dataset$cbq108r <- 8-cbqee_items_dataset$cbq108
-cbqee_items_dataset$cbq162r <- 8-cbqee_items_dataset$cbq162
-cbqee_items_dataset$cbq12r <- 8-cbqee_items_dataset$cbq12
-cbqee_items_dataset$cbq66r <- 8-cbqee_items_dataset$cbq66
-cbqee_items_dataset$cbq86r <- 8-cbqee_items_dataset$cbq86
-cbqee_items_dataset$cbq111r <- 8-cbqee_items_dataset$cbq111
-cbqee_items_dataset$cbq28r <- 8-cbqee_items_dataset$cbq28
-cbqee_items_dataset$cbq83r <- 8-cbqee_items_dataset$cbq83
-cbqee_items_dataset$cbq122r <- 8-cbqee_items_dataset$cbq122
-cbqee_items_dataset$cbq142r <- 8-cbqee_items_dataset$cbq142
-cbqee_items_dataset$cbq170r <- 8-cbqee_items_dataset$cbq170
-cbqee_items_dataset$cbq72r <- 8-cbqee_items_dataset$cbq72
-cbqee_items_dataset$cbq109r <- 8-cbqee_items_dataset$cbq109
-cbqee_items_dataset$cbq112r <- 8-cbqee_items_dataset$cbq112
-cbqee_items_dataset$cbq149r <- 8-cbqee_items_dataset$cbq149
-cbqee_items_dataset$cbq17r <- 8-cbqee_items_dataset$cbq17
-cbqee_items_dataset$cbq23r <- 8-cbqee_items_dataset$cbq23
-cbqee_items_dataset$cbq45r <- 8-cbqee_items_dataset$cbq45
-cbqee_items_dataset$cbq57r <- 8-cbqee_items_dataset$cbq57
-cbqee_items_dataset$cbq119r <- 8-cbqee_items_dataset$cbq119
-cbqee_items_dataset$cbq129r <- 8-cbqee_items_dataset$cbq129
-cbqee_items_dataset$cbq158r <- 8-cbqee_items_dataset$cbq158
-cbqee_items_dataset$cbq43r <- 8-cbqee_items_dataset$cbq43
-cbqee_items_dataset$cbq99r <- 8-cbqee_items_dataset$cbq99
-cbqee_items_dataset$cbq84r <- 8-cbqee_items_dataset$cbq84
-cbqee_items_dataset$cbq121r <- 8-cbqee_items_dataset$cbq121
-cbqee_items_dataset$cbq135r <- 8-cbqee_items_dataset$cbq135
-cbqee_items_dataset$cbq165r <- 8-cbqee_items_dataset$cbq165
+	within(non_reversed_dataset, {
+cbq41r <- 8-cbq41
+cbq88r <- 8-cbq88
+cbq102r <- 8-cbq102
+cbq123r <- 8-cbq123
+cbq126r <- 8-cbq126
+cbq145r <- 8-cbq145
+cbq192r <- 8-cbq192
+cbq19r <- 8-cbq19
+cbq120r <- 8-cbq120
+cbq156r <- 8-cbq156
+cbq131r <- 8-cbq131
+cbq175r <- 8-cbq175
+cbq188r <- 8-cbq188
+cbq191r <- 8-cbq191
+cbq38r <- 8-cbq38
+cbq47r <- 8-cbq47
+cbq171r <- 8-cbq171
+cbq195r <- 8-cbq195
+cbq6r <- 8-cbq6
+cbq95r <- 8-cbq95
+cbq184r <- 8-cbq184
+cbq5r <- 8-cbq5
+cbq101r <- 8-cbq101
+cbq190r <- 8-cbq190
+cbq14r <- 8-cbq14
+cbq53r <- 8-cbq53
+cbq68r <- 8-cbq68
+cbq150r <- 8-cbq150
+cbq167r <- 8-cbq167
+cbq15r <- 8-cbq15
+cbq58r <- 8-cbq58
+cbq70r <- 8-cbq70
+cbq138r <- 8-cbq138
+cbq161r <- 8-cbq161
+cbq176r <- 8-cbq176
+cbq30r <- 8-cbq30
+cbq51r <- 8-cbq51
+cbq60r <- 8-cbq60
+cbq159r <- 8-cbq159
+cbq71r <- 8-cbq71
+cbq79r <- 8-cbq79
+cbq90r <- 8-cbq90
+cbq137r <- 8-cbq137
+cbq169r <- 8-cbq169
+cbq183r <- 8-cbq183
+cbq32r <- 8-cbq32
+cbq93r <- 8-cbq93
+cbq108r <- 8-cbq108
+cbq162r <- 8-cbq162
+cbq12r <- 8-cbq12
+cbq66r <- 8-cbq66
+cbq86r <- 8-cbq86
+cbq111r <- 8-cbq111
+cbq28r <- 8-cbq28
+cbq83r <- 8-cbq83
+cbq122r <- 8-cbq122
+cbq142r <- 8-cbq142
+cbq170r <- 8-cbq170
+cbq72r <- 8-cbq72
+cbq109r <- 8-cbq109
+cbq112r <- 8-cbq112
+cbq149r <- 8-cbq149
+cbq17r <- 8-cbq17
+cbq23r <- 8-cbq23
+cbq45r <- 8-cbq45
+cbq57r <- 8-cbq57
+cbq119r <- 8-cbq119
+cbq129r <- 8-cbq129
+cbq158r <- 8-cbq158
+cbq43r <- 8-cbq43
+cbq99r <- 8-cbq99
+cbq84r <- 8-cbq84
+cbq121r <- 8-cbq121
+cbq135r <- 8-cbq135
+cbq165r <- 8-cbq165
+	})
 #REMOVE THE NON INVERTED ORIGINAL ITEMS
-trailingr <- gsub('r$', '', names(cbqee_items_dataset)[grep('cbq\\d{1,3}r', names(cbqee_items_dataset), perl=T)])
-cbqee_items_dataset[, trailingr] <- list(NULL)
+#trailingr <- gsub('', '', names(cbqee_items_dataset)[grep('cbq\\d{1,3}r', names(cbqee_items_dataset), perl=T)])
+#cbqee_items_dataset[, trailingr] <- list(NULL)
 }
 
-## ONCE THE REVERSED ITEMS WERE COMPUTED ONLY THE SCALES AND FACTORS ARE COMPUTED
-compute_scales_and_factors <- function(cbqee_items_dataset)
-{
-#CREATE DATAFRAMES
-fifteen_scales_dataset  <- data.frame(matrix(ncol = 0, nrow = length(cbqee_items_dataset[, 1])))
-three_factors_dataset <- data.frame(matrix(ncol = 0, nrow = length(cbqee_items_dataset[, 1])))
-#SET THE ROW NAMES USING THE ID COLUMN
-row.names(fifteen_scales_dataset)  <- raw_information$identificador
-row.names(three_factors_dataset) <- raw_information$identificador
 
 
-#CALCULATE DIMENSIONS
-fifteen_scales_dataset$act <- rowMeans(data.frame(cbqee_items_dataset$cbq1, cbqee_items_dataset$cbq25, cbqee_items_dataset$cbq41r, cbqee_items_dataset$cbq48, cbqee_items_dataset$cbq88r, cbqee_items_dataset$cbq102r, cbqee_items_dataset$cbq123r, cbqee_items_dataset$cbq126r, cbqee_items_dataset$cbq145r, cbqee_items_dataset$cbq153, cbqee_items_dataset$cbq172, cbqee_items_dataset$cbq187, cbqee_items_dataset$cbq192r) , na.rm=TRUE )
-fifteen_scales_dataset$fru <- rowMeans(data.frame(cbqee_items_dataset$cbq2, cbqee_items_dataset$cbq19r, cbqee_items_dataset$cbq34, cbqee_items_dataset$cbq62, cbqee_items_dataset$cbq73, cbqee_items_dataset$cbq78, cbqee_items_dataset$cbq120r, cbqee_items_dataset$cbq128, cbqee_items_dataset$cbq140, cbqee_items_dataset$cbq156r, cbqee_items_dataset$cbq173, cbqee_items_dataset$cbq181, cbqee_items_dataset$cbq193) , na.rm=TRUE )
-fifteen_scales_dataset$app <- rowMeans(data.frame(cbqee_items_dataset$cbq10, cbqee_items_dataset$cbq24, cbqee_items_dataset$cbq35, cbqee_items_dataset$cbq69, cbqee_items_dataset$cbq82, cbqee_items_dataset$cbq96, cbqee_items_dataset$cbq117, cbqee_items_dataset$cbq131r, cbqee_items_dataset$cbq148, cbqee_items_dataset$cbq166, cbqee_items_dataset$cbq175r, cbqee_items_dataset$cbq188r, cbqee_items_dataset$cbq191r) , na.rm=TRUE )
-fifteen_scales_dataset$attfoc <- rowMeans(data.frame(cbqee_items_dataset$cbq16, cbqee_items_dataset$cbq38r, cbqee_items_dataset$cbq47r, cbqee_items_dataset$cbq125, cbqee_items_dataset$cbq144, cbqee_items_dataset$cbq160, cbqee_items_dataset$cbq171r, cbqee_items_dataset$cbq186, cbqee_items_dataset$cbq195r) , na.rm=TRUE )
-fifteen_scales_dataset$attshi <- rowMeans(data.frame(cbqee_items_dataset$cbq6r, cbqee_items_dataset$cbq29, cbqee_items_dataset$cbq95r, cbqee_items_dataset$cbq180, cbqee_items_dataset$cbq184r) , na.rm=TRUE )
-#suma de las dos atenciones anteriores
-fifteen_scales_dataset$attcon <- rowMeans(data.frame(cbqee_items_dataset$cbq16, cbqee_items_dataset$cbq38r, cbqee_items_dataset$cbq47r, cbqee_items_dataset$cbq125, cbqee_items_dataset$cbq144, cbqee_items_dataset$cbq160, cbqee_items_dataset$cbq171r, cbqee_items_dataset$cbq186, cbqee_items_dataset$cbq195r, cbqee_items_dataset$cbq6r, cbqee_items_dataset$cbq29, cbqee_items_dataset$cbq95r, cbqee_items_dataset$cbq180, cbqee_items_dataset$cbq184r) , na.rm=TRUE ) 
-fifteen_scales_dataset$dis <- rowMeans(data.frame(cbqee_items_dataset$cbq5r, cbqee_items_dataset$cbq21, cbqee_items_dataset$cbq61, cbqee_items_dataset$cbq87, cbqee_items_dataset$cbq97, cbqee_items_dataset$cbq101r, cbqee_items_dataset$cbq115, cbqee_items_dataset$cbq132, cbqee_items_dataset$cbq141, cbqee_items_dataset$cbq157, cbqee_items_dataset$cbq178, cbqee_items_dataset$cbq190r) , na.rm=TRUE )
-fifteen_scales_dataset$sth <- rowMeans(data.frame(cbqee_items_dataset$cbq14r, cbqee_items_dataset$cbq27, cbqee_items_dataset$cbq42, cbqee_items_dataset$cbq53r, cbqee_items_dataset$cbq68r, cbqee_items_dataset$cbq85, cbqee_items_dataset$cbq92, cbqee_items_dataset$cbq103, cbqee_items_dataset$cbq118, cbqee_items_dataset$cbq134, cbqee_items_dataset$cbq150r, cbqee_items_dataset$cbq167r, cbqee_items_dataset$cbq177) , na.rm=TRUE )
-fifteen_scales_dataset$fea <- rowMeans(data.frame(cbqee_items_dataset$cbq15r, cbqee_items_dataset$cbq40, cbqee_items_dataset$cbq50, cbqee_items_dataset$cbq58r, cbqee_items_dataset$cbq70r, cbqee_items_dataset$cbq80, cbqee_items_dataset$cbq91, cbqee_items_dataset$cbq130, cbqee_items_dataset$cbq138r, cbqee_items_dataset$cbq161r, cbqee_items_dataset$cbq176r, cbqee_items_dataset$cbq189) , na.rm=TRUE )
-fifteen_scales_dataset$hip <- rowMeans(data.frame(cbqee_items_dataset$cbq8, cbqee_items_dataset$cbq22, cbqee_items_dataset$cbq30r, cbqee_items_dataset$cbq51r, cbqee_items_dataset$cbq60r, cbqee_items_dataset$cbq67, cbqee_items_dataset$cbq77, cbqee_items_dataset$cbq100, cbqee_items_dataset$cbq107, cbqee_items_dataset$cbq124, cbqee_items_dataset$cbq139, cbqee_items_dataset$cbq159r, cbqee_items_dataset$cbq182) , na.rm=TRUE )
-fifteen_scales_dataset$imp <- rowMeans(data.frame(cbqee_items_dataset$cbq13, cbqee_items_dataset$cbq26, cbqee_items_dataset$cbq46, cbqee_items_dataset$cbq59, cbqee_items_dataset$cbq71r, cbqee_items_dataset$cbq79r, cbqee_items_dataset$cbq90r, cbqee_items_dataset$cbq104, cbqee_items_dataset$cbq114, cbqee_items_dataset$cbq137r, cbqee_items_dataset$cbq155, cbqee_items_dataset$cbq169r, cbqee_items_dataset$cbq183r) , na.rm=TRUE )
-fifteen_scales_dataset$inh <- rowMeans(data.frame(cbqee_items_dataset$cbq4, cbqee_items_dataset$cbq20, cbqee_items_dataset$cbq32r, cbqee_items_dataset$cbq63, cbqee_items_dataset$cbq75, cbqee_items_dataset$cbq93r, cbqee_items_dataset$cbq108r, cbqee_items_dataset$cbq116, cbqee_items_dataset$cbq136, cbqee_items_dataset$cbq147, cbqee_items_dataset$cbq162r, cbqee_items_dataset$cbq168, cbqee_items_dataset$cbq185) , na.rm=TRUE )
-fifteen_scales_dataset$lip <- rowMeans(data.frame(cbqee_items_dataset$cbq12r, cbqee_items_dataset$cbq36, cbqee_items_dataset$cbq54, cbqee_items_dataset$cbq66r, cbqee_items_dataset$cbq76, cbqee_items_dataset$cbq86r, cbqee_items_dataset$cbq111r, cbqee_items_dataset$cbq113, cbqee_items_dataset$cbq133, cbqee_items_dataset$cbq146, cbqee_items_dataset$cbq151, cbqee_items_dataset$cbq164, cbqee_items_dataset$cbq174) , na.rm=TRUE )
-fifteen_scales_dataset$per <- rowMeans(data.frame(cbqee_items_dataset$cbq9, cbqee_items_dataset$cbq28r, cbqee_items_dataset$cbq31, cbqee_items_dataset$cbq52, cbqee_items_dataset$cbq65, cbqee_items_dataset$cbq84r, cbqee_items_dataset$cbq98, cbqee_items_dataset$cbq105, cbqee_items_dataset$cbq122r, cbqee_items_dataset$cbq142r, cbqee_items_dataset$cbq154, cbqee_items_dataset$cbq170r) , na.rm=TRUE )
-fifteen_scales_dataset$sad <- rowMeans(data.frame(cbqee_items_dataset$cbq18, cbqee_items_dataset$cbq39, cbqee_items_dataset$cbq44, cbqee_items_dataset$cbq55, cbqee_items_dataset$cbq64, cbqee_items_dataset$cbq72r, cbqee_items_dataset$cbq81, cbqee_items_dataset$cbq94, cbqee_items_dataset$cbq109r, cbqee_items_dataset$cbq112r, cbqee_items_dataset$cbq127, cbqee_items_dataset$cbq149r) , na.rm=TRUE )
-fifteen_scales_dataset$shy <- rowMeans(data.frame(cbqee_items_dataset$cbq7, cbqee_items_dataset$cbq17r, cbqee_items_dataset$cbq23r, cbqee_items_dataset$cbq37, cbqee_items_dataset$cbq45r, cbqee_items_dataset$cbq57r, cbqee_items_dataset$cbq74, cbqee_items_dataset$cbq89, cbqee_items_dataset$cbq106, cbqee_items_dataset$cbq119r, cbqee_items_dataset$cbq129r, cbqee_items_dataset$cbq143, cbqee_items_dataset$cbq158r) , na.rm=TRUE )
-fifteen_scales_dataset$smi <- rowMeans(data.frame(cbqee_items_dataset$cbq11, cbqee_items_dataset$cbq43r, cbqee_items_dataset$cbq56, cbqee_items_dataset$cbq83r, cbqee_items_dataset$cbq99r, cbqee_items_dataset$cbq110, cbqee_items_dataset$cbq121r, cbqee_items_dataset$cbq135r, cbqee_items_dataset$cbq152, cbqee_items_dataset$cbq163, cbqee_items_dataset$cbq165r, cbqee_items_dataset$cbq179, cbqee_items_dataset$cbq194) , na.rm=TRUE )
-
-##CALCULA 3 FACTORES, CE, AN, Y SU  
-three_factors_dataset$CE <- rowMeans(data.frame(fifteen_scales_dataset$attcon, fifteen_scales_dataset$lip, fifteen_scales_dataset$inh, fifteen_scales_dataset$per) , na.rm=TRUE )
-three_factors_dataset$AN <- rowMeans(data.frame(fifteen_scales_dataset$sad, fifteen_scales_dataset$dis, fifteen_scales_dataset$fru, fifteen_scales_dataset$fea, fifteen_scales_dataset$sth) , na.rm=TRUE )
-three_factors_dataset$SU <- rowMeans(data.frame(fifteen_scales_dataset$shy, fifteen_scales_dataset$app, fifteen_scales_dataset$imp, fifteen_scales_dataset$hip, fifteen_scales_dataset$smi, fifteen_scales_dataset$act) , na.rm=TRUE )
 ##################################
 #PERFILES
-CE <- three_factors_dataset$CE
-AN <- three_factors_dataset$AN
-cem  <- median(CE)
-anm  <- median(AN)
-three_factors_dataset$perfil[CE >= cem & AN <  anm] <- 'easy'
-three_factors_dataset$perfil[CE >= cem & AN >= anm] <- 'intense'
-three_factors_dataset$perfil[CE <  cem & AN <  anm] <- 'disengaged'
-three_factors_dataset$perfil[CE <  cem & AN >= anm] <- 'risky'
-three_factors_dataset$perfil  <- as.factor(three_factors_dataset$perfil)
+add_profiles_column <- function(xxxx)
+{
+	## DEFINE MEDIANS
+	cem  <- median(xxxx[['CE']])
+	anm  <- median(xxxx[['AN']])
+	within(xxxx, {
+		perfil <- NA
+		perfil[CE >= cem & AN <  anm] <- 'easy'
+		perfil[CE >= cem & AN >= anm] <- 'intense'
+		perfil[CE <  cem & AN <  anm] <- 'disengaged'
+		perfil[CE <  cem & AN >= anm] <- 'risky'
+	})
+}
 
-#QUITA LAS VARIABLES DE ATENCION -ATTFOC -ATTSHI
-dimensions_noextras_att <- fifteen_scales_dataset[, !grepl('(attfoc|attshi)', names(fifteen_scales_dataset), perl=TRUE)]
 
-#SAVE TO DISK
-write.csv(fifteen_scales_dataset, 'xCBQ_15DIMENSIONES.csv', row.names=TRUE)
-write.csv(three_factors_dataset, 'xCBQ_3FACTORES.csv', row.names=TRUE)
-write.csv(dimensions_noextras_att,'xCBQ_DIMENSIONES_SIN_ATTFOC_ATTSHI.csv', row.names=TRUE)
 
-## RETURN VALUE
-list(scales = dimensions_noextras_att, factors = three_factors_dataset, att_extra = fifteen_scales_dataset)
+## ONCE THE REVERSED ITEMS WERE COMPUTED ONLY THE SCALES AND FACTORS ARE COMPUTED
+compute_scales_and_factors <- function(xxxx = raw_information)
+{
+within(xxxx, {
+#CALCULATE DIMENSIONS
+act <- rowMeans(data.frame(cbq1, cbq25, cbq41r, cbq48, cbq88r, cbq102r, cbq123r, cbq126r, cbq145r, cbq153, cbq172, cbq187, cbq192r) , na.rm=TRUE )
+fru <- rowMeans(data.frame(cbq2, cbq19r, cbq34, cbq62, cbq73, cbq78, cbq120r, cbq128, cbq140, cbq156r, cbq173, cbq181, cbq193) , na.rm=TRUE )
+app <- rowMeans(data.frame(cbq10, cbq24, cbq35, cbq69, cbq82, cbq96, cbq117, cbq131r, cbq148, cbq166, cbq175r, cbq188r, cbq191r) , na.rm=TRUE )
+attfoc <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r) , na.rm=TRUE )
+attshi <- rowMeans(data.frame(cbq6r, cbq29, cbq95r, cbq180, cbq184r) , na.rm=TRUE )
+#suma de las dos atenciones anteriores
+attcon <- rowMeans(data.frame(cbq16, cbq38r, cbq47r, cbq125, cbq144, cbq160, cbq171r, cbq186, cbq195r, cbq6r, cbq29, cbq95r, cbq180, cbq184r) , na.rm=TRUE ) 
+dis <- rowMeans(data.frame(cbq5r, cbq21, cbq61, cbq87, cbq97, cbq101r, cbq115, cbq132, cbq141, cbq157, cbq178, cbq190r) , na.rm=TRUE )
+sth <- rowMeans(data.frame(cbq14r, cbq27, cbq42, cbq53r, cbq68r, cbq85, cbq92, cbq103, cbq118, cbq134, cbq150r, cbq167r, cbq177) , na.rm=TRUE )
+fea <- rowMeans(data.frame(cbq15r, cbq40, cbq50, cbq58r, cbq70r, cbq80, cbq91, cbq130, cbq138r, cbq161r, cbq176r, cbq189) , na.rm=TRUE )
+hip <- rowMeans(data.frame(cbq8, cbq22, cbq30r, cbq51r, cbq60r, cbq67, cbq77, cbq100, cbq107, cbq124, cbq139, cbq159r, cbq182) , na.rm=TRUE )
+imp <- rowMeans(data.frame(cbq13, cbq26, cbq46, cbq59, cbq71r, cbq79r, cbq90r, cbq104, cbq114, cbq137r, cbq155, cbq169r, cbq183r) , na.rm=TRUE )
+inh <- rowMeans(data.frame(cbq4, cbq20, cbq32r, cbq63, cbq75, cbq93r, cbq108r, cbq116, cbq136, cbq147, cbq162r, cbq168, cbq185) , na.rm=TRUE )
+lip <- rowMeans(data.frame(cbq12r, cbq36, cbq54, cbq66r, cbq76, cbq86r, cbq111r, cbq113, cbq133, cbq146, cbq151, cbq164, cbq174) , na.rm=TRUE )
+per <- rowMeans(data.frame(cbq9, cbq28r, cbq31, cbq52, cbq65, cbq84r, cbq98, cbq105, cbq122r, cbq142r, cbq154, cbq170r) , na.rm=TRUE )
+sad <- rowMeans(data.frame(cbq18, cbq39, cbq44, cbq55, cbq64, cbq72r, cbq81, cbq94, cbq109r, cbq112r, cbq127, cbq149r) , na.rm=TRUE )
+shy <- rowMeans(data.frame(cbq7, cbq17r, cbq23r, cbq37, cbq45r, cbq57r, cbq74, cbq89, cbq106, cbq119r, cbq129r, cbq143, cbq158r) , na.rm=TRUE )
+smi <- rowMeans(data.frame(cbq11, cbq43r, cbq56, cbq83r, cbq99r, cbq110, cbq121r, cbq135r, cbq152, cbq163, cbq165r, cbq179, cbq194) , na.rm=TRUE )
+
+##CALCULA 3 FACTORES, CE, AN, Y SU  
+CE <- rowMeans(data.frame(attcon, lip, inh, per) , na.rm=TRUE )
+AN <- rowMeans(data.frame(sad, dis, fru, fea, sth) , na.rm=TRUE )
+SU <- rowMeans(data.frame(shy, app, imp, hip, smi, act) , na.rm=TRUE )
+	})
 }
 
 
@@ -360,9 +361,14 @@ compute_scales_and_factors()
 
 #==========================================
 #==========================================
-cbq  <- function(questionnaire_dataset_file) {
-create_datasets(questionnaire_dataset_file)
-compute_scales_and_factors()
+#==========================================
+#==========================================
+cbq <- function(questionnaire_dataset_file)
+{
+	create_datasets(questionnaire_dataset_file) |>
+		make_reversed_trail_r() |>
+		compute_scales_and_factors() |>
+		add_profiles_column()
 }
 
 imputed_cbq  <- function(questionnaire_dataset_file, maximum_iterations, number_of_imputations) {
@@ -373,10 +379,13 @@ compute_scales_and_factors()
 
 #==========================================
 #==========================================
-sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file) {
-create_datasets(valkar)
-generate_unreversed_cbqee_items_dataset()
-compute_scales_and_factors()
+sin_invertidos_val_kar_mfs <- function(questionnaire_dataset_file)
+{
+	create_datasets(valkar) |>
+		generate_unreversed_cbqee_items_dataset() |>
+		make_reversed_trail_r() |>
+		compute_scales_and_factors() |>
+		add_profiles_column()
 }
 
 
