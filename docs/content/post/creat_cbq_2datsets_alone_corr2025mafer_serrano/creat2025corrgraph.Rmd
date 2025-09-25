@@ -28,9 +28,9 @@ library('psych')
 
 ```{r, torrance_cbq_scatterplot_graph, echo=FALSE}
 
-results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j_unimput_torr_cbq_outliers_median_imputed_dataset, varnames_totals_creativ_torrance, varnames_dims_subdims_cbq, significance_threshold = 0.05)
+torrance_cbq_results_corr_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j_unimput_torr_cbq_outliers_median_imputed_dataset, varnames_totals_creativ_torrance, varnames_dims_subdims_cbq, significance_threshold = 0.05)
 
-results_graph_list[[1]]
+#torrance_cbq_results_corr_graph_list[[1]]
 ```
 
 # Torrance - Raven Correlation Plots.
@@ -44,7 +44,7 @@ results_graph_list[[1]]
 torr_raven_results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j2_31impute, varnames_totals_creativ_torrance, varnames_raven, significance_threshold = 0.095)
 
 ## SHOW TORRANCE-RAVEN SCATTERPLOTS
-torr_raven_results_graph_list[[1]]
+#torr_raven_results_graph_list[[1]]
 ```
 
 # Raven CBQ Corrlation Graphics
@@ -55,5 +55,5 @@ torr_raven_results_graph_list[[1]]
 raven_cbq_results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j2raven_cbqimpute, varnames_raven, varnames_dims_subdims_cbq, significance_threshold = 0.095)
 
 ## SHOW RAVEN GRAPHS
-raven_cbq_results_graph_list[[1]]
+#raven_cbq_results_graph_list[[1]]
 ```

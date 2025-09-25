@@ -5,7 +5,7 @@ author: 'Ma Fernanda Serrano'
 date: 2025-09-20
 tags: ['diagrama de columnas', 'corelaciones por pares', 'Fer Serrano', 'Torrance', 'cbq']
 output: hugodown::md_document
-rmd_hash: c67ae8ae945b1d8e
+rmd_hash: 1023791fa333e493
 
 ---
 
@@ -41,7 +41,7 @@ rmd_hash: c67ae8ae945b1d8e
 <span><span class='c'>#&gt; [1] "sum_fluidez fea _ r = 0.35963524 _ pval = 0.04"</span></span>
 <span><span class='c'>#&gt; [1] "perc_elaboracion inh _ r = -0.37898954 _ pval = 0.03"</span></span>
 <span></span></code></pre>
-<img src="figs/torrance_cbq_scatterplot_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-3.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-4.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-5.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-6.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-7.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/torrance_cbq_scatterplot_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-3.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-4.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-5.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torrance_cbq_scatterplot_graph-6.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -56,7 +56,7 @@ rmd_hash: c67ae8ae945b1d8e
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='c'>#&gt; [1] "sum_creatividad percentil _ r = 0.26557038 _ pval = 0.093"</span></span>
 <span><span class='c'>#&gt; [1] "sum_creatividad rango _ r = -0.27895575 _ pval = 0.077"</span></span>
 <span></span></code></pre>
-<img src="figs/torr_rav_corr_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torr_rav_corr_graph-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torr_rav_corr_graph-3.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/torr_rav_corr_graph-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/torr_rav_corr_graph-2.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
@@ -78,7 +78,7 @@ rmd_hash: c67ae8ae945b1d8e
 <span><span class='c'>#&gt; [1] "puntaje per _ r = 0.30610049 _ pval = 0.074"</span></span>
 <span><span class='c'>#&gt; [1] "columna_b smi _ r = 0.37731623 _ pval = 0.025"</span></span>
 <span></span></code></pre>
-<img src="figs/rav_cbq-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/rav_cbq-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/rav_cbq-3.png" width="700px" style="display: block; margin: auto;" /><img src="figs/rav_cbq-4.png" width="700px" style="display: block; margin: auto;" />
+<img src="figs/rav_cbq-1.png" width="700px" style="display: block; margin: auto;" /><img src="figs/rav_cbq-2.png" width="700px" style="display: block; margin: auto;" /><img src="figs/rav_cbq-3.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
 
