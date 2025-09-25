@@ -1,0 +1,59 @@
+---
+title: 'Creativity CBQ by themselves (no raven) 2025 correlation analyses. Ma. Fer. Serrano'
+subtitle: 'Torrance CBQ Variables Only'
+author: 'Ma Fernanda Serrano'
+date: 2025-09-20
+tags: ['diagrama de columnas', 'corelaciones por pares', 'Fer Serrano', 'Torrance', 'cbq']
+output: hugodown::md_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
+source('~/u/temperament_ant_vale_karen_mfserrano/correlation_graphics.R')
+source('~/p/creat_cbq2025/wrangle.R')
+```
+
+```{r, include=FALSE, echo=FALSE}
+library('tidytext')
+library('widyr')
+library('ggplot2')
+library('dplyr')
+library('tidyr')
+library('psych')
+```
+
+# CORRELATION analyses
+
+## Torrance CBQ
+
+```{r, torrance_cbq_scatterplot_graph, echo=FALSE}
+
+results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j_unimput_torr_cbq_outliers_median_imputed_dataset, varnames_totals_creativ_torrance, varnames_dims_subdims_cbq, significance_threshold = 0.05)
+
+results_graph_list[[1]]
+```
+
+# Torrance - Raven Correlation Plots.
+
+- Raven iq test correlation to creativity torrce test.
+
+- Note  0.09 p-value (that is marginally significant) was used.
+
+
+```{r, torr_rav_corr_graph, echo=FALSE}
+torr_raven_results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j2_31impute, varnames_totals_creativ_torrance, varnames_raven, significance_threshold = 0.095)
+
+## SHOW TORRANCE-RAVEN SCATTERPLOTS
+torr_raven_results_graph_list[[1]]
+```
+
+# Raven CBQ Corrlation Graphics
+
+- Also 0.09 p value.
+
+```{r, rav_cbq, echo=FALSE}
+raven_cbq_results_graph_list <- correlation_scatterplot_mapper_df2names_wrap_up_main_fn(j2raven_cbqimpute, varnames_raven, varnames_dims_subdims_cbq, significance_threshold = 0.095)
+
+## SHOW RAVEN GRAPHS
+raven_cbq_results_graph_list[[1]]
+```
