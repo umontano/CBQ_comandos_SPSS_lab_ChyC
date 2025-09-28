@@ -7,9 +7,17 @@ tags: ['diagrama de columnas', 'corelaciones por pares', 'Fer Serrano', 'Torranc
 output: hugodown::md_document
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE, warning = FALSE, message = FALSE
+	#, results = "hide"
+	, message = FALSE
+	#, fig.height = 8.5
+	#, fig.width = 8.5
+	)
+## THE OLD NAME AND REPO WAS:
 #source('https://github.com/umontano/CBQ_comandos_SPSS_lab_ChyC/raw/main/correlation_graphics.R')
-source('~/u/temperament_ant_vale_karen_mfserrano/correlation_graphics.R')
+## THE NEW NAME AND REPO IS:
+source('https://github.com/umontano/cbq/raw/main/corr.R')
 source('~/p/creat_cbq2025/wrangle.R')
 ```
 

@@ -5,7 +5,7 @@ author: 'Ma Fernanda Serrano'
 date: 2025-09-20
 tags: ['diagrama de columnas', 'corelaciones por pares', 'Fer Serrano', 'Torrance', 'cbq']
 output: hugodown::md_document
-rmd_hash: 1023791fa333e493
+rmd_hash: 9c251cb2be6e0320
 
 ---
 
